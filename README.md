@@ -151,9 +151,9 @@ Simülasyonun, algoritmaların ve görev dağıtımı mekanizmasının kodlanmas
 
 | Ad Soyad |
 | --- |
+| Mert Aydın |
+| Yusuf Öksüz |
 | Muhammet ALTINOLUK |
-| Mert AYDIN |
-| Yusuf ÖKSÜZ |
 
 ## Akademik Bağlam
 
