@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="680" viewBox="0 0 960 680" role="img" aria-labelledby="title desc">
+<title id="title">Küçük afet bölgesi senaryosu</title>
+<desc id="desc">Sentetik afet ağı. Yeşil düz yollar açık, turuncu kesikli yollar hasarlı, kırmızı noktalı yollar kapalıdır. Rota hesabı yapılmaz.</desc>
+<rect width="960" height="680" fill="#f8fafc"/>
+<g font-family="Arial, sans-serif" fill="#17263c">
+<text x="48" y="48" font-size="26" font-weight="bold">AYROS MMY | İkinci hafta</text>
+<text x="48" y="80" font-size="18">Küçük afet bölgesi senaryosu</text>
+<text x="48" y="108" font-size="14">Yerel x/y koordinatları (km) • Şematik gösterim • Rota hesaplanmadı</text>
+<line x1="100.0" y1="335.0" x2="275.0" y2="247.5" stroke="#247c59" stroke-width="4"/>
+<rect x="168.5" y="281.2" width="38" height="20" rx="4" fill="#f8fafc"/>
+<text x="187.5" y="296.2" text-anchor="middle" font-size="12">R01</text>
+<line x1="100.0" y1="335.0" x2="275.0" y2="422.5" stroke="#247c59" stroke-width="4"/>
+<rect x="168.5" y="368.8" width="38" height="20" rx="4" fill="#f8fafc"/>
+<text x="187.5" y="383.8" text-anchor="middle" font-size="12">R02</text>
+<line x1="275.0" y1="247.5" x2="275.0" y2="422.5" stroke="#c23e42" stroke-width="4" stroke-dasharray="3 6"/>
+<rect x="256.0" y="325.0" width="38" height="20" rx="4" fill="#f8fafc"/>
+<text x="275.0" y="340.0" text-anchor="middle" font-size="12">R03</text>
+<line x1="275.0" y1="247.5" x2="450.0" y2="247.5" stroke="#247c59" stroke-width="4"/>
+<rect x="343.5" y="237.5" width="38" height="20" rx="4" fill="#f8fafc"/>
+<text x="362.5" y="252.5" text-anchor="middle" font-size="12">R04</text>
+<line x1="275.0" y1="422.5" x2="450.0" y2="422.5" stroke="#247c59" stroke-width="4"/>
+<rect x="343.5" y="412.5" width="38" height="20" rx="4" fill="#f8fafc"/>
+<text x="362.5" y="427.5" text-anchor="middle" font-size="12">R05</text>
+<line x1="450.0" y1="247.5" x2="450.0" y2="422.5" stroke="#247c59" stroke-width="4"/>
+<rect x="431.0" y="325.0" width="38" height="20" rx="4" fill="#f8fafc"/>
+<text x="450.0" y="340.0" text-anchor="middle" font-size="12">R06</text>
+<line x1="450.0" y1="247.5" x2="625.0" y2="247.5" stroke="#b66a09" stroke-width="4" stroke-dasharray="12 5"/>
+<rect x="518.5" y="237.5" width="38" height="20" rx="4" fill="#f8fafc"/>
+<text x="537.5" y="252.5" text-anchor="middle" font-size="12">R07</text>
+<line x1="450.0" y1="422.5" x2="625.0" y2="422.5" stroke="#247c59" stroke-width="4"/>
+<rect x="518.5" y="412.5" width="38" height="20" rx="4" fill="#f8fafc"/>
+<text x="537.5" y="427.5" text-anchor="middle" font-size="12">R08</text>
+<line x1="625.0" y1="247.5" x2="625.0" y2="422.5" stroke="#c23e42" stroke-width="4" stroke-dasharray="3 6"/>
+<rect x="606.0" y="325.0" width="38" height="20" rx="4" fill="#f8fafc"/>
+<text x="625.0" y="340.0" text-anchor="middle" font-size="12">R09</text>
+<line x1="625.0" y1="247.5" x2="800.0" y2="160.0" stroke="#b66a09" stroke-width="4" stroke-dasharray="12 5"/>
+<rect x="693.5" y="193.8" width="38" height="20" rx="4" fill="#f8fafc"/>
+<text x="712.5" y="208.8" text-anchor="middle" font-size="12">R10</text>
+<line x1="625.0" y1="422.5" x2="800.0" y2="510.0" stroke="#247c59" stroke-width="4"/>
+<rect x="693.5" y="456.2" width="38" height="20" rx="4" fill="#f8fafc"/>
+<text x="712.5" y="471.2" text-anchor="middle" font-size="12">R11</text>
+<line x1="625.0" y1="247.5" x2="800.0" y2="335.0" stroke="#247c59" stroke-width="4"/>
+<rect x="693.5" y="281.2" width="38" height="20" rx="4" fill="#f8fafc"/>
+<text x="712.5" y="296.2" text-anchor="middle" font-size="12">R12</text>
+<line x1="625.0" y1="422.5" x2="800.0" y2="335.0" stroke="#b66a09" stroke-width="4" stroke-dasharray="12 5"/>
+<rect x="693.5" y="368.8" width="38" height="20" rx="4" fill="#f8fafc"/>
+<text x="712.5" y="383.8" text-anchor="middle" font-size="12">R13</text>
+<line x1="800.0" y1="160.0" x2="800.0" y2="335.0" stroke="#247c59" stroke-width="4"/>
+<rect x="781.0" y="237.5" width="38" height="20" rx="4" fill="#f8fafc"/>
+<text x="800.0" y="252.5" text-anchor="middle" font-size="12">R14</text>
+<circle cx="100.0" cy="335.0" r="22" fill="#1f4b78"/>
+<text x="100.0" y="340.0" text-anchor="middle" font-size="14" fill="white">H0</text>
+<circle cx="275.0" cy="247.5" r="22" fill="#5c6776"/>
+<text x="275.0" y="252.5" text-anchor="middle" font-size="14" fill="white">K1</text>
+<circle cx="275.0" cy="422.5" r="22" fill="#5c6776"/>
+<text x="275.0" y="427.5" text-anchor="middle" font-size="14" fill="white">K2</text>
+<circle cx="450.0" cy="247.5" r="22" fill="#5c6776"/>
+<text x="450.0" y="252.5" text-anchor="middle" font-size="14" fill="white">K3</text>
+<circle cx="450.0" cy="422.5" r="22" fill="#5c6776"/>
+<text x="450.0" y="427.5" text-anchor="middle" font-size="14" fill="white">K4</text>
+<circle cx="625.0" cy="247.5" r="22" fill="#5c6776"/>
+<text x="625.0" y="252.5" text-anchor="middle" font-size="14" fill="white">K5</text>
+<circle cx="625.0" cy="422.5" r="22" fill="#5c6776"/>
+<text x="625.0" y="427.5" text-anchor="middle" font-size="14" fill="white">K6</text>
+<circle cx="800.0" cy="160.0" r="22" fill="#9e3a57"/>
+<text x="800.0" y="165.0" text-anchor="middle" font-size="14" fill="white">A1</text>
+<circle cx="800.0" cy="335.0" r="22" fill="#9e3a57"/>
+<text x="800.0" y="340.0" text-anchor="middle" font-size="14" fill="white">A2</text>
+<circle cx="800.0" cy="510.0" r="22" fill="#9e3a57"/>
+<text x="800.0" y="515.0" text-anchor="middle" font-size="14" fill="white">A3</text>
+<text x="48" y="570" font-size="15">H0: Yardım merkezi     K1–K6: Kavşak     A1–A3: Afet noktası</text>
+<text x="48" y="602" font-size="15">Yollar: Yeşil düz = Açık | Turuncu kesikli = Hasarlı | Kırmızı noktalı = Kapalı</text>
+<text x="48" y="634" font-size="14">10 düğüm · 14 çift yönlü yol · Yol etiketleri JSON kaydıyla eşleşir.</text>
+</g></svg>
