@@ -3,7 +3,7 @@
 
 AYROS MMY, simüle edilmiş afet bölgelerinde yardım araçlarının yol koşulları ve ihtiyaç öncelikleri dikkate alınarak yönlendirilmesi amacıyla geliştirilecek bir akademik projedir. Dijkstra ve A* algoritmalarıyla rota hesaplama, değişen yol koşullarına göre yeniden planlama ve temel düzeyde çoklu araç görev dağıtımı hedeflenmektedir.
 
-> **Proje durumu:** Tasarım ve geliştirme başlangıç aşamasındadır. Bu belgede açıklanan işlevler planlanan kapsamı ifade etmektedir; tamamlanmış özellikler veya ölçülmüş performans sonuçları olarak değerlendirilmemelidir.
+> **Proje durumu — 2. hafta:** İlk çizge modeli, JSON senaryo okuma, veri doğrulama, komşuluk sorguları ve statik SVG gösterimi tamamlandı. Rota algoritmaları, hasar maliyeti, araç atama ve hareket simülasyonu henüz geliştirilmedi. Aşağıdaki genel kapsam bu sonraki hedefleri de içerir.
 
 ## Proje Hakkında
 
@@ -137,15 +137,36 @@ Bu başlıklar gelecekteki olası geliştirmelerdir; tamamlanmış işlevleri ve
 
 ## Proje Durumu
 
-Proje, **tasarım ve geliştirme başlangıç aşamasındadır**. Bu aşamada aşağıdaki çalışmaların çerçevesi belirlenmiştir:
+İkinci haftada Python veri modeli ve küçük bir afet senaryosu oluşturuldu. Senaryo **10 düğüm ve 14 çift yönlü yol** içerir: **9 açık, 3 hasarlı, 2 kapalı yol**. Düğümler 1 yardım merkezi, 6 kavşak ve 3 afet noktasından oluşur.
 
-- Problem tanımı.
-- Sistem modeli.
-- Kullanılacak temel algoritmalar.
-- İş paketleri.
-- Görev dağılımı.
+Kapalı yollar veride korunur ve geçilebilir komşu sorgularından çıkarılır. Hasarlı yolların durumu tutulur; henüz ek maliyet uygulanmaz. Rota, öncelik puanı ve araç atama hesabı yapılmaz. **19 otomatik test başarılıdır.**
 
-Simülasyonun, algoritmaların ve görev dağıtımı mekanizmasının kodlanması; senaryoların hazırlanması ve performans değerlendirmelerinin yapılması sonraki geliştirme çalışmalarını oluşturacaktır.
+## Çalıştırma
+
+Python **3.11 veya üzeri** yeterlidir. Bu sürüm yalnızca standart kütüphaneyi kullanır; ek paket kurulumu gerekmez. Komutları depo klasöründe çalıştırın:
+
+```bash
+python -m ayros
+python -m ayros --svg docs/hafta2_senaryo.svg
+python -m unittest discover -s tests -v
+```
+
+Farklı bir senaryo için `python -m ayros data/hafta2_senaryo.json` komutunu kullanabilirsiniz. Windows'ta Python komutu `py` ise `python` yerine `py` yazın. Hatalı dosyalarda program anlaşılır hata ile `1`, başarılı çalışmada `0` çıkış kodu döndürür.
+
+![İkinci hafta afet çizgesi](docs/hafta2_senaryo.svg)
+
+## Dosyalar ve ikinci hafta notları
+
+- `ayros/model.py`: Düğüm, yol ve yönsüz komşuluk listesi.
+- `ayros/scenario.py`: JSON okuma ve veri kontrolleri.
+- `ayros/__main__.py`: Terminalde senaryo özeti.
+- `ayros/visualize.py`: Veriden SVG üretimi.
+- `data/hafta2_senaryo.json`: Tekrarlanabilir örnek senaryo.
+- `tests/test_scenario.py`: Model, dosya okuma, görsel ve komut satırı testleri.
+- [Veri sözlüğü ve sunum adımları](docs/hafta2.md)
+- [Gereksinim analizi](docs/gereksinimler.md)
+
+Koordinatlar yerel düzlemde kilometre cinsindedir; gerçek enlem/boylam değildir. İlk modelde yollar çift yönlüdür; aynı iki düğüm arasında tek yol desteklenir. Bağlantısız ağlar geçerlidir, boş düğüm listesi reddedilir. Ayrıntılı kapsam ve sonraki adım hafta notunda açıklanmıştır.
 
 ## Ekip
 

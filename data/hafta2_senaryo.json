@@ -1,0 +1,202 @@
+{
+  "schema_version": 1,
+  "name": "Küçük afet bölgesi senaryosu",
+  "description": "İkinci hafta için elle denetlenebilir sentetik veri. Süreler temel tahmindir; hasar cezası henüz uygulanmaz.",
+  "directed": false,
+  "coordinate_system": "cartesian_km",
+  "nodes": [
+    {
+      "id": "H0",
+      "name": "Yardım Merkezi",
+      "node_type": "aid_center",
+      "x_km": 0,
+      "y_km": 1
+    },
+    {
+      "id": "K1",
+      "name": "Kavşak 1",
+      "node_type": "intersection",
+      "x_km": 2,
+      "y_km": 2
+    },
+    {
+      "id": "K2",
+      "name": "Kavşak 2",
+      "node_type": "intersection",
+      "x_km": 2,
+      "y_km": 0
+    },
+    {
+      "id": "K3",
+      "name": "Kavşak 3",
+      "node_type": "intersection",
+      "x_km": 4,
+      "y_km": 2
+    },
+    {
+      "id": "K4",
+      "name": "Kavşak 4",
+      "node_type": "intersection",
+      "x_km": 4,
+      "y_km": 0
+    },
+    {
+      "id": "K5",
+      "name": "Kavşak 5",
+      "node_type": "intersection",
+      "x_km": 6,
+      "y_km": 2
+    },
+    {
+      "id": "K6",
+      "name": "Kavşak 6",
+      "node_type": "intersection",
+      "x_km": 6,
+      "y_km": 0
+    },
+    {
+      "id": "A1",
+      "name": "Kuzey Afet Noktası",
+      "node_type": "disaster_area",
+      "x_km": 8,
+      "y_km": 3,
+      "affected_count": 80,
+      "injured_count": 20,
+      "urgency_level": 5
+    },
+    {
+      "id": "A2",
+      "name": "Merkez Afet Noktası",
+      "node_type": "disaster_area",
+      "x_km": 8,
+      "y_km": 1,
+      "affected_count": 120,
+      "injured_count": 12,
+      "urgency_level": 3
+    },
+    {
+      "id": "A3",
+      "name": "Güney Afet Noktası",
+      "node_type": "disaster_area",
+      "x_km": 8,
+      "y_km": -1,
+      "affected_count": 60,
+      "injured_count": 8,
+      "urgency_level": 2
+    }
+  ],
+  "roads": [
+    {
+      "id": "R01",
+      "source": "H0",
+      "target": "K1",
+      "distance_km": 2.46,
+      "travel_time_min": 4.92,
+      "status": "open"
+    },
+    {
+      "id": "R02",
+      "source": "H0",
+      "target": "K2",
+      "distance_km": 2.46,
+      "travel_time_min": 4.92,
+      "status": "open"
+    },
+    {
+      "id": "R03",
+      "source": "K1",
+      "target": "K2",
+      "distance_km": 2.2,
+      "travel_time_min": 4.4,
+      "status": "closed"
+    },
+    {
+      "id": "R04",
+      "source": "K1",
+      "target": "K3",
+      "distance_km": 2.2,
+      "travel_time_min": 4.4,
+      "status": "open"
+    },
+    {
+      "id": "R05",
+      "source": "K2",
+      "target": "K4",
+      "distance_km": 2.2,
+      "travel_time_min": 4.4,
+      "status": "open"
+    },
+    {
+      "id": "R06",
+      "source": "K3",
+      "target": "K4",
+      "distance_km": 2.2,
+      "travel_time_min": 4.4,
+      "status": "open"
+    },
+    {
+      "id": "R07",
+      "source": "K3",
+      "target": "K5",
+      "distance_km": 2.2,
+      "travel_time_min": 4.4,
+      "status": "damaged"
+    },
+    {
+      "id": "R08",
+      "source": "K4",
+      "target": "K6",
+      "distance_km": 2.2,
+      "travel_time_min": 4.4,
+      "status": "open"
+    },
+    {
+      "id": "R09",
+      "source": "K5",
+      "target": "K6",
+      "distance_km": 2.2,
+      "travel_time_min": 4.4,
+      "status": "closed"
+    },
+    {
+      "id": "R10",
+      "source": "K5",
+      "target": "A1",
+      "distance_km": 2.46,
+      "travel_time_min": 4.92,
+      "status": "damaged"
+    },
+    {
+      "id": "R11",
+      "source": "K6",
+      "target": "A3",
+      "distance_km": 2.46,
+      "travel_time_min": 4.92,
+      "status": "open"
+    },
+    {
+      "id": "R12",
+      "source": "K5",
+      "target": "A2",
+      "distance_km": 2.46,
+      "travel_time_min": 4.92,
+      "status": "open"
+    },
+    {
+      "id": "R13",
+      "source": "K6",
+      "target": "A2",
+      "distance_km": 2.46,
+      "travel_time_min": 4.92,
+      "status": "damaged"
+    },
+    {
+      "id": "R14",
+      "source": "A1",
+      "target": "A2",
+      "distance_km": 2.2,
+      "travel_time_min": 4.4,
+      "status": "open"
+    }
+  ]
+}
