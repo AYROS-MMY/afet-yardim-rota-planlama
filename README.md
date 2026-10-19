@@ -3,7 +3,7 @@
 
 AYROS MMY, simüle edilmiş afet bölgelerinde yardım araçlarının yol koşulları ve ihtiyaç öncelikleri dikkate alınarak yönlendirilmesi amacıyla geliştirilecek bir akademik projedir. Dijkstra ve A* algoritmalarıyla rota hesaplama, değişen yol koşullarına göre yeniden planlama ve temel düzeyde çoklu araç görev dağıtımı hedeflenmektedir.
 
-> **Proje durumu — 3. hafta:** Veri modeline Dijkstra, dakika cinsinden yol maliyeti, rota ölçümleri ve SVG üzerinde rota gösterimi eklendi. **38 otomatik test başarılıdır.** A*, afet öncelik puanı, araç atama ve hareket simülasyonu sonraki haftaların hedefleridir. [Üçüncü hafta notu ve sunum akışı](docs/hafta3.md)
+> **Proje durumu — 3. hafta:** Dijkstra artık **30 düğüm, 55 yollu** ağ üzerinde çalışıyor. 2 yardım merkezi ve 6 afet noktası için tek hedef rotası veya toplu erişilebilirlik özeti alınabiliyor. **44 otomatik test başarılıdır.** Bu haftanın takım kaptanı **Yusuf Öksüz**. A*, araç atama ve hareket sonraki aşamalardır. [Üçüncü hafta notu ve sunum akışı](docs/hafta3.md)
 
 ## Proje Hakkında
 
@@ -137,22 +137,28 @@ Bu başlıklar gelecekteki olası geliştirmelerdir; tamamlanmış işlevleri ve
 
 İkinci haftada Python veri modeli ve küçük bir afet senaryosu oluşturuldu. Senaryo **10 düğüm ve 14 çift yönlü yol** içerir: **9 açık, 3 hasarlı, 2 kapalı yol**. Düğümler 1 yardım merkezi, 6 kavşak ve 3 afet noktasından oluşur.
 
-Üçüncü haftada bu ağ üzerinde Dijkstra çalıştırıldı. `H0 → K1 → K3 → K5 → A2 → A1` rotasının maliyeti **27,44 dakika**, temel süresi **23,04 dakika**, mesafesi **11,52 km** olarak doğrulandı. Ayrıca elle kontrol için **4 düğüm, 5 yollu** ayrı bir örnek eklendi. Önceki 19 teste 19 rota testi eklendi; **38 test metodu başarılıdır** (19 Ekim 2026).
+Üçüncü haftanın ana senaryosu **30 düğüm ve 55 çift yönlü yol** içerir: **2 yardım merkezi, 6 afet noktası, 22 kavşak; 39 açık, 10 hasarlı, 6 kapalı yol**. 6×5 yerleşimde yatay/dikey yollar ve 6 çapraz bağlantı vardır. A6'nın üç giriş yolu kapalı olduğundan her iki merkezden de 6 afet noktasının 5'ine ulaşılabilir.
+
+H0 → A3 rotası varsayılan hasar katsayısıyla **38,14 dakika** maliyet, **32,64 dakika** temel süre ve **15,40 km** mesafe verir. Katsayı 1 yapılınca farklı rota **31,24 dakika** olur. İki merkezin hedefleri ayrı ayrı sorgulanır; otomatik merkez/araç ataması yapılmaz. Elle anlatım için 4 düğümlü örnek ve önceki haftanın 10 düğümlü verisi korunmuştur. **44 test metodu başarılıdır** (19 Ekim 2026).
 
 ## Çalıştırma
 
 Python **3.11 veya üzeri** yeterlidir. Bu sürüm yalnızca standart kütüphaneyi kullanır; ek paket kurulumu gerekmez. Komutları depo klasöründe çalıştırın:
 
 ```bash
-py -3.11 -m ayros data/hafta3_ornek.json --start S --target T --svg docs/hafta3_rota.svg
-py -3.11 -m ayros data/hafta3_ornek.json --start S --target T --damage-factor 1
-py -3.11 -m ayros --start H0 --target A1
+py -3.11 -m ayros --start H0 --target A3 --svg docs/hafta3_genis_rota.svg
+py -3.11 -m ayros --start H0 --all-targets
+py -3.11 -m ayros --start H1 --all-targets
+py -3.11 -m ayros --start H0 --target A3 --damage-factor 1 --svg docs/hafta3_hasar_1.svg
+py -3.11 -m ayros --start H0 --target A6
 py -3.11 -m unittest discover -s tests -v
 ```
 
-Komutlar Windows Python başlatıcısını kullanır. Diğer sistemlerde `py -3.11` yerine Python 3.11+ yorumlayıcınızın `python` veya `python3` komutunu kullanın. İlk komut **S → C → T, 5 dakika** sonucunu verir. İkincisi katsayıyı 1 yapar ve **S → B → T, 4 dakika** bulur. SVG dosyasını tarayıcıda açabilirsiniz. Parametresiz `py -3.11 -m ayros` önceki senaryo özetini gösterir. Çıkış kodları: başarı `0`, veri/dosya hatası `1`, hatalı komut kullanımı `2`, ulaşılamayan hedef `3`.
+Komutlar Windows Python başlatıcısını kullanır. Diğer sistemlerde `py -3.11` yerine Python 3.11+ yorumlayıcınızın `python` veya `python3` komutunu kullanın. Varsayılan veri `data/hafta3_genis_ag.json` dosyasıdır. İlk komutun SVG çıktısını tarayıcıda açın; yol etiketlerinde kimlik ve güncel süre, üzerine gelince ayrıntılar görünür. `--all-targets` tüm afet noktalarını bağımsız hesaplar ve bazıları erişilemez olsa da tamamlanan özet için `0` döndürür. Tek hedefte ulaşılamayan sonuç `3`, veri/dosya hatası `1`, hatalı komut kullanımı `2` koduyla biter.
 
-![Üçüncü hafta Dijkstra rotası](docs/hafta3_rota.svg)
+Küçük örnek: `py -3.11 -m ayros data/hafta3_ornek.json --start S --target T`. Önceki haftanın ağı: `py -3.11 -m ayros data/hafta2_senaryo.json --start H0 --target A1`. Geniş veri dosyası `py -3.11 scripts/generate_week3_scenario.py` ile aynı şekilde yeniden üretilebilir.
+
+![Üçüncü hafta geniş yol ağı ve Dijkstra rotası](docs/hafta3_genis_rota.svg)
 
 ## Dosyalar ve hafta notları
 
@@ -164,7 +170,10 @@ Komutlar Windows Python başlatıcısını kullanır. Diğer sistemlerde `py -3.
 - `data/hafta2_senaryo.json`: Tekrarlanabilir örnek senaryo.
 - `tests/test_scenario.py`: Model, dosya okuma, görsel ve komut satırı testleri.
 - `data/hafta3_ornek.json`: Elle doğrulanabilen rota örneği.
+- `data/hafta3_genis_ag.json`: Sunumun ana senaryosu; 30 düğüm, 55 yol.
+- `scripts/generate_week3_scenario.py`: Geniş ağın tekrarlanabilir veri üretimi.
 - `tests/test_routing.py`: Rota doğruluğu, sınır durumları, CLI ve SVG kontrolleri.
+- `tests/test_large_scenario.py`: Geniş ağda bağımsız maliyet doğrulaması ve toplu sorgular.
 - [Üçüncü hafta: maliyet modeli, doğrulama ve sunum](docs/hafta3.md)
 - [Veri sözlüğü ve sunum adımları](docs/hafta2.md)
 - [Gereksinim analizi](docs/gereksinimler.md)
@@ -172,6 +181,8 @@ Komutlar Windows Python başlatıcısını kullanır. Diğer sistemlerde `py -3.
 Koordinatlar yerel düzlemde kilometre cinsindedir; gerçek enlem/boylam değildir. İlk modelde yollar çift yönlüdür; aynı iki düğüm arasında tek yol desteklenir. Bağlantısız ağlar geçerlidir, boş düğüm listesi reddedilir. Ayrıntılı kapsam ve sonraki adım hafta notunda açıklanmıştır.
 
 ## Ekip
+
+**3. hafta takım kaptanı: Yusuf Öksüz.**
 
 | Ad Soyad |
 | --- |
