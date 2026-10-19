@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "name": "Üçüncü hafta geniş afet ağı",
-  "description": "Sentetik 6x5 yerleşim: 2 yardım merkezi, 6 afet noktası, 22 kavşak; 49 yatay/dikey ve 6 çapraz yol. Mesafeler düzlem uzaklığının yaklaşık 1,1 katı; temel süreler 24/30/36 km/saat varsayımlarıyla üretilir. A6 girişleri kapalıdır. Gerçek saha verisi değildir.",
+  "name": "Üçüncü hafta düzensiz yerleşim ağı",
+  "description": "İki yaka, iki köprü, düzensiz mahalle halkaları ve çıkmaz sokaklar içeren sentetik ağ. Yol mesafeleri çizilen kırımlı geometri üzerinden hesaplanır; ana yol 40, ikincil yol 30, sokak 20, köprü 25 km/saat varsayılır. A6'nın iki girişi kapalıdır. Gerçek şehir veya saha verisi değildir.",
   "directed": false,
   "coordinate_system": "cartesian_km",
   "nodes": [
@@ -9,671 +9,1562 @@
       "id": "K01",
       "name": "Kavşak K01",
       "node_type": "intersection",
-      "x_km": 0,
-      "y_km": 0
+      "x_km": 1.2,
+      "y_km": 7.7
     },
     {
       "id": "K02",
       "name": "Kavşak K02",
       "node_type": "intersection",
-      "x_km": 2,
-      "y_km": 0
-    },
-    {
-      "id": "A6",
-      "name": "Afet noktası A6",
-      "node_type": "disaster_area",
-      "x_km": 4,
-      "y_km": 0,
-      "affected_count": 45,
-      "injured_count": 10,
-      "urgency_level": 4
+      "x_km": 2.6,
+      "y_km": 8.3
     },
     {
       "id": "K03",
       "name": "Kavşak K03",
       "node_type": "intersection",
-      "x_km": 6,
-      "y_km": 0
+      "x_km": 4.1,
+      "y_km": 7.8
     },
     {
       "id": "K04",
       "name": "Kavşak K04",
       "node_type": "intersection",
-      "x_km": 8,
-      "y_km": 0
-    },
-    {
-      "id": "A5",
-      "name": "Afet noktası A5",
-      "node_type": "disaster_area",
-      "x_km": 10,
-      "y_km": 0,
-      "affected_count": 95,
-      "injured_count": 15,
-      "urgency_level": 4
+      "x_km": 5.5,
+      "y_km": 8.4
     },
     {
       "id": "K05",
       "name": "Kavşak K05",
       "node_type": "intersection",
-      "x_km": 0,
-      "y_km": 2
+      "x_km": 0.9,
+      "y_km": 5.6
     },
     {
       "id": "K06",
       "name": "Kavşak K06",
       "node_type": "intersection",
-      "x_km": 2,
-      "y_km": 2
+      "x_km": 2.2,
+      "y_km": 6.4
     },
     {
       "id": "K07",
       "name": "Kavşak K07",
       "node_type": "intersection",
-      "x_km": 4,
-      "y_km": 2
+      "x_km": 3.6,
+      "y_km": 5.9
     },
     {
       "id": "K08",
       "name": "Kavşak K08",
       "node_type": "intersection",
-      "x_km": 6,
-      "y_km": 2
-    },
-    {
-      "id": "A4",
-      "name": "Afet noktası A4",
-      "node_type": "disaster_area",
-      "x_km": 8,
-      "y_km": 2,
-      "affected_count": 60,
-      "injured_count": 8,
-      "urgency_level": 2
+      "x_km": 5.4,
+      "y_km": 6.8
     },
     {
       "id": "K09",
       "name": "Kavşak K09",
       "node_type": "intersection",
-      "x_km": 10,
-      "y_km": 2
-    },
-    {
-      "id": "H0",
-      "name": "Yardım merkezi H0",
-      "node_type": "aid_center",
-      "x_km": 0,
-      "y_km": 4
+      "x_km": 1.6,
+      "y_km": 3.7
     },
     {
       "id": "K10",
       "name": "Kavşak K10",
       "node_type": "intersection",
-      "x_km": 2,
-      "y_km": 4
+      "x_km": 3.2,
+      "y_km": 4.4
     },
     {
       "id": "K11",
       "name": "Kavşak K11",
       "node_type": "intersection",
-      "x_km": 4,
-      "y_km": 4
+      "x_km": 5.3,
+      "y_km": 4.8
     },
     {
       "id": "K12",
       "name": "Kavşak K12",
       "node_type": "intersection",
-      "x_km": 6,
-      "y_km": 4
+      "x_km": 0.9,
+      "y_km": 1.8
     },
     {
       "id": "K13",
       "name": "Kavşak K13",
       "node_type": "intersection",
-      "x_km": 8,
-      "y_km": 4
-    },
-    {
-      "id": "A3",
-      "name": "Afet noktası A3",
-      "node_type": "disaster_area",
-      "x_km": 10,
-      "y_km": 4,
-      "affected_count": 160,
-      "injured_count": 32,
-      "urgency_level": 5
+      "x_km": 2.5,
+      "y_km": 2.4
     },
     {
       "id": "K14",
       "name": "Kavşak K14",
       "node_type": "intersection",
-      "x_km": 0,
-      "y_km": 6
+      "x_km": 4.4,
+      "y_km": 2.1
     },
     {
       "id": "K15",
       "name": "Kavşak K15",
       "node_type": "intersection",
-      "x_km": 2,
-      "y_km": 6
+      "x_km": 5.7,
+      "y_km": 2.8
     },
     {
       "id": "K16",
       "name": "Kavşak K16",
       "node_type": "intersection",
-      "x_km": 4,
-      "y_km": 6
+      "x_km": 3.7,
+      "y_km": 0.8
     },
     {
       "id": "K17",
       "name": "Kavşak K17",
       "node_type": "intersection",
-      "x_km": 6,
-      "y_km": 6
-    },
-    {
-      "id": "A2",
-      "name": "Afet noktası A2",
-      "node_type": "disaster_area",
-      "x_km": 8,
-      "y_km": 6,
-      "affected_count": 80,
-      "injured_count": 12,
-      "urgency_level": 3
+      "x_km": 7.4,
+      "y_km": 8.2
     },
     {
       "id": "K18",
       "name": "Kavşak K18",
       "node_type": "intersection",
-      "x_km": 10,
-      "y_km": 6
-    },
-    {
-      "id": "H1",
-      "name": "Yardım merkezi H1",
-      "node_type": "aid_center",
-      "x_km": 0,
-      "y_km": 8
+      "x_km": 9.2,
+      "y_km": 8.8
     },
     {
       "id": "K19",
       "name": "Kavşak K19",
       "node_type": "intersection",
-      "x_km": 2,
-      "y_km": 8
+      "x_km": 11.0,
+      "y_km": 8.2
     },
     {
       "id": "K20",
       "name": "Kavşak K20",
       "node_type": "intersection",
-      "x_km": 4,
-      "y_km": 8
+      "x_km": 12.6,
+      "y_km": 7.1
     },
     {
       "id": "K21",
       "name": "Kavşak K21",
       "node_type": "intersection",
-      "x_km": 6,
-      "y_km": 8
+      "x_km": 7.6,
+      "y_km": 6.5
     },
     {
       "id": "K22",
       "name": "Kavşak K22",
       "node_type": "intersection",
-      "x_km": 8,
-      "y_km": 8
+      "x_km": 9.0,
+      "y_km": 7.0
+    },
+    {
+      "id": "K23",
+      "name": "Kavşak K23",
+      "node_type": "intersection",
+      "x_km": 10.2,
+      "y_km": 6.2
+    },
+    {
+      "id": "K24",
+      "name": "Kavşak K24",
+      "node_type": "intersection",
+      "x_km": 11.8,
+      "y_km": 5.8
+    },
+    {
+      "id": "K25",
+      "name": "Kavşak K25",
+      "node_type": "intersection",
+      "x_km": 7.3,
+      "y_km": 4.9
+    },
+    {
+      "id": "K26",
+      "name": "Kavşak K26",
+      "node_type": "intersection",
+      "x_km": 8.8,
+      "y_km": 4.4
+    },
+    {
+      "id": "K27",
+      "name": "Kavşak K27",
+      "node_type": "intersection",
+      "x_km": 10.5,
+      "y_km": 4.5
+    },
+    {
+      "id": "K28",
+      "name": "Kavşak K28",
+      "node_type": "intersection",
+      "x_km": 12.4,
+      "y_km": 3.4
+    },
+    {
+      "id": "K29",
+      "name": "Kavşak K29",
+      "node_type": "intersection",
+      "x_km": 7.6,
+      "y_km": 2.5
+    },
+    {
+      "id": "K30",
+      "name": "Kavşak K30",
+      "node_type": "intersection",
+      "x_km": 9.3,
+      "y_km": 2.0
+    },
+    {
+      "id": "K31",
+      "name": "Kavşak K31",
+      "node_type": "intersection",
+      "x_km": 11.1,
+      "y_km": 2.6
+    },
+    {
+      "id": "K32",
+      "name": "Kavşak K32",
+      "node_type": "intersection",
+      "x_km": 10.1,
+      "y_km": 0.7
+    },
+    {
+      "id": "H0",
+      "name": "Yardım merkezi H0",
+      "node_type": "aid_center",
+      "x_km": 0.25,
+      "y_km": 4.6
+    },
+    {
+      "id": "H1",
+      "name": "Yardım merkezi H1",
+      "node_type": "aid_center",
+      "x_km": 8.0,
+      "y_km": 0.9
     },
     {
       "id": "A1",
       "name": "Afet noktası A1",
       "node_type": "disaster_area",
-      "x_km": 10,
-      "y_km": 8,
+      "x_km": 3.2,
+      "y_km": 9.3,
       "affected_count": 120,
       "injured_count": 25,
       "urgency_level": 5
+    },
+    {
+      "id": "A2",
+      "name": "Afet noktası A2",
+      "node_type": "disaster_area",
+      "x_km": 4.7,
+      "y_km": 6.3,
+      "affected_count": 80,
+      "injured_count": 12,
+      "urgency_level": 3
+    },
+    {
+      "id": "A3",
+      "name": "Afet noktası A3",
+      "node_type": "disaster_area",
+      "x_km": 13.3,
+      "y_km": 5.4,
+      "affected_count": 160,
+      "injured_count": 32,
+      "urgency_level": 5
+    },
+    {
+      "id": "A4",
+      "name": "Afet noktası A4",
+      "node_type": "disaster_area",
+      "x_km": 10.5,
+      "y_km": 9.4,
+      "affected_count": 60,
+      "injured_count": 8,
+      "urgency_level": 2
+    },
+    {
+      "id": "A5",
+      "name": "Afet noktası A5",
+      "node_type": "disaster_area",
+      "x_km": 12.6,
+      "y_km": 1.0,
+      "affected_count": 95,
+      "injured_count": 15,
+      "urgency_level": 4
+    },
+    {
+      "id": "A6",
+      "name": "Afet noktası A6",
+      "node_type": "disaster_area",
+      "x_km": 0.45,
+      "y_km": 0.6,
+      "affected_count": 45,
+      "injured_count": 10,
+      "urgency_level": 4
     }
   ],
   "roads": [
     {
       "id": "R01",
-      "source": "K01",
-      "target": "K02",
-      "distance_km": 2.2,
-      "travel_time_min": 5.5,
-      "status": "open"
+      "source": "H0",
+      "target": "K05",
+      "distance_km": 1.24,
+      "travel_time_min": 1.86,
+      "status": "open",
+      "road_type": "main",
+      "via": [
+        [
+          0.567,
+          4.849
+        ],
+        [
+          0.801,
+          5.209
+        ]
+      ]
     },
     {
       "id": "R02",
-      "source": "K02",
-      "target": "A6",
-      "distance_km": 2.2,
-      "travel_time_min": 4.4,
-      "status": "closed"
+      "source": "K05",
+      "target": "K06",
+      "distance_km": 1.55,
+      "travel_time_min": 2.33,
+      "status": "open",
+      "road_type": "main",
+      "via": [
+        [
+          1.264,
+          5.941
+        ],
+        [
+          1.732,
+          6.229
+        ]
+      ]
     },
     {
       "id": "R03",
-      "source": "A6",
-      "target": "K03",
-      "distance_km": 2.2,
-      "travel_time_min": 3.67,
-      "status": "closed"
+      "source": "K06",
+      "target": "K02",
+      "distance_km": 1.97,
+      "travel_time_min": 2.96,
+      "status": "open",
+      "road_type": "main",
+      "via": [
+        [
+          2.455,
+          6.981
+        ],
+        [
+          2.599,
+          7.665
+        ]
+      ]
     },
     {
       "id": "R04",
-      "source": "K03",
-      "target": "K04",
-      "distance_km": 2.2,
-      "travel_time_min": 5.5,
-      "status": "open"
+      "source": "K02",
+      "target": "K03",
+      "distance_km": 1.61,
+      "travel_time_min": 2.42,
+      "status": "open",
+      "road_type": "main",
+      "via": [
+        [
+          3.112,
+          8.235
+        ],
+        [
+          3.652,
+          8.055
+        ]
+      ]
     },
     {
       "id": "R05",
-      "source": "K04",
-      "target": "A5",
-      "distance_km": 2.2,
-      "travel_time_min": 4.4,
-      "status": "damaged"
+      "source": "K03",
+      "target": "K04",
+      "distance_km": 1.56,
+      "travel_time_min": 2.34,
+      "status": "open",
+      "road_type": "main",
+      "via": [
+        [
+          4.599,
+          7.873
+        ],
+        [
+          5.103,
+          8.089
+        ]
+      ]
     },
     {
       "id": "R06",
-      "source": "K05",
-      "target": "K06",
-      "distance_km": 2.2,
-      "travel_time_min": 3.67,
-      "status": "open"
+      "source": "H0",
+      "target": "K09",
+      "distance_km": 1.65,
+      "travel_time_min": 2.47,
+      "status": "open",
+      "road_type": "main",
+      "via": [
+        [
+          0.737,
+          4.395
+        ],
+        [
+          1.223,
+          4.071
+        ]
+      ]
     },
     {
       "id": "R07",
-      "source": "K06",
-      "target": "K07",
-      "distance_km": 2.2,
-      "travel_time_min": 5.5,
-      "status": "open"
+      "source": "K09",
+      "target": "K10",
+      "distance_km": 1.78,
+      "travel_time_min": 2.67,
+      "status": "open",
+      "road_type": "main",
+      "via": [
+        [
+          2.164,
+          3.805
+        ],
+        [
+          2.74,
+          4.057
+        ]
+      ]
     },
     {
       "id": "R08",
-      "source": "K07",
-      "target": "K08",
-      "distance_km": 2.2,
-      "travel_time_min": 4.4,
-      "status": "open"
+      "source": "K10",
+      "target": "K11",
+      "distance_km": 2.16,
+      "travel_time_min": 3.24,
+      "status": "damaged",
+      "road_type": "main",
+      "via": [
+        [
+          3.853,
+          4.626
+        ],
+        [
+          4.609,
+          4.77
+        ]
+      ]
     },
     {
       "id": "R09",
-      "source": "K08",
-      "target": "A4",
-      "distance_km": 2.2,
-      "travel_time_min": 3.67,
-      "status": "open"
+      "source": "K17",
+      "target": "K18",
+      "distance_km": 1.93,
+      "travel_time_min": 2.9,
+      "status": "open",
+      "road_type": "main",
+      "via": [
+        [
+          8.017,
+          8.269
+        ],
+        [
+          8.665,
+          8.485
+        ]
+      ]
     },
     {
       "id": "R10",
-      "source": "A4",
-      "target": "K09",
-      "distance_km": 2.2,
-      "travel_time_min": 5.5,
-      "status": "open"
+      "source": "K18",
+      "target": "K19",
+      "distance_km": 1.92,
+      "travel_time_min": 2.88,
+      "status": "damaged",
+      "road_type": "main",
+      "via": [
+        [
+          9.808,
+          8.703
+        ],
+        [
+          10.456,
+          8.487
+        ]
+      ]
     },
     {
       "id": "R11",
-      "source": "H0",
-      "target": "K10",
-      "distance_km": 2.2,
-      "travel_time_min": 4.4,
-      "status": "open"
+      "source": "K19",
+      "target": "K20",
+      "distance_km": 1.97,
+      "travel_time_min": 2.96,
+      "status": "open",
+      "road_type": "main",
+      "via": [
+        [
+          11.438,
+          7.741
+        ],
+        [
+          12.014,
+          7.345
+        ]
+      ]
     },
     {
       "id": "R12",
-      "source": "K10",
-      "target": "K11",
-      "distance_km": 2.2,
-      "travel_time_min": 3.67,
-      "status": "damaged"
+      "source": "K25",
+      "target": "K26",
+      "distance_km": 1.61,
+      "travel_time_min": 2.42,
+      "status": "open",
+      "road_type": "main",
+      "via": [
+        [
+          7.812,
+          4.835
+        ],
+        [
+          8.352,
+          4.655
+        ]
+      ]
     },
     {
       "id": "R13",
-      "source": "K11",
-      "target": "K12",
-      "distance_km": 2.2,
-      "travel_time_min": 5.5,
-      "status": "closed"
+      "source": "K26",
+      "target": "K27",
+      "distance_km": 1.74,
+      "travel_time_min": 2.61,
+      "status": "damaged",
+      "road_type": "main",
+      "via": [
+        [
+          9.352,
+          4.302
+        ],
+        [
+          9.964,
+          4.338
+        ]
+      ]
     },
     {
       "id": "R14",
-      "source": "K12",
-      "target": "K13",
-      "distance_km": 2.2,
-      "travel_time_min": 4.4,
-      "status": "open"
+      "source": "K27",
+      "target": "K28",
+      "distance_km": 2.21,
+      "travel_time_min": 3.31,
+      "status": "closed",
+      "road_type": "main",
+      "via": [
+        [
+          11.158,
+          4.235
+        ],
+        [
+          11.842,
+          3.839
+        ]
+      ]
     },
     {
       "id": "R15",
-      "source": "K13",
+      "source": "K28",
       "target": "A3",
-      "distance_km": 2.2,
-      "travel_time_min": 3.67,
-      "status": "closed"
+      "distance_km": 2.22,
+      "travel_time_min": 3.33,
+      "status": "open",
+      "road_type": "main",
+      "via": [
+        [
+          12.807,
+          3.987
+        ],
+        [
+          13.131,
+          4.707
+        ]
+      ]
     },
     {
       "id": "R16",
-      "source": "K14",
-      "target": "K15",
-      "distance_km": 2.2,
-      "travel_time_min": 5.5,
-      "status": "open"
+      "source": "K04",
+      "target": "K17",
+      "distance_km": 1.92,
+      "travel_time_min": 4.61,
+      "status": "damaged",
+      "road_type": "bridge",
+      "via": [
+        [
+          6.108,
+          8.336
+        ],
+        [
+          6.792,
+          8.264
+        ]
+      ]
     },
     {
       "id": "R17",
-      "source": "K15",
-      "target": "K16",
-      "distance_km": 2.2,
-      "travel_time_min": 4.4,
-      "status": "open"
+      "source": "K11",
+      "target": "K25",
+      "distance_km": 2.01,
+      "travel_time_min": 4.82,
+      "status": "open",
+      "road_type": "bridge",
+      "via": [
+        [
+          5.94,
+          4.832
+        ],
+        [
+          6.66,
+          4.868
+        ]
+      ]
     },
     {
       "id": "R18",
-      "source": "K16",
-      "target": "K17",
-      "distance_km": 2.2,
-      "travel_time_min": 3.67,
-      "status": "open"
+      "source": "K05",
+      "target": "K01",
+      "distance_km": 2.14,
+      "travel_time_min": 4.28,
+      "status": "open",
+      "road_type": "secondary",
+      "via": [
+        [
+          0.897,
+          6.286
+        ],
+        [
+          1.005,
+          7.042
+        ]
+      ]
     },
     {
       "id": "R19",
-      "source": "K17",
-      "target": "A2",
-      "distance_km": 2.2,
-      "travel_time_min": 5.5,
-      "status": "damaged"
+      "source": "K01",
+      "target": "K02",
+      "distance_km": 1.56,
+      "travel_time_min": 3.12,
+      "status": "open",
+      "road_type": "secondary",
+      "via": [
+        [
+          1.699,
+          7.773
+        ],
+        [
+          2.203,
+          7.989
+        ]
+      ]
     },
     {
       "id": "R20",
-      "source": "A2",
-      "target": "K18",
-      "distance_km": 2.2,
-      "travel_time_min": 4.4,
-      "status": "damaged"
+      "source": "K06",
+      "target": "K07",
+      "distance_km": 1.51,
+      "travel_time_min": 3.02,
+      "status": "damaged",
+      "road_type": "secondary",
+      "via": [
+        [
+          2.682,
+          6.334
+        ],
+        [
+          3.186,
+          6.154
+        ]
+      ]
     },
     {
       "id": "R21",
-      "source": "H1",
-      "target": "K19",
-      "distance_km": 2.2,
-      "travel_time_min": 3.67,
-      "status": "open"
+      "source": "K07",
+      "target": "K03",
+      "distance_km": 2.0,
+      "travel_time_min": 4.0,
+      "status": "open",
+      "road_type": "secondary",
+      "via": [
+        [
+          3.886,
+          6.475
+        ],
+        [
+          4.066,
+          7.159
+        ]
+      ]
     },
     {
       "id": "R22",
-      "source": "K19",
-      "target": "K20",
-      "distance_km": 2.2,
-      "travel_time_min": 5.5,
-      "status": "damaged"
+      "source": "K03",
+      "target": "K08",
+      "distance_km": 1.66,
+      "travel_time_min": 3.32,
+      "status": "closed",
+      "road_type": "secondary",
+      "via": [
+        [
+          4.577,
+          7.559
+        ],
+        [
+          5.045,
+          7.199
+        ]
+      ]
     },
     {
       "id": "R23",
-      "source": "K20",
-      "target": "K21",
-      "distance_km": 2.2,
-      "travel_time_min": 4.4,
-      "status": "open"
+      "source": "K08",
+      "target": "K04",
+      "distance_km": 1.64,
+      "travel_time_min": 3.28,
+      "status": "open",
+      "road_type": "secondary",
+      "via": [
+        [
+          5.562,
+          7.304
+        ],
+        [
+          5.598,
+          7.88
+        ]
+      ]
     },
     {
       "id": "R24",
-      "source": "K21",
-      "target": "K22",
-      "distance_km": 2.2,
-      "travel_time_min": 3.67,
-      "status": "damaged"
+      "source": "K07",
+      "target": "K10",
+      "distance_km": 1.58,
+      "travel_time_min": 3.16,
+      "status": "open",
+      "road_type": "secondary",
+      "via": [
+        [
+          3.569,
+          5.394
+        ],
+        [
+          3.425,
+          4.854
+        ]
+      ]
     },
     {
       "id": "R25",
-      "source": "K22",
-      "target": "A1",
-      "distance_km": 2.2,
-      "travel_time_min": 5.5,
-      "status": "open"
+      "source": "K11",
+      "target": "K08",
+      "distance_km": 2.03,
+      "travel_time_min": 4.06,
+      "status": "open",
+      "road_type": "secondary",
+      "via": [
+        [
+          5.462,
+          5.434
+        ],
+        [
+          5.498,
+          6.154
+        ]
+      ]
     },
     {
       "id": "R26",
-      "source": "K01",
-      "target": "K05",
-      "distance_km": 2.2,
-      "travel_time_min": 4.4,
-      "status": "open"
+      "source": "K09",
+      "target": "K12",
+      "distance_km": 2.05,
+      "travel_time_min": 4.1,
+      "status": "open",
+      "road_type": "secondary",
+      "via": [
+        [
+          1.47,
+          3.057
+        ],
+        [
+          1.218,
+          2.373
+        ]
+      ]
     },
     {
       "id": "R27",
-      "source": "K02",
-      "target": "K06",
-      "distance_km": 2.2,
-      "travel_time_min": 3.67,
-      "status": "open"
+      "source": "K12",
+      "target": "K13",
+      "distance_km": 1.74,
+      "travel_time_min": 3.48,
+      "status": "open",
+      "road_type": "secondary",
+      "via": [
+        [
+          1.458,
+          1.87
+        ],
+        [
+          2.034,
+          2.086
+        ]
+      ]
     },
     {
       "id": "R28",
-      "source": "A6",
-      "target": "K07",
-      "distance_km": 2.2,
-      "travel_time_min": 5.5,
-      "status": "closed"
+      "source": "K13",
+      "target": "K10",
+      "distance_km": 2.14,
+      "travel_time_min": 4.28,
+      "status": "open",
+      "road_type": "secondary",
+      "via": [
+        [
+          2.63,
+          3.073
+        ],
+        [
+          2.882,
+          3.793
+        ]
+      ]
     },
     {
       "id": "R29",
-      "source": "K03",
-      "target": "K08",
-      "distance_km": 2.2,
-      "travel_time_min": 4.4,
-      "status": "open"
+      "source": "K13",
+      "target": "K14",
+      "distance_km": 1.96,
+      "travel_time_min": 3.92,
+      "status": "damaged",
+      "road_type": "secondary",
+      "via": [
+        [
+          3.088,
+          2.176
+        ],
+        [
+          3.772,
+          2.068
+        ]
+      ]
     },
     {
       "id": "R30",
-      "source": "K04",
-      "target": "A4",
-      "distance_km": 2.2,
-      "travel_time_min": 3.67,
-      "status": "open"
+      "source": "K14",
+      "target": "K15",
+      "distance_km": 1.5,
+      "travel_time_min": 3.0,
+      "status": "open",
+      "road_type": "secondary",
+      "via": [
+        [
+          4.769,
+          2.412
+        ],
+        [
+          5.237,
+          2.664
+        ]
+      ]
     },
     {
       "id": "R31",
-      "source": "A5",
-      "target": "K09",
-      "distance_km": 2.2,
-      "travel_time_min": 5.5,
-      "status": "open"
+      "source": "K15",
+      "target": "K11",
+      "distance_km": 2.07,
+      "travel_time_min": 4.14,
+      "status": "open",
+      "road_type": "secondary",
+      "via": [
+        [
+          5.699,
+          3.465
+        ],
+        [
+          5.555,
+          4.185
+        ]
+      ]
     },
     {
       "id": "R32",
-      "source": "K05",
-      "target": "H0",
-      "distance_km": 2.2,
-      "travel_time_min": 4.4,
-      "status": "open"
+      "source": "K10",
+      "target": "K14",
+      "distance_km": 2.61,
+      "travel_time_min": 5.22,
+      "status": "open",
+      "road_type": "secondary",
+      "via": [
+        [
+          3.673,
+          3.71
+        ],
+        [
+          4.105,
+          2.882
+        ]
+      ]
     },
     {
       "id": "R33",
-      "source": "K06",
-      "target": "K10",
-      "distance_km": 2.2,
-      "travel_time_min": 3.67,
-      "status": "open"
+      "source": "K17",
+      "target": "K21",
+      "distance_km": 1.75,
+      "travel_time_min": 3.5,
+      "status": "open",
+      "road_type": "secondary",
+      "via": [
+        [
+          7.335,
+          7.641
+        ],
+        [
+          7.407,
+          7.029
+        ]
+      ]
     },
     {
       "id": "R34",
-      "source": "K07",
-      "target": "K11",
-      "distance_km": 2.2,
-      "travel_time_min": 5.5,
-      "status": "open"
+      "source": "K21",
+      "target": "K22",
+      "distance_km": 1.51,
+      "travel_time_min": 3.02,
+      "status": "closed",
+      "road_type": "secondary",
+      "via": [
+        [
+          8.014,
+          6.754
+        ],
+        [
+          8.518,
+          6.934
+        ]
+      ]
     },
     {
       "id": "R35",
-      "source": "K08",
-      "target": "K12",
-      "distance_km": 2.2,
-      "travel_time_min": 4.4,
-      "status": "open"
+      "source": "K22",
+      "target": "K18",
+      "distance_km": 1.84,
+      "travel_time_min": 3.68,
+      "status": "open",
+      "road_type": "secondary",
+      "via": [
+        [
+          9.193,
+          7.562
+        ],
+        [
+          9.265,
+          8.21
+        ]
+      ]
     },
     {
       "id": "R36",
-      "source": "A4",
-      "target": "K13",
-      "distance_km": 2.2,
-      "travel_time_min": 3.67,
-      "status": "damaged"
+      "source": "K22",
+      "target": "K23",
+      "distance_km": 1.47,
+      "travel_time_min": 2.94,
+      "status": "open",
+      "road_type": "secondary",
+      "via": [
+        [
+          9.439,
+          6.827
+        ],
+        [
+          9.871,
+          6.539
+        ]
+      ]
     },
     {
       "id": "R37",
-      "source": "K09",
-      "target": "A3",
-      "distance_km": 2.2,
-      "travel_time_min": 5.5,
-      "status": "damaged"
+      "source": "K23",
+      "target": "K19",
+      "distance_km": 2.18,
+      "travel_time_min": 4.36,
+      "status": "open",
+      "road_type": "secondary",
+      "via": [
+        [
+          10.577,
+          6.792
+        ],
+        [
+          10.865,
+          7.512
+        ]
+      ]
     },
     {
       "id": "R38",
-      "source": "H0",
-      "target": "K14",
-      "distance_km": 2.2,
-      "travel_time_min": 4.4,
-      "status": "open"
+      "source": "K23",
+      "target": "K24",
+      "distance_km": 1.67,
+      "travel_time_min": 3.34,
+      "status": "damaged",
+      "road_type": "secondary",
+      "via": [
+        [
+          10.736,
+          6.169
+        ],
+        [
+          11.312,
+          6.025
+        ]
+      ]
     },
     {
       "id": "R39",
-      "source": "K10",
-      "target": "K15",
-      "distance_km": 2.2,
-      "travel_time_min": 3.67,
-      "status": "open"
+      "source": "K24",
+      "target": "K20",
+      "distance_km": 1.57,
+      "travel_time_min": 3.14,
+      "status": "open",
+      "road_type": "secondary",
+      "via": [
+        [
+          12.167,
+          6.148
+        ],
+        [
+          12.455,
+          6.616
+        ]
+      ]
     },
     {
       "id": "R40",
-      "source": "K11",
-      "target": "K16",
-      "distance_km": 2.2,
-      "travel_time_min": 5.5,
-      "status": "open"
+      "source": "K21",
+      "target": "K25",
+      "distance_km": 1.65,
+      "travel_time_min": 3.3,
+      "status": "open",
+      "road_type": "secondary",
+      "via": [
+        [
+          7.602,
+          5.97
+        ],
+        [
+          7.494,
+          5.394
+        ]
+      ]
     },
     {
       "id": "R41",
-      "source": "K12",
-      "target": "K17",
-      "distance_km": 2.2,
-      "travel_time_min": 4.4,
-      "status": "open"
+      "source": "K26",
+      "target": "K23",
+      "distance_km": 2.31,
+      "travel_time_min": 4.62,
+      "status": "open",
+      "road_type": "secondary",
+      "via": [
+        [
+          9.351,
+          4.896
+        ],
+        [
+          9.855,
+          5.544
+        ]
+      ]
     },
     {
       "id": "R42",
-      "source": "K13",
-      "target": "A2",
-      "distance_km": 2.2,
-      "travel_time_min": 3.67,
-      "status": "open"
+      "source": "K27",
+      "target": "K24",
+      "distance_km": 1.86,
+      "travel_time_min": 3.72,
+      "status": "open",
+      "road_type": "secondary",
+      "via": [
+        [
+          10.845,
+          4.987
+        ],
+        [
+          11.313,
+          5.455
+        ]
+      ]
     },
     {
       "id": "R43",
-      "source": "A3",
-      "target": "K18",
-      "distance_km": 2.2,
-      "travel_time_min": 5.5,
-      "status": "open"
+      "source": "K25",
+      "target": "K29",
+      "distance_km": 2.45,
+      "travel_time_min": 4.9,
+      "status": "open",
+      "road_type": "secondary",
+      "via": [
+        [
+          7.267,
+          4.116
+        ],
+        [
+          7.375,
+          3.252
+        ]
+      ]
     },
     {
       "id": "R44",
-      "source": "K14",
-      "target": "H1",
-      "distance_km": 2.2,
-      "travel_time_min": 4.4,
-      "status": "open"
+      "source": "K29",
+      "target": "K30",
+      "distance_km": 1.79,
+      "travel_time_min": 3.58,
+      "status": "open",
+      "road_type": "secondary",
+      "via": [
+        [
+          8.172,
+          2.436
+        ],
+        [
+          8.784,
+          2.256
+        ]
+      ]
     },
     {
       "id": "R45",
-      "source": "K15",
-      "target": "K19",
-      "distance_km": 2.2,
-      "travel_time_min": 3.67,
-      "status": "open"
+      "source": "K30",
+      "target": "K26",
+      "distance_km": 2.48,
+      "travel_time_min": 4.96,
+      "status": "open",
+      "road_type": "secondary",
+      "via": [
+        [
+          9.267,
+          2.795
+        ],
+        [
+          9.087,
+          3.659
+        ]
+      ]
     },
     {
       "id": "R46",
-      "source": "K16",
-      "target": "K20",
-      "distance_km": 2.2,
-      "travel_time_min": 5.5,
-      "status": "open"
+      "source": "K30",
+      "target": "K31",
+      "distance_km": 1.92,
+      "travel_time_min": 3.84,
+      "status": "open",
+      "road_type": "secondary",
+      "via": [
+        [
+          9.844,
+          2.287
+        ],
+        [
+          10.492,
+          2.503
+        ]
+      ]
     },
     {
       "id": "R47",
-      "source": "K17",
-      "target": "K21",
-      "distance_km": 2.2,
-      "travel_time_min": 4.4,
-      "status": "closed"
+      "source": "K31",
+      "target": "K27",
+      "distance_km": 2.02,
+      "travel_time_min": 4.04,
+      "status": "open",
+      "road_type": "secondary",
+      "via": [
+        [
+          11.032,
+          3.247
+        ],
+        [
+          10.816,
+          3.931
+        ]
+      ]
     },
     {
       "id": "R48",
-      "source": "A2",
-      "target": "K22",
-      "distance_km": 2.2,
-      "travel_time_min": 3.67,
-      "status": "open"
+      "source": "K31",
+      "target": "K28",
+      "distance_km": 1.55,
+      "travel_time_min": 3.1,
+      "status": "open",
+      "road_type": "secondary",
+      "via": [
+        [
+          11.464,
+          2.941
+        ],
+        [
+          11.932,
+          3.229
+        ]
+      ]
     },
     {
       "id": "R49",
-      "source": "K18",
-      "target": "A1",
-      "distance_km": 2.2,
-      "travel_time_min": 5.5,
-      "status": "open"
+      "source": "K30",
+      "target": "H1",
+      "distance_km": 1.74,
+      "travel_time_min": 3.48,
+      "status": "open",
+      "road_type": "secondary",
+      "via": [
+        [
+          8.8,
+          1.747
+        ],
+        [
+          8.332,
+          1.351
+        ]
+      ]
     },
     {
       "id": "R50",
-      "source": "K05",
-      "target": "K10",
-      "distance_km": 3.11,
-      "travel_time_min": 6.22,
-      "status": "open"
+      "source": "K02",
+      "target": "A1",
+      "distance_km": 1.2,
+      "travel_time_min": 3.6,
+      "status": "open",
+      "road_type": "local",
+      "via": [
+        [
+          2.706,
+          8.671
+        ],
+        [
+          2.922,
+          9.031
+        ]
+      ]
     },
     {
       "id": "R51",
-      "source": "K15",
-      "target": "K20",
-      "distance_km": 3.11,
-      "travel_time_min": 5.18,
-      "status": "open"
+      "source": "A1",
+      "target": "K03",
+      "distance_km": 1.78,
+      "travel_time_min": 5.34,
+      "status": "open",
+      "road_type": "local",
+      "via": [
+        [
+          3.377,
+          8.753
+        ],
+        [
+          3.701,
+          8.213
+        ]
+      ]
     },
     {
       "id": "R52",
-      "source": "K11",
-      "target": "K17",
-      "distance_km": 3.11,
-      "travel_time_min": 7.77,
-      "status": "damaged"
+      "source": "K07",
+      "target": "A2",
+      "distance_km": 1.2,
+      "travel_time_min": 3.6,
+      "status": "damaged",
+      "road_type": "local",
+      "via": [
+        [
+          3.918,
+          6.122
+        ],
+        [
+          4.314,
+          6.266
+        ]
+      ]
     },
     {
       "id": "R53",
-      "source": "K03",
-      "target": "A4",
-      "distance_km": 3.11,
-      "travel_time_min": 6.22,
-      "status": "open"
+      "source": "A2",
+      "target": "K08",
+      "distance_km": 0.92,
+      "travel_time_min": 2.76,
+      "status": "open",
+      "road_type": "local",
+      "via": [
+        [
+          5.0,
+          6.354
+        ],
+        [
+          5.252,
+          6.534
+        ]
+      ]
     },
     {
       "id": "R54",
-      "source": "K12",
-      "target": "A2",
-      "distance_km": 3.11,
-      "travel_time_min": 5.18,
-      "status": "open"
+      "source": "A2",
+      "target": "K11",
+      "distance_km": 1.64,
+      "travel_time_min": 4.92,
+      "status": "open",
+      "road_type": "local",
+      "via": [
+        [
+          4.985,
+          5.857
+        ],
+        [
+          5.201,
+          5.317
+        ]
+      ]
     },
     {
       "id": "R55",
-      "source": "A2",
-      "target": "A1",
-      "distance_km": 3.11,
-      "travel_time_min": 7.77,
-      "status": "damaged"
+      "source": "K14",
+      "target": "K16",
+      "distance_km": 1.52,
+      "travel_time_min": 4.56,
+      "status": "open",
+      "road_type": "local",
+      "via": [
+        [
+          4.062,
+          1.746
+        ],
+        [
+          3.81,
+          1.278
+        ]
+      ]
+    },
+    {
+      "id": "R56",
+      "source": "K12",
+      "target": "A6",
+      "distance_km": 1.31,
+      "travel_time_min": 3.93,
+      "status": "closed",
+      "road_type": "local",
+      "via": [
+        [
+          0.85,
+          1.381
+        ],
+        [
+          0.688,
+          0.949
+        ]
+      ]
+    },
+    {
+      "id": "R57",
+      "source": "K13",
+      "target": "A6",
+      "distance_km": 2.78,
+      "travel_time_min": 8.34,
+      "status": "closed",
+      "road_type": "local",
+      "via": [
+        [
+          1.976,
+          1.674
+        ],
+        [
+          1.238,
+          1.026
+        ]
+      ]
+    },
+    {
+      "id": "R58",
+      "source": "K18",
+      "target": "A4",
+      "distance_km": 1.46,
+      "travel_time_min": 4.38,
+      "status": "open",
+      "road_type": "local",
+      "via": [
+        [
+          9.574,
+          9.083
+        ],
+        [
+          10.042,
+          9.299
+        ]
+      ]
+    },
+    {
+      "id": "R59",
+      "source": "A4",
+      "target": "K19",
+      "distance_km": 1.34,
+      "travel_time_min": 4.02,
+      "status": "open",
+      "road_type": "local",
+      "via": [
+        [
+          10.54,
+          8.966
+        ],
+        [
+          10.72,
+          8.534
+        ]
+      ]
+    },
+    {
+      "id": "R60",
+      "source": "K24",
+      "target": "A3",
+      "distance_km": 1.58,
+      "travel_time_min": 4.74,
+      "status": "open",
+      "road_type": "local",
+      "via": [
+        [
+          12.306,
+          5.769
+        ],
+        [
+          12.846,
+          5.625
+        ]
+      ]
+    },
+    {
+      "id": "R61",
+      "source": "K20",
+      "target": "A3",
+      "distance_km": 1.87,
+      "travel_time_min": 5.61,
+      "status": "open",
+      "road_type": "local",
+      "via": [
+        [
+          12.704,
+          6.507
+        ],
+        [
+          12.956,
+          5.895
+        ]
+      ]
+    },
+    {
+      "id": "R62",
+      "source": "K29",
+      "target": "H1",
+      "distance_km": 1.67,
+      "travel_time_min": 5.01,
+      "status": "open",
+      "road_type": "local",
+      "via": [
+        [
+          7.825,
+          2.012
+        ],
+        [
+          7.969,
+          1.436
+        ]
+      ]
+    },
+    {
+      "id": "R63",
+      "source": "K30",
+      "target": "K32",
+      "distance_km": 1.57,
+      "travel_time_min": 4.71,
+      "status": "open",
+      "road_type": "local",
+      "via": [
+        [
+          9.445,
+          1.516
+        ],
+        [
+          9.733,
+          1.048
+        ]
+      ]
+    },
+    {
+      "id": "R64",
+      "source": "K31",
+      "target": "A5",
+      "distance_km": 2.21,
+      "travel_time_min": 6.63,
+      "status": "damaged",
+      "road_type": "local",
+      "via": [
+        [
+          11.653,
+          2.156
+        ],
+        [
+          12.193,
+          1.58
+        ]
+      ]
+    },
+    {
+      "id": "R65",
+      "source": "K28",
+      "target": "A5",
+      "distance_km": 2.44,
+      "travel_time_min": 7.32,
+      "status": "open",
+      "road_type": "local",
+      "via": [
+        [
+          12.334,
+          2.621
+        ],
+        [
+          12.406,
+          1.757
+        ]
+      ]
     }
+  ],
+  "river": [
+    [
+      6.4,
+      -0.4
+    ],
+    [
+      6.2,
+      2.2
+    ],
+    [
+      6.5,
+      4.4
+    ],
+    [
+      6.3,
+      6.5
+    ],
+    [
+      6.6,
+      8.4
+    ],
+    [
+      6.4,
+      10.0
+    ]
   ]
 }

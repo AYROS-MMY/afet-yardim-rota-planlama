@@ -1,5 +1,6 @@
 """Geniş ağ, bağımsız maliyet doğrulaması ve toplu hedef sorguları."""
 
+import copy
 import json
 import math
 import os
@@ -10,9 +11,9 @@ import tempfile
 import unittest
 import xml.etree.ElementTree as ET
 
-from ayros.model import NodeType, RoadStatus
+from ayros.model import NodeType, RoadStatus, ValidationError
 from ayros.routing import CostModel, find_shortest_path
-from ayros.scenario import load_scenario
+from ayros.scenario import load_scenario, scenario_from_dict
 from ayros.visualize import write_svg
 from scripts.generate_week3_scenario import build_scenario
 
@@ -28,15 +29,20 @@ class LargeScenarioTests(unittest.TestCase):
     def test_topology_and_measurements_are_reproducible(self):
         self.assertEqual(json.loads(SAMPLE.read_text(encoding="utf-8")), build_scenario())
         graph = self.scenario.graph
-        self.assertEqual(len(graph.nodes), 30)
-        self.assertEqual(len(graph.roads), 55)
+        self.assertEqual(len(graph.nodes), 40)
+        self.assertEqual(len(graph.roads), 65)
         self.assertEqual([sum(n.node_type == kind for n in graph.nodes.values())
-                          for kind in (NodeType.AID_CENTER, NodeType.DISASTER_AREA, NodeType.INTERSECTION)], [2, 6, 22])
+                          for kind in (NodeType.AID_CENTER, NodeType.DISASTER_AREA, NodeType.INTERSECTION)], [2, 6, 32])
         self.assertEqual([sum(r.status == status for r in graph.roads.values())
-                          for status in (RoadStatus.OPEN, RoadStatus.DAMAGED, RoadStatus.CLOSED)], [39, 10, 6])
+                          for status in (RoadStatus.OPEN, RoadStatus.DAMAGED, RoadStatus.CLOSED)], [51, 9, 5])
+        speeds = {"main": 40, "secondary": 30, "local": 20, "bridge": 25}
         for road in graph.roads.values():
             a, b = graph.nodes[road.source], graph.nodes[road.target]
-            self.assertGreaterEqual(road.distance_km, math.hypot(a.x_km-b.x_km, a.y_km-b.y_km))
+            points = [(a.x_km, a.y_km), *road.via, (b.x_km, b.y_km)]
+            length = sum(math.dist(p, q) for p, q in zip(points, points[1:]))
+            self.assertGreaterEqual(road.distance_km, length)
+            self.assertLess(road.distance_km-length, 0.010001)
+            self.assertEqual(road.travel_time_min, round(road.distance_km / speeds[road.road_type] * 60, 2))
 
     def test_both_centers_and_damage_factors_match_independent_relaxation(self):
         # Referans Bellman-Ford: öncelik kuyruğu veya üretim CostModel'i kullanılmaz.
@@ -71,22 +77,22 @@ class LargeScenarioTests(unittest.TestCase):
 
     def test_damage_changes_route_in_large_network(self):
         graph = self.scenario.graph
-        normal = find_shortest_path(graph, "H0", "A3")
-        no_penalty = find_shortest_path(graph, "H0", "A3", cost_model=CostModel(1))
-        self.assertAlmostEqual(normal.cost_min, 38.14)
-        self.assertAlmostEqual(no_penalty.cost_min, 31.24)
+        normal = find_shortest_path(graph, "H0", "A5")
+        no_penalty = find_shortest_path(graph, "H0", "A5", cost_model=CostModel(1))
+        self.assertAlmostEqual(normal.cost_min, 38.08)
+        self.assertAlmostEqual(no_penalty.cost_min, 28.90)
         self.assertNotEqual(normal.path, no_penalty.path)
-        self.assertAlmostEqual(normal.base_time_min, 32.64)
-        self.assertAlmostEqual(normal.distance_km, 15.4)
+        self.assertAlmostEqual(normal.base_time_min, 34.84)
+        self.assertAlmostEqual(normal.distance_km, 17.6)
 
     def test_isolated_area_retains_closed_roads_but_is_unreachable(self):
         graph = self.scenario.graph
-        self.assertEqual(len(graph.neighbors("A6", traversable_only=False)), 3)
+        self.assertEqual(len(graph.neighbors("A6", traversable_only=False)), 2)
         self.assertEqual(graph.neighbors("A6"), [])
         for center in ("H0", "H1"):
             route = find_shortest_path(graph, center, "A6")
             self.assertFalse(route.found)
-            self.assertEqual(route.settled_nodes, 29)
+            self.assertEqual(route.settled_nodes, 39)
 
     def test_large_svg_labels_match_selected_cost_model(self):
         graph = self.scenario.graph
@@ -97,12 +103,12 @@ class LargeScenarioTests(unittest.TestCase):
             write_svg(self.scenario, path, route=route, cost_model=model)
             root = ET.parse(path).getroot()
             ns = {"s": "http://www.w3.org/2000/svg"}
-            self.assertEqual(len(root.findall(".//s:circle", ns)), 30)
-            self.assertEqual(len(root.findall(".//s:line", ns)), 55)
-            self.assertEqual(root.attrib["width"], "1280")
+            self.assertEqual(len(root.findall(".//s:circle", ns)), 40)
+            self.assertEqual(len(root.findall(".//s:polyline[@data-road-geometry]", ns)), 65)
+            self.assertEqual(root.attrib["width"], "1400")
             for road in graph.roads.values():
                 group = next(e for e in root.iter() if e.get("data-road-id") == road.id)
-                label = " ".join(e.text for e in group.findall("s:text", ns))
+                label = group.find("s:title", ns).text
                 expected = "kapalı" if road.status == RoadStatus.CLOSED else f"{model.cost_minutes(road):.2f} dk"
                 self.assertIn(expected, label)
             highlighted = {e.get("data-route-road") for e in root.iter() if e.get("data-route-road")}
@@ -124,6 +130,60 @@ class LargeScenarioTests(unittest.TestCase):
                 self.assertEqual(result.returncode, code)
                 self.assertIn(message, result.stdout + result.stderr)
                 self.assertNotIn("Traceback", result.stderr)
+
+    def test_only_bridges_connect_banks_and_closures_change_reachability(self):
+        data = build_scenario()
+        graph = self.scenario.graph
+        crossings = [r for r in graph.roads.values()
+                     if (graph.nodes[r.source].x_km < 6.4) != (graph.nodes[r.target].x_km < 6.4)]
+        self.assertEqual(len(crossings), 2)
+        self.assertTrue(all(r.road_type == "bridge" for r in crossings))
+        # Tek köprü kapanırsa diğer geçiş kullanılır; iki köprü kapanınca yakalar ayrılır.
+        for count in (1, 2):
+            modified = copy.deepcopy(data)
+            ids = {r.id for r in crossings[:count]}
+            for road in modified["roads"]:
+                if road["id"] in ids:
+                    road["status"] = "closed"
+            changed = scenario_from_dict(modified).graph
+            route = find_shortest_path(changed, "H0", "A3")
+            self.assertEqual(route.found, count == 1)
+            self.assertTrue(find_shortest_path(changed, "H0", "A1").found)
+        self.assertEqual([r.status for r in crossings], [RoadStatus.DAMAGED, RoadStatus.OPEN])
+        self.assertEqual(len(graph.neighbors("K16")), 1)
+        self.assertEqual(len(graph.neighbors("K32")), 1)
+
+    def test_road_geometries_do_not_cross_without_junctions(self):
+        # Çizimde düğüm olmayan bir yerde yollar birbirini kesmemeli.
+        graph = self.scenario.graph
+        segments = []
+        for road in graph.roads.values():
+            a, b = graph.nodes[road.source], graph.nodes[road.target]
+            points = [(a.x_km, a.y_km), *road.via, (b.x_km, b.y_km)]
+            segments.extend((road.id, p, q) for p, q in zip(points, points[1:]))
+
+        def side(a, b, p):
+            return (b[0]-a[0])*(p[1]-a[1]) - (b[1]-a[1])*(p[0]-a[0])
+
+        for i, (rid, a, b) in enumerate(segments):
+            for other, c, d in segments[i+1:]:
+                if rid != other:
+                    crosses = side(a, b, c)*side(a, b, d) < -1e-10 and side(c, d, a)*side(c, d, b) < -1e-10
+                    self.assertFalse(crosses, f"Düğümsüz kesişme: {rid} / {other}")
+
+    def test_invalid_geometry_and_road_type_are_rejected(self):
+        cases = [("via", "invalid"), ("via", [[1]]), ("via", [[1, float("nan")]]),
+                 ("via", [[1000, 1000]]), ("road_type", "motorway")]
+        for field, value in cases:
+            data = build_scenario()
+            data["roads"][0][field] = value
+            with self.subTest(field=field, value=value), self.assertRaises(ValidationError):
+                scenario_from_dict(data)
+        for value in ([[1, 2]], [[1, float("inf")], [2, 3]], None):
+            data = build_scenario()
+            data["river"] = value
+            with self.subTest(river=value), self.assertRaises(ValidationError):
+                scenario_from_dict(data)
 
 
 if __name__ == "__main__":
