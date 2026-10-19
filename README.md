@@ -36,7 +36,7 @@ cd afet-yardim-rota-planlama
 Güncel uygulama henüz geliştirme dalındadır:
 
 ```bash
-git switch codex/hafta-3-dijkstra
+git switch hafta-3-dijkstra
 ```
 
 Windows'ta proje klasöründeki terminalden çalıştırın:
