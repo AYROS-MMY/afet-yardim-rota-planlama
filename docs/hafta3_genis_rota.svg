@@ -1,0 +1,575 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1211" viewBox="0 0 1400 1211" role="img" aria-labelledby="title desc">
+<title id="title">Üçüncü hafta düzensiz yerleşim ağı</title>
+<desc id="desc">Sentetik afet ağı. Yeşil yollar açık, turuncu kesikli yollar hasarlı, kırmızı noktalı yollar kapalıdır. Yol ayrıntıları üzerine gelince gösterilir.</desc>
+<rect width="1400" height="1211" fill="#f8faf7"/>
+<g font-family="Arial, sans-serif" fill="#17263c">
+<text x="48" y="48" font-size="26" font-weight="bold">AYROS MMY | Afet yol ağı</text>
+<text x="48" y="80" font-size="18">Üçüncü hafta düzensiz yerleşim ağı</text>
+<text x="48" y="108" font-size="14">Sentetik yerel koordinatlar (km) • Mavi çerçeve = Dijkstra rotası</text>
+<text x="48" y="132" font-size="13">Hasar katsayısı: 2 • Yol üzerine gelin: tür, mesafe ve süre • Rota üzerindeki süreler dakika</text>
+<polyline data-map-feature="river" points="671.9,945.0 656.9,750.0 679.4,585.0 664.4,427.5 686.9,285.0 671.9,165.0" stroke="#d9e8df" stroke-width="63.8" fill="none" stroke-linejoin="round"/>
+<polyline points="671.9,945.0 656.9,750.0 679.4,585.0 664.4,427.5 686.9,285.0 671.9,165.0" stroke="#add9e8" stroke-width="33.8" fill="none" stroke-linejoin="round"><title>Sentetik dere koridoru; yakalar yalnızca iki köprüyle bağlıdır.</title></polyline>
+<text x="65" y="200" font-size="12" fill="#73867b" letter-spacing="2">BATI YERLEŞİMİ</text>
+<text x="1175" y="200" font-size="12" fill="#73867b" letter-spacing="2">DOĞU YERLEŞİMİ</text>
+<g data-road-id="R01"><title>R01: H0 ↔ K05; Ana yol; 1.24 km; temel 1.86 dk; maliyet 1.86 dk</title>
+<polyline data-road-geometry="R01" points="210.6,570.0 234.4,551.3 251.9,524.3 259.4,495.0" stroke="#39775c" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R02"><title>R02: K05 ↔ K06; Ana yol; 1.55 km; temel 2.33 dk; maliyet 2.33 dk</title>
+<polyline data-road-geometry="R02" points="259.4,495.0 286.7,469.4 321.8,447.8 356.9,435.0" stroke="#39775c" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R03"><title>R03: K06 ↔ K02; Ana yol; 1.97 km; temel 2.96 dk; maliyet 2.96 dk</title>
+<polyline data-road-geometry="R03" points="356.9,435.0 376.0,391.4 386.8,340.1 386.9,292.5" stroke="#39775c" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R04"><title>R04: K02 ↔ K03; Ana yol; 1.61 km; temel 2.42 dk; maliyet 2.42 dk</title>
+<polyline data-road-geometry="R04" points="386.9,292.5 425.3,297.4 465.8,310.9 499.4,330.0" stroke="#39775c" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R05"><title>R05: K03 ↔ K04; Ana yol; 1.56 km; temel 2.34 dk; maliyet 2.34 dk</title>
+<polyline data-road-geometry="R05" points="499.4,330.0 536.8,324.5 574.6,308.3 604.4,285.0" stroke="#39775c" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R06"><title>R06: H0 ↔ K09; Ana yol; 1.65 km; temel 2.47 dk; maliyet 2.47 dk</title>
+<path data-route-road="R06" d="M 210.6 570.0 L 247.2 585.4 L 283.6 609.7 L 311.9 637.5" stroke="#2563eb" stroke-width="14" fill="none" stroke-linejoin="round"/>
+<polyline data-road-geometry="R06" points="210.6,570.0 247.2,585.4 283.6,609.7 311.9,637.5" stroke="#39775c" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R07"><title>R07: K09 ↔ K10; Ana yol; 1.78 km; temel 2.67 dk; maliyet 2.67 dk</title>
+<path data-route-road="R07" d="M 311.9 637.5 L 354.2 629.6 L 397.4 610.7 L 431.9 585.0" stroke="#2563eb" stroke-width="14" fill="none" stroke-linejoin="round"/>
+<polyline data-road-geometry="R07" points="311.9,637.5 354.2,629.6 397.4,610.7 431.9,585.0" stroke="#39775c" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R08"><title>R08: K10 ↔ K11; Ana yol; 2.16 km; temel 3.24 dk; maliyet 6.48 dk</title>
+<path data-route-road="R08" d="M 431.9 585.0 L 480.9 568.0 L 537.5 557.2 L 589.4 555.0" stroke="#2563eb" stroke-width="14" fill="none" stroke-linejoin="round"/>
+<polyline data-road-geometry="R08" points="431.9,585.0 480.9,568.0 537.5,557.2 589.4,555.0" stroke="#be720e" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="10 5"/>
+</g>
+<g data-road-id="R09"><title>R09: K17 ↔ K18; Ana yol; 1.93 km; temel 2.9 dk; maliyet 2.90 dk</title>
+<polyline data-road-geometry="R09" points="746.9,300.0 793.1,294.8 841.7,278.6 881.9,255.0" stroke="#39775c" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R10"><title>R10: K18 ↔ K19; Ana yol; 1.92 km; temel 2.88 dk; maliyet 5.76 dk</title>
+<polyline data-road-geometry="R10" points="881.9,255.0 927.5,262.3 976.1,278.5 1016.9,300.0" stroke="#be720e" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="10 5"/>
+</g>
+<g data-road-id="R11"><title>R11: K19 ↔ K20; Ana yol; 1.97 km; temel 2.96 dk; maliyet 2.96 dk</title>
+<polyline data-road-geometry="R11" points="1016.9,300.0 1049.7,334.4 1092.9,364.1 1136.9,382.5" stroke="#39775c" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R12"><title>R12: K25 ↔ K26; Ana yol; 1.61 km; temel 2.42 dk; maliyet 2.42 dk</title>
+<path data-route-road="R12" d="M 739.4 547.5 L 777.8 552.4 L 818.3 565.9 L 851.9 585.0" stroke="#2563eb" stroke-width="14" fill="none" stroke-linejoin="round"/>
+<polyline data-road-geometry="R12" points="739.4,547.5 777.8,552.4 818.3,565.9 851.9,585.0" stroke="#39775c" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R13"><title>R13: K26 ↔ K27; Ana yol; 1.74 km; temel 2.61 dk; maliyet 5.22 dk</title>
+<polyline data-road-geometry="R13" points="851.9,585.0 893.3,592.4 939.2,589.6 979.4,577.5" stroke="#be720e" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="10 5"/>
+</g>
+<g data-road-id="R14"><title>R14: K27 ↔ K28; Ana yol; 2.21 km; temel 3.31 dk; maliyet kapalı</title>
+<polyline data-road-geometry="R14" points="979.4,577.5 1028.7,597.4 1080.0,627.1 1121.9,660.0" stroke="#c23e42" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 6"/>
+</g>
+<g data-road-id="R15"><title>R15: K28 ↔ A3; Ana yol; 2.22 km; temel 3.33 dk; maliyet 3.33 dk</title>
+<polyline data-road-geometry="R15" points="1121.9,660.0 1152.4,616.0 1176.7,562.0 1189.4,510.0" stroke="#39775c" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R16"><title>R16: K04 ↔ K17; Köprü; 1.92 km; temel 4.61 dk; maliyet 9.22 dk</title>
+<path d="M 604.4 285.0 L 650.0 289.8 L 701.3 295.2 L 746.9 300.0" stroke="#8c9da0" stroke-width="13" fill="none"/>
+<polyline data-road-geometry="R16" points="604.4,285.0 650.0,289.8 701.3,295.2 746.9,300.0" stroke="#be720e" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="10 5"/>
+</g>
+<g data-road-id="R17"><title>R17: K11 ↔ K25; Köprü; 2.01 km; temel 4.82 dk; maliyet 4.82 dk</title>
+<path d="M 589.4 555.0 L 637.4 552.6 L 691.4 549.9 L 739.4 547.5" stroke="#8c9da0" stroke-width="13" fill="none"/>
+<path data-route-road="R17" d="M 589.4 555.0 L 637.4 552.6 L 691.4 549.9 L 739.4 547.5" stroke="#2563eb" stroke-width="14" fill="none" stroke-linejoin="round"/>
+<polyline data-road-geometry="R17" points="589.4,555.0 637.4,552.6 691.4,549.9 739.4,547.5" stroke="#39775c" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R18"><title>R18: K05 ↔ K01; İkincil yol; 2.14 km; temel 4.28 dk; maliyet 4.28 dk</title>
+<polyline data-road-geometry="R18" points="259.4,495.0 259.1,443.6 267.2,386.9 281.9,337.5" stroke="#39775c" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R19"><title>R19: K01 ↔ K02; İkincil yol; 1.56 km; temel 3.12 dk; maliyet 3.12 dk</title>
+<polyline data-road-geometry="R19" points="281.9,337.5 319.3,332.0 357.1,315.8 386.9,292.5" stroke="#39775c" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R20"><title>R20: K06 ↔ K07; İkincil yol; 1.51 km; temel 3.02 dk; maliyet 6.04 dk</title>
+<polyline data-road-geometry="R20" points="356.9,435.0 393.0,440.0 430.8,453.4 461.9,472.5" stroke="#be720e" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="10 5"/>
+</g>
+<g data-road-id="R21"><title>R21: K07 ↔ K03; İkincil yol; 2 km; temel 4 dk; maliyet 4.00 dk</title>
+<polyline data-road-geometry="R21" points="461.9,472.5 483.3,429.4 496.8,378.1 499.4,330.0" stroke="#39775c" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R22"><title>R22: K03 ↔ K08; İkincil yol; 1.66 km; temel 3.32 dk; maliyet kapalı</title>
+<polyline data-road-geometry="R22" points="499.4,330.0 535.1,348.1 570.2,375.1 596.9,405.0" stroke="#c23e42" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 6"/>
+</g>
+<g data-road-id="R23"><title>R23: K08 ↔ K04; İkincil yol; 1.64 km; temel 3.28 dk; maliyet 3.28 dk</title>
+<polyline data-road-geometry="R23" points="596.9,405.0 609.0,367.2 611.7,324.0 604.4,285.0" stroke="#39775c" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R24"><title>R24: K07 ↔ K10; İkincil yol; 1.58 km; temel 3.16 dk; maliyet 3.16 dk</title>
+<polyline data-road-geometry="R24" points="461.9,472.5 459.5,510.4 448.8,551.0 431.9,585.0" stroke="#39775c" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R25"><title>R25: K11 ↔ K08; İkincil yol; 2.03 km; temel 4.06 dk; maliyet 4.06 dk</title>
+<polyline data-road-geometry="R25" points="589.4,555.0 601.5,507.4 604.2,453.4 596.9,405.0" stroke="#39775c" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R26"><title>R26: K09 ↔ K12; İkincil yol; 2.05 km; temel 4.1 dk; maliyet 4.10 dk</title>
+<polyline data-road-geometry="R26" points="311.9,637.5 302.1,685.7 283.2,737.0 259.4,780.0" stroke="#39775c" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R27"><title>R27: K12 ↔ K13; İkincil yol; 1.74 km; temel 3.48 dk; maliyet 3.48 dk</title>
+<polyline data-road-geometry="R27" points="259.4,780.0 301.2,774.7 344.4,758.5 379.4,735.0" stroke="#39775c" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R28"><title>R28: K13 ↔ K10; İkincil yol; 2.14 km; temel 4.28 dk; maliyet 4.28 dk</title>
+<polyline data-road-geometry="R28" points="379.4,735.0 389.1,684.5 408.0,630.5 431.9,585.0" stroke="#39775c" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R29"><title>R29: K13 ↔ K14; İkincil yol; 1.96 km; temel 3.92 dk; maliyet 7.84 dk</title>
+<polyline data-road-geometry="R29" points="379.4,735.0 423.5,751.8 474.8,759.9 521.9,757.5" stroke="#be720e" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="10 5"/>
+</g>
+<g data-road-id="R30"><title>R30: K14 ↔ K15; İkincil yol; 1.5 km; temel 3 dk; maliyet 3.00 dk</title>
+<polyline data-road-geometry="R30" points="521.9,757.5 549.5,734.1 584.7,715.2 619.4,705.0" stroke="#39775c" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R31"><title>R31: K15 ↔ K11; İkincil yol; 2.07 km; temel 4.14 dk; maliyet 4.14 dk</title>
+<polyline data-road-geometry="R31" points="619.4,705.0 619.3,655.1 608.5,601.1 589.4,555.0" stroke="#39775c" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R32"><title>R32: K10 ↔ K14; İkincil yol; 2.61 km; temel 5.22 dk; maliyet 5.22 dk</title>
+<polyline data-road-geometry="R32" points="431.9,585.0 467.4,636.8 499.8,698.9 521.9,757.5" stroke="#39775c" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R33"><title>R33: K17 ↔ K21; İkincil yol; 1.75 km; temel 3.5 dk; maliyet 3.50 dk</title>
+<polyline data-road-geometry="R33" points="746.9,300.0 742.0,341.9 747.4,387.8 761.9,427.5" stroke="#39775c" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R34"><title>R34: K21 ↔ K22; İkincil yol; 1.51 km; temel 3.02 dk; maliyet kapalı</title>
+<polyline data-road-geometry="R34" points="761.9,427.5 792.9,408.5 830.7,394.9 866.9,390.0" stroke="#c23e42" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 6"/>
+</g>
+<g data-road-id="R35"><title>R35: K22 ↔ K18; İkincil yol; 1.84 km; temel 3.68 dk; maliyet 3.68 dk</title>
+<polyline data-road-geometry="R35" points="866.9,390.0 881.4,347.8 886.8,299.2 881.9,255.0" stroke="#39775c" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R36"><title>R36: K22 ↔ K23; İkincil yol; 1.47 km; temel 2.94 dk; maliyet 2.94 dk</title>
+<polyline data-road-geometry="R36" points="866.9,390.0 899.8,403.0 932.2,424.6 956.9,450.0" stroke="#39775c" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R37"><title>R37: K23 ↔ K19; İkincil yol; 2.18 km; temel 4.36 dk; maliyet 4.36 dk</title>
+<polyline data-road-geometry="R37" points="956.9,450.0 985.1,405.6 1006.8,351.6 1016.9,300.0" stroke="#39775c" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R38"><title>R38: K23 ↔ K24; İkincil yol; 1.67 km; temel 3.34 dk; maliyet 6.68 dk</title>
+<polyline data-road-geometry="R38" points="956.9,450.0 997.1,452.3 1040.3,463.1 1076.9,480.0" stroke="#be720e" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="10 5"/>
+</g>
+<g data-road-id="R39"><title>R39: K24 ↔ K20; İkincil yol; 1.57 km; temel 3.14 dk; maliyet 3.14 dk</title>
+<polyline data-road-geometry="R39" points="1076.9,480.0 1104.4,453.9 1126.0,418.8 1136.9,382.5" stroke="#39775c" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R40"><title>R40: K21 ↔ K25; İkincil yol; 1.65 km; temel 3.3 dk; maliyet 3.30 dk</title>
+<polyline data-road-geometry="R40" points="761.9,427.5 762.0,467.2 753.9,510.4 739.4,547.5" stroke="#39775c" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R41"><title>R41: K26 ↔ K23; İkincil yol; 2.31 km; temel 4.62 dk; maliyet 4.62 dk</title>
+<polyline data-road-geometry="R41" points="851.9,585.0 893.2,547.8 931.0,499.2 956.9,450.0" stroke="#39775c" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R42"><title>R42: K27 ↔ K24; İkincil yol; 1.86 km; temel 3.72 dk; maliyet 3.72 dk</title>
+<polyline data-road-geometry="R42" points="979.4,577.5 1005.2,541.0 1040.3,505.9 1076.9,480.0" stroke="#39775c" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R43"><title>R43: K25 ↔ K29; İkincil yol; 2.45 km; temel 4.9 dk; maliyet 4.90 dk</title>
+<polyline data-road-geometry="R43" points="739.4,547.5 736.9,606.3 745.0,671.1 761.9,727.5" stroke="#39775c" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R44"><title>R44: K29 ↔ K30; İkincil yol; 1.79 km; temel 3.58 dk; maliyet 3.58 dk</title>
+<polyline data-road-geometry="R44" points="761.9,727.5 804.8,732.3 850.7,745.8 889.4,765.0" stroke="#39775c" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R45"><title>R45: K30 ↔ K26; İkincil yol; 2.48 km; temel 4.96 dk; maliyet 4.96 dk</title>
+<path data-route-road="R45" d="M 889.4 765.0 L 886.9 705.4 L 873.4 640.6 L 851.9 585.0" stroke="#2563eb" stroke-width="11" fill="none" stroke-linejoin="round"/>
+<polyline data-road-geometry="R45" points="889.4,765.0 886.9,705.4 873.4,640.6 851.9,585.0" stroke="#39775c" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R46"><title>R46: K30 ↔ K31; İkincil yol; 1.92 km; temel 3.84 dk; maliyet 3.84 dk</title>
+<path data-route-road="R46" d="M 889.4 765.0 L 930.2 743.5 L 978.8 727.3 L 1024.4 720.0" stroke="#2563eb" stroke-width="11" fill="none" stroke-linejoin="round"/>
+<polyline data-road-geometry="R46" points="889.4,765.0 930.2,743.5 978.8,727.3 1024.4,720.0" stroke="#39775c" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R47"><title>R47: K31 ↔ K27; İkincil yol; 2.02 km; temel 4.04 dk; maliyet 4.04 dk</title>
+<polyline data-road-geometry="R47" points="1024.4,720.0 1019.3,671.5 1003.1,620.2 979.4,577.5" stroke="#39775c" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R48"><title>R48: K31 ↔ K28; İkincil yol; 1.55 km; temel 3.1 dk; maliyet 3.10 dk</title>
+<path data-route-road="R48" d="M 1024.4 720.0 L 1051.7 694.4 L 1086.8 672.8 L 1121.9 660.0" stroke="#2563eb" stroke-width="11" fill="none" stroke-linejoin="round"/>
+<polyline data-road-geometry="R48" points="1024.4,720.0 1051.7,694.4 1086.8,672.8 1121.9,660.0" stroke="#39775c" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R49"><title>R49: K30 ↔ H1; İkincil yol; 1.74 km; temel 3.48 dk; maliyet 3.48 dk</title>
+<polyline data-road-geometry="R49" points="889.4,765.0 851.9,784.0 816.8,813.7 791.9,847.5" stroke="#39775c" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R50"><title>R50: K02 ↔ A1; Mahalle sokağı; 1.2 km; temel 3.6 dk; maliyet 3.60 dk</title>
+<polyline data-road-geometry="R50" points="386.9,292.5 394.8,264.7 411.0,237.7 431.9,217.5" stroke="#39775c" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R51"><title>R51: A1 ↔ K03; Mahalle sokağı; 1.78 km; temel 5.34 dk; maliyet 5.34 dk</title>
+<polyline data-road-geometry="R51" points="431.9,217.5 445.1,258.5 469.4,299.0 499.4,330.0" stroke="#39775c" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R52"><title>R52: K07 ↔ A2; Mahalle sokağı; 1.2 km; temel 3.6 dk; maliyet 7.20 dk</title>
+<polyline data-road-geometry="R52" points="461.9,472.5 485.7,455.9 515.4,445.1 544.4,442.5" stroke="#be720e" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="10 5"/>
+</g>
+<g data-road-id="R53"><title>R53: A2 ↔ K08; Mahalle sokağı; 0.92 km; temel 2.76 dk; maliyet 2.76 dk</title>
+<polyline data-road-geometry="R53" points="544.4,442.5 566.9,438.4 585.8,424.9 596.9,405.0" stroke="#39775c" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R54"><title>R54: A2 ↔ K11; Mahalle sokağı; 1.64 km; temel 4.92 dk; maliyet 4.92 dk</title>
+<polyline data-road-geometry="R54" points="544.4,442.5 565.8,475.7 582.0,516.2 589.4,555.0" stroke="#39775c" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R55"><title>R55: K14 ↔ K16; Mahalle sokağı; 1.52 km; temel 4.56 dk; maliyet 4.56 dk</title>
+<polyline data-road-geometry="R55" points="521.9,757.5 496.5,784.0 477.6,819.1 469.4,855.0" stroke="#39775c" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R56"><title>R56: K12 ↔ A6; Mahalle sokağı; 1.31 km; temel 3.93 dk; maliyet kapalı</title>
+<polyline data-road-geometry="R56" points="259.4,780.0 255.6,811.4 243.5,843.8 225.6,870.0" stroke="#c23e42" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 6"/>
+</g>
+<g data-road-id="R57"><title>R57: K13 ↔ A6; Mahalle sokağı; 2.78 km; temel 8.34 dk; maliyet kapalı</title>
+<polyline data-road-geometry="R57" points="379.4,735.0 340.1,789.5 284.7,838.1 225.6,870.0" stroke="#c23e42" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 6"/>
+</g>
+<g data-road-id="R58"><title>R58: K18 ↔ A4; Mahalle sokağı; 1.46 km; temel 4.38 dk; maliyet 4.38 dk</title>
+<polyline data-road-geometry="R58" points="881.9,255.0 909.9,233.8 945.0,217.6 979.4,210.0" stroke="#39775c" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R59"><title>R59: A4 ↔ K19; Mahalle sokağı; 1.34 km; temel 4.02 dk; maliyet 4.02 dk</title>
+<polyline data-road-geometry="R59" points="979.4,210.0 982.4,242.6 995.9,274.9 1016.9,300.0" stroke="#39775c" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R60"><title>R60: K24 ↔ A3; Mahalle sokağı; 1.58 km; temel 4.74 dk; maliyet 4.74 dk</title>
+<polyline data-road-geometry="R60" points="1076.9,480.0 1114.8,482.3 1155.3,493.1 1189.4,510.0" stroke="#39775c" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R61"><title>R61: K20 ↔ A3; Mahalle sokağı; 1.87 km; temel 5.61 dk; maliyet 5.61 dk</title>
+<polyline data-road-geometry="R61" points="1136.9,382.5 1144.7,427.0 1163.6,472.9 1189.4,510.0" stroke="#39775c" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R62"><title>R62: K29 ↔ H1; Mahalle sokağı; 1.67 km; temel 5.01 dk; maliyet 5.01 dk</title>
+<polyline data-road-geometry="R62" points="761.9,727.5 778.8,764.1 789.6,807.3 791.9,847.5" stroke="#39775c" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R63"><title>R63: K30 ↔ K32; Mahalle sokağı; 1.57 km; temel 4.71 dk; maliyet 4.71 dk</title>
+<polyline data-road-geometry="R63" points="889.4,765.0 900.2,801.3 921.9,836.4 949.4,862.5" stroke="#39775c" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-id="R64"><title>R64: K31 ↔ A5; Mahalle sokağı; 2.21 km; temel 6.63 dk; maliyet 13.26 dk</title>
+<polyline data-road-geometry="R64" points="1024.4,720.0 1065.8,753.3 1106.3,796.5 1136.9,840.0" stroke="#be720e" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="10 5"/>
+</g>
+<g data-road-id="R65"><title>R65: K28 ↔ A5; Mahalle sokağı; 2.44 km; temel 7.32 dk; maliyet 7.32 dk</title>
+<path data-route-road="R65" d="M 1121.9 660.0 L 1116.9 718.4 L 1122.3 783.2 L 1136.9 840.0" stroke="#2563eb" stroke-width="9.5" fill="none" stroke-linejoin="round"/>
+<polyline data-road-geometry="R65" points="1121.9,660.0 1116.9,718.4 1122.3,783.2 1136.9,840.0" stroke="#39775c" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-road-label="R01"><title>R01: H0 ↔ K05; Ana yol; 1.24 km; temel 1.86 dk; maliyet 1.86 dk</title>
+<rect x="250.2" y="529.3" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="265.2" y="541.8" text-anchor="middle" font-size="11">R01</text>
+</g>
+<g data-road-label="R02"><title>R02: K05 ↔ K06; Ana yol; 1.55 km; temel 2.33 dk; maliyet 2.33 dk</title>
+<rect x="289.2" y="430.1" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="304.2" y="442.6" text-anchor="middle" font-size="11">R02</text>
+</g>
+<g data-road-label="R03"><title>R03: K06 ↔ K02; Ana yol; 1.97 km; temel 2.96 dk; maliyet 2.96 dk</title>
+<rect x="366.4" y="357.3" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="381.4" y="369.8" text-anchor="middle" font-size="11">R03</text>
+</g>
+<g data-road-label="R04"><title>R04: K02 ↔ K03; Ana yol; 1.61 km; temel 2.42 dk; maliyet 2.42 dk</title>
+<rect x="430.5" y="295.6" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="445.5" y="308.1" text-anchor="middle" font-size="11">R04</text>
+</g>
+<g data-road-label="R05"><title>R05: K03 ↔ K04; Ana yol; 1.56 km; temel 2.34 dk; maliyet 2.34 dk</title>
+<rect x="540.7" y="307.9" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="555.7" y="320.4" text-anchor="middle" font-size="11">R05</text>
+</g>
+<g data-road-label="R06"><title>R06: H0 ↔ K09; Ana yol; 1.65 km; temel 2.47 dk; maliyet 2.47 dk</title>
+<rect x="238.6" y="583.0" width="53.5" height="29" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="265.4" y="595.5" text-anchor="middle" font-size="11">R06</text>
+<text x="265.4" y="608.5" text-anchor="middle" font-size="10">2.47 dk</text>
+</g>
+<g data-road-label="R07"><title>R07: K09 ↔ K10; Ana yol; 1.78 km; temel 2.67 dk; maliyet 2.67 dk</title>
+<rect x="349.0" y="625.7" width="53.5" height="29" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="375.8" y="638.2" text-anchor="middle" font-size="11">R07</text>
+<text x="375.8" y="651.2" text-anchor="middle" font-size="10">2.67 dk</text>
+</g>
+<g data-road-label="R08"><title>R08: K10 ↔ K11; Ana yol; 2.16 km; temel 3.24 dk; maliyet 6.48 dk</title>
+<rect x="482.4" y="548.1" width="53.5" height="29" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="509.2" y="560.6" text-anchor="middle" font-size="11">R08</text>
+<text x="509.2" y="573.6" text-anchor="middle" font-size="10">6.48 dk</text>
+</g>
+<g data-road-label="R09"><title>R09: K17 ↔ K18; Ana yol; 1.93 km; temel 2.9 dk; maliyet 2.90 dk</title>
+<rect x="802.4" y="278.2" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="817.4" y="290.7" text-anchor="middle" font-size="11">R09</text>
+</g>
+<g data-road-label="R10"><title>R10: K18 ↔ K19; Ana yol; 1.92 km; temel 2.88 dk; maliyet 5.76 dk</title>
+<rect x="936.8" y="261.9" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="951.8" y="274.4" text-anchor="middle" font-size="11">R10</text>
+</g>
+<g data-road-label="R11"><title>R11: K19 ↔ K20; Ana yol; 1.97 km; temel 2.96 dk; maliyet 2.96 dk</title>
+<rect x="1056.3" y="340.8" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="1071.3" y="353.3" text-anchor="middle" font-size="11">R11</text>
+</g>
+<g data-road-label="R12"><title>R12: K25 ↔ K26; Ana yol; 1.61 km; temel 2.42 dk; maliyet 2.42 dk</title>
+<rect x="771.3" y="524.6" width="53.5" height="29" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="798.0" y="537.1" text-anchor="middle" font-size="11">R12</text>
+<text x="798.0" y="550.1" text-anchor="middle" font-size="10">2.42 dk</text>
+</g>
+<g data-road-label="R13"><title>R13: K26 ↔ K27; Ana yol; 1.74 km; temel 2.61 dk; maliyet 5.22 dk</title>
+<rect x="901.2" y="582.5" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="916.2" y="595.0" text-anchor="middle" font-size="11">R13</text>
+</g>
+<g data-road-label="R14"><title>R14: K27 ↔ K28; Ana yol; 2.21 km; temel 3.31 dk; maliyet kapalı</title>
+<rect x="1039.4" y="603.7" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="1054.4" y="616.2" text-anchor="middle" font-size="11">R14</text>
+</g>
+<g data-road-label="R15"><title>R15: K28 ↔ A3; Ana yol; 2.22 km; temel 3.33 dk; maliyet 3.33 dk</title>
+<rect x="1149.6" y="580.5" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="1164.6" y="593.0" text-anchor="middle" font-size="11">R15</text>
+</g>
+<g data-road-label="R16"><title>R16: K04 ↔ K17; Köprü; 1.92 km; temel 4.61 dk; maliyet 9.22 dk</title>
+<rect x="660.6" y="284.0" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="675.6" y="296.5" text-anchor="middle" font-size="11">R16</text>
+</g>
+<g data-road-label="R17"><title>R17: K11 ↔ K25; Köprü; 2.01 km; temel 4.82 dk; maliyet 4.82 dk</title>
+<rect x="637.6" y="536.8" width="53.5" height="29" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="664.4" y="549.2" text-anchor="middle" font-size="11">R17</text>
+<text x="664.4" y="562.2" text-anchor="middle" font-size="10">4.82 dk</text>
+</g>
+<g data-road-label="R18"><title>R18: K05 ↔ K01; İkincil yol; 2.14 km; temel 4.28 dk; maliyet 4.28 dk</title>
+<rect x="248.2" y="406.7" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="263.2" y="419.2" text-anchor="middle" font-size="11">R18</text>
+</g>
+<g data-road-label="R19"><title>R19: K01 ↔ K02; İkincil yol; 1.56 km; temel 3.12 dk; maliyet 3.12 dk</title>
+<rect x="323.2" y="315.4" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="338.2" y="327.9" text-anchor="middle" font-size="11">R19</text>
+</g>
+<g data-road-label="R20"><title>R20: K06 ↔ K07; İkincil yol; 1.51 km; temel 3.02 dk; maliyet 6.04 dk</title>
+<rect x="396.9" y="438.2" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="411.9" y="450.7" text-anchor="middle" font-size="11">R20</text>
+</g>
+<g data-road-label="R21"><title>R21: K07 ↔ K03; İkincil yol; 2 km; temel 4 dk; maliyet 4.00 dk</title>
+<rect x="475.1" y="395.2" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="490.1" y="407.7" text-anchor="middle" font-size="11">R21</text>
+</g>
+<g data-road-label="R22"><title>R22: K03 ↔ K08; İkincil yol; 1.66 km; temel 3.32 dk; maliyet kapalı</title>
+<rect x="537.7" y="353.1" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="552.7" y="365.6" text-anchor="middle" font-size="11">R22</text>
+</g>
+<g data-road-label="R23"><title>R23: K08 ↔ K04; İkincil yol; 1.64 km; temel 3.28 dk; maliyet 3.28 dk</title>
+<rect x="595.4" y="337.1" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="610.4" y="349.6" text-anchor="middle" font-size="11">R23</text>
+</g>
+<g data-road-label="R24"><title>R24: K07 ↔ K10; İkincil yol; 1.58 km; temel 3.16 dk; maliyet 3.16 dk</title>
+<rect x="439.1" y="522.2" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="454.1" y="534.7" text-anchor="middle" font-size="11">R24</text>
+</g>
+<g data-road-label="R25"><title>R25: K11 ↔ K08; İkincil yol; 2.03 km; temel 4.06 dk; maliyet 4.06 dk</title>
+<rect x="587.9" y="471.9" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="602.9" y="484.4" text-anchor="middle" font-size="11">R25</text>
+</g>
+<g data-road-label="R26"><title>R26: K09 ↔ K12; İkincil yol; 2.05 km; temel 4.1 dk; maliyet 4.10 dk</title>
+<rect x="277.7" y="702.9" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="292.7" y="715.4" text-anchor="middle" font-size="11">R26</text>
+</g>
+<g data-road-label="R27"><title>R27: K12 ↔ K13; İkincil yol; 1.74 km; temel 3.48 dk; maliyet 3.48 dk</title>
+<rect x="307.8" y="758.1" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="322.8" y="770.6" text-anchor="middle" font-size="11">R27</text>
+</g>
+<g data-road-label="R28"><title>R28: K13 ↔ K10; İkincil yol; 2.14 km; temel 4.28 dk; maliyet 4.28 dk</title>
+<rect x="383.6" y="669.0" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="398.6" y="681.5" text-anchor="middle" font-size="11">R28</text>
+</g>
+<g data-road-label="R29"><title>R29: K13 ↔ K14; İkincil yol; 1.96 km; temel 3.92 dk; maliyet 7.84 dk</title>
+<rect x="434.1" y="747.3" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="449.1" y="759.8" text-anchor="middle" font-size="11">R29</text>
+</g>
+<g data-road-label="R30"><title>R30: K14 ↔ K15; İkincil yol; 1.5 km; temel 3 dk; maliyet 3.00 dk</title>
+<rect x="552.1" y="696.2" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="567.1" y="708.7" text-anchor="middle" font-size="11">R30</text>
+</g>
+<g data-road-label="R31"><title>R31: K15 ↔ K11; İkincil yol; 2.07 km; temel 4.14 dk; maliyet 4.14 dk</title>
+<rect x="598.9" y="619.6" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="613.9" y="632.1" text-anchor="middle" font-size="11">R31</text>
+</g>
+<g data-road-label="R32"><title>R32: K10 ↔ K14; İkincil yol; 2.61 km; temel 5.22 dk; maliyet 5.22 dk</title>
+<rect x="468.6" y="659.3" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="483.6" y="671.8" text-anchor="middle" font-size="11">R32</text>
+</g>
+<g data-road-label="R33"><title>R33: K17 ↔ K21; İkincil yol; 1.75 km; temel 3.5 dk; maliyet 3.50 dk</title>
+<rect x="729.7" y="356.4" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="744.7" y="368.9" text-anchor="middle" font-size="11">R33</text>
+</g>
+<g data-road-label="R34"><title>R34: K21 ↔ K22; İkincil yol; 1.51 km; temel 3.02 dk; maliyet kapalı</title>
+<rect x="796.8" y="393.2" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="811.8" y="405.7" text-anchor="middle" font-size="11">R34</text>
+</g>
+<g data-road-label="R35"><title>R35: K22 ↔ K18; İkincil yol; 1.84 km; temel 3.68 dk; maliyet 3.68 dk</title>
+<rect x="869.0" y="315.0" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="884.0" y="327.5" text-anchor="middle" font-size="11">R35</text>
+</g>
+<g data-road-label="R36"><title>R36: K22 ↔ K23; İkincil yol; 1.47 km; temel 2.94 dk; maliyet 2.94 dk</title>
+<rect x="901.0" y="385.3" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="916.0" y="397.8" text-anchor="middle" font-size="11">R36</text>
+</g>
+<g data-road-label="R37"><title>R37: K23 ↔ K19; İkincil yol; 2.18 km; temel 4.36 dk; maliyet 4.36 dk</title>
+<rect x="981.0" y="370.1" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="996.0" y="382.6" text-anchor="middle" font-size="11">R37</text>
+</g>
+<g data-road-label="R38"><title>R38: K23 ↔ K24; İkincil yol; 1.67 km; temel 3.34 dk; maliyet 6.68 dk</title>
+<rect x="1003.7" y="449.2" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="1018.7" y="461.7" text-anchor="middle" font-size="11">R38</text>
+</g>
+<g data-road-label="R39"><title>R39: K24 ↔ K20; İkincil yol; 1.57 km; temel 3.14 dk; maliyet 3.14 dk</title>
+<rect x="1100.2" y="427.9" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="1115.2" y="440.4" text-anchor="middle" font-size="11">R39</text>
+</g>
+<g data-road-label="R40"><title>R40: K21 ↔ K25; İkincil yol; 1.65 km; temel 3.3 dk; maliyet 3.30 dk</title>
+<rect x="743.0" y="480.4" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="758.0" y="492.9" text-anchor="middle" font-size="11">R40</text>
+</g>
+<g data-road-label="R41"><title>R41: K26 ↔ K23; İkincil yol; 2.31 km; temel 4.62 dk; maliyet 4.62 dk</title>
+<rect x="897.1" y="515.0" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="912.1" y="527.5" text-anchor="middle" font-size="11">R41</text>
+</g>
+<g data-road-label="R42"><title>R42: K27 ↔ K24; İkincil yol; 1.86 km; temel 3.72 dk; maliyet 3.72 dk</title>
+<rect x="1007.8" y="514.9" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="1022.8" y="527.4" text-anchor="middle" font-size="11">R42</text>
+</g>
+<g data-road-label="R43"><title>R43: K25 ↔ K29; İkincil yol; 2.45 km; temel 4.9 dk; maliyet 4.90 dk</title>
+<rect x="726.0" y="630.2" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="741.0" y="642.7" text-anchor="middle" font-size="11">R43</text>
+</g>
+<g data-road-label="R44"><title>R44: K29 ↔ K30; İkincil yol; 1.79 km; temel 3.58 dk; maliyet 3.58 dk</title>
+<rect x="812.7" y="730.5" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="827.7" y="743.0" text-anchor="middle" font-size="11">R44</text>
+</g>
+<g data-road-label="R45"><title>R45: K30 ↔ K26; İkincil yol; 2.48 km; temel 4.96 dk; maliyet 4.96 dk</title>
+<rect x="853.4" y="658.5" width="53.5" height="29" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="880.1" y="671.0" text-anchor="middle" font-size="11">R45</text>
+<text x="880.1" y="684.0" text-anchor="middle" font-size="10">4.96 dk</text>
+</g>
+<g data-road-label="R46"><title>R46: K30 ↔ K31; İkincil yol; 1.92 km; temel 3.84 dk; maliyet 3.84 dk</title>
+<rect x="927.7" y="720.9" width="53.5" height="29" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="954.5" y="733.4" text-anchor="middle" font-size="11">R46</text>
+<text x="954.5" y="746.4" text-anchor="middle" font-size="10">3.84 dk</text>
+</g>
+<g data-road-label="R47"><title>R47: K31 ↔ K27; İkincil yol; 2.02 km; temel 4.04 dk; maliyet 4.04 dk</title>
+<rect x="996.2" y="637.3" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="1011.2" y="649.8" text-anchor="middle" font-size="11">R47</text>
+</g>
+<g data-road-label="R48"><title>R48: K31 ↔ K28; İkincil yol; 1.55 km; temel 3.1 dk; maliyet 3.10 dk</title>
+<rect x="1042.5" y="669.1" width="53.5" height="29" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="1069.2" y="681.6" text-anchor="middle" font-size="11">R48</text>
+<text x="1069.2" y="694.6" text-anchor="middle" font-size="10">3.10 dk</text>
+</g>
+<g data-road-label="R49"><title>R49: K30 ↔ H1; İkincil yol; 1.74 km; temel 3.48 dk; maliyet 3.48 dk</title>
+<rect x="819.3" y="790.3" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="834.3" y="802.8" text-anchor="middle" font-size="11">R49</text>
+</g>
+<g data-road-label="R50"><title>R50: K02 ↔ A1; Mahalle sokağı; 1.2 km; temel 3.6 dk; maliyet 3.60 dk</title>
+<rect x="365.9" y="242.7" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="380.9" y="255.2" text-anchor="middle" font-size="11">R50</text>
+</g>
+<g data-road-label="R51"><title>R51: A1 ↔ K03; Mahalle sokağı; 1.78 km; temel 5.34 dk; maliyet 5.34 dk</title>
+<rect x="442.3" y="270.3" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="457.3" y="282.8" text-anchor="middle" font-size="11">R51</text>
+</g>
+<g data-road-label="R52"><title>R52: K07 ↔ A2; Mahalle sokağı; 1.2 km; temel 3.6 dk; maliyet 7.20 dk</title>
+<rect x="463.6" y="422.0" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="478.6" y="434.5" text-anchor="middle" font-size="11">R52</text>
+</g>
+<g data-road-label="R53"><title>R53: A2 ↔ K08; Mahalle sokağı; 0.92 km; temel 2.76 dk; maliyet 2.76 dk</title>
+<rect x="583.3" y="443.2" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="598.3" y="455.7" text-anchor="middle" font-size="11">R53</text>
+</g>
+<g data-road-label="R54"><title>R54: A2 ↔ K11; Mahalle sokağı; 1.64 km; temel 4.92 dk; maliyet 4.92 dk</title>
+<rect x="536.9" y="487.5" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="551.9" y="500.0" text-anchor="middle" font-size="11">R54</text>
+</g>
+<g data-road-label="R55"><title>R55: K14 ↔ K16; Mahalle sokağı; 1.52 km; temel 4.56 dk; maliyet 4.56 dk</title>
+<rect x="472.1" y="793.1" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="487.1" y="805.6" text-anchor="middle" font-size="11">R55</text>
+</g>
+<g data-road-label="R56"><title>R56: K12 ↔ A6; Mahalle sokağı; 1.31 km; temel 3.93 dk; maliyet kapalı</title>
+<rect x="234.6" y="819.1" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="249.6" y="831.6" text-anchor="middle" font-size="11">R56</text>
+</g>
+<g data-road-label="R57"><title>R57: K13 ↔ A6; Mahalle sokağı; 2.78 km; temel 8.34 dk; maliyet kapalı</title>
+<rect x="297.4" y="805.2" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="312.4" y="817.8" text-anchor="middle" font-size="11">R57</text>
+</g>
+<g data-road-label="R58"><title>R58: K18 ↔ A4; Mahalle sokağı; 1.46 km; temel 4.38 dk; maliyet 4.38 dk</title>
+<rect x="912.5" y="197.2" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="927.5" y="209.7" text-anchor="middle" font-size="11">R58</text>
+</g>
+<g data-road-label="R59"><title>R59: A4 ↔ K19; Mahalle sokağı; 1.34 km; temel 4.02 dk; maliyet 4.02 dk</title>
+<rect x="974.1" y="250.2" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="989.1" y="262.8" text-anchor="middle" font-size="11">R59</text>
+</g>
+<g data-road-label="R60"><title>R60: K24 ↔ A3; Mahalle sokağı; 1.58 km; temel 4.74 dk; maliyet 4.74 dk</title>
+<rect x="1120.1" y="479.2" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="1135.1" y="491.7" text-anchor="middle" font-size="11">R60</text>
+</g>
+<g data-road-label="R61"><title>R61: K20 ↔ A3; Mahalle sokağı; 1.87 km; temel 5.61 dk; maliyet 5.61 dk</title>
+<rect x="1139.1" y="441.4" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="1154.1" y="453.9" text-anchor="middle" font-size="11">R61</text>
+</g>
+<g data-road-label="R62"><title>R62: K29 ↔ H1; Mahalle sokağı; 1.67 km; temel 5.01 dk; maliyet 5.01 dk</title>
+<rect x="769.2" y="777.2" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="784.2" y="789.7" text-anchor="middle" font-size="11">R62</text>
+</g>
+<g data-road-label="R63"><title>R63: K30 ↔ K32; Mahalle sokağı; 1.57 km; temel 4.71 dk; maliyet 4.71 dk</title>
+<rect x="896.0" y="810.3" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="911.0" y="822.8" text-anchor="middle" font-size="11">R63</text>
+</g>
+<g data-road-label="R64"><title>R64: K31 ↔ A5; Mahalle sokağı; 2.21 km; temel 6.63 dk; maliyet 13.26 dk</title>
+<rect x="1071.1" y="766.4" width="30.0" height="17" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="1086.1" y="778.9" text-anchor="middle" font-size="11">R64</text>
+</g>
+<g data-road-label="R65"><title>R65: K28 ↔ A5; Mahalle sokağı; 2.44 km; temel 7.32 dk; maliyet 7.32 dk</title>
+<rect x="1092.9" y="716.3" width="53.5" height="29" rx="3" fill="#f8faf7" fill-opacity="0.95"/>
+<text x="1119.6" y="728.8" text-anchor="middle" font-size="11">R65</text>
+<text x="1119.6" y="741.8" text-anchor="middle" font-size="10">7.32 dk</text>
+</g>
+<g><title>Kavşak K01</title><circle cx="281.9" cy="337.5" r="14" fill="#65746e" stroke="#f8faf7" stroke-width="2"/>
+<text x="281.9" y="341.5" text-anchor="middle" font-size="10" fill="white">K01</text></g>
+<g><title>Kavşak K02</title><circle cx="386.9" cy="292.5" r="14" fill="#65746e" stroke="#f8faf7" stroke-width="2"/>
+<text x="386.9" y="296.5" text-anchor="middle" font-size="10" fill="white">K02</text></g>
+<g><title>Kavşak K03</title><circle cx="499.4" cy="330.0" r="14" fill="#65746e" stroke="#f8faf7" stroke-width="2"/>
+<text x="499.4" y="334.0" text-anchor="middle" font-size="10" fill="white">K03</text></g>
+<g><title>Kavşak K04</title><circle cx="604.4" cy="285.0" r="14" fill="#65746e" stroke="#f8faf7" stroke-width="2"/>
+<text x="604.4" y="289.0" text-anchor="middle" font-size="10" fill="white">K04</text></g>
+<g><title>Kavşak K05</title><circle cx="259.4" cy="495.0" r="14" fill="#65746e" stroke="#f8faf7" stroke-width="2"/>
+<text x="259.4" y="499.0" text-anchor="middle" font-size="10" fill="white">K05</text></g>
+<g><title>Kavşak K06</title><circle cx="356.9" cy="435.0" r="14" fill="#65746e" stroke="#f8faf7" stroke-width="2"/>
+<text x="356.9" y="439.0" text-anchor="middle" font-size="10" fill="white">K06</text></g>
+<g><title>Kavşak K07</title><circle cx="461.9" cy="472.5" r="14" fill="#65746e" stroke="#f8faf7" stroke-width="2"/>
+<text x="461.9" y="476.5" text-anchor="middle" font-size="10" fill="white">K07</text></g>
+<g><title>Kavşak K08</title><circle cx="596.9" cy="405.0" r="14" fill="#65746e" stroke="#f8faf7" stroke-width="2"/>
+<text x="596.9" y="409.0" text-anchor="middle" font-size="10" fill="white">K08</text></g>
+<g><title>Kavşak K09</title><circle cx="311.9" cy="637.5" r="14" fill="#65746e" stroke="#f8faf7" stroke-width="2"/>
+<text x="311.9" y="641.5" text-anchor="middle" font-size="10" fill="white">K09</text></g>
+<g><title>Kavşak K10</title><circle cx="431.9" cy="585.0" r="14" fill="#65746e" stroke="#f8faf7" stroke-width="2"/>
+<text x="431.9" y="589.0" text-anchor="middle" font-size="10" fill="white">K10</text></g>
+<g><title>Kavşak K11</title><circle cx="589.4" cy="555.0" r="14" fill="#65746e" stroke="#f8faf7" stroke-width="2"/>
+<text x="589.4" y="559.0" text-anchor="middle" font-size="10" fill="white">K11</text></g>
+<g><title>Kavşak K12</title><circle cx="259.4" cy="780.0" r="14" fill="#65746e" stroke="#f8faf7" stroke-width="2"/>
+<text x="259.4" y="784.0" text-anchor="middle" font-size="10" fill="white">K12</text></g>
+<g><title>Kavşak K13</title><circle cx="379.4" cy="735.0" r="14" fill="#65746e" stroke="#f8faf7" stroke-width="2"/>
+<text x="379.4" y="739.0" text-anchor="middle" font-size="10" fill="white">K13</text></g>
+<g><title>Kavşak K14</title><circle cx="521.9" cy="757.5" r="14" fill="#65746e" stroke="#f8faf7" stroke-width="2"/>
+<text x="521.9" y="761.5" text-anchor="middle" font-size="10" fill="white">K14</text></g>
+<g><title>Kavşak K15</title><circle cx="619.4" cy="705.0" r="14" fill="#65746e" stroke="#f8faf7" stroke-width="2"/>
+<text x="619.4" y="709.0" text-anchor="middle" font-size="10" fill="white">K15</text></g>
+<g><title>Kavşak K16</title><circle cx="469.4" cy="855.0" r="14" fill="#65746e" stroke="#f8faf7" stroke-width="2"/>
+<text x="469.4" y="859.0" text-anchor="middle" font-size="10" fill="white">K16</text></g>
+<g><title>Kavşak K17</title><circle cx="746.9" cy="300.0" r="14" fill="#65746e" stroke="#f8faf7" stroke-width="2"/>
+<text x="746.9" y="304.0" text-anchor="middle" font-size="10" fill="white">K17</text></g>
+<g><title>Kavşak K18</title><circle cx="881.9" cy="255.0" r="14" fill="#65746e" stroke="#f8faf7" stroke-width="2"/>
+<text x="881.9" y="259.0" text-anchor="middle" font-size="10" fill="white">K18</text></g>
+<g><title>Kavşak K19</title><circle cx="1016.9" cy="300.0" r="14" fill="#65746e" stroke="#f8faf7" stroke-width="2"/>
+<text x="1016.9" y="304.0" text-anchor="middle" font-size="10" fill="white">K19</text></g>
+<g><title>Kavşak K20</title><circle cx="1136.9" cy="382.5" r="14" fill="#65746e" stroke="#f8faf7" stroke-width="2"/>
+<text x="1136.9" y="386.5" text-anchor="middle" font-size="10" fill="white">K20</text></g>
+<g><title>Kavşak K21</title><circle cx="761.9" cy="427.5" r="14" fill="#65746e" stroke="#f8faf7" stroke-width="2"/>
+<text x="761.9" y="431.5" text-anchor="middle" font-size="10" fill="white">K21</text></g>
+<g><title>Kavşak K22</title><circle cx="866.9" cy="390.0" r="14" fill="#65746e" stroke="#f8faf7" stroke-width="2"/>
+<text x="866.9" y="394.0" text-anchor="middle" font-size="10" fill="white">K22</text></g>
+<g><title>Kavşak K23</title><circle cx="956.9" cy="450.0" r="14" fill="#65746e" stroke="#f8faf7" stroke-width="2"/>
+<text x="956.9" y="454.0" text-anchor="middle" font-size="10" fill="white">K23</text></g>
+<g><title>Kavşak K24</title><circle cx="1076.9" cy="480.0" r="14" fill="#65746e" stroke="#f8faf7" stroke-width="2"/>
+<text x="1076.9" y="484.0" text-anchor="middle" font-size="10" fill="white">K24</text></g>
+<g><title>Kavşak K25</title><circle cx="739.4" cy="547.5" r="14" fill="#65746e" stroke="#f8faf7" stroke-width="2"/>
+<text x="739.4" y="551.5" text-anchor="middle" font-size="10" fill="white">K25</text></g>
+<g><title>Kavşak K26</title><circle cx="851.9" cy="585.0" r="14" fill="#65746e" stroke="#f8faf7" stroke-width="2"/>
+<text x="851.9" y="589.0" text-anchor="middle" font-size="10" fill="white">K26</text></g>
+<g><title>Kavşak K27</title><circle cx="979.4" cy="577.5" r="14" fill="#65746e" stroke="#f8faf7" stroke-width="2"/>
+<text x="979.4" y="581.5" text-anchor="middle" font-size="10" fill="white">K27</text></g>
+<g><title>Kavşak K28</title><circle cx="1121.9" cy="660.0" r="14" fill="#65746e" stroke="#f8faf7" stroke-width="2"/>
+<text x="1121.9" y="664.0" text-anchor="middle" font-size="10" fill="white">K28</text></g>
+<g><title>Kavşak K29</title><circle cx="761.9" cy="727.5" r="14" fill="#65746e" stroke="#f8faf7" stroke-width="2"/>
+<text x="761.9" y="731.5" text-anchor="middle" font-size="10" fill="white">K29</text></g>
+<g><title>Kavşak K30</title><circle cx="889.4" cy="765.0" r="14" fill="#65746e" stroke="#f8faf7" stroke-width="2"/>
+<text x="889.4" y="769.0" text-anchor="middle" font-size="10" fill="white">K30</text></g>
+<g><title>Kavşak K31</title><circle cx="1024.4" cy="720.0" r="14" fill="#65746e" stroke="#f8faf7" stroke-width="2"/>
+<text x="1024.4" y="724.0" text-anchor="middle" font-size="10" fill="white">K31</text></g>
+<g><title>Kavşak K32</title><circle cx="949.4" cy="862.5" r="14" fill="#65746e" stroke="#f8faf7" stroke-width="2"/>
+<text x="949.4" y="866.5" text-anchor="middle" font-size="10" fill="white">K32</text></g>
+<g><title>Yardım merkezi H0</title><circle cx="210.6" cy="570.0" r="21" fill="#1f4b78" stroke="#2563eb" stroke-width="4"/>
+<text x="210.6" y="574.0" text-anchor="middle" font-size="14" fill="white">H0</text></g>
+<g><title>Yardım merkezi H1</title><circle cx="791.9" cy="847.5" r="21" fill="#1f4b78" stroke="#f8faf7" stroke-width="2"/>
+<text x="791.9" y="851.5" text-anchor="middle" font-size="14" fill="white">H1</text></g>
+<g><title>Afet noktası A1; 120 afetzede, 25 yaralı, aciliyet 5/5</title><circle cx="431.9" cy="217.5" r="21" fill="#9e3a57" stroke="#f8faf7" stroke-width="2"/>
+<text x="431.9" y="221.5" text-anchor="middle" font-size="14" fill="white">A1</text></g>
+<g><title>Afet noktası A2; 80 afetzede, 12 yaralı, aciliyet 3/5</title><circle cx="544.4" cy="442.5" r="21" fill="#9e3a57" stroke="#f8faf7" stroke-width="2"/>
+<text x="544.4" y="446.5" text-anchor="middle" font-size="14" fill="white">A2</text></g>
+<g><title>Afet noktası A3; 160 afetzede, 32 yaralı, aciliyet 5/5</title><circle cx="1189.4" cy="510.0" r="21" fill="#9e3a57" stroke="#f8faf7" stroke-width="2"/>
+<text x="1189.4" y="514.0" text-anchor="middle" font-size="14" fill="white">A3</text></g>
+<g><title>Afet noktası A4; 60 afetzede, 8 yaralı, aciliyet 2/5</title><circle cx="979.4" cy="210.0" r="21" fill="#9e3a57" stroke="#f8faf7" stroke-width="2"/>
+<text x="979.4" y="214.0" text-anchor="middle" font-size="14" fill="white">A4</text></g>
+<g><title>Afet noktası A5; 95 afetzede, 15 yaralı, aciliyet 4/5</title><circle cx="1136.9" cy="840.0" r="21" fill="#9e3a57" stroke="#2563eb" stroke-width="4"/>
+<text x="1136.9" y="844.0" text-anchor="middle" font-size="14" fill="white">A5</text></g>
+<g><title>Afet noktası A6; 45 afetzede, 10 yaralı, aciliyet 4/5</title><circle cx="225.6" cy="870.0" r="21" fill="#9e3a57" stroke="#f8faf7" stroke-width="2"/>
+<text x="225.6" y="874.0" text-anchor="middle" font-size="14" fill="white">A6</text></g>
+<text x="48" y="985" font-size="14">Düğümler: Lacivert = Yardım merkezi | Gri = Kavşak | Bordo = Afet noktası</text>
+<text x="48" y="1013" font-size="14">Yollar: Yeşil = Açık | Turuncu kesikli = Hasarlı | Kırmızı noktalı = Kapalı</text>
+<text x="48" y="1041" font-size="14">40 düğüm · 65 çift yönlü yol · Kalın çizgi ana yol, ince çizgi mahalle sokağı.</text>
+<text x="48" y="1065" font-size="13">Mavi şerit dere, gri kenarlı geçiş köprüdür. Yol kırımları yeni kavşak değildir. Gerçek şehir verisi kullanılmamıştır.</text>
+<text x="48" y="1101" font-size="17" font-weight="bold">Rota: H0 → K09 → K10 → K11 → K25 → K26 → K30 → K31 → K28 → A5</text>
+<text x="48" y="1141" font-size="15">Maliyet / hasar dahil süre: 38.08 dk | Mesafe: 17.60 km | İncelenen düğüm: 39</text>
+</g></svg>
