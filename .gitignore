@@ -218,3 +218,11 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Local generated output and academic delivery files
+/output/
+/tmp/
+/teslimler/
+/raporlar/
+*.docx
+*.pdf
