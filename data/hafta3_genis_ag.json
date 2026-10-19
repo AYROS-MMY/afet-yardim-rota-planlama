@@ -1,0 +1,679 @@
+{
+  "schema_version": 1,
+  "name": "Üçüncü hafta geniş afet ağı",
+  "description": "Sentetik 6x5 yerleşim: 2 yardım merkezi, 6 afet noktası, 22 kavşak; 49 yatay/dikey ve 6 çapraz yol. Mesafeler düzlem uzaklığının yaklaşık 1,1 katı; temel süreler 24/30/36 km/saat varsayımlarıyla üretilir. A6 girişleri kapalıdır. Gerçek saha verisi değildir.",
+  "directed": false,
+  "coordinate_system": "cartesian_km",
+  "nodes": [
+    {
+      "id": "K01",
+      "name": "Kavşak K01",
+      "node_type": "intersection",
+      "x_km": 0,
+      "y_km": 0
+    },
+    {
+      "id": "K02",
+      "name": "Kavşak K02",
+      "node_type": "intersection",
+      "x_km": 2,
+      "y_km": 0
+    },
+    {
+      "id": "A6",
+      "name": "Afet noktası A6",
+      "node_type": "disaster_area",
+      "x_km": 4,
+      "y_km": 0,
+      "affected_count": 45,
+      "injured_count": 10,
+      "urgency_level": 4
+    },
+    {
+      "id": "K03",
+      "name": "Kavşak K03",
+      "node_type": "intersection",
+      "x_km": 6,
+      "y_km": 0
+    },
+    {
+      "id": "K04",
+      "name": "Kavşak K04",
+      "node_type": "intersection",
+      "x_km": 8,
+      "y_km": 0
+    },
+    {
+      "id": "A5",
+      "name": "Afet noktası A5",
+      "node_type": "disaster_area",
+      "x_km": 10,
+      "y_km": 0,
+      "affected_count": 95,
+      "injured_count": 15,
+      "urgency_level": 4
+    },
+    {
+      "id": "K05",
+      "name": "Kavşak K05",
+      "node_type": "intersection",
+      "x_km": 0,
+      "y_km": 2
+    },
+    {
+      "id": "K06",
+      "name": "Kavşak K06",
+      "node_type": "intersection",
+      "x_km": 2,
+      "y_km": 2
+    },
+    {
+      "id": "K07",
+      "name": "Kavşak K07",
+      "node_type": "intersection",
+      "x_km": 4,
+      "y_km": 2
+    },
+    {
+      "id": "K08",
+      "name": "Kavşak K08",
+      "node_type": "intersection",
+      "x_km": 6,
+      "y_km": 2
+    },
+    {
+      "id": "A4",
+      "name": "Afet noktası A4",
+      "node_type": "disaster_area",
+      "x_km": 8,
+      "y_km": 2,
+      "affected_count": 60,
+      "injured_count": 8,
+      "urgency_level": 2
+    },
+    {
+      "id": "K09",
+      "name": "Kavşak K09",
+      "node_type": "intersection",
+      "x_km": 10,
+      "y_km": 2
+    },
+    {
+      "id": "H0",
+      "name": "Yardım merkezi H0",
+      "node_type": "aid_center",
+      "x_km": 0,
+      "y_km": 4
+    },
+    {
+      "id": "K10",
+      "name": "Kavşak K10",
+      "node_type": "intersection",
+      "x_km": 2,
+      "y_km": 4
+    },
+    {
+      "id": "K11",
+      "name": "Kavşak K11",
+      "node_type": "intersection",
+      "x_km": 4,
+      "y_km": 4
+    },
+    {
+      "id": "K12",
+      "name": "Kavşak K12",
+      "node_type": "intersection",
+      "x_km": 6,
+      "y_km": 4
+    },
+    {
+      "id": "K13",
+      "name": "Kavşak K13",
+      "node_type": "intersection",
+      "x_km": 8,
+      "y_km": 4
+    },
+    {
+      "id": "A3",
+      "name": "Afet noktası A3",
+      "node_type": "disaster_area",
+      "x_km": 10,
+      "y_km": 4,
+      "affected_count": 160,
+      "injured_count": 32,
+      "urgency_level": 5
+    },
+    {
+      "id": "K14",
+      "name": "Kavşak K14",
+      "node_type": "intersection",
+      "x_km": 0,
+      "y_km": 6
+    },
+    {
+      "id": "K15",
+      "name": "Kavşak K15",
+      "node_type": "intersection",
+      "x_km": 2,
+      "y_km": 6
+    },
+    {
+      "id": "K16",
+      "name": "Kavşak K16",
+      "node_type": "intersection",
+      "x_km": 4,
+      "y_km": 6
+    },
+    {
+      "id": "K17",
+      "name": "Kavşak K17",
+      "node_type": "intersection",
+      "x_km": 6,
+      "y_km": 6
+    },
+    {
+      "id": "A2",
+      "name": "Afet noktası A2",
+      "node_type": "disaster_area",
+      "x_km": 8,
+      "y_km": 6,
+      "affected_count": 80,
+      "injured_count": 12,
+      "urgency_level": 3
+    },
+    {
+      "id": "K18",
+      "name": "Kavşak K18",
+      "node_type": "intersection",
+      "x_km": 10,
+      "y_km": 6
+    },
+    {
+      "id": "H1",
+      "name": "Yardım merkezi H1",
+      "node_type": "aid_center",
+      "x_km": 0,
+      "y_km": 8
+    },
+    {
+      "id": "K19",
+      "name": "Kavşak K19",
+      "node_type": "intersection",
+      "x_km": 2,
+      "y_km": 8
+    },
+    {
+      "id": "K20",
+      "name": "Kavşak K20",
+      "node_type": "intersection",
+      "x_km": 4,
+      "y_km": 8
+    },
+    {
+      "id": "K21",
+      "name": "Kavşak K21",
+      "node_type": "intersection",
+      "x_km": 6,
+      "y_km": 8
+    },
+    {
+      "id": "K22",
+      "name": "Kavşak K22",
+      "node_type": "intersection",
+      "x_km": 8,
+      "y_km": 8
+    },
+    {
+      "id": "A1",
+      "name": "Afet noktası A1",
+      "node_type": "disaster_area",
+      "x_km": 10,
+      "y_km": 8,
+      "affected_count": 120,
+      "injured_count": 25,
+      "urgency_level": 5
+    }
+  ],
+  "roads": [
+    {
+      "id": "R01",
+      "source": "K01",
+      "target": "K02",
+      "distance_km": 2.2,
+      "travel_time_min": 5.5,
+      "status": "open"
+    },
+    {
+      "id": "R02",
+      "source": "K02",
+      "target": "A6",
+      "distance_km": 2.2,
+      "travel_time_min": 4.4,
+      "status": "closed"
+    },
+    {
+      "id": "R03",
+      "source": "A6",
+      "target": "K03",
+      "distance_km": 2.2,
+      "travel_time_min": 3.67,
+      "status": "closed"
+    },
+    {
+      "id": "R04",
+      "source": "K03",
+      "target": "K04",
+      "distance_km": 2.2,
+      "travel_time_min": 5.5,
+      "status": "open"
+    },
+    {
+      "id": "R05",
+      "source": "K04",
+      "target": "A5",
+      "distance_km": 2.2,
+      "travel_time_min": 4.4,
+      "status": "damaged"
+    },
+    {
+      "id": "R06",
+      "source": "K05",
+      "target": "K06",
+      "distance_km": 2.2,
+      "travel_time_min": 3.67,
+      "status": "open"
+    },
+    {
+      "id": "R07",
+      "source": "K06",
+      "target": "K07",
+      "distance_km": 2.2,
+      "travel_time_min": 5.5,
+      "status": "open"
+    },
+    {
+      "id": "R08",
+      "source": "K07",
+      "target": "K08",
+      "distance_km": 2.2,
+      "travel_time_min": 4.4,
+      "status": "open"
+    },
+    {
+      "id": "R09",
+      "source": "K08",
+      "target": "A4",
+      "distance_km": 2.2,
+      "travel_time_min": 3.67,
+      "status": "open"
+    },
+    {
+      "id": "R10",
+      "source": "A4",
+      "target": "K09",
+      "distance_km": 2.2,
+      "travel_time_min": 5.5,
+      "status": "open"
+    },
+    {
+      "id": "R11",
+      "source": "H0",
+      "target": "K10",
+      "distance_km": 2.2,
+      "travel_time_min": 4.4,
+      "status": "open"
+    },
+    {
+      "id": "R12",
+      "source": "K10",
+      "target": "K11",
+      "distance_km": 2.2,
+      "travel_time_min": 3.67,
+      "status": "damaged"
+    },
+    {
+      "id": "R13",
+      "source": "K11",
+      "target": "K12",
+      "distance_km": 2.2,
+      "travel_time_min": 5.5,
+      "status": "closed"
+    },
+    {
+      "id": "R14",
+      "source": "K12",
+      "target": "K13",
+      "distance_km": 2.2,
+      "travel_time_min": 4.4,
+      "status": "open"
+    },
+    {
+      "id": "R15",
+      "source": "K13",
+      "target": "A3",
+      "distance_km": 2.2,
+      "travel_time_min": 3.67,
+      "status": "closed"
+    },
+    {
+      "id": "R16",
+      "source": "K14",
+      "target": "K15",
+      "distance_km": 2.2,
+      "travel_time_min": 5.5,
+      "status": "open"
+    },
+    {
+      "id": "R17",
+      "source": "K15",
+      "target": "K16",
+      "distance_km": 2.2,
+      "travel_time_min": 4.4,
+      "status": "open"
+    },
+    {
+      "id": "R18",
+      "source": "K16",
+      "target": "K17",
+      "distance_km": 2.2,
+      "travel_time_min": 3.67,
+      "status": "open"
+    },
+    {
+      "id": "R19",
+      "source": "K17",
+      "target": "A2",
+      "distance_km": 2.2,
+      "travel_time_min": 5.5,
+      "status": "damaged"
+    },
+    {
+      "id": "R20",
+      "source": "A2",
+      "target": "K18",
+      "distance_km": 2.2,
+      "travel_time_min": 4.4,
+      "status": "damaged"
+    },
+    {
+      "id": "R21",
+      "source": "H1",
+      "target": "K19",
+      "distance_km": 2.2,
+      "travel_time_min": 3.67,
+      "status": "open"
+    },
+    {
+      "id": "R22",
+      "source": "K19",
+      "target": "K20",
+      "distance_km": 2.2,
+      "travel_time_min": 5.5,
+      "status": "damaged"
+    },
+    {
+      "id": "R23",
+      "source": "K20",
+      "target": "K21",
+      "distance_km": 2.2,
+      "travel_time_min": 4.4,
+      "status": "open"
+    },
+    {
+      "id": "R24",
+      "source": "K21",
+      "target": "K22",
+      "distance_km": 2.2,
+      "travel_time_min": 3.67,
+      "status": "damaged"
+    },
+    {
+      "id": "R25",
+      "source": "K22",
+      "target": "A1",
+      "distance_km": 2.2,
+      "travel_time_min": 5.5,
+      "status": "open"
+    },
+    {
+      "id": "R26",
+      "source": "K01",
+      "target": "K05",
+      "distance_km": 2.2,
+      "travel_time_min": 4.4,
+      "status": "open"
+    },
+    {
+      "id": "R27",
+      "source": "K02",
+      "target": "K06",
+      "distance_km": 2.2,
+      "travel_time_min": 3.67,
+      "status": "open"
+    },
+    {
+      "id": "R28",
+      "source": "A6",
+      "target": "K07",
+      "distance_km": 2.2,
+      "travel_time_min": 5.5,
+      "status": "closed"
+    },
+    {
+      "id": "R29",
+      "source": "K03",
+      "target": "K08",
+      "distance_km": 2.2,
+      "travel_time_min": 4.4,
+      "status": "open"
+    },
+    {
+      "id": "R30",
+      "source": "K04",
+      "target": "A4",
+      "distance_km": 2.2,
+      "travel_time_min": 3.67,
+      "status": "open"
+    },
+    {
+      "id": "R31",
+      "source": "A5",
+      "target": "K09",
+      "distance_km": 2.2,
+      "travel_time_min": 5.5,
+      "status": "open"
+    },
+    {
+      "id": "R32",
+      "source": "K05",
+      "target": "H0",
+      "distance_km": 2.2,
+      "travel_time_min": 4.4,
+      "status": "open"
+    },
+    {
+      "id": "R33",
+      "source": "K06",
+      "target": "K10",
+      "distance_km": 2.2,
+      "travel_time_min": 3.67,
+      "status": "open"
+    },
+    {
+      "id": "R34",
+      "source": "K07",
+      "target": "K11",
+      "distance_km": 2.2,
+      "travel_time_min": 5.5,
+      "status": "open"
+    },
+    {
+      "id": "R35",
+      "source": "K08",
+      "target": "K12",
+      "distance_km": 2.2,
+      "travel_time_min": 4.4,
+      "status": "open"
+    },
+    {
+      "id": "R36",
+      "source": "A4",
+      "target": "K13",
+      "distance_km": 2.2,
+      "travel_time_min": 3.67,
+      "status": "damaged"
+    },
+    {
+      "id": "R37",
+      "source": "K09",
+      "target": "A3",
+      "distance_km": 2.2,
+      "travel_time_min": 5.5,
+      "status": "damaged"
+    },
+    {
+      "id": "R38",
+      "source": "H0",
+      "target": "K14",
+      "distance_km": 2.2,
+      "travel_time_min": 4.4,
+      "status": "open"
+    },
+    {
+      "id": "R39",
+      "source": "K10",
+      "target": "K15",
+      "distance_km": 2.2,
+      "travel_time_min": 3.67,
+      "status": "open"
+    },
+    {
+      "id": "R40",
+      "source": "K11",
+      "target": "K16",
+      "distance_km": 2.2,
+      "travel_time_min": 5.5,
+      "status": "open"
+    },
+    {
+      "id": "R41",
+      "source": "K12",
+      "target": "K17",
+      "distance_km": 2.2,
+      "travel_time_min": 4.4,
+      "status": "open"
+    },
+    {
+      "id": "R42",
+      "source": "K13",
+      "target": "A2",
+      "distance_km": 2.2,
+      "travel_time_min": 3.67,
+      "status": "open"
+    },
+    {
+      "id": "R43",
+      "source": "A3",
+      "target": "K18",
+      "distance_km": 2.2,
+      "travel_time_min": 5.5,
+      "status": "open"
+    },
+    {
+      "id": "R44",
+      "source": "K14",
+      "target": "H1",
+      "distance_km": 2.2,
+      "travel_time_min": 4.4,
+      "status": "open"
+    },
+    {
+      "id": "R45",
+      "source": "K15",
+      "target": "K19",
+      "distance_km": 2.2,
+      "travel_time_min": 3.67,
+      "status": "open"
+    },
+    {
+      "id": "R46",
+      "source": "K16",
+      "target": "K20",
+      "distance_km": 2.2,
+      "travel_time_min": 5.5,
+      "status": "open"
+    },
+    {
+      "id": "R47",
+      "source": "K17",
+      "target": "K21",
+      "distance_km": 2.2,
+      "travel_time_min": 4.4,
+      "status": "closed"
+    },
+    {
+      "id": "R48",
+      "source": "A2",
+      "target": "K22",
+      "distance_km": 2.2,
+      "travel_time_min": 3.67,
+      "status": "open"
+    },
+    {
+      "id": "R49",
+      "source": "K18",
+      "target": "A1",
+      "distance_km": 2.2,
+      "travel_time_min": 5.5,
+      "status": "open"
+    },
+    {
+      "id": "R50",
+      "source": "K05",
+      "target": "K10",
+      "distance_km": 3.11,
+      "travel_time_min": 6.22,
+      "status": "open"
+    },
+    {
+      "id": "R51",
+      "source": "K15",
+      "target": "K20",
+      "distance_km": 3.11,
+      "travel_time_min": 5.18,
+      "status": "open"
+    },
+    {
+      "id": "R52",
+      "source": "K11",
+      "target": "K17",
+      "distance_km": 3.11,
+      "travel_time_min": 7.77,
+      "status": "damaged"
+    },
+    {
+      "id": "R53",
+      "source": "K03",
+      "target": "A4",
+      "distance_km": 3.11,
+      "travel_time_min": 6.22,
+      "status": "open"
+    },
+    {
+      "id": "R54",
+      "source": "K12",
+      "target": "A2",
+      "distance_km": 3.11,
+      "travel_time_min": 5.18,
+      "status": "open"
+    },
+    {
+      "id": "R55",
+      "source": "A2",
+      "target": "A1",
+      "distance_km": 3.11,
+      "travel_time_min": 7.77,
+      "status": "damaged"
+    }
+  ]
+}
