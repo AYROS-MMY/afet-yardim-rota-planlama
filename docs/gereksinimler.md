@@ -23,6 +23,8 @@ Simüle edilmiş afet bölgesinde yardım araçlarının yol koşulları ve afet
 - **K3 — Hata yönetimi:** Ulaşılamayan hedef ve uygun araç bulunamaması kontrollü sonuç üretmelidir. Arayüzde işlem bekleme durumu başarıda ve hatada sonlanmalıdır.
 - **K4 — Test edilebilirlik:** Algoritmalar arayüzden bağımsız olmalı; aynı senaryo ve koşullarda yapılan deneyler kaydedilebilmelidir. Performans eşiği deneylerden sonra belirlenecektir.
 
-## Kısıtlar ve ikinci hafta durumu
+## Kısıtlar ve üçüncü hafta durumu
 
-Ana dil Python'dur. İlk çizge çift yönlü yollar ve yerel düzlem koordinatları kullanır. Gerçek zamanlı saha verisi, canlı trafik, gerçek araç takibi ve kapsamlı VRP çözümü ilk sürüm kapsamı dışındadır. İkinci haftada G1 ve G2'nin yol durumu/kapalı yol filtreleme kısmı gerçekleştirilmiştir; rota maliyeti ve diğer hedefler sonraki aşamalardadır.
+Ana dil Python'dur. İlk çizge çift yönlü yollar ve yerel düzlem koordinatları kullanır. Gerçek zamanlı saha verisi, canlı trafik, gerçek araç takibi ve kapsamlı VRP çözümü ilk sürüm kapsamı dışındadır.
+
+19 Ekim 2026 itibarıyla G1 veri yükleme/doğrulama ve G2 açık/hasarlı/kapalı yol maliyeti uygulanmıştır. G3 kapsamında Dijkstra çalışmaktadır; A* sonraki haftaya planlanmıştır. G7 için statik SVG üzerinde rota ve terminalde tüm rota ölçümleri gösterilmektedir. K2'nin kapalı yol ve Dijkstra doğruluk kontrolleri, K3'ün ulaşılamayan hedef kontrolü ve K4'ün arayüzden bağımsız test yapısı mevcuttur. G4–G6, A* karşılaştırması ve araç/arayüz hata durumları henüz uygulanmamıştır. Güncel doğrulama: 38 başarılı test metodu; ayrıntılar [üçüncü hafta notunda](hafta3.md).

@@ -1,4 +1,4 @@
-"""Kullanım: python -m ayros [senaryo.json] [--svg cikti.svg]"""
+"""Senaryo özeti ve isteğe bağlı Dijkstra rotası: --start H0 --target A1."""
 
 import argparse
 import sys
@@ -7,16 +7,24 @@ from pathlib import Path
 
 from .model import NodeType, RoadStatus, ValidationError
 from .scenario import load_scenario
+from .routing import CostModel, find_shortest_path
 from .visualize import write_svg
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="AYROS MMY ikinci hafta senaryo incelemesi")
+    parser = argparse.ArgumentParser(description="AYROS MMY senaryo incelemesi ve Dijkstra rotası")
     parser.add_argument("scenario", nargs="?", type=Path,
                         default=Path(__file__).resolve().parent.parent / "data" / "hafta2_senaryo.json")
     parser.add_argument("--svg", type=Path, help="Çizge görselinin kaydedileceği SVG dosyası")
+    parser.add_argument("--start", help="Başlangıç düğüm kimliği")
+    parser.add_argument("--target", help="Hedef düğüm kimliği")
+    parser.add_argument("--damage-factor", type=float, default=2.0,
+                        help="Hasarlı yol süresi çarpanı (en az 1, varsayılan 2)")
     args = parser.parse_args()
+    if (args.start is None) != (args.target is None):
+        parser.error("--start ve --target birlikte verilmelidir.")
     try:
+        cost_model = CostModel(args.damage_factor)
         scenario = load_scenario(args.scenario)
         graph = scenario.graph
         counts = Counter(road.status for road in graph.roads.values())
@@ -33,11 +41,26 @@ def main() -> int:
             if node.node_type == NodeType.DISASTER_AREA:
                 print(f"  {node.id}: {node.affected_count} afetzede, "
                       f"{node.injured_count} yaralı, aciliyet {node.urgency_level}/5")
+        route = None
+        if args.start is not None:
+            route = find_shortest_path(graph, args.start, args.target, cost_model=cost_model)
+            print(f"\nDijkstra | {args.start} -> {args.target} | Hasar katsayısı: {cost_model.damaged_factor:g}")
+            if route.found:
+                print("Rota: " + " -> ".join(route.path))
+                print("Yollar: " + (", ".join(route.road_ids) or "yol geçişi yok"))
+                print(f"Maliyet / hasar dahil tahmini süre: {route.cost_min:.2f} dk")
+                print(f"Temel süre (hasar etkisi hariç): {route.base_time_min:.2f} dk")
+                print(f"Toplam mesafe: {route.distance_km:.2f} km")
+            else:
+                print("Rota bulunamadı: hedefe geçilebilir yollardan ulaşılamıyor.")
+            print(f"İncelenen düğüm: {route.settled_nodes}")
+            print(f"Hesaplama süresi: {route.elapsed_ms:.3f} ms (tek çalıştırma)")
         if args.svg:
-            write_svg(scenario, args.svg)
+            write_svg(scenario, args.svg, route=route)
             print(f"\nÇizge görseli: {args.svg}")
-        print("\nBu sürüm veri modelini gösterir; rota ve araç atama hesabı içermez.")
-        return 0
+        if route is None:
+            print("\nRota için --start ve --target kullanın. Araç atama henüz yoktur.")
+        return 3 if route is not None and not route.found else 0
     except (ValidationError, OSError) as error:
         print(f"Hata: {error}", file=sys.stderr)
         return 1

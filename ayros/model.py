@@ -1,4 +1,4 @@
-"""İkinci hafta: yönsüz çizge, düğüm ve yol modeli. Henüz rota hesabı yoktur."""
+"""Yönsüz çizge, düğüm ve yol modeli; rota hesabı routing modülündedir."""
 
 from dataclasses import dataclass
 from enum import Enum
@@ -27,9 +27,14 @@ def require_text(value: str, field: str) -> None:
 
 
 def require_number(value: float, field: str, *, positive: bool = False) -> None:
-    if (isinstance(value, bool) or not isinstance(value, (int, float))
-            or not isfinite(value)):
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
         raise ValidationError(f"{field}: sonlu bir sayı olmalıdır.")
+    try:
+        finite = isfinite(value)
+    except OverflowError:
+        finite = False
+    if not finite:
+        raise ValidationError(f"{field}: desteklenen aralıkta sonlu bir sayı olmalıdır.")
     if positive and value <= 0:
         raise ValidationError(f"{field}: sıfırdan büyük olmalıdır.")
 
@@ -89,7 +94,7 @@ class Graph:
     """Yolları iki yönde saklayan basit komşuluk listesi.
 
     Kapalı yollar modelde korunur, geçilebilir komşu sorgusunda filtrelenir.
-    Hasarlı yollar geçilebilirdir; hasar maliyeti sonraki aşamada eklenecektir.
+    Hasarlı yollar geçilebilirdir; hasar maliyeti routing modülünde hesaplanır.
     """
 
     def __init__(self, nodes: list[Node], roads: list[Road]) -> None:

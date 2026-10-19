@@ -3,7 +3,7 @@
 
 AYROS MMY, simüle edilmiş afet bölgelerinde yardım araçlarının yol koşulları ve ihtiyaç öncelikleri dikkate alınarak yönlendirilmesi amacıyla geliştirilecek bir akademik projedir. Dijkstra ve A* algoritmalarıyla rota hesaplama, değişen yol koşullarına göre yeniden planlama ve temel düzeyde çoklu araç görev dağıtımı hedeflenmektedir.
 
-> **Proje durumu — 2. hafta:** İlk çizge modeli, JSON senaryo okuma, veri doğrulama, komşuluk sorguları ve statik SVG gösterimi tamamlandı. Rota algoritmaları, hasar maliyeti, araç atama ve hareket simülasyonu henüz geliştirilmedi. Aşağıdaki genel kapsam bu sonraki hedefleri de içerir.
+> **Proje durumu — 3. hafta:** Veri modeline Dijkstra, dakika cinsinden yol maliyeti, rota ölçümleri ve SVG üzerinde rota gösterimi eklendi. **38 otomatik test başarılıdır.** A*, afet öncelik puanı, araç atama ve hareket simülasyonu sonraki haftaların hedefleridir. [Üçüncü hafta notu ve sunum akışı](docs/hafta3.md)
 
 ## Proje Hakkında
 
@@ -64,7 +64,7 @@ Gerekiyorsa yeniden rota hesaplama
 
 ### Dijkstra
 
-Dijkstra algoritması, negatif olmayan kenar ağırlıklarına sahip bir çizgede başlangıç düğümünden diğer düğümlere en düşük maliyetli yolları bulmak için kullanılacaktır. Projede kenar maliyetlerinin yol bilgileri ve yol koşulları temelinde tanımlanması planlanmaktadır. Kapalı yollar aramaya dahil edilmeyecek, hasarlı yollar için artırılmış maliyet uygulanacaktır.
+Dijkstra uygulaması seçilen başlangıç ve hedef arasında en düşük süre maliyetli rotayı bulur. Açık yolun maliyeti temel süresidir; hasarlı yolun süresi varsayılan olarak 2 ile çarpılır. Kapalı yollar aramaya dahil edilmez. `heapq` yalnızca öncelik kuyruğu için kullanılır; arama ve rotanın geri kurulması proje kodundadır.
 
 Dijkstra, aynı senaryolarda A* ile karşılaştırılacak temel rota algoritmalarından biri olacaktır.
 
@@ -84,13 +84,11 @@ Düğümlerin konum bilgileri ve seçilen maliyet modeli uygun olduğunda Öklid
 
 ## Yol Modeli
 
-| Yol durumu | Sistemde planlanan değerlendirme |
-| --- | --- |
-| **Açık** | Mesafe ve tahmini geçiş süresi gibi yol bilgileri üzerinden hesaplanan temel maliyetle rota aramasına dahil edilecektir. |
-| **Hasarlı** | Geçişe izin verilecek; olumsuz yol koşullarını yansıtmak için rota maliyeti artırılacaktır. |
-| **Kapalı** | Geçişe izin verilmeyecek ve rota hesabında kullanılamayacaktır. |
+- **Açık:** Maliyet = `travel_time_min`.
+- **Hasarlı:** Maliyet = `travel_time_min × damaged_factor`.
+- **Kapalı:** Aramadan çıkarılır; senaryo verisinde korunur.
 
-Mesafe, tahmini geçiş süresi ve yol durumunun maliyete nasıl yansıtılacağı tasarım sürecinde netleştirilecektir. Hasarlı yollar için uygulanacak ek maliyet veya katsayı henüz kesinleştirilmemiştir.
+Hasar katsayısı varsayılan **2** olan, en az **1** seçilebilen bir simülasyon varsayımıdır; ölçülmüş saha verisi değildir. Mesafe kilometre, maliyet dakika cinsindedir ve birbirine eklenmez. Toplam mesafe ayrı raporlanır. Hasar dahil tahmini süre ile rota maliyeti bu modelde aynı değerdir; temel süre ise hasar etkisi hariç toplamdır.
 
 ## Afet Noktalarının Önceliklendirilmesi
 
@@ -139,30 +137,35 @@ Bu başlıklar gelecekteki olası geliştirmelerdir; tamamlanmış işlevleri ve
 
 İkinci haftada Python veri modeli ve küçük bir afet senaryosu oluşturuldu. Senaryo **10 düğüm ve 14 çift yönlü yol** içerir: **9 açık, 3 hasarlı, 2 kapalı yol**. Düğümler 1 yardım merkezi, 6 kavşak ve 3 afet noktasından oluşur.
 
-Kapalı yollar veride korunur ve geçilebilir komşu sorgularından çıkarılır. Hasarlı yolların durumu tutulur; henüz ek maliyet uygulanmaz. Rota, öncelik puanı ve araç atama hesabı yapılmaz. **19 otomatik test başarılıdır.**
+Üçüncü haftada bu ağ üzerinde Dijkstra çalıştırıldı. `H0 → K1 → K3 → K5 → A2 → A1` rotasının maliyeti **27,44 dakika**, temel süresi **23,04 dakika**, mesafesi **11,52 km** olarak doğrulandı. Ayrıca elle kontrol için **4 düğüm, 5 yollu** ayrı bir örnek eklendi. Önceki 19 teste 19 rota testi eklendi; **38 test metodu başarılıdır** (19 Ekim 2026).
 
 ## Çalıştırma
 
 Python **3.11 veya üzeri** yeterlidir. Bu sürüm yalnızca standart kütüphaneyi kullanır; ek paket kurulumu gerekmez. Komutları depo klasöründe çalıştırın:
 
 ```bash
-python -m ayros
-python -m ayros --svg docs/hafta2_senaryo.svg
-python -m unittest discover -s tests -v
+py -3.11 -m ayros data/hafta3_ornek.json --start S --target T --svg docs/hafta3_rota.svg
+py -3.11 -m ayros data/hafta3_ornek.json --start S --target T --damage-factor 1
+py -3.11 -m ayros --start H0 --target A1
+py -3.11 -m unittest discover -s tests -v
 ```
 
-Farklı bir senaryo için `python -m ayros data/hafta2_senaryo.json` komutunu kullanabilirsiniz. Windows'ta Python komutu `py` ise `python` yerine `py` yazın. Hatalı dosyalarda program anlaşılır hata ile `1`, başarılı çalışmada `0` çıkış kodu döndürür.
+Komutlar Windows Python başlatıcısını kullanır. Diğer sistemlerde `py -3.11` yerine Python 3.11+ yorumlayıcınızın `python` veya `python3` komutunu kullanın. İlk komut **S → C → T, 5 dakika** sonucunu verir. İkincisi katsayıyı 1 yapar ve **S → B → T, 4 dakika** bulur. SVG dosyasını tarayıcıda açabilirsiniz. Parametresiz `py -3.11 -m ayros` önceki senaryo özetini gösterir. Çıkış kodları: başarı `0`, veri/dosya hatası `1`, hatalı komut kullanımı `2`, ulaşılamayan hedef `3`.
 
-![İkinci hafta afet çizgesi](docs/hafta2_senaryo.svg)
+![Üçüncü hafta Dijkstra rotası](docs/hafta3_rota.svg)
 
-## Dosyalar ve ikinci hafta notları
+## Dosyalar ve hafta notları
 
 - `ayros/model.py`: Düğüm, yol ve yönsüz komşuluk listesi.
 - `ayros/scenario.py`: JSON okuma ve veri kontrolleri.
-- `ayros/__main__.py`: Terminalde senaryo özeti.
-- `ayros/visualize.py`: Veriden SVG üretimi.
+- `ayros/routing.py`: Maliyet modeli, Dijkstra ve rota ölçümleri.
+- `ayros/__main__.py`: Terminalde senaryo ve rota çıktısı.
+- `ayros/visualize.py`: Veriden SVG üretimi ve seçilen rotanın gösterilmesi.
 - `data/hafta2_senaryo.json`: Tekrarlanabilir örnek senaryo.
 - `tests/test_scenario.py`: Model, dosya okuma, görsel ve komut satırı testleri.
+- `data/hafta3_ornek.json`: Elle doğrulanabilen rota örneği.
+- `tests/test_routing.py`: Rota doğruluğu, sınır durumları, CLI ve SVG kontrolleri.
+- [Üçüncü hafta: maliyet modeli, doğrulama ve sunum](docs/hafta3.md)
 - [Veri sözlüğü ve sunum adımları](docs/hafta2.md)
 - [Gereksinim analizi](docs/gereksinimler.md)
 
