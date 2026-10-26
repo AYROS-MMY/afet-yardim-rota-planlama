@@ -9,6 +9,7 @@ from .model import NodeType, RoadStatus, ValidationError
 from .scenario import load_scenario
 from .routing import CostModel, find_shortest_path
 from .visualize import write_svg
+from .search_visualize import write_search_svg
 from .benchmark import ComparisonResult, compare_algorithms
 
 
@@ -27,6 +28,7 @@ def main() -> int:
     parser.add_argument("scenario", nargs="?", type=Path,
                         default=Path(__file__).resolve().parent.parent / "data" / "hafta3_genis_ag.json")
     parser.add_argument("--svg", type=Path, help="Çizge görselinin kaydedileceği SVG dosyası")
+    parser.add_argument("--search-svg", type=Path, help="--compare ile tek hedefin yan yana arama görseli")
     parser.add_argument("--start", help="Başlangıç düğüm kimliği")
     destinations = parser.add_mutually_exclusive_group()
     destinations.add_argument("--target", help="Hedef düğüm kimliği")
@@ -40,6 +42,8 @@ def main() -> int:
     mode.add_argument("--compare", action="store_true", help="Dijkstra ve A* için tekrarlı karşılaştırma")
     parser.add_argument("--repeats", type=int, help="Karşılaştırmada 1-1000 tekrar (varsayılan 30)")
     args = parser.parse_args()
+    if args.search_svg and (not args.compare or args.target is None):
+        parser.error("--search-svg için --compare ve tek bir --target gerekir.")
     if (args.start is None) != (args.target is None and not args.all_targets):
         parser.error("--start ile --target veya --all-targets birlikte verilmelidir.")
     if args.all_targets and args.svg:
@@ -85,6 +89,12 @@ def main() -> int:
             if args.all_targets:
                 print(f"Erişilebilir afet noktası: {reachable}/{len(targets)}")
             print("Süreler bu bilgisayardaki deneydir; daha az düğüm daha kısa toplam süreyi garanti etmez.")
+            if args.search_svg:
+                traced = {name: find_shortest_path(graph, args.start, args.target, cost_model=cost_model,
+                                                   algorithm=name, record_search=True)
+                          for name in ("dijkstra", "astar")}
+                write_search_svg(scenario, args.search_svg, start=args.start, target=args.target, cost_model=cost_model, **traced)
+                print(f"Arama karşılaştırma görseli: {args.search_svg}")
         elif args.all_targets:
             # Her hedef bağımsız bir sorgudur; araç atama/ziyaret sırası değildir.
             graph.neighbors(args.start)  # Afet noktası olmasa bile kimliği doğrula.

@@ -1,0 +1,4449 @@
+{
+  "schema_version": 1,
+  "name": "Bölgesel afet ağı",
+  "description": "Sabit tohum 20261026; 180 düğüm, 3 merkez, 12 afet noktası, 165 kavşak. Düzlemsel düzensiz sokaklar ve 3 köprü. A12 iki kapalı girişle yalıtılmıştır. Sentetik yerel koordinatlar; saha verisi değildir. Hızlar ana/ikincil/yerel/köprü için 40/30/20/25 km/saat.",
+  "directed": false,
+  "coordinate_system": "cartesian_km",
+  "nodes": [
+    {
+      "id": "H0",
+      "name": "H0",
+      "node_type": "aid_center",
+      "x_km": 1.0,
+      "y_km": 8.0
+    },
+    {
+      "id": "H1",
+      "name": "H1",
+      "node_type": "aid_center",
+      "x_km": 24.0,
+      "y_km": 2.0
+    },
+    {
+      "id": "H2",
+      "name": "H2",
+      "node_type": "aid_center",
+      "x_km": 23.0,
+      "y_km": 15.0
+    },
+    {
+      "id": "A01",
+      "name": "A01",
+      "node_type": "disaster_area",
+      "x_km": 2,
+      "y_km": 14,
+      "affected_count": 62,
+      "injured_count": 13,
+      "urgency_level": 4
+    },
+    {
+      "id": "A02",
+      "name": "A02",
+      "node_type": "disaster_area",
+      "x_km": 6,
+      "y_km": 12,
+      "affected_count": 79,
+      "injured_count": 20,
+      "urgency_level": 2
+    },
+    {
+      "id": "A03",
+      "name": "A03",
+      "node_type": "disaster_area",
+      "x_km": 10,
+      "y_km": 15,
+      "affected_count": 96,
+      "injured_count": 27,
+      "urgency_level": 5
+    },
+    {
+      "id": "A04",
+      "name": "A04",
+      "node_type": "disaster_area",
+      "x_km": 4,
+      "y_km": 7,
+      "affected_count": 113,
+      "injured_count": 34,
+      "urgency_level": 3
+    },
+    {
+      "id": "A05",
+      "name": "A05",
+      "node_type": "disaster_area",
+      "x_km": 9,
+      "y_km": 4,
+      "affected_count": 130,
+      "injured_count": 41,
+      "urgency_level": 1
+    },
+    {
+      "id": "A06",
+      "name": "A06",
+      "node_type": "disaster_area",
+      "x_km": 5,
+      "y_km": 2,
+      "affected_count": 147,
+      "injured_count": 6,
+      "urgency_level": 4
+    },
+    {
+      "id": "A07",
+      "name": "A07",
+      "node_type": "disaster_area",
+      "x_km": 16,
+      "y_km": 14,
+      "affected_count": 164,
+      "injured_count": 13,
+      "urgency_level": 2
+    },
+    {
+      "id": "A08",
+      "name": "A08",
+      "node_type": "disaster_area",
+      "x_km": 21,
+      "y_km": 11,
+      "affected_count": 181,
+      "injured_count": 20,
+      "urgency_level": 5
+    },
+    {
+      "id": "A09",
+      "name": "A09",
+      "node_type": "disaster_area",
+      "x_km": 24,
+      "y_km": 8,
+      "affected_count": 198,
+      "injured_count": 27,
+      "urgency_level": 3
+    },
+    {
+      "id": "A10",
+      "name": "A10",
+      "node_type": "disaster_area",
+      "x_km": 17,
+      "y_km": 6,
+      "affected_count": 215,
+      "injured_count": 34,
+      "urgency_level": 1
+    },
+    {
+      "id": "A11",
+      "name": "A11",
+      "node_type": "disaster_area",
+      "x_km": 20,
+      "y_km": 2,
+      "affected_count": 232,
+      "injured_count": 41,
+      "urgency_level": 4
+    },
+    {
+      "id": "A12",
+      "name": "A12",
+      "node_type": "disaster_area",
+      "x_km": 0.4,
+      "y_km": 0.4,
+      "affected_count": 249,
+      "injured_count": 6,
+      "urgency_level": 2
+    },
+    {
+      "id": "K001",
+      "name": "K001",
+      "node_type": "intersection",
+      "x_km": 12,
+      "y_km": 3
+    },
+    {
+      "id": "K002",
+      "name": "K002",
+      "node_type": "intersection",
+      "x_km": 14,
+      "y_km": 3
+    },
+    {
+      "id": "K003",
+      "name": "K003",
+      "node_type": "intersection",
+      "x_km": 12,
+      "y_km": 8
+    },
+    {
+      "id": "K004",
+      "name": "K004",
+      "node_type": "intersection",
+      "x_km": 14,
+      "y_km": 8
+    },
+    {
+      "id": "K005",
+      "name": "K005",
+      "node_type": "intersection",
+      "x_km": 12,
+      "y_km": 13
+    },
+    {
+      "id": "K006",
+      "name": "K006",
+      "node_type": "intersection",
+      "x_km": 14,
+      "y_km": 13
+    },
+    {
+      "id": "K007",
+      "name": "K007",
+      "node_type": "intersection",
+      "x_km": 1.926,
+      "y_km": 4.146
+    },
+    {
+      "id": "K008",
+      "name": "K008",
+      "node_type": "intersection",
+      "x_km": 15.936,
+      "y_km": 7.945
+    },
+    {
+      "id": "K009",
+      "name": "K009",
+      "node_type": "intersection",
+      "x_km": 6.553,
+      "y_km": 0.928
+    },
+    {
+      "id": "K010",
+      "name": "K010",
+      "node_type": "intersection",
+      "x_km": 18.826,
+      "y_km": 6.014
+    },
+    {
+      "id": "K011",
+      "name": "K011",
+      "node_type": "intersection",
+      "x_km": 4.389,
+      "y_km": 10.31
+    },
+    {
+      "id": "K012",
+      "name": "K012",
+      "node_type": "intersection",
+      "x_km": 17.427,
+      "y_km": 8.122
+    },
+    {
+      "id": "K013",
+      "name": "K013",
+      "node_type": "intersection",
+      "x_km": 4.389,
+      "y_km": 13.815
+    },
+    {
+      "id": "K014",
+      "name": "K014",
+      "node_type": "intersection",
+      "x_km": 24.768,
+      "y_km": 1.578
+    },
+    {
+      "id": "K015",
+      "name": "K015",
+      "node_type": "intersection",
+      "x_km": 3.062,
+      "y_km": 8.096
+    },
+    {
+      "id": "K016",
+      "name": "K016",
+      "node_type": "intersection",
+      "x_km": 21.19,
+      "y_km": 14.827
+    },
+    {
+      "id": "K017",
+      "name": "K017",
+      "node_type": "intersection",
+      "x_km": 2.094,
+      "y_km": 6.498
+    },
+    {
+      "id": "K018",
+      "name": "K018",
+      "node_type": "intersection",
+      "x_km": 24.25,
+      "y_km": 5.326
+    },
+    {
+      "id": "K019",
+      "name": "K019",
+      "node_type": "intersection",
+      "x_km": 8.851,
+      "y_km": 6.561
+    },
+    {
+      "id": "K020",
+      "name": "K020",
+      "node_type": "intersection",
+      "x_km": 17.984,
+      "y_km": 1.829
+    },
+    {
+      "id": "K021",
+      "name": "K021",
+      "node_type": "intersection",
+      "x_km": 9.302,
+      "y_km": 11.853
+    },
+    {
+      "id": "K022",
+      "name": "K022",
+      "node_type": "intersection",
+      "x_km": 16.102,
+      "y_km": 5.524
+    },
+    {
+      "id": "K023",
+      "name": "K023",
+      "node_type": "intersection",
+      "x_km": 7.011,
+      "y_km": 11.329
+    },
+    {
+      "id": "K024",
+      "name": "K024",
+      "node_type": "intersection",
+      "x_km": 24.589,
+      "y_km": 3.046
+    },
+    {
+      "id": "K025",
+      "name": "K025",
+      "node_type": "intersection",
+      "x_km": 2.909,
+      "y_km": 3.089
+    },
+    {
+      "id": "K026",
+      "name": "K026",
+      "node_type": "intersection",
+      "x_km": 19.641,
+      "y_km": 4.324
+    },
+    {
+      "id": "K027",
+      "name": "K027",
+      "node_type": "intersection",
+      "x_km": 1.356,
+      "y_km": 7.05
+    },
+    {
+      "id": "K028",
+      "name": "K028",
+      "node_type": "intersection",
+      "x_km": 25.066,
+      "y_km": 8.663
+    },
+    {
+      "id": "K029",
+      "name": "K029",
+      "node_type": "intersection",
+      "x_km": 7.94,
+      "y_km": 13.153
+    },
+    {
+      "id": "K030",
+      "name": "K030",
+      "node_type": "intersection",
+      "x_km": 16.914,
+      "y_km": 7.453
+    },
+    {
+      "id": "K031",
+      "name": "K031",
+      "node_type": "intersection",
+      "x_km": 2.078,
+      "y_km": 3.216
+    },
+    {
+      "id": "K032",
+      "name": "K032",
+      "node_type": "intersection",
+      "x_km": 17.516,
+      "y_km": 11.374
+    },
+    {
+      "id": "K033",
+      "name": "K033",
+      "node_type": "intersection",
+      "x_km": 9.602,
+      "y_km": 10.297
+    },
+    {
+      "id": "K034",
+      "name": "K034",
+      "node_type": "intersection",
+      "x_km": 20.908,
+      "y_km": 15.488
+    },
+    {
+      "id": "K035",
+      "name": "K035",
+      "node_type": "intersection",
+      "x_km": 3.879,
+      "y_km": 11.352
+    },
+    {
+      "id": "K036",
+      "name": "K036",
+      "node_type": "intersection",
+      "x_km": 21.482,
+      "y_km": 1.994
+    },
+    {
+      "id": "K037",
+      "name": "K037",
+      "node_type": "intersection",
+      "x_km": 1.563,
+      "y_km": 0.951
+    },
+    {
+      "id": "K038",
+      "name": "K038",
+      "node_type": "intersection",
+      "x_km": 17.384,
+      "y_km": 13.746
+    },
+    {
+      "id": "K039",
+      "name": "K039",
+      "node_type": "intersection",
+      "x_km": 10.188,
+      "y_km": 1.513
+    },
+    {
+      "id": "K040",
+      "name": "K040",
+      "node_type": "intersection",
+      "x_km": 23.984,
+      "y_km": 14.25
+    },
+    {
+      "id": "K041",
+      "name": "K041",
+      "node_type": "intersection",
+      "x_km": 11.208,
+      "y_km": 10.338
+    },
+    {
+      "id": "K042",
+      "name": "K042",
+      "node_type": "intersection",
+      "x_km": 25.185,
+      "y_km": 3.516
+    },
+    {
+      "id": "K043",
+      "name": "K043",
+      "node_type": "intersection",
+      "x_km": 4.506,
+      "y_km": 8.047
+    },
+    {
+      "id": "K044",
+      "name": "K044",
+      "node_type": "intersection",
+      "x_km": 20.461,
+      "y_km": 12.465
+    },
+    {
+      "id": "K045",
+      "name": "K045",
+      "node_type": "intersection",
+      "x_km": 5.998,
+      "y_km": 7.206
+    },
+    {
+      "id": "K046",
+      "name": "K046",
+      "node_type": "intersection",
+      "x_km": 16.369,
+      "y_km": 10.937
+    },
+    {
+      "id": "K047",
+      "name": "K047",
+      "node_type": "intersection",
+      "x_km": 11.176,
+      "y_km": 14.882
+    },
+    {
+      "id": "K048",
+      "name": "K048",
+      "node_type": "intersection",
+      "x_km": 24.828,
+      "y_km": 10.819
+    },
+    {
+      "id": "K049",
+      "name": "K049",
+      "node_type": "intersection",
+      "x_km": 5.866,
+      "y_km": 12.842
+    },
+    {
+      "id": "K050",
+      "name": "K050",
+      "node_type": "intersection",
+      "x_km": 18.508,
+      "y_km": 13.071
+    },
+    {
+      "id": "K051",
+      "name": "K051",
+      "node_type": "intersection",
+      "x_km": 2.778,
+      "y_km": 5.301
+    },
+    {
+      "id": "K052",
+      "name": "K052",
+      "node_type": "intersection",
+      "x_km": 22.539,
+      "y_km": 4.654
+    },
+    {
+      "id": "K053",
+      "name": "K053",
+      "node_type": "intersection",
+      "x_km": 8.891,
+      "y_km": 3.135
+    },
+    {
+      "id": "K054",
+      "name": "K054",
+      "node_type": "intersection",
+      "x_km": 22.118,
+      "y_km": 11.158
+    },
+    {
+      "id": "K055",
+      "name": "K055",
+      "node_type": "intersection",
+      "x_km": 5.67,
+      "y_km": 13.928
+    },
+    {
+      "id": "K056",
+      "name": "K056",
+      "node_type": "intersection",
+      "x_km": 18.451,
+      "y_km": 10.03
+    },
+    {
+      "id": "K057",
+      "name": "K057",
+      "node_type": "intersection",
+      "x_km": 11.124,
+      "y_km": 12.276
+    },
+    {
+      "id": "K058",
+      "name": "K058",
+      "node_type": "intersection",
+      "x_km": 20.881,
+      "y_km": 8.699
+    },
+    {
+      "id": "K059",
+      "name": "K059",
+      "node_type": "intersection",
+      "x_km": 5.215,
+      "y_km": 13.262
+    },
+    {
+      "id": "K060",
+      "name": "K060",
+      "node_type": "intersection",
+      "x_km": 23.459,
+      "y_km": 7.51
+    },
+    {
+      "id": "K061",
+      "name": "K061",
+      "node_type": "intersection",
+      "x_km": 7.662,
+      "y_km": 9.32
+    },
+    {
+      "id": "K062",
+      "name": "K062",
+      "node_type": "intersection",
+      "x_km": 16.863,
+      "y_km": 3.123
+    },
+    {
+      "id": "K063",
+      "name": "K063",
+      "node_type": "intersection",
+      "x_km": 7.711,
+      "y_km": 10.499
+    },
+    {
+      "id": "K064",
+      "name": "K064",
+      "node_type": "intersection",
+      "x_km": 22.658,
+      "y_km": 6.053
+    },
+    {
+      "id": "K065",
+      "name": "K065",
+      "node_type": "intersection",
+      "x_km": 8.003,
+      "y_km": 11.827
+    },
+    {
+      "id": "K066",
+      "name": "K066",
+      "node_type": "intersection",
+      "x_km": 22.552,
+      "y_km": 6.786
+    },
+    {
+      "id": "K067",
+      "name": "K067",
+      "node_type": "intersection",
+      "x_km": 5.898,
+      "y_km": 8.571
+    },
+    {
+      "id": "K068",
+      "name": "K068",
+      "node_type": "intersection",
+      "x_km": 20.594,
+      "y_km": 14.037
+    },
+    {
+      "id": "K069",
+      "name": "K069",
+      "node_type": "intersection",
+      "x_km": 10.302,
+      "y_km": 13.43
+    },
+    {
+      "id": "K070",
+      "name": "K070",
+      "node_type": "intersection",
+      "x_km": 15.557,
+      "y_km": 8.652
+    },
+    {
+      "id": "K071",
+      "name": "K071",
+      "node_type": "intersection",
+      "x_km": 8.092,
+      "y_km": 2.149
+    },
+    {
+      "id": "K072",
+      "name": "K072",
+      "node_type": "intersection",
+      "x_km": 20.168,
+      "y_km": 9.425
+    },
+    {
+      "id": "K073",
+      "name": "K073",
+      "node_type": "intersection",
+      "x_km": 8.851,
+      "y_km": 8.806
+    },
+    {
+      "id": "K074",
+      "name": "K074",
+      "node_type": "intersection",
+      "x_km": 23.76,
+      "y_km": 3.394
+    },
+    {
+      "id": "K075",
+      "name": "K075",
+      "node_type": "intersection",
+      "x_km": 2.285,
+      "y_km": 7.687
+    },
+    {
+      "id": "K076",
+      "name": "K076",
+      "node_type": "intersection",
+      "x_km": 22.276,
+      "y_km": 14.194
+    },
+    {
+      "id": "K077",
+      "name": "K077",
+      "node_type": "intersection",
+      "x_km": 9.084,
+      "y_km": 5.7
+    },
+    {
+      "id": "K078",
+      "name": "K078",
+      "node_type": "intersection",
+      "x_km": 17.612,
+      "y_km": 1.03
+    },
+    {
+      "id": "K079",
+      "name": "K079",
+      "node_type": "intersection",
+      "x_km": 6.733,
+      "y_km": 12.736
+    },
+    {
+      "id": "K080",
+      "name": "K080",
+      "node_type": "intersection",
+      "x_km": 14.97,
+      "y_km": 5.67
+    },
+    {
+      "id": "K081",
+      "name": "K081",
+      "node_type": "intersection",
+      "x_km": 7.02,
+      "y_km": 7.437
+    },
+    {
+      "id": "K082",
+      "name": "K082",
+      "node_type": "intersection",
+      "x_km": 23.501,
+      "y_km": 13.108
+    },
+    {
+      "id": "K083",
+      "name": "K083",
+      "node_type": "intersection",
+      "x_km": 6.037,
+      "y_km": 4.467
+    },
+    {
+      "id": "K084",
+      "name": "K084",
+      "node_type": "intersection",
+      "x_km": 25.128,
+      "y_km": 12.898
+    },
+    {
+      "id": "K085",
+      "name": "K085",
+      "node_type": "intersection",
+      "x_km": 1.565,
+      "y_km": 11.251
+    },
+    {
+      "id": "K086",
+      "name": "K086",
+      "node_type": "intersection",
+      "x_km": 21.998,
+      "y_km": 15.446
+    },
+    {
+      "id": "K087",
+      "name": "K087",
+      "node_type": "intersection",
+      "x_km": 3.046,
+      "y_km": 10.215
+    },
+    {
+      "id": "K088",
+      "name": "K088",
+      "node_type": "intersection",
+      "x_km": 22.136,
+      "y_km": 1.246
+    },
+    {
+      "id": "K089",
+      "name": "K089",
+      "node_type": "intersection",
+      "x_km": 7.967,
+      "y_km": 5.544
+    },
+    {
+      "id": "K090",
+      "name": "K090",
+      "node_type": "intersection",
+      "x_km": 16.075,
+      "y_km": 12.367
+    },
+    {
+      "id": "K091",
+      "name": "K091",
+      "node_type": "intersection",
+      "x_km": 7.059,
+      "y_km": 2.991
+    },
+    {
+      "id": "K092",
+      "name": "K092",
+      "node_type": "intersection",
+      "x_km": 22.37,
+      "y_km": 12.695
+    },
+    {
+      "id": "K093",
+      "name": "K093",
+      "node_type": "intersection",
+      "x_km": 3.294,
+      "y_km": 7.241
+    },
+    {
+      "id": "K094",
+      "name": "K094",
+      "node_type": "intersection",
+      "x_km": 15.617,
+      "y_km": 11.023
+    },
+    {
+      "id": "K095",
+      "name": "K095",
+      "node_type": "intersection",
+      "x_km": 10.05,
+      "y_km": 6.336
+    },
+    {
+      "id": "K096",
+      "name": "K096",
+      "node_type": "intersection",
+      "x_km": 18.11,
+      "y_km": 7.81
+    },
+    {
+      "id": "K097",
+      "name": "K097",
+      "node_type": "intersection",
+      "x_km": 7.417,
+      "y_km": 8.518
+    },
+    {
+      "id": "K098",
+      "name": "K098",
+      "node_type": "intersection",
+      "x_km": 16.447,
+      "y_km": 1.746
+    },
+    {
+      "id": "K099",
+      "name": "K099",
+      "node_type": "intersection",
+      "x_km": 5.489,
+      "y_km": 10.789
+    },
+    {
+      "id": "K100",
+      "name": "K100",
+      "node_type": "intersection",
+      "x_km": 21.193,
+      "y_km": 4.932
+    },
+    {
+      "id": "K101",
+      "name": "K101",
+      "node_type": "intersection",
+      "x_km": 2.581,
+      "y_km": 0.925
+    },
+    {
+      "id": "K102",
+      "name": "K102",
+      "node_type": "intersection",
+      "x_km": 21.259,
+      "y_km": 7.918
+    },
+    {
+      "id": "K103",
+      "name": "K103",
+      "node_type": "intersection",
+      "x_km": 2.362,
+      "y_km": 9.932
+    },
+    {
+      "id": "K104",
+      "name": "K104",
+      "node_type": "intersection",
+      "x_km": 16.402,
+      "y_km": 8.52
+    },
+    {
+      "id": "K105",
+      "name": "K105",
+      "node_type": "intersection",
+      "x_km": 3.261,
+      "y_km": 6.396
+    },
+    {
+      "id": "K106",
+      "name": "K106",
+      "node_type": "intersection",
+      "x_km": 23.158,
+      "y_km": 13.745
+    },
+    {
+      "id": "K107",
+      "name": "K107",
+      "node_type": "intersection",
+      "x_km": 6.193,
+      "y_km": 2.58
+    },
+    {
+      "id": "K108",
+      "name": "K108",
+      "node_type": "intersection",
+      "x_km": 19.877,
+      "y_km": 13.752
+    },
+    {
+      "id": "K109",
+      "name": "K109",
+      "node_type": "intersection",
+      "x_km": 4.436,
+      "y_km": 15.415
+    },
+    {
+      "id": "K110",
+      "name": "K110",
+      "node_type": "intersection",
+      "x_km": 19.471,
+      "y_km": 14.667
+    },
+    {
+      "id": "K111",
+      "name": "K111",
+      "node_type": "intersection",
+      "x_km": 4.58,
+      "y_km": 3.258
+    },
+    {
+      "id": "K112",
+      "name": "K112",
+      "node_type": "intersection",
+      "x_km": 18.328,
+      "y_km": 15.137
+    },
+    {
+      "id": "K113",
+      "name": "K113",
+      "node_type": "intersection",
+      "x_km": 9.539,
+      "y_km": 2.354
+    },
+    {
+      "id": "K114",
+      "name": "K114",
+      "node_type": "intersection",
+      "x_km": 24.179,
+      "y_km": 7.128
+    },
+    {
+      "id": "K115",
+      "name": "K115",
+      "node_type": "intersection",
+      "x_km": 9.896,
+      "y_km": 11.294
+    },
+    {
+      "id": "K116",
+      "name": "K116",
+      "node_type": "intersection",
+      "x_km": 18.372,
+      "y_km": 11.705
+    },
+    {
+      "id": "K117",
+      "name": "K117",
+      "node_type": "intersection",
+      "x_km": 6.736,
+      "y_km": 10.643
+    },
+    {
+      "id": "K118",
+      "name": "K118",
+      "node_type": "intersection",
+      "x_km": 17.905,
+      "y_km": 5.719
+    },
+    {
+      "id": "K119",
+      "name": "K119",
+      "node_type": "intersection",
+      "x_km": 1.291,
+      "y_km": 14.954
+    },
+    {
+      "id": "K120",
+      "name": "K120",
+      "node_type": "intersection",
+      "x_km": 20.077,
+      "y_km": 15.145
+    },
+    {
+      "id": "K121",
+      "name": "K121",
+      "node_type": "intersection",
+      "x_km": 2.389,
+      "y_km": 12.119
+    },
+    {
+      "id": "K122",
+      "name": "K122",
+      "node_type": "intersection",
+      "x_km": 20.645,
+      "y_km": 7.116
+    },
+    {
+      "id": "K123",
+      "name": "K123",
+      "node_type": "intersection",
+      "x_km": 3.702,
+      "y_km": 14.154
+    },
+    {
+      "id": "K124",
+      "name": "K124",
+      "node_type": "intersection",
+      "x_km": 25.025,
+      "y_km": 2.236
+    },
+    {
+      "id": "K125",
+      "name": "K125",
+      "node_type": "intersection",
+      "x_km": 2.769,
+      "y_km": 2.062
+    },
+    {
+      "id": "K126",
+      "name": "K126",
+      "node_type": "intersection",
+      "x_km": 16.487,
+      "y_km": 13.031
+    },
+    {
+      "id": "K127",
+      "name": "K127",
+      "node_type": "intersection",
+      "x_km": 7.127,
+      "y_km": 13.362
+    },
+    {
+      "id": "K128",
+      "name": "K128",
+      "node_type": "intersection",
+      "x_km": 22.746,
+      "y_km": 8.07
+    },
+    {
+      "id": "K129",
+      "name": "K129",
+      "node_type": "intersection",
+      "x_km": 3.709,
+      "y_km": 9.337
+    },
+    {
+      "id": "K130",
+      "name": "K130",
+      "node_type": "intersection",
+      "x_km": 18.946,
+      "y_km": 1.429
+    },
+    {
+      "id": "K131",
+      "name": "K131",
+      "node_type": "intersection",
+      "x_km": 9.403,
+      "y_km": 1.486
+    },
+    {
+      "id": "K132",
+      "name": "K132",
+      "node_type": "intersection",
+      "x_km": 23.336,
+      "y_km": 5.42
+    },
+    {
+      "id": "K133",
+      "name": "K133",
+      "node_type": "intersection",
+      "x_km": 4.26,
+      "y_km": 4.649
+    },
+    {
+      "id": "K134",
+      "name": "K134",
+      "node_type": "intersection",
+      "x_km": 17.13,
+      "y_km": 14.531
+    },
+    {
+      "id": "K135",
+      "name": "K135",
+      "node_type": "intersection",
+      "x_km": 5.032,
+      "y_km": 7.544
+    },
+    {
+      "id": "K136",
+      "name": "K136",
+      "node_type": "intersection",
+      "x_km": 17.485,
+      "y_km": 10.589
+    },
+    {
+      "id": "K137",
+      "name": "K137",
+      "node_type": "intersection",
+      "x_km": 7.657,
+      "y_km": 0.945
+    },
+    {
+      "id": "K138",
+      "name": "K138",
+      "node_type": "intersection",
+      "x_km": 18.336,
+      "y_km": 6.778
+    },
+    {
+      "id": "K139",
+      "name": "K139",
+      "node_type": "intersection",
+      "x_km": 8.275,
+      "y_km": 15.441
+    },
+    {
+      "id": "K140",
+      "name": "K140",
+      "node_type": "intersection",
+      "x_km": 25.173,
+      "y_km": 5.919
+    },
+    {
+      "id": "K141",
+      "name": "K141",
+      "node_type": "intersection",
+      "x_km": 5.966,
+      "y_km": 9.786
+    },
+    {
+      "id": "K142",
+      "name": "K142",
+      "node_type": "intersection",
+      "x_km": 18.244,
+      "y_km": 4.725
+    },
+    {
+      "id": "K143",
+      "name": "K143",
+      "node_type": "intersection",
+      "x_km": 3.966,
+      "y_km": 1.705
+    },
+    {
+      "id": "K144",
+      "name": "K144",
+      "node_type": "intersection",
+      "x_km": 19.014,
+      "y_km": 3.108
+    },
+    {
+      "id": "K145",
+      "name": "K145",
+      "node_type": "intersection",
+      "x_km": 2.0,
+      "y_km": 2.033
+    },
+    {
+      "id": "K146",
+      "name": "K146",
+      "node_type": "intersection",
+      "x_km": 20.593,
+      "y_km": 5.694
+    },
+    {
+      "id": "K147",
+      "name": "K147",
+      "node_type": "intersection",
+      "x_km": 10.993,
+      "y_km": 3.845
+    },
+    {
+      "id": "K148",
+      "name": "K148",
+      "node_type": "intersection",
+      "x_km": 21.366,
+      "y_km": 10.242
+    },
+    {
+      "id": "K149",
+      "name": "K149",
+      "node_type": "intersection",
+      "x_km": 9.706,
+      "y_km": 3.088
+    },
+    {
+      "id": "K150",
+      "name": "K150",
+      "node_type": "intersection",
+      "x_km": 14.687,
+      "y_km": 1.984
+    },
+    {
+      "id": "K151",
+      "name": "K151",
+      "node_type": "intersection",
+      "x_km": 8.278,
+      "y_km": 10.035
+    },
+    {
+      "id": "K152",
+      "name": "K152",
+      "node_type": "intersection",
+      "x_km": 19.415,
+      "y_km": 11.308
+    },
+    {
+      "id": "K153",
+      "name": "K153",
+      "node_type": "intersection",
+      "x_km": 1.652,
+      "y_km": 12.953
+    },
+    {
+      "id": "K154",
+      "name": "K154",
+      "node_type": "intersection",
+      "x_km": 16.473,
+      "y_km": 14.839
+    },
+    {
+      "id": "K155",
+      "name": "K155",
+      "node_type": "intersection",
+      "x_km": 5.423,
+      "y_km": 11.574
+    },
+    {
+      "id": "K156",
+      "name": "K156",
+      "node_type": "intersection",
+      "x_km": 23.619,
+      "y_km": 1.359
+    },
+    {
+      "id": "K157",
+      "name": "K157",
+      "node_type": "intersection",
+      "x_km": 2.041,
+      "y_km": 8.676
+    },
+    {
+      "id": "K158",
+      "name": "K158",
+      "node_type": "intersection",
+      "x_km": 24.365,
+      "y_km": 15.252
+    },
+    {
+      "id": "K159",
+      "name": "K159",
+      "node_type": "intersection",
+      "x_km": 2.013,
+      "y_km": 10.645
+    },
+    {
+      "id": "K160",
+      "name": "K160",
+      "node_type": "intersection",
+      "x_km": 14.611,
+      "y_km": 12.494
+    },
+    {
+      "id": "K161",
+      "name": "K161",
+      "node_type": "intersection",
+      "x_km": 9.956,
+      "y_km": 7.552
+    },
+    {
+      "id": "K162",
+      "name": "K162",
+      "node_type": "intersection",
+      "x_km": 18.236,
+      "y_km": 2.836
+    },
+    {
+      "id": "K163",
+      "name": "K163",
+      "node_type": "intersection",
+      "x_km": 5.574,
+      "y_km": 3.504
+    },
+    {
+      "id": "K164",
+      "name": "K164",
+      "node_type": "intersection",
+      "x_km": 22.966,
+      "y_km": 1.969
+    },
+    {
+      "id": "K165",
+      "name": "K165",
+      "node_type": "intersection",
+      "x_km": 10.62,
+      "y_km": 4.883
+    }
+  ],
+  "roads": [
+    {
+      "id": "R001",
+      "source": "K014",
+      "target": "K124",
+      "distance_km": 0.71,
+      "travel_time_min": 1.42,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R002",
+      "source": "A02",
+      "target": "K155",
+      "distance_km": 0.72,
+      "travel_time_min": 1.44,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R003",
+      "source": "K016",
+      "target": "K034",
+      "distance_km": 0.72,
+      "travel_time_min": 1.44,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R004",
+      "source": "K082",
+      "target": "K106",
+      "distance_km": 0.73,
+      "travel_time_min": 1.095,
+      "status": "open",
+      "road_type": "main"
+    },
+    {
+      "id": "R005",
+      "source": "K134",
+      "target": "K154",
+      "distance_km": 0.73,
+      "travel_time_min": 1.46,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R006",
+      "source": "K043",
+      "target": "K135",
+      "distance_km": 0.73,
+      "travel_time_min": 1.46,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R007",
+      "source": "A09",
+      "target": "K060",
+      "distance_km": 0.73,
+      "travel_time_min": 1.46,
+      "status": "damaged",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R008",
+      "source": "K063",
+      "target": "K151",
+      "distance_km": 0.74,
+      "travel_time_min": 1.11,
+      "status": "open",
+      "road_type": "main"
+    },
+    {
+      "id": "R009",
+      "source": "K023",
+      "target": "K117",
+      "distance_km": 0.74,
+      "travel_time_min": 1.48,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R010",
+      "source": "K079",
+      "target": "K127",
+      "distance_km": 0.74,
+      "travel_time_min": 1.48,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R011",
+      "source": "K008",
+      "target": "K104",
+      "distance_km": 0.75,
+      "travel_time_min": 1.5,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R012",
+      "source": "K087",
+      "target": "K103",
+      "distance_km": 0.75,
+      "travel_time_min": 1.125,
+      "status": "open",
+      "road_type": "main"
+    },
+    {
+      "id": "R013",
+      "source": "K064",
+      "target": "K066",
+      "distance_km": 0.75,
+      "travel_time_min": 1.5,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R014",
+      "source": "H1",
+      "target": "K156",
+      "distance_km": 0.75,
+      "travel_time_min": 1.5,
+      "status": "damaged",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R015",
+      "source": "A04",
+      "target": "K093",
+      "distance_km": 0.75,
+      "travel_time_min": 1.5,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R016",
+      "source": "K012",
+      "target": "K096",
+      "distance_km": 0.76,
+      "travel_time_min": 1.14,
+      "status": "open",
+      "road_type": "main"
+    },
+    {
+      "id": "R017",
+      "source": "K113",
+      "target": "K149",
+      "distance_km": 0.76,
+      "travel_time_min": 1.52,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R018",
+      "source": "K085",
+      "target": "K159",
+      "distance_km": 0.76,
+      "travel_time_min": 1.52,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R019",
+      "source": "K046",
+      "target": "K094",
+      "distance_km": 0.76,
+      "travel_time_min": 1.52,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R020",
+      "source": "K024",
+      "target": "K042",
+      "distance_km": 0.76,
+      "travel_time_min": 1.14,
+      "status": "open",
+      "road_type": "main"
+    },
+    {
+      "id": "R021",
+      "source": "K013",
+      "target": "K123",
+      "distance_km": 0.77,
+      "travel_time_min": 1.54,
+      "status": "damaged",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R022",
+      "source": "K125",
+      "target": "K145",
+      "distance_km": 0.77,
+      "travel_time_min": 1.54,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R023",
+      "source": "K068",
+      "target": "K108",
+      "distance_km": 0.78,
+      "travel_time_min": 1.56,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R024",
+      "source": "K110",
+      "target": "K120",
+      "distance_km": 0.78,
+      "travel_time_min": 1.17,
+      "status": "open",
+      "road_type": "main"
+    },
+    {
+      "id": "R025",
+      "source": "K049",
+      "target": "K059",
+      "distance_km": 0.78,
+      "travel_time_min": 1.56,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R026",
+      "source": "K090",
+      "target": "K126",
+      "distance_km": 0.79,
+      "travel_time_min": 1.58,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R027",
+      "source": "K039",
+      "target": "K131",
+      "distance_km": 0.79,
+      "travel_time_min": 1.58,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R028",
+      "source": "K032",
+      "target": "K136",
+      "distance_km": 0.79,
+      "travel_time_min": 1.185,
+      "status": "damaged",
+      "road_type": "main"
+    },
+    {
+      "id": "R029",
+      "source": "K099",
+      "target": "K155",
+      "distance_km": 0.79,
+      "travel_time_min": 1.58,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R030",
+      "source": "K006",
+      "target": "K160",
+      "distance_km": 0.8,
+      "travel_time_min": 1.6,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R031",
+      "source": "K103",
+      "target": "K159",
+      "distance_km": 0.8,
+      "travel_time_min": 1.6,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R032",
+      "source": "K008",
+      "target": "K070",
+      "distance_km": 0.81,
+      "travel_time_min": 1.215,
+      "status": "open",
+      "road_type": "main"
+    },
+    {
+      "id": "R033",
+      "source": "K055",
+      "target": "K059",
+      "distance_km": 0.81,
+      "travel_time_min": 1.62,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R034",
+      "source": "K060",
+      "target": "K114",
+      "distance_km": 0.82,
+      "travel_time_min": 1.64,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R035",
+      "source": "K021",
+      "target": "K115",
+      "distance_km": 0.82,
+      "travel_time_min": 1.64,
+      "status": "damaged",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R036",
+      "source": "K053",
+      "target": "K149",
+      "distance_km": 0.82,
+      "travel_time_min": 1.23,
+      "status": "open",
+      "road_type": "main"
+    },
+    {
+      "id": "R037",
+      "source": "K144",
+      "target": "K162",
+      "distance_km": 0.83,
+      "travel_time_min": 1.66,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R038",
+      "source": "K038",
+      "target": "K134",
+      "distance_km": 0.83,
+      "travel_time_min": 1.66,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R039",
+      "source": "K061",
+      "target": "K097",
+      "distance_km": 0.84,
+      "travel_time_min": 1.68,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R040",
+      "source": "K029",
+      "target": "K127",
+      "distance_km": 0.84,
+      "travel_time_min": 1.26,
+      "status": "open",
+      "road_type": "main"
+    },
+    {
+      "id": "R041",
+      "source": "K025",
+      "target": "K031",
+      "distance_km": 0.85,
+      "travel_time_min": 1.7,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R042",
+      "source": "A08",
+      "target": "K148",
+      "distance_km": 0.85,
+      "travel_time_min": 1.7,
+      "status": "damaged",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R043",
+      "source": "K012",
+      "target": "K030",
+      "distance_km": 0.85,
+      "travel_time_min": 1.7,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R044",
+      "source": "K093",
+      "target": "K105",
+      "distance_km": 0.85,
+      "travel_time_min": 1.275,
+      "status": "open",
+      "road_type": "main"
+    },
+    {
+      "id": "R045",
+      "source": "A02",
+      "target": "K049",
+      "distance_km": 0.86,
+      "travel_time_min": 1.72,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R046",
+      "source": "K058",
+      "target": "K102",
+      "distance_km": 0.87,
+      "travel_time_min": 1.74,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R047",
+      "source": "A05",
+      "target": "K053",
+      "distance_km": 0.88,
+      "travel_time_min": 1.76,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R048",
+      "source": "K049",
+      "target": "K079",
+      "distance_km": 0.88,
+      "travel_time_min": 1.32,
+      "status": "open",
+      "road_type": "main"
+    },
+    {
+      "id": "R049",
+      "source": "H1",
+      "target": "K014",
+      "distance_km": 0.88,
+      "travel_time_min": 1.76,
+      "status": "damaged",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R050",
+      "source": "K015",
+      "target": "K075",
+      "distance_km": 0.88,
+      "travel_time_min": 1.76,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R051",
+      "source": "K113",
+      "target": "K131",
+      "distance_km": 0.88,
+      "travel_time_min": 1.76,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R052",
+      "source": "K020",
+      "target": "K078",
+      "distance_km": 0.89,
+      "travel_time_min": 1.335,
+      "status": "open",
+      "road_type": "main"
+    },
+    {
+      "id": "R053",
+      "source": "K015",
+      "target": "K093",
+      "distance_km": 0.89,
+      "travel_time_min": 1.78,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R054",
+      "source": "K019",
+      "target": "K077",
+      "distance_km": 0.9,
+      "travel_time_min": 1.8,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R055",
+      "source": "K156",
+      "target": "K164",
+      "distance_km": 0.9,
+      "travel_time_min": 1.8,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R056",
+      "source": "K034",
+      "target": "K120",
+      "distance_km": 0.9,
+      "travel_time_min": 1.35,
+      "status": "damaged",
+      "road_type": "main"
+    },
+    {
+      "id": "R057",
+      "source": "K024",
+      "target": "K074",
+      "distance_km": 0.9,
+      "travel_time_min": 1.8,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R058",
+      "source": "K060",
+      "target": "K128",
+      "distance_km": 0.91,
+      "travel_time_min": 1.82,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R059",
+      "source": "K010",
+      "target": "K138",
+      "distance_km": 0.91,
+      "travel_time_min": 1.82,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R060",
+      "source": "K032",
+      "target": "K116",
+      "distance_km": 0.92,
+      "travel_time_min": 1.38,
+      "status": "open",
+      "road_type": "main"
+    },
+    {
+      "id": "R061",
+      "source": "K018",
+      "target": "K132",
+      "distance_km": 0.92,
+      "travel_time_min": 1.84,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R062",
+      "source": "K024",
+      "target": "K124",
+      "distance_km": 0.92,
+      "travel_time_min": 1.84,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R063",
+      "source": "K017",
+      "target": "K027",
+      "distance_km": 0.93,
+      "travel_time_min": 1.86,
+      "status": "damaged",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R064",
+      "source": "K064",
+      "target": "K132",
+      "distance_km": 0.93,
+      "travel_time_min": 1.395,
+      "status": "open",
+      "road_type": "main"
+    },
+    {
+      "id": "R065",
+      "source": "K007",
+      "target": "K031",
+      "distance_km": 0.95,
+      "travel_time_min": 1.9,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R066",
+      "source": "K061",
+      "target": "K151",
+      "distance_km": 0.95,
+      "travel_time_min": 1.9,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R067",
+      "source": "A10",
+      "target": "K118",
+      "distance_km": 0.95,
+      "travel_time_min": 1.9,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R068",
+      "source": "K091",
+      "target": "K107",
+      "distance_km": 0.96,
+      "travel_time_min": 1.44,
+      "status": "open",
+      "road_type": "main"
+    },
+    {
+      "id": "R069",
+      "source": "A07",
+      "target": "K154",
+      "distance_km": 0.97,
+      "travel_time_min": 1.94,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R070",
+      "source": "K010",
+      "target": "K118",
+      "distance_km": 0.97,
+      "travel_time_min": 1.94,
+      "status": "damaged",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R071",
+      "source": "K040",
+      "target": "K106",
+      "distance_km": 0.97,
+      "travel_time_min": 1.94,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R072",
+      "source": "K100",
+      "target": "K146",
+      "distance_km": 0.97,
+      "travel_time_min": 1.455,
+      "status": "open",
+      "road_type": "main"
+    },
+    {
+      "id": "R073",
+      "source": "K063",
+      "target": "K117",
+      "distance_km": 0.99,
+      "travel_time_min": 1.98,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R074",
+      "source": "K016",
+      "target": "K068",
+      "distance_km": 0.99,
+      "travel_time_min": 1.98,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R075",
+      "source": "K076",
+      "target": "K106",
+      "distance_km": 0.99,
+      "travel_time_min": 1.98,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R076",
+      "source": "K036",
+      "target": "K088",
+      "distance_km": 1.0,
+      "travel_time_min": 1.5,
+      "status": "open",
+      "road_type": "main"
+    },
+    {
+      "id": "R077",
+      "source": "K013",
+      "target": "K059",
+      "distance_km": 1.0,
+      "travel_time_min": 2.0,
+      "status": "damaged",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R078",
+      "source": "K102",
+      "target": "K122",
+      "distance_km": 1.02,
+      "travel_time_min": 2.04,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R079",
+      "source": "H0",
+      "target": "K027",
+      "distance_km": 1.02,
+      "travel_time_min": 2.04,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R080",
+      "source": "A10",
+      "target": "K022",
+      "distance_km": 1.02,
+      "travel_time_min": 1.53,
+      "status": "open",
+      "road_type": "main"
+    },
+    {
+      "id": "R081",
+      "source": "K058",
+      "target": "K072",
+      "distance_km": 1.02,
+      "travel_time_min": 2.04,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R082",
+      "source": "K016",
+      "target": "K086",
+      "distance_km": 1.02,
+      "travel_time_min": 2.04,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R083",
+      "source": "K037",
+      "target": "K101",
+      "distance_km": 1.02,
+      "travel_time_min": 2.04,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R084",
+      "source": "K075",
+      "target": "K157",
+      "distance_km": 1.02,
+      "travel_time_min": 1.53,
+      "status": "damaged",
+      "road_type": "main"
+    },
+    {
+      "id": "R085",
+      "source": "K045",
+      "target": "K135",
+      "distance_km": 1.03,
+      "travel_time_min": 2.06,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R086",
+      "source": "K111",
+      "target": "K163",
+      "distance_km": 1.03,
+      "travel_time_min": 2.06,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R087",
+      "source": "K025",
+      "target": "K125",
+      "distance_km": 1.04,
+      "travel_time_min": 2.08,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R088",
+      "source": "K020",
+      "target": "K162",
+      "distance_km": 1.04,
+      "travel_time_min": 1.56,
+      "status": "open",
+      "road_type": "main"
+    },
+    {
+      "id": "R089",
+      "source": "K033",
+      "target": "K115",
+      "distance_km": 1.04,
+      "travel_time_min": 2.08,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R090",
+      "source": "K020",
+      "target": "K130",
+      "distance_km": 1.05,
+      "travel_time_min": 2.1,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R091",
+      "source": "K045",
+      "target": "K081",
+      "distance_km": 1.05,
+      "travel_time_min": 2.1,
+      "status": "damaged",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R092",
+      "source": "K118",
+      "target": "K142",
+      "distance_km": 1.06,
+      "travel_time_min": 1.59,
+      "status": "open",
+      "road_type": "main"
+    },
+    {
+      "id": "R093",
+      "source": "K096",
+      "target": "K138",
+      "distance_km": 1.06,
+      "travel_time_min": 2.12,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R094",
+      "source": "K083",
+      "target": "K163",
+      "distance_km": 1.07,
+      "travel_time_min": 2.14,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R095",
+      "source": "K040",
+      "target": "K158",
+      "distance_km": 1.08,
+      "travel_time_min": 2.16,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R096",
+      "source": "A06",
+      "target": "K143",
+      "distance_km": 1.08,
+      "travel_time_min": 1.62,
+      "status": "open",
+      "road_type": "main"
+    },
+    {
+      "id": "R097",
+      "source": "H2",
+      "target": "K076",
+      "distance_km": 1.09,
+      "travel_time_min": 2.18,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R098",
+      "source": "A07",
+      "target": "K126",
+      "distance_km": 1.09,
+      "travel_time_min": 2.18,
+      "status": "damaged",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R099",
+      "source": "K008",
+      "target": "K030",
+      "distance_km": 1.1,
+      "travel_time_min": 2.2,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R100",
+      "source": "H2",
+      "target": "K086",
+      "distance_km": 1.1,
+      "travel_time_min": 1.65,
+      "status": "open",
+      "road_type": "main"
+    },
+    {
+      "id": "R101",
+      "source": "K018",
+      "target": "K140",
+      "distance_km": 1.1,
+      "travel_time_min": 2.2,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R102",
+      "source": "K087",
+      "target": "K129",
+      "distance_km": 1.11,
+      "travel_time_min": 2.22,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R103",
+      "source": "K088",
+      "target": "K164",
+      "distance_km": 1.11,
+      "travel_time_min": 2.22,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R104",
+      "source": "K147",
+      "target": "K165",
+      "distance_km": 1.11,
+      "travel_time_min": 1.665,
+      "status": "open",
+      "road_type": "main"
+    },
+    {
+      "id": "R105",
+      "source": "A01",
+      "target": "K153",
+      "distance_km": 1.11,
+      "travel_time_min": 2.22,
+      "status": "damaged",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R106",
+      "source": "K009",
+      "target": "K137",
+      "distance_km": 1.11,
+      "travel_time_min": 2.22,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R107",
+      "source": "K052",
+      "target": "K132",
+      "distance_km": 1.11,
+      "travel_time_min": 2.22,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R108",
+      "source": "K023",
+      "target": "K065",
+      "distance_km": 1.11,
+      "travel_time_min": 1.665,
+      "status": "open",
+      "road_type": "main"
+    },
+    {
+      "id": "R109",
+      "source": "K099",
+      "target": "K141",
+      "distance_km": 1.12,
+      "travel_time_min": 2.24,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R110",
+      "source": "K107",
+      "target": "K163",
+      "distance_km": 1.12,
+      "travel_time_min": 2.24,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R111",
+      "source": "K121",
+      "target": "K153",
+      "distance_km": 1.12,
+      "travel_time_min": 2.24,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R112",
+      "source": "K116",
+      "target": "K152",
+      "distance_km": 1.12,
+      "travel_time_min": 1.68,
+      "status": "damaged",
+      "road_type": "main"
+    },
+    {
+      "id": "R113",
+      "source": "K056",
+      "target": "K136",
+      "distance_km": 1.12,
+      "travel_time_min": 2.24,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R114",
+      "source": "K027",
+      "target": "K075",
+      "distance_km": 1.13,
+      "travel_time_min": 2.26,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R115",
+      "source": "K077",
+      "target": "K089",
+      "distance_km": 1.13,
+      "travel_time_min": 2.26,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R116",
+      "source": "A08",
+      "target": "K054",
+      "distance_km": 1.13,
+      "travel_time_min": 1.695,
+      "status": "open",
+      "road_type": "main"
+    },
+    {
+      "id": "R117",
+      "source": "K005",
+      "target": "K057",
+      "distance_km": 1.14,
+      "travel_time_min": 2.28,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R118",
+      "source": "K022",
+      "target": "K080",
+      "distance_km": 1.15,
+      "travel_time_min": 2.3,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R119",
+      "source": "K081",
+      "target": "K097",
+      "distance_km": 1.16,
+      "travel_time_min": 2.32,
+      "status": "damaged",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R120",
+      "source": "K117",
+      "target": "K141",
+      "distance_km": 1.16,
+      "travel_time_min": 1.74,
+      "status": "open",
+      "road_type": "main"
+    },
+    {
+      "id": "R121",
+      "source": "K101",
+      "target": "K125",
+      "distance_km": 1.16,
+      "travel_time_min": 2.32,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R122",
+      "source": "K077",
+      "target": "K095",
+      "distance_km": 1.16,
+      "travel_time_min": 2.32,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R123",
+      "source": "K011",
+      "target": "K035",
+      "distance_km": 1.17,
+      "travel_time_min": 2.34,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R124",
+      "source": "K060",
+      "target": "K066",
+      "distance_km": 1.17,
+      "travel_time_min": 1.755,
+      "status": "open",
+      "road_type": "main"
+    },
+    {
+      "id": "R125",
+      "source": "A04",
+      "target": "K043",
+      "distance_km": 1.17,
+      "travel_time_min": 2.34,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R126",
+      "source": "K046",
+      "target": "K136",
+      "distance_km": 1.17,
+      "travel_time_min": 2.34,
+      "status": "damaged",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R127",
+      "source": "A03",
+      "target": "K047",
+      "distance_km": 1.19,
+      "travel_time_min": 2.38,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R128",
+      "source": "K011",
+      "target": "K129",
+      "distance_km": 1.19,
+      "travel_time_min": 1.785,
+      "status": "open",
+      "road_type": "main"
+    },
+    {
+      "id": "R129",
+      "source": "A01",
+      "target": "K119",
+      "distance_km": 1.19,
+      "travel_time_min": 2.38,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R130",
+      "source": "K051",
+      "target": "K105",
+      "distance_km": 1.2,
+      "travel_time_min": 2.4,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R131",
+      "source": "K085",
+      "target": "K121",
+      "distance_km": 1.2,
+      "travel_time_min": 2.4,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R132",
+      "source": "A11",
+      "target": "K130",
+      "distance_km": 1.2,
+      "travel_time_min": 1.8,
+      "status": "open",
+      "road_type": "main"
+    },
+    {
+      "id": "R133",
+      "source": "K011",
+      "target": "K099",
+      "distance_km": 1.2,
+      "travel_time_min": 2.4,
+      "status": "damaged",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R134",
+      "source": "K082",
+      "target": "K092",
+      "distance_km": 1.21,
+      "travel_time_min": 2.42,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R135",
+      "source": "K067",
+      "target": "K141",
+      "distance_km": 1.22,
+      "travel_time_min": 2.44,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R136",
+      "source": "K095",
+      "target": "K161",
+      "distance_km": 1.22,
+      "travel_time_min": 1.83,
+      "status": "open",
+      "road_type": "main"
+    },
+    {
+      "id": "R137",
+      "source": "K002",
+      "target": "K150",
+      "distance_km": 1.23,
+      "travel_time_min": 2.46,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R138",
+      "source": "K110",
+      "target": "K112",
+      "distance_km": 1.24,
+      "travel_time_min": 2.48,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R139",
+      "source": "K125",
+      "target": "K143",
+      "distance_km": 1.25,
+      "travel_time_min": 2.5,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R140",
+      "source": "A09",
+      "target": "K028",
+      "distance_km": 1.26,
+      "travel_time_min": 1.89,
+      "status": "damaged",
+      "road_type": "main"
+    },
+    {
+      "id": "R141",
+      "source": "K053",
+      "target": "K071",
+      "distance_km": 1.27,
+      "travel_time_min": 2.54,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R142",
+      "source": "K071",
+      "target": "K137",
+      "distance_km": 1.29,
+      "travel_time_min": 2.58,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R143",
+      "source": "K061",
+      "target": "K073",
+      "distance_km": 1.3,
+      "travel_time_min": 2.6,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R144",
+      "source": "K021",
+      "target": "K065",
+      "distance_km": 1.3,
+      "travel_time_min": 1.95,
+      "status": "open",
+      "road_type": "main"
+    },
+    {
+      "id": "R145",
+      "source": "K038",
+      "target": "K050",
+      "distance_km": 1.32,
+      "travel_time_min": 2.64,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R146",
+      "source": "K001",
+      "target": "K147",
+      "distance_km": 1.32,
+      "travel_time_min": 2.64,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R147",
+      "source": "A06",
+      "target": "K111",
+      "distance_km": 1.33,
+      "travel_time_min": 2.66,
+      "status": "damaged",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R148",
+      "source": "K071",
+      "target": "K091",
+      "distance_km": 1.34,
+      "travel_time_min": 2.01,
+      "status": "open",
+      "road_type": "main"
+    },
+    {
+      "id": "R149",
+      "source": "K112",
+      "target": "K134",
+      "distance_km": 1.35,
+      "travel_time_min": 2.7,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R150",
+      "source": "K078",
+      "target": "K098",
+      "distance_km": 1.37,
+      "travel_time_min": 2.74,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R151",
+      "source": "K026",
+      "target": "K144",
+      "distance_km": 1.37,
+      "travel_time_min": 2.74,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R152",
+      "source": "K050",
+      "target": "K116",
+      "distance_km": 1.38,
+      "travel_time_min": 2.07,
+      "status": "open",
+      "road_type": "main"
+    },
+    {
+      "id": "R153",
+      "source": "K052",
+      "target": "K100",
+      "distance_km": 1.38,
+      "travel_time_min": 2.76,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R154",
+      "source": "K062",
+      "target": "K162",
+      "distance_km": 1.41,
+      "travel_time_min": 2.82,
+      "status": "damaged",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R155",
+      "source": "K044",
+      "target": "K108",
+      "distance_km": 1.42,
+      "travel_time_min": 2.84,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R156",
+      "source": "K057",
+      "target": "K069",
+      "distance_km": 1.42,
+      "travel_time_min": 2.13,
+      "status": "open",
+      "road_type": "main"
+    },
+    {
+      "id": "R157",
+      "source": "K122",
+      "target": "K146",
+      "distance_km": 1.43,
+      "travel_time_min": 2.86,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R158",
+      "source": "K111",
+      "target": "K133",
+      "distance_km": 1.43,
+      "travel_time_min": 2.86,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R159",
+      "source": "K007",
+      "target": "K051",
+      "distance_km": 1.44,
+      "travel_time_min": 2.88,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R160",
+      "source": "K072",
+      "target": "K148",
+      "distance_km": 1.46,
+      "travel_time_min": 2.19,
+      "status": "open",
+      "road_type": "main"
+    },
+    {
+      "id": "R161",
+      "source": "K026",
+      "target": "K142",
+      "distance_km": 1.46,
+      "travel_time_min": 2.92,
+      "status": "damaged",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R162",
+      "source": "K109",
+      "target": "K123",
+      "distance_km": 1.46,
+      "travel_time_min": 2.92,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R163",
+      "source": "K090",
+      "target": "K160",
+      "distance_km": 1.47,
+      "travel_time_min": 2.94,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R164",
+      "source": "A11",
+      "target": "K036",
+      "distance_km": 1.49,
+      "travel_time_min": 2.235,
+      "status": "open",
+      "road_type": "main"
+    },
+    {
+      "id": "R165",
+      "source": "K147",
+      "target": "K149",
+      "distance_km": 1.5,
+      "travel_time_min": 3.0,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R166",
+      "source": "K054",
+      "target": "K092",
+      "distance_km": 1.56,
+      "travel_time_min": 3.12,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R167",
+      "source": "K095",
+      "target": "K165",
+      "distance_km": 1.57,
+      "travel_time_min": 3.14,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R168",
+      "source": "K057",
+      "target": "K115",
+      "distance_km": 1.58,
+      "travel_time_min": 2.37,
+      "status": "damaged",
+      "road_type": "main"
+    },
+    {
+      "id": "R169",
+      "source": "A03",
+      "target": "K069",
+      "distance_km": 1.6,
+      "travel_time_min": 3.2,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R170",
+      "source": "K033",
+      "target": "K041",
+      "distance_km": 1.61,
+      "travel_time_min": 3.22,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R171",
+      "source": "K082",
+      "target": "K084",
+      "distance_km": 1.65,
+      "travel_time_min": 3.3,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R172",
+      "source": "K026",
+      "target": "K100",
+      "distance_km": 1.67,
+      "travel_time_min": 2.505,
+      "status": "open",
+      "road_type": "main"
+    },
+    {
+      "id": "R173",
+      "source": "K004",
+      "target": "K070",
+      "distance_km": 1.69,
+      "travel_time_min": 3.38,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R174",
+      "source": "K098",
+      "target": "K150",
+      "distance_km": 1.78,
+      "travel_time_min": 3.56,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R175",
+      "source": "A03",
+      "target": "K139",
+      "distance_km": 1.79,
+      "travel_time_min": 3.58,
+      "status": "damaged",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R176",
+      "source": "K003",
+      "target": "K161",
+      "distance_km": 2.1,
+      "travel_time_min": 3.15,
+      "status": "open",
+      "road_type": "main"
+    },
+    {
+      "id": "R177",
+      "source": "K048",
+      "target": "K084",
+      "distance_km": 2.11,
+      "travel_time_min": 4.22,
+      "status": "open",
+      "road_type": "secondary"
+    },
+    {
+      "id": "R178",
+      "source": "K001",
+      "target": "K002",
+      "distance_km": 2.0,
+      "travel_time_min": 4.8,
+      "status": "open",
+      "road_type": "bridge"
+    },
+    {
+      "id": "R179",
+      "source": "K003",
+      "target": "K004",
+      "distance_km": 2.0,
+      "travel_time_min": 4.8,
+      "status": "open",
+      "road_type": "bridge"
+    },
+    {
+      "id": "R180",
+      "source": "K005",
+      "target": "K006",
+      "distance_km": 2.0,
+      "travel_time_min": 4.8,
+      "status": "open",
+      "road_type": "bridge"
+    },
+    {
+      "id": "R181",
+      "source": "A12",
+      "target": "K037",
+      "distance_km": 1.29,
+      "travel_time_min": 3.87,
+      "status": "closed",
+      "road_type": "local"
+    },
+    {
+      "id": "R182",
+      "source": "A12",
+      "target": "K101",
+      "distance_km": 2.25,
+      "travel_time_min": 6.75,
+      "status": "closed",
+      "road_type": "local"
+    },
+    {
+      "id": "R183",
+      "source": "K070",
+      "target": "K104",
+      "distance_km": 0.86,
+      "travel_time_min": 2.58,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R184",
+      "source": "A09",
+      "target": "K114",
+      "distance_km": 0.9,
+      "travel_time_min": 2.7,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R185",
+      "source": "A04",
+      "target": "K105",
+      "distance_km": 0.96,
+      "travel_time_min": 2.88,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R186",
+      "source": "K108",
+      "target": "K110",
+      "distance_km": 1.01,
+      "travel_time_min": 3.03,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R187",
+      "source": "K053",
+      "target": "K113",
+      "distance_km": 1.02,
+      "travel_time_min": 3.06,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R188",
+      "source": "H1",
+      "target": "K164",
+      "distance_km": 1.04,
+      "travel_time_min": 3.12,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R189",
+      "source": "A02",
+      "target": "K079",
+      "distance_km": 1.04,
+      "travel_time_min": 3.12,
+      "status": "damaged",
+      "road_type": "local"
+    },
+    {
+      "id": "R190",
+      "source": "H1",
+      "target": "K124",
+      "distance_km": 1.06,
+      "travel_time_min": 3.18,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R191",
+      "source": "K039",
+      "target": "K113",
+      "distance_km": 1.07,
+      "travel_time_min": 3.21,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R192",
+      "source": "K023",
+      "target": "K063",
+      "distance_km": 1.09,
+      "travel_time_min": 3.27,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R193",
+      "source": "K034",
+      "target": "K086",
+      "distance_km": 1.1,
+      "travel_time_min": 3.3,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R194",
+      "source": "K012",
+      "target": "K104",
+      "distance_km": 1.1,
+      "travel_time_min": 3.3,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R195",
+      "source": "K075",
+      "target": "K093",
+      "distance_km": 1.11,
+      "travel_time_min": 3.33,
+      "status": "closed",
+      "road_type": "local"
+    },
+    {
+      "id": "R196",
+      "source": "K049",
+      "target": "K055",
+      "distance_km": 1.11,
+      "travel_time_min": 3.33,
+      "status": "damaged",
+      "road_type": "local"
+    },
+    {
+      "id": "R197",
+      "source": "K087",
+      "target": "K159",
+      "distance_km": 1.12,
+      "travel_time_min": 3.36,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R198",
+      "source": "K118",
+      "target": "K138",
+      "distance_km": 1.15,
+      "travel_time_min": 3.45,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R199",
+      "source": "K038",
+      "target": "K126",
+      "distance_km": 1.15,
+      "travel_time_min": 3.45,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R200",
+      "source": "A05",
+      "target": "K149",
+      "distance_km": 1.16,
+      "travel_time_min": 3.48,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R201",
+      "source": "K016",
+      "target": "K120",
+      "distance_km": 1.16,
+      "travel_time_min": 3.48,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R202",
+      "source": "A04",
+      "target": "K135",
+      "distance_km": 1.17,
+      "travel_time_min": 3.51,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R203",
+      "source": "K037",
+      "target": "K145",
+      "distance_km": 1.17,
+      "travel_time_min": 3.51,
+      "status": "damaged",
+      "road_type": "local"
+    },
+    {
+      "id": "R204",
+      "source": "K014",
+      "target": "K156",
+      "distance_km": 1.17,
+      "travel_time_min": 3.51,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R205",
+      "source": "K017",
+      "target": "K105",
+      "distance_km": 1.18,
+      "travel_time_min": 3.54,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R206",
+      "source": "K015",
+      "target": "K157",
+      "distance_km": 1.18,
+      "travel_time_min": 3.54,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R207",
+      "source": "K061",
+      "target": "K063",
+      "distance_km": 1.19,
+      "travel_time_min": 3.57,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R208",
+      "source": "K030",
+      "target": "K104",
+      "distance_km": 1.19,
+      "travel_time_min": 3.57,
+      "status": "closed",
+      "road_type": "local"
+    },
+    {
+      "id": "R209",
+      "source": "K054",
+      "target": "K148",
+      "distance_km": 1.19,
+      "travel_time_min": 3.57,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R210",
+      "source": "K031",
+      "target": "K145",
+      "distance_km": 1.19,
+      "travel_time_min": 3.57,
+      "status": "damaged",
+      "road_type": "local"
+    },
+    {
+      "id": "R211",
+      "source": "A02",
+      "target": "K023",
+      "distance_km": 1.22,
+      "travel_time_min": 3.66,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R212",
+      "source": "K019",
+      "target": "K095",
+      "distance_km": 1.22,
+      "travel_time_min": 3.66,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R213",
+      "source": "K068",
+      "target": "K120",
+      "distance_km": 1.23,
+      "travel_time_min": 3.69,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R214",
+      "source": "K032",
+      "target": "K046",
+      "distance_km": 1.23,
+      "travel_time_min": 3.69,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R215",
+      "source": "H2",
+      "target": "K040",
+      "distance_km": 1.24,
+      "travel_time_min": 3.72,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R216",
+      "source": "K040",
+      "target": "K082",
+      "distance_km": 1.24,
+      "travel_time_min": 3.72,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R217",
+      "source": "H0",
+      "target": "K157",
+      "distance_km": 1.25,
+      "travel_time_min": 3.75,
+      "status": "damaged",
+      "road_type": "local"
+    },
+    {
+      "id": "R218",
+      "source": "K030",
+      "target": "K096",
+      "distance_km": 1.25,
+      "travel_time_min": 3.75,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R219",
+      "source": "A07",
+      "target": "K134",
+      "distance_km": 1.25,
+      "travel_time_min": 3.75,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R220",
+      "source": "K101",
+      "target": "K145",
+      "distance_km": 1.26,
+      "travel_time_min": 3.78,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R221",
+      "source": "K099",
+      "target": "K117",
+      "distance_km": 1.26,
+      "travel_time_min": 3.78,
+      "status": "closed",
+      "road_type": "local"
+    },
+    {
+      "id": "R222",
+      "source": "A09",
+      "target": "K128",
+      "distance_km": 1.26,
+      "travel_time_min": 3.78,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R223",
+      "source": "H2",
+      "target": "K106",
+      "distance_km": 1.27,
+      "travel_time_min": 3.81,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R224",
+      "source": "K029",
+      "target": "K079",
+      "distance_km": 1.28,
+      "travel_time_min": 3.84,
+      "status": "damaged",
+      "road_type": "local"
+    },
+    {
+      "id": "R225",
+      "source": "K076",
+      "target": "K086",
+      "distance_km": 1.29,
+      "travel_time_min": 3.87,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R226",
+      "source": "K013",
+      "target": "K055",
+      "distance_km": 1.29,
+      "travel_time_min": 3.87,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R227",
+      "source": "K068",
+      "target": "K110",
+      "distance_km": 1.29,
+      "travel_time_min": 3.87,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R228",
+      "source": "K042",
+      "target": "K124",
+      "distance_km": 1.29,
+      "travel_time_min": 3.87,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R229",
+      "source": "K103",
+      "target": "K157",
+      "distance_km": 1.3,
+      "travel_time_min": 3.9,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R230",
+      "source": "K066",
+      "target": "K128",
+      "distance_km": 1.3,
+      "travel_time_min": 3.9,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R231",
+      "source": "A06",
+      "target": "K107",
+      "distance_km": 1.33,
+      "travel_time_min": 3.99,
+      "status": "damaged",
+      "road_type": "local"
+    },
+    {
+      "id": "R232",
+      "source": "K029",
+      "target": "K065",
+      "distance_km": 1.33,
+      "travel_time_min": 3.99,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R233",
+      "source": "K067",
+      "target": "K135",
+      "distance_km": 1.35,
+      "travel_time_min": 4.05,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R234",
+      "source": "K011",
+      "target": "K087",
+      "distance_km": 1.35,
+      "travel_time_min": 4.05,
+      "status": "closed",
+      "road_type": "local"
+    },
+    {
+      "id": "R235",
+      "source": "K019",
+      "target": "K089",
+      "distance_km": 1.35,
+      "travel_time_min": 4.05,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R236",
+      "source": "K033",
+      "target": "K151",
+      "distance_km": 1.35,
+      "travel_time_min": 4.05,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R237",
+      "source": "K073",
+      "target": "K151",
+      "distance_km": 1.36,
+      "travel_time_min": 4.08,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R238",
+      "source": "K045",
+      "target": "K067",
+      "distance_km": 1.37,
+      "travel_time_min": 4.11,
+      "status": "damaged",
+      "road_type": "local"
+    },
+    {
+      "id": "R239",
+      "source": "K017",
+      "target": "K051",
+      "distance_km": 1.38,
+      "travel_time_min": 4.14,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R240",
+      "source": "K078",
+      "target": "K130",
+      "distance_km": 1.4,
+      "travel_time_min": 4.2,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R241",
+      "source": "K015",
+      "target": "K129",
+      "distance_km": 1.4,
+      "travel_time_min": 4.2,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R242",
+      "source": "K052",
+      "target": "K064",
+      "distance_km": 1.41,
+      "travel_time_min": 4.23,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R243",
+      "source": "A07",
+      "target": "K038",
+      "distance_km": 1.41,
+      "travel_time_min": 4.23,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R244",
+      "source": "K010",
+      "target": "K142",
+      "distance_km": 1.42,
+      "travel_time_min": 4.26,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R245",
+      "source": "K090",
+      "target": "K094",
+      "distance_km": 1.42,
+      "travel_time_min": 4.26,
+      "status": "damaged",
+      "road_type": "local"
+    },
+    {
+      "id": "R246",
+      "source": "K116",
+      "target": "K136",
+      "distance_km": 1.43,
+      "travel_time_min": 4.29,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R247",
+      "source": "K042",
+      "target": "K074",
+      "distance_km": 1.44,
+      "travel_time_min": 4.32,
+      "status": "closed",
+      "road_type": "local"
+    },
+    {
+      "id": "R248",
+      "source": "K062",
+      "target": "K098",
+      "distance_km": 1.44,
+      "travel_time_min": 4.32,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R249",
+      "source": "K007",
+      "target": "K025",
+      "distance_km": 1.45,
+      "travel_time_min": 4.35,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R250",
+      "source": "K046",
+      "target": "K090",
+      "distance_km": 1.46,
+      "travel_time_min": 4.38,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R251",
+      "source": "K073",
+      "target": "K097",
+      "distance_km": 1.47,
+      "travel_time_min": 4.41,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R252",
+      "source": "K071",
+      "target": "K131",
+      "distance_km": 1.47,
+      "travel_time_min": 4.41,
+      "status": "damaged",
+      "road_type": "local"
+    },
+    {
+      "id": "R253",
+      "source": "K103",
+      "target": "K129",
+      "distance_km": 1.48,
+      "travel_time_min": 4.44,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R254",
+      "source": "A11",
+      "target": "K144",
+      "distance_km": 1.49,
+      "travel_time_min": 4.47,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R255",
+      "source": "K036",
+      "target": "K164",
+      "distance_km": 1.49,
+      "travel_time_min": 4.47,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R256",
+      "source": "K019",
+      "target": "K161",
+      "distance_km": 1.49,
+      "travel_time_min": 4.47,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R257",
+      "source": "K088",
+      "target": "K156",
+      "distance_km": 1.49,
+      "travel_time_min": 4.47,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R258",
+      "source": "K043",
+      "target": "K067",
+      "distance_km": 1.49,
+      "travel_time_min": 4.47,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R259",
+      "source": "K102",
+      "target": "K128",
+      "distance_km": 1.5,
+      "travel_time_min": 4.5,
+      "status": "damaged",
+      "road_type": "local"
+    },
+    {
+      "id": "R260",
+      "source": "K076",
+      "target": "K092",
+      "distance_km": 1.51,
+      "travel_time_min": 4.53,
+      "status": "closed",
+      "road_type": "local"
+    },
+    {
+      "id": "R261",
+      "source": "K121",
+      "target": "K159",
+      "distance_km": 1.53,
+      "travel_time_min": 4.59,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R262",
+      "source": "K050",
+      "target": "K108",
+      "distance_km": 1.53,
+      "travel_time_min": 4.59,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R263",
+      "source": "K020",
+      "target": "K098",
+      "distance_km": 1.54,
+      "travel_time_min": 4.62,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R264",
+      "source": "A10",
+      "target": "K138",
+      "distance_km": 1.55,
+      "travel_time_min": 4.65,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R265",
+      "source": "K044",
+      "target": "K152",
+      "distance_km": 1.56,
+      "travel_time_min": 4.68,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R266",
+      "source": "K035",
+      "target": "K155",
+      "distance_km": 1.56,
+      "travel_time_min": 4.68,
+      "status": "damaged",
+      "road_type": "local"
+    },
+    {
+      "id": "R267",
+      "source": "A08",
+      "target": "K044",
+      "distance_km": 1.57,
+      "travel_time_min": 4.71,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R268",
+      "source": "K055",
+      "target": "K127",
+      "distance_km": 1.57,
+      "travel_time_min": 4.71,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R269",
+      "source": "K114",
+      "target": "K140",
+      "distance_km": 1.57,
+      "travel_time_min": 4.71,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R270",
+      "source": "K091",
+      "target": "K163",
+      "distance_km": 1.58,
+      "travel_time_min": 4.74,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R271",
+      "source": "K066",
+      "target": "K132",
+      "distance_km": 1.58,
+      "travel_time_min": 4.74,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R272",
+      "source": "K130",
+      "target": "K162",
+      "distance_km": 1.58,
+      "travel_time_min": 4.74,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R273",
+      "source": "K021",
+      "target": "K033",
+      "distance_km": 1.59,
+      "travel_time_min": 4.77,
+      "status": "closed",
+      "road_type": "local"
+    },
+    {
+      "id": "R274",
+      "source": "K058",
+      "target": "K122",
+      "distance_km": 1.61,
+      "travel_time_min": 4.83,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R275",
+      "source": "K013",
+      "target": "K109",
+      "distance_km": 1.61,
+      "travel_time_min": 4.83,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R276",
+      "source": "K056",
+      "target": "K152",
+      "distance_km": 1.61,
+      "travel_time_min": 4.83,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R277",
+      "source": "A08",
+      "target": "K152",
+      "distance_km": 1.62,
+      "travel_time_min": 4.86,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R278",
+      "source": "K058",
+      "target": "K148",
+      "distance_km": 1.62,
+      "travel_time_min": 4.86,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R279",
+      "source": "K051",
+      "target": "K133",
+      "distance_km": 1.62,
+      "travel_time_min": 4.86,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R280",
+      "source": "K041",
+      "target": "K115",
+      "distance_km": 1.63,
+      "travel_time_min": 4.89,
+      "status": "damaged",
+      "road_type": "local"
+    },
+    {
+      "id": "R281",
+      "source": "K026",
+      "target": "K146",
+      "distance_km": 1.67,
+      "travel_time_min": 5.01,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R282",
+      "source": "K111",
+      "target": "K143",
+      "distance_km": 1.67,
+      "travel_time_min": 5.01,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R283",
+      "source": "K073",
+      "target": "K161",
+      "distance_km": 1.68,
+      "travel_time_min": 5.04,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R284",
+      "source": "K035",
+      "target": "K121",
+      "distance_km": 1.68,
+      "travel_time_min": 5.04,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R285",
+      "source": "K009",
+      "target": "K107",
+      "distance_km": 1.7,
+      "travel_time_min": 5.1,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R286",
+      "source": "K047",
+      "target": "K069",
+      "distance_km": 1.7,
+      "travel_time_min": 5.1,
+      "status": "closed",
+      "road_type": "local"
+    },
+    {
+      "id": "R287",
+      "source": "K059",
+      "target": "K155",
+      "distance_km": 1.71,
+      "travel_time_min": 5.13,
+      "status": "damaged",
+      "road_type": "local"
+    },
+    {
+      "id": "R288",
+      "source": "A05",
+      "target": "K077",
+      "distance_km": 1.71,
+      "travel_time_min": 5.13,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R289",
+      "source": "K085",
+      "target": "K153",
+      "distance_km": 1.71,
+      "travel_time_min": 5.13,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R290",
+      "source": "A01",
+      "target": "K123",
+      "distance_km": 1.71,
+      "travel_time_min": 5.13,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R291",
+      "source": "K025",
+      "target": "K143",
+      "distance_km": 1.75,
+      "travel_time_min": 5.25,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R292",
+      "source": "K005",
+      "target": "K069",
+      "distance_km": 1.76,
+      "travel_time_min": 5.28,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R293",
+      "source": "K052",
+      "target": "K074",
+      "distance_km": 1.76,
+      "travel_time_min": 5.28,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R294",
+      "source": "K028",
+      "target": "K114",
+      "distance_km": 1.78,
+      "travel_time_min": 5.34,
+      "status": "damaged",
+      "road_type": "local"
+    },
+    {
+      "id": "R295",
+      "source": "A10",
+      "target": "K142",
+      "distance_km": 1.79,
+      "travel_time_min": 5.37,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R296",
+      "source": "K094",
+      "target": "K160",
+      "distance_km": 1.79,
+      "travel_time_min": 5.37,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R297",
+      "source": "K083",
+      "target": "K133",
+      "distance_km": 1.79,
+      "travel_time_min": 5.37,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R298",
+      "source": "K083",
+      "target": "K091",
+      "distance_km": 1.8,
+      "travel_time_min": 5.4,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R299",
+      "source": "K010",
+      "target": "K146",
+      "distance_km": 1.8,
+      "travel_time_min": 5.4,
+      "status": "closed",
+      "road_type": "local"
+    },
+    {
+      "id": "R300",
+      "source": "K056",
+      "target": "K072",
+      "distance_km": 1.83,
+      "travel_time_min": 5.49,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R301",
+      "source": "K131",
+      "target": "K137",
+      "distance_km": 1.83,
+      "travel_time_min": 5.49,
+      "status": "damaged",
+      "road_type": "local"
+    },
+    {
+      "id": "R302",
+      "source": "K064",
+      "target": "K100",
+      "distance_km": 1.85,
+      "travel_time_min": 5.55,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R303",
+      "source": "A05",
+      "target": "K165",
+      "distance_km": 1.85,
+      "travel_time_min": 5.55,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R304",
+      "source": "K021",
+      "target": "K057",
+      "distance_km": 1.88,
+      "travel_time_min": 5.64,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R305",
+      "source": "K112",
+      "target": "K154",
+      "distance_km": 1.88,
+      "travel_time_min": 5.64,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R306",
+      "source": "A06",
+      "target": "K009",
+      "distance_km": 1.89,
+      "travel_time_min": 5.67,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R307",
+      "source": "K044",
+      "target": "K092",
+      "distance_km": 1.93,
+      "travel_time_min": 5.79,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R308",
+      "source": "K097",
+      "target": "K141",
+      "distance_km": 1.93,
+      "travel_time_min": 5.79,
+      "status": "damaged",
+      "road_type": "local"
+    },
+    {
+      "id": "R309",
+      "source": "K004",
+      "target": "K008",
+      "distance_km": 1.94,
+      "travel_time_min": 5.82,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R310",
+      "source": "K032",
+      "target": "K126",
+      "distance_km": 1.96,
+      "travel_time_min": 5.88,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R311",
+      "source": "K018",
+      "target": "K074",
+      "distance_km": 2.0,
+      "travel_time_min": 6.0,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R312",
+      "source": "K119",
+      "target": "K153",
+      "distance_km": 2.04,
+      "travel_time_min": 6.12,
+      "status": "closed",
+      "road_type": "local"
+    },
+    {
+      "id": "R313",
+      "source": "K018",
+      "target": "K042",
+      "distance_km": 2.04,
+      "travel_time_min": 6.12,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R314",
+      "source": "K005",
+      "target": "K047",
+      "distance_km": 2.06,
+      "travel_time_min": 6.18,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R315",
+      "source": "K050",
+      "target": "K112",
+      "distance_km": 2.08,
+      "travel_time_min": 6.24,
+      "status": "damaged",
+      "road_type": "local"
+    },
+    {
+      "id": "R316",
+      "source": "K081",
+      "target": "K089",
+      "distance_km": 2.12,
+      "travel_time_min": 6.36,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R317",
+      "source": "K062",
+      "target": "K144",
+      "distance_km": 2.16,
+      "travel_time_min": 6.48,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R318",
+      "source": "K012",
+      "target": "K056",
+      "distance_km": 2.17,
+      "travel_time_min": 6.51,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R319",
+      "source": "K028",
+      "target": "K048",
+      "distance_km": 2.17,
+      "travel_time_min": 6.51,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R320",
+      "source": "K083",
+      "target": "K089",
+      "distance_km": 2.22,
+      "travel_time_min": 6.66,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R321",
+      "source": "A11",
+      "target": "K088",
+      "distance_km": 2.27,
+      "travel_time_min": 6.81,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R322",
+      "source": "K029",
+      "target": "K139",
+      "distance_km": 2.32,
+      "travel_time_min": 6.96,
+      "status": "damaged",
+      "road_type": "local"
+    },
+    {
+      "id": "R323",
+      "source": "K031",
+      "target": "K037",
+      "distance_km": 2.33,
+      "travel_time_min": 6.99,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R324",
+      "source": "K001",
+      "target": "K165",
+      "distance_km": 2.34,
+      "travel_time_min": 7.02,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R325",
+      "source": "K001",
+      "target": "K039",
+      "distance_km": 2.35,
+      "travel_time_min": 7.05,
+      "status": "closed",
+      "road_type": "local"
+    },
+    {
+      "id": "R326",
+      "source": "K072",
+      "target": "K122",
+      "distance_km": 2.36,
+      "travel_time_min": 7.08,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R327",
+      "source": "K007",
+      "target": "K017",
+      "distance_km": 2.36,
+      "travel_time_min": 7.08,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R328",
+      "source": "K070",
+      "target": "K094",
+      "distance_km": 2.38,
+      "travel_time_min": 7.14,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R329",
+      "source": "K127",
+      "target": "K139",
+      "distance_km": 2.38,
+      "travel_time_min": 7.14,
+      "status": "damaged",
+      "road_type": "local"
+    },
+    {
+      "id": "R330",
+      "source": "K062",
+      "target": "K150",
+      "distance_km": 2.46,
+      "travel_time_min": 7.38,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R331",
+      "source": "K039",
+      "target": "K147",
+      "distance_km": 2.47,
+      "travel_time_min": 7.41,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R332",
+      "source": "K003",
+      "target": "K041",
+      "distance_km": 2.47,
+      "travel_time_min": 7.41,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R333",
+      "source": "K084",
+      "target": "K158",
+      "distance_km": 2.48,
+      "travel_time_min": 7.44,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R334",
+      "source": "K004",
+      "target": "K080",
+      "distance_km": 2.53,
+      "travel_time_min": 7.59,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R335",
+      "source": "K119",
+      "target": "K123",
+      "distance_km": 2.55,
+      "travel_time_min": 7.65,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R336",
+      "source": "K048",
+      "target": "K054",
+      "distance_km": 2.74,
+      "travel_time_min": 8.22,
+      "status": "damaged",
+      "road_type": "local"
+    },
+    {
+      "id": "R337",
+      "source": "K028",
+      "target": "K140",
+      "distance_km": 2.75,
+      "travel_time_min": 8.25,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R338",
+      "source": "K002",
+      "target": "K080",
+      "distance_km": 2.85,
+      "travel_time_min": 8.55,
+      "status": "closed",
+      "road_type": "local"
+    },
+    {
+      "id": "R339",
+      "source": "K047",
+      "target": "K139",
+      "distance_km": 2.96,
+      "travel_time_min": 8.88,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R340",
+      "source": "K154",
+      "target": "K160",
+      "distance_km": 3.0,
+      "travel_time_min": 9.0,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R341",
+      "source": "K022",
+      "target": "K096",
+      "distance_km": 3.05,
+      "travel_time_min": 9.15,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R342",
+      "source": "K078",
+      "target": "K150",
+      "distance_km": 3.08,
+      "travel_time_min": 9.24,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R343",
+      "source": "K045",
+      "target": "K133",
+      "distance_km": 3.1,
+      "travel_time_min": 9.3,
+      "status": "damaged",
+      "road_type": "local"
+    },
+    {
+      "id": "R344",
+      "source": "K109",
+      "target": "K119",
+      "distance_km": 3.18,
+      "travel_time_min": 9.54,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R345",
+      "source": "A01",
+      "target": "K035",
+      "distance_km": 3.25,
+      "travel_time_min": 9.75,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R346",
+      "source": "K024",
+      "target": "K036",
+      "distance_km": 3.29,
+      "travel_time_min": 9.87,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R347",
+      "source": "K002",
+      "target": "K022",
+      "distance_km": 3.29,
+      "travel_time_min": 9.87,
+      "status": "open",
+      "road_type": "local"
+    },
+    {
+      "id": "R348",
+      "source": "H0",
+      "target": "K085",
+      "distance_km": 3.3,
+      "travel_time_min": 9.9,
+      "status": "open",
+      "road_type": "local"
+    }
+  ],
+  "river": [
+    [
+      13,
+      -0.4
+    ],
+    [
+      13,
+      16.3
+    ]
+  ]
+}
