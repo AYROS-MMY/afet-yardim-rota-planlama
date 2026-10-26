@@ -1,0 +1,340 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="840" viewBox="0 0 1800 840" role="img" aria-labelledby="title desc">
+<title id="title">Üçüncü hafta düzensiz yerleşim ağı — Dijkstra ve A* arama karşılaştırması</title>
+<desc id="desc">İki panel aynı ölçek ve aynı yol ağıdır. Sarı halkalar maliyeti kesinleştirilen düğümleri, mavi çizgiler rotayı gösterir.</desc>
+<rect width="1800" height="840" fill="#f8fafc"/>
+<g font-family="Arial, sans-serif" fill="#17263c">
+<text x="36" y="36" font-size="25" font-weight="bold">Üçüncü hafta düzensiz yerleşim ağı | Aramanın incelediği düğümler</text>
+<text x="36" y="64" font-size="16">H0 → A5 · Hasar katsayısı 2 · 40 düğüm · 65 yol · Sentetik yerel koordinatlar (km) · İki panel aynı ölçek</text>
+<path d="M900 85 V745" stroke="#cbd5e1"/>
+<g data-algorithm="dijkstra" transform="translate(0 0)">
+<text x="36" y="106" font-size="24" font-weight="bold">Dijkstra</text>
+<text x="36" y="134" font-size="17">39 düğüm incelendi · 38.08 dk</text>
+<polyline points="430.53,715.00 420.14,580.00 435.72,465.77 425.34,356.73 440.91,258.08 430.53,175.00" fill="none" stroke="#c4e5f0" stroke-width="23.37"/>
+<polyline data-road="R01" points="111.20,455.38 127.66,442.46 139.81,423.76 144.95,403.46" fill="none" stroke="#a4adb9" stroke-width="2"><title>R01 · H0 ↔ K05 · open</title></polyline>
+<polyline data-road="R02" points="144.95,403.46 163.85,385.76 188.15,370.80 212.45,361.92" fill="none" stroke="#a4adb9" stroke-width="2"><title>R02 · K05 ↔ K06 · open</title></polyline>
+<polyline data-road="R03" points="212.45,361.92 225.69,331.76 233.17,296.24 233.22,263.27" fill="none" stroke="#a4adb9" stroke-width="2"><title>R03 · K06 ↔ K02 · open</title></polyline>
+<polyline data-road="R04" points="233.22,263.27 259.81,266.64 287.84,275.99 311.11,289.23" fill="none" stroke="#a4adb9" stroke-width="2"><title>R04 · K02 ↔ K03 · open</title></polyline>
+<polyline data-road="R05" points="311.11,289.23 337.02,285.44 363.18,274.22 383.80,258.08" fill="none" stroke="#a4adb9" stroke-width="2"><title>R05 · K03 ↔ K04 · open</title></polyline>
+<polyline data-road="R06" points="111.20,455.38 136.49,466.03 161.72,482.85 181.30,502.12" fill="none" stroke="#a4adb9" stroke-width="2"><title>R06 · H0 ↔ K09 · open</title></polyline>
+<polyline data-road="R07" points="181.30,502.12 210.58,496.66 240.49,483.58 264.38,465.77" fill="none" stroke="#a4adb9" stroke-width="2"><title>R07 · K09 ↔ K10 · open</title></polyline>
+<polyline data-road="R08" points="264.38,465.77 298.28,454.03 337.53,446.56 373.41,445.00" fill="none" stroke="#c18b37" stroke-width="2" stroke-dasharray="3 4"><title>R08 · K10 ↔ K11 · damaged</title></polyline>
+<polyline data-road="R09" points="482.45,268.46 514.49,264.88 548.13,253.66 575.91,237.31" fill="none" stroke="#a4adb9" stroke-width="2"><title>R09 · K17 ↔ K18 · open</title></polyline>
+<polyline data-road="R10" points="575.91,237.31 607.48,242.34 641.13,253.56 669.38,268.46" fill="none" stroke="#c18b37" stroke-width="2" stroke-dasharray="3 4"><title>R10 · K18 ↔ K19 · damaged</title></polyline>
+<polyline data-road="R11" points="669.38,268.46 692.12,292.29 722.02,312.86 752.45,325.58" fill="none" stroke="#a4adb9" stroke-width="2"><title>R11 · K19 ↔ K20 · open</title></polyline>
+<polyline data-road="R12" points="477.26,439.81 503.84,443.18 531.88,452.53 555.14,465.77" fill="none" stroke="#a4adb9" stroke-width="2"><title>R12 · K25 ↔ K26 · open</title></polyline>
+<polyline data-road="R13" points="555.14,465.77 583.81,470.86 615.58,468.99 643.41,460.58" fill="none" stroke="#c18b37" stroke-width="2" stroke-dasharray="3 4"><title>R13 · K26 ↔ K27 · damaged</title></polyline>
+<polyline data-road="R14" points="643.41,460.58 677.58,474.34 713.09,494.90 742.07,517.69" fill="none" stroke="#dc6262" stroke-width="2" stroke-dasharray="3 4"><title>R14 · K27 ↔ K28 · closed</title></polyline>
+<polyline data-road="R15" points="742.07,517.69 763.20,487.21 780.02,449.83 788.80,413.85" fill="none" stroke="#a4adb9" stroke-width="2"><title>R15 · K28 ↔ A3 · open</title></polyline>
+<polyline data-road="R16" points="383.80,258.08 415.37,261.40 450.88,265.14 482.45,268.46" fill="none" stroke="#c18b37" stroke-width="4" stroke-dasharray="3 4"><title>R16 · K04 ↔ K17 · damaged</title></polyline>
+<polyline data-road="R17" points="373.41,445.00 406.64,443.34 444.03,441.47 477.26,439.81" fill="none" stroke="#a4adb9" stroke-width="4"><title>R17 · K11 ↔ K25 · open</title></polyline>
+<polyline data-road="R18" points="144.95,403.46 144.80,367.84 150.40,328.59 160.53,294.42" fill="none" stroke="#a4adb9" stroke-width="2"><title>R18 · K05 ↔ K01 · open</title></polyline>
+<polyline data-road="R19" points="160.53,294.42 186.44,290.63 212.61,279.42 233.22,263.27" fill="none" stroke="#a4adb9" stroke-width="2"><title>R19 · K01 ↔ K02 · open</title></polyline>
+<polyline data-road="R20" points="212.45,361.92 237.48,365.35 263.65,374.70 285.14,387.88" fill="none" stroke="#c18b37" stroke-width="2" stroke-dasharray="3 4"><title>R20 · K06 ↔ K07 · damaged</title></polyline>
+<polyline data-road="R21" points="285.14,387.88 299.99,358.03 309.34,322.51 311.11,289.23" fill="none" stroke="#a4adb9" stroke-width="2"><title>R21 · K07 ↔ K03 · open</title></polyline>
+<polyline data-road="R22" points="311.11,289.23 335.87,301.74 360.17,320.44 378.61,341.15" fill="none" stroke="#dc6262" stroke-width="2" stroke-dasharray="3 4"><title>R22 · K03 ↔ K08 · closed</title></polyline>
+<polyline data-road="R23" points="378.61,341.15 387.02,314.98 388.89,285.08 383.80,258.08" fill="none" stroke="#a4adb9" stroke-width="2"><title>R23 · K08 ↔ K04 · open</title></polyline>
+<polyline data-road="R24" points="285.14,387.88 283.53,414.16 276.06,442.20 264.38,465.77" fill="none" stroke="#a4adb9" stroke-width="2"><title>R24 · K07 ↔ K10 · open</title></polyline>
+<polyline data-road="R25" points="373.41,445.00 381.82,412.08 383.69,374.70 378.61,341.15" fill="none" stroke="#a4adb9" stroke-width="2"><title>R25 · K11 ↔ K08 · open</title></polyline>
+<polyline data-road="R26" points="181.30,502.12 174.55,535.50 161.46,571.02 144.95,600.77" fill="none" stroke="#a4adb9" stroke-width="2"><title>R26 · K09 ↔ K12 · open</title></polyline>
+<polyline data-road="R27" points="144.95,600.77 173.93,597.13 203.83,585.92 228.03,569.62" fill="none" stroke="#a4adb9" stroke-width="2"><title>R27 · K12 ↔ K13 · open</title></polyline>
+<polyline data-road="R28" points="228.03,569.62 234.78,534.67 247.86,497.29 264.38,465.77" fill="none" stroke="#a4adb9" stroke-width="2"><title>R28 · K13 ↔ K10 · open</title></polyline>
+<polyline data-road="R29" points="228.03,569.62 258.56,581.25 294.07,586.85 326.68,585.19" fill="none" stroke="#c18b37" stroke-width="2" stroke-dasharray="3 4"><title>R29 · K13 ↔ K14 · damaged</title></polyline>
+<polyline data-road="R30" points="326.68,585.19 345.84,568.99 370.14,555.91 394.18,548.85" fill="none" stroke="#a4adb9" stroke-width="2"><title>R30 · K14 ↔ K15 · open</title></polyline>
+<polyline data-road="R31" points="394.18,548.85 394.13,514.32 386.65,476.93 373.41,445.00" fill="none" stroke="#a4adb9" stroke-width="2"><title>R31 · K15 ↔ K11 · open</title></polyline>
+<polyline data-road="R32" points="264.38,465.77 288.93,501.60 311.37,544.59 326.68,585.19" fill="none" stroke="#a4adb9" stroke-width="2"><title>R32 · K10 ↔ K14 · open</title></polyline>
+<polyline data-road="R33" points="482.45,268.46 479.08,297.49 482.82,329.26 492.84,356.73" fill="none" stroke="#a4adb9" stroke-width="2"><title>R33 · K17 ↔ K21 · open</title></polyline>
+<polyline data-road="R34" points="492.84,356.73 514.33,343.54 540.50,334.20 565.53,330.77" fill="none" stroke="#dc6262" stroke-width="2" stroke-dasharray="3 4"><title>R34 · K21 ↔ K22 · closed</title></polyline>
+<polyline data-road="R35" points="565.53,330.77 575.55,301.59 579.29,267.94 575.91,237.31" fill="none" stroke="#a4adb9" stroke-width="2"><title>R35 · K22 ↔ K18 · open</title></polyline>
+<polyline data-road="R36" points="565.53,330.77 588.32,339.75 610.75,354.71 627.84,372.31" fill="none" stroke="#a4adb9" stroke-width="2"><title>R36 · K22 ↔ K23 · open</title></polyline>
+<polyline data-road="R37" points="627.84,372.31 647.41,341.57 662.37,304.18 669.38,268.46" fill="none" stroke="#a4adb9" stroke-width="2"><title>R37 · K23 ↔ K19 · open</title></polyline>
+<polyline data-road="R38" points="627.84,372.31 655.67,373.92 685.57,381.39 710.91,393.08" fill="none" stroke="#c18b37" stroke-width="2" stroke-dasharray="3 4"><title>R38 · K23 ↔ K24 · damaged</title></polyline>
+<polyline data-road="R39" points="710.91,393.08 729.97,375.01 744.92,350.71 752.45,325.58" fill="none" stroke="#a4adb9" stroke-width="2"><title>R39 · K24 ↔ K20 · open</title></polyline>
+<polyline data-road="R40" points="492.84,356.73 492.94,384.25 487.33,414.16 477.26,439.81" fill="none" stroke="#a4adb9" stroke-width="2"><title>R40 · K21 ↔ K25 · open</title></polyline>
+<polyline data-road="R41" points="555.14,465.77 583.75,440.02 609.92,406.37 627.84,372.31" fill="none" stroke="#a4adb9" stroke-width="2"><title>R41 · K26 ↔ K23 · open</title></polyline>
+<polyline data-road="R42" points="643.41,460.58 661.33,435.29 685.63,410.99 710.91,393.08" fill="none" stroke="#a4adb9" stroke-width="2"><title>R42 · K27 ↔ K24 · open</title></polyline>
+<polyline data-road="R43" points="477.26,439.81 475.55,480.52 481.15,525.38 492.84,564.42" fill="none" stroke="#a4adb9" stroke-width="2"><title>R43 · K25 ↔ K29 · open</title></polyline>
+<polyline data-road="R44" points="492.84,564.42 522.54,567.75 554.31,577.09 581.11,590.38" fill="none" stroke="#a4adb9" stroke-width="2"><title>R44 · K29 ↔ K30 · open</title></polyline>
+<polyline data-road="R45" points="581.11,590.38 579.39,549.11 570.05,504.24 555.14,465.77" fill="none" stroke="#a4adb9" stroke-width="2"><title>R45 · K30 ↔ K26 · open</title></polyline>
+<polyline data-road="R46" points="581.11,590.38 609.35,575.48 643.00,564.27 674.57,559.23" fill="none" stroke="#a4adb9" stroke-width="2"><title>R46 · K30 ↔ K31 · open</title></polyline>
+<polyline data-road="R47" points="674.57,559.23 671.04,525.64 659.82,490.12 643.41,460.58" fill="none" stroke="#a4adb9" stroke-width="2"><title>R47 · K31 ↔ K27 · open</title></polyline>
+<polyline data-road="R48" points="674.57,559.23 693.47,541.52 717.77,526.57 742.07,517.69" fill="none" stroke="#a4adb9" stroke-width="2"><title>R48 · K31 ↔ K28 · open</title></polyline>
+<polyline data-road="R49" points="581.11,590.38 555.14,603.52 530.84,624.08 513.61,647.50" fill="none" stroke="#a4adb9" stroke-width="2"><title>R49 · K30 ↔ H1 · open</title></polyline>
+<polyline data-road="R50" points="233.22,263.27 238.73,244.01 249.94,225.31 264.38,211.35" fill="none" stroke="#a4adb9" stroke-width="2"><title>R50 · K02 ↔ A1 · open</title></polyline>
+<polyline data-road="R51" points="264.38,211.35 273.57,239.75 290.39,267.79 311.11,289.23" fill="none" stroke="#a4adb9" stroke-width="2"><title>R51 · A1 ↔ K03 · open</title></polyline>
+<polyline data-road="R52" points="285.14,387.88 301.66,376.36 322.22,368.88 342.26,367.12" fill="none" stroke="#c18b37" stroke-width="2" stroke-dasharray="3 4"><title>R52 · K07 ↔ A2 · damaged</title></polyline>
+<polyline data-road="R53" points="342.26,367.12 357.84,364.31 370.92,354.97 378.61,341.15" fill="none" stroke="#a4adb9" stroke-width="2"><title>R53 · A2 ↔ K08 · open</title></polyline>
+<polyline data-road="R54" points="342.26,367.12 357.06,390.12 368.27,418.16 373.41,445.00" fill="none" stroke="#a4adb9" stroke-width="2"><title>R54 · A2 ↔ K11 · open</title></polyline>
+<polyline data-road="R55" points="326.68,585.19 309.13,603.57 296.05,627.87 290.34,652.69" fill="none" stroke="#a4adb9" stroke-width="2"><title>R55 · K14 ↔ K16 · open</title></polyline>
+<polyline data-road="R56" points="144.95,600.77 142.36,622.52 133.94,644.96 121.59,663.08" fill="none" stroke="#dc6262" stroke-width="2" stroke-dasharray="3 4"><title>R56 · K12 ↔ A6 · closed</title></polyline>
+<polyline data-road="R57" points="228.03,569.62 200.82,607.31 162.50,640.96 121.59,663.08" fill="none" stroke="#dc6262" stroke-width="2" stroke-dasharray="3 4"><title>R57 · K13 ↔ A6 · closed</title></polyline>
+<polyline data-road="R58" points="575.91,237.31 595.33,222.61 619.63,211.40 643.41,206.15" fill="none" stroke="#a4adb9" stroke-width="2"><title>R58 · K18 ↔ A4 · open</title></polyline>
+<polyline data-road="R59" points="643.41,206.15 645.49,228.69 654.84,251.12 669.38,268.46" fill="none" stroke="#a4adb9" stroke-width="2"><title>R59 · A4 ↔ K19 · open</title></polyline>
+<polyline data-road="R60" points="710.91,393.08 737.19,394.69 765.23,402.16 788.80,413.85" fill="none" stroke="#a4adb9" stroke-width="2"><title>R60 · K24 ↔ A3 · open</title></polyline>
+<polyline data-road="R61" points="752.45,325.58 757.85,356.37 770.94,388.14 788.80,413.85" fill="none" stroke="#a4adb9" stroke-width="2"><title>R61 · K20 ↔ A3 · open</title></polyline>
+<polyline data-road="R62" points="492.84,564.42 504.52,589.76 512.00,619.67 513.61,647.50" fill="none" stroke="#a4adb9" stroke-width="2"><title>R62 · K29 ↔ H1 · open</title></polyline>
+<polyline data-road="R63" points="581.11,590.38 588.63,615.52 603.59,639.82 622.64,657.88" fill="none" stroke="#a4adb9" stroke-width="2"><title>R63 · K30 ↔ K32 · open</title></polyline>
+<polyline data-road="R64" points="674.57,559.23 703.28,582.28 731.32,612.19 752.45,642.31" fill="none" stroke="#c18b37" stroke-width="2" stroke-dasharray="3 4"><title>R64 · K31 ↔ A5 · damaged</title></polyline>
+<polyline data-road="R65" points="742.07,517.69 738.64,558.14 742.38,603.00 752.45,642.31" fill="none" stroke="#a4adb9" stroke-width="2"><title>R65 · K28 ↔ A5 · open</title></polyline>
+<polyline data-route-road="R06" points="111.20,455.38 136.49,466.03 161.72,482.85 181.30,502.12" fill="none" stroke="#2563eb" stroke-width="4"/>
+<polyline data-route-road="R07" points="181.30,502.12 210.58,496.66 240.49,483.58 264.38,465.77" fill="none" stroke="#2563eb" stroke-width="4"/>
+<polyline data-route-road="R08" points="264.38,465.77 298.28,454.03 337.53,446.56 373.41,445.00" fill="none" stroke="#2563eb" stroke-width="4"/>
+<polyline data-route-road="R17" points="373.41,445.00 406.64,443.34 444.03,441.47 477.26,439.81" fill="none" stroke="#2563eb" stroke-width="4"/>
+<polyline data-route-road="R12" points="477.26,439.81 503.84,443.18 531.88,452.53 555.14,465.77" fill="none" stroke="#2563eb" stroke-width="4"/>
+<polyline data-route-road="R45" points="581.11,590.38 579.39,549.11 570.05,504.24 555.14,465.77" fill="none" stroke="#2563eb" stroke-width="4"/>
+<polyline data-route-road="R46" points="581.11,590.38 609.35,575.48 643.00,564.27 674.57,559.23" fill="none" stroke="#2563eb" stroke-width="4"/>
+<polyline data-route-road="R48" points="674.57,559.23 693.47,541.52 717.77,526.57 742.07,517.69" fill="none" stroke="#2563eb" stroke-width="4"/>
+<polyline data-route-road="R65" points="742.07,517.69 738.64,558.14 742.38,603.00 752.45,642.31" fill="none" stroke="#2563eb" stroke-width="4"/>
+<circle data-settled-node="K01" data-order="6" cx="160.53" cy="294.42" r="6.2" fill="#f3c75b"/>
+<circle cx="160.53" cy="294.42" r="3.2" fill="#64748b"><title>K01; kesinleştirme sırası 6</title></circle>
+<circle data-settled-node="K02" data-order="8" cx="233.22" cy="263.27" r="6.2" fill="#f3c75b"/>
+<circle cx="233.22" cy="263.27" r="3.2" fill="#64748b"><title>K02; kesinleştirme sırası 8</title></circle>
+<circle data-settled-node="K03" data-order="11" cx="311.11" cy="289.23" r="6.2" fill="#f3c75b"/>
+<circle cx="311.11" cy="289.23" r="3.2" fill="#64748b"><title>K03; kesinleştirme sırası 11</title></circle>
+<circle data-settled-node="K04" data-order="15" cx="383.80" cy="258.08" r="6.2" fill="#f3c75b"/>
+<circle cx="383.80" cy="258.08" r="3.2" fill="#64748b"><title>K04; kesinleştirme sırası 15</title></circle>
+<circle data-settled-node="K05" data-order="2" cx="144.95" cy="403.46" r="6.2" fill="#f3c75b"/>
+<circle cx="144.95" cy="403.46" r="3.2" fill="#64748b"><title>K05; kesinleştirme sırası 2</title></circle>
+<circle data-settled-node="K06" data-order="4" cx="212.45" cy="361.92" r="6.2" fill="#f3c75b"/>
+<circle cx="212.45" cy="361.92" r="3.2" fill="#64748b"><title>K06; kesinleştirme sırası 4</title></circle>
+<circle data-settled-node="K07" data-order="9" cx="285.14" cy="387.88" r="6.2" fill="#f3c75b"/>
+<circle cx="285.14" cy="387.88" r="3.2" fill="#64748b"><title>K07; kesinleştirme sırası 9</title></circle>
+<circle data-settled-node="K08" data-order="18" cx="378.61" cy="341.15" r="6.2" fill="#f3c75b"/>
+<circle cx="378.61" cy="341.15" r="3.2" fill="#64748b"><title>K08; kesinleştirme sırası 18</title></circle>
+<circle data-settled-node="K09" data-order="3" cx="181.30" cy="502.12" r="6.2" fill="#f3c75b"/>
+<circle cx="181.30" cy="502.12" r="3.2" fill="#64748b"><title>K09; kesinleştirme sırası 3</title></circle>
+<circle data-settled-node="K10" data-order="5" cx="264.38" cy="465.77" r="6.2" fill="#f3c75b"/>
+<circle cx="264.38" cy="465.77" r="3.2" fill="#64748b"><title>K10; kesinleştirme sırası 5</title></circle>
+<circle data-settled-node="K11" data-order="14" cx="373.41" cy="445.00" r="6.2" fill="#f3c75b"/>
+<circle cx="373.41" cy="445.00" r="3.2" fill="#64748b"><title>K11; kesinleştirme sırası 14</title></circle>
+<circle data-settled-node="K12" data-order="7" cx="144.95" cy="600.77" r="6.2" fill="#f3c75b"/>
+<circle cx="144.95" cy="600.77" r="3.2" fill="#64748b"><title>K12; kesinleştirme sırası 7</title></circle>
+<circle data-settled-node="K13" data-order="10" cx="228.03" cy="569.62" r="6.2" fill="#f3c75b"/>
+<circle cx="228.03" cy="569.62" r="3.2" fill="#64748b"><title>K13; kesinleştirme sırası 10</title></circle>
+<circle data-settled-node="K14" data-order="12" cx="326.68" cy="585.19" r="6.2" fill="#f3c75b"/>
+<circle cx="326.68" cy="585.19" r="3.2" fill="#64748b"><title>K14; kesinleştirme sırası 12</title></circle>
+<circle data-settled-node="K15" data-order="16" cx="394.18" cy="548.85" r="6.2" fill="#f3c75b"/>
+<circle cx="394.18" cy="548.85" r="3.2" fill="#64748b"><title>K15; kesinleştirme sırası 16</title></circle>
+<circle data-settled-node="K16" data-order="17" cx="290.34" cy="652.69" r="6.2" fill="#f3c75b"/>
+<circle cx="290.34" cy="652.69" r="3.2" fill="#64748b"><title>K16; kesinleştirme sırası 17</title></circle>
+<circle data-settled-node="K17" data-order="23" cx="482.45" cy="268.46" r="6.2" fill="#f3c75b"/>
+<circle cx="482.45" cy="268.46" r="3.2" fill="#64748b"><title>K17; kesinleştirme sırası 23</title></circle>
+<circle data-settled-node="K18" data-order="27" cx="575.91" cy="237.31" r="6.2" fill="#f3c75b"/>
+<circle cx="575.91" cy="237.31" r="3.2" fill="#64748b"><title>K18; kesinleştirme sırası 27</title></circle>
+<circle data-settled-node="K19" data-order="33" cx="669.38" cy="268.46" r="6.2" fill="#f3c75b"/>
+<circle cx="669.38" cy="268.46" r="3.2" fill="#64748b"><title>K19; kesinleştirme sırası 33</title></circle>
+<circle data-settled-node="K20" data-order="37" cx="752.45" cy="325.58" r="6.2" fill="#f3c75b"/>
+<circle cx="752.45" cy="325.58" r="3.2" fill="#64748b"><title>K20; kesinleştirme sırası 37</title></circle>
+<circle data-settled-node="K21" data-order="22" cx="492.84" cy="356.73" r="6.2" fill="#f3c75b"/>
+<circle cx="492.84" cy="356.73" r="3.2" fill="#64748b"><title>K21; kesinleştirme sırası 22</title></circle>
+<circle data-settled-node="K22" data-order="30" cx="565.53" cy="330.77" r="6.2" fill="#f3c75b"/>
+<circle cx="565.53" cy="330.77" r="3.2" fill="#64748b"><title>K22; kesinleştirme sırası 30</title></circle>
+<circle data-settled-node="K23" data-order="25" cx="627.84" cy="372.31" r="6.2" fill="#f3c75b"/>
+<circle cx="627.84" cy="372.31" r="3.2" fill="#64748b"><title>K23; kesinleştirme sırası 25</title></circle>
+<circle data-settled-node="K24" data-order="32" cx="710.91" cy="393.08" r="6.2" fill="#f3c75b"/>
+<circle cx="710.91" cy="393.08" r="3.2" fill="#64748b"><title>K24; kesinleştirme sırası 32</title></circle>
+<circle data-settled-node="K25" data-order="20" cx="477.26" cy="439.81" r="6.2" fill="#f3c75b"/>
+<circle cx="477.26" cy="439.81" r="3.2" fill="#64748b"><title>K25; kesinleştirme sırası 20</title></circle>
+<circle data-settled-node="K26" data-order="21" cx="555.14" cy="465.77" r="6.2" fill="#f3c75b"/>
+<circle cx="555.14" cy="465.77" r="3.2" fill="#64748b"><title>K26; kesinleştirme sırası 21</title></circle>
+<circle data-settled-node="K27" data-order="28" cx="643.41" cy="460.58" r="6.2" fill="#f3c75b"/>
+<circle cx="643.41" cy="460.58" r="3.2" fill="#64748b"><title>K27; kesinleştirme sırası 28</title></circle>
+<circle data-settled-node="K28" data-order="36" cx="742.07" cy="517.69" r="6.2" fill="#f3c75b"/>
+<circle cx="742.07" cy="517.69" r="3.2" fill="#64748b"><title>K28; kesinleştirme sırası 36</title></circle>
+<circle data-settled-node="K29" data-order="24" cx="492.84" cy="564.42" r="6.2" fill="#f3c75b"/>
+<circle cx="492.84" cy="564.42" r="3.2" fill="#64748b"><title>K29; kesinleştirme sırası 24</title></circle>
+<circle data-settled-node="K30" data-order="26" cx="581.11" cy="590.38" r="6.2" fill="#f3c75b"/>
+<circle cx="581.11" cy="590.38" r="3.2" fill="#64748b"><title>K30; kesinleştirme sırası 26</title></circle>
+<circle data-settled-node="K31" data-order="31" cx="674.57" cy="559.23" r="6.2" fill="#f3c75b"/>
+<circle cx="674.57" cy="559.23" r="3.2" fill="#64748b"><title>K31; kesinleştirme sırası 31</title></circle>
+<circle data-settled-node="K32" data-order="35" cx="622.64" cy="657.88" r="6.2" fill="#f3c75b"/>
+<circle cx="622.64" cy="657.88" r="3.2" fill="#64748b"><title>K32; kesinleştirme sırası 35</title></circle>
+<circle data-settled-node="H0" data-order="1" cx="111.20" cy="455.38" r="10" fill="#f3c75b"/>
+<circle cx="111.20" cy="455.38" r="7" fill="#1f4b78"><title>H0; kesinleştirme sırası 1</title></circle>
+<circle data-settled-node="H1" data-order="29" cx="513.61" cy="647.50" r="10" fill="#f3c75b"/>
+<circle cx="513.61" cy="647.50" r="7" fill="#1f4b78"><title>H1; kesinleştirme sırası 29</title></circle>
+<circle data-settled-node="A1" data-order="13" cx="264.38" cy="211.35" r="10" fill="#f3c75b"/>
+<circle cx="264.38" cy="211.35" r="7" fill="#9e3a57"><title>A1; kesinleştirme sırası 13</title></circle>
+<circle data-settled-node="A2" data-order="19" cx="342.26" cy="367.12" r="10" fill="#f3c75b"/>
+<circle cx="342.26" cy="367.12" r="7" fill="#9e3a57"><title>A2; kesinleştirme sırası 19</title></circle>
+<circle data-settled-node="A3" data-order="38" cx="788.80" cy="413.85" r="10" fill="#f3c75b"/>
+<circle cx="788.80" cy="413.85" r="7" fill="#9e3a57"><title>A3; kesinleştirme sırası 38</title></circle>
+<circle data-settled-node="A4" data-order="34" cx="643.41" cy="206.15" r="10" fill="#f3c75b"/>
+<circle cx="643.41" cy="206.15" r="7" fill="#9e3a57"><title>A4; kesinleştirme sırası 34</title></circle>
+<circle data-settled-node="A5" data-order="39" cx="752.45" cy="642.31" r="10" fill="#f3c75b"/>
+<circle cx="752.45" cy="642.31" r="7" fill="#9e3a57"><title>A5; kesinleştirme sırası 39</title></circle>
+<circle cx="121.59" cy="663.08" r="7" fill="#9e3a57"><title>A6; kesinleştirilmedi</title></circle>
+<text x="122.20" y="446.38" font-size="13" font-weight="bold" stroke="#f8fafc" stroke-width="3" paint-order="stroke">H0</text>
+<text x="524.61" y="638.50" font-size="13" font-weight="bold" stroke="#f8fafc" stroke-width="3" paint-order="stroke">H1</text>
+<text x="275.38" y="202.35" font-size="13" font-weight="bold" stroke="#f8fafc" stroke-width="3" paint-order="stroke">A1</text>
+<text x="353.26" y="385.12" font-size="13" font-weight="bold" stroke="#f8fafc" stroke-width="3" paint-order="stroke">A2</text>
+<text x="799.80" y="404.85" font-size="13" font-weight="bold" stroke="#f8fafc" stroke-width="3" paint-order="stroke">A3</text>
+<text x="654.41" y="197.15" font-size="13" font-weight="bold" stroke="#f8fafc" stroke-width="3" paint-order="stroke">A4</text>
+<text x="763.45" y="633.31" font-size="13" font-weight="bold" stroke="#f8fafc" stroke-width="3" paint-order="stroke">A5</text>
+<text x="132.59" y="654.08" font-size="13" font-weight="bold" stroke="#f8fafc" stroke-width="3" paint-order="stroke">A6</text>
+</g>
+<g data-algorithm="astar" transform="translate(900 0)">
+<text x="36" y="106" font-size="24" font-weight="bold">A*</text>
+<text x="36" y="134" font-size="17">35 düğüm incelendi · 38.08 dk</text>
+<polyline points="430.53,715.00 420.14,580.00 435.72,465.77 425.34,356.73 440.91,258.08 430.53,175.00" fill="none" stroke="#c4e5f0" stroke-width="23.37"/>
+<polyline data-road="R01" points="111.20,455.38 127.66,442.46 139.81,423.76 144.95,403.46" fill="none" stroke="#a4adb9" stroke-width="2"><title>R01 · H0 ↔ K05 · open</title></polyline>
+<polyline data-road="R02" points="144.95,403.46 163.85,385.76 188.15,370.80 212.45,361.92" fill="none" stroke="#a4adb9" stroke-width="2"><title>R02 · K05 ↔ K06 · open</title></polyline>
+<polyline data-road="R03" points="212.45,361.92 225.69,331.76 233.17,296.24 233.22,263.27" fill="none" stroke="#a4adb9" stroke-width="2"><title>R03 · K06 ↔ K02 · open</title></polyline>
+<polyline data-road="R04" points="233.22,263.27 259.81,266.64 287.84,275.99 311.11,289.23" fill="none" stroke="#a4adb9" stroke-width="2"><title>R04 · K02 ↔ K03 · open</title></polyline>
+<polyline data-road="R05" points="311.11,289.23 337.02,285.44 363.18,274.22 383.80,258.08" fill="none" stroke="#a4adb9" stroke-width="2"><title>R05 · K03 ↔ K04 · open</title></polyline>
+<polyline data-road="R06" points="111.20,455.38 136.49,466.03 161.72,482.85 181.30,502.12" fill="none" stroke="#a4adb9" stroke-width="2"><title>R06 · H0 ↔ K09 · open</title></polyline>
+<polyline data-road="R07" points="181.30,502.12 210.58,496.66 240.49,483.58 264.38,465.77" fill="none" stroke="#a4adb9" stroke-width="2"><title>R07 · K09 ↔ K10 · open</title></polyline>
+<polyline data-road="R08" points="264.38,465.77 298.28,454.03 337.53,446.56 373.41,445.00" fill="none" stroke="#c18b37" stroke-width="2" stroke-dasharray="3 4"><title>R08 · K10 ↔ K11 · damaged</title></polyline>
+<polyline data-road="R09" points="482.45,268.46 514.49,264.88 548.13,253.66 575.91,237.31" fill="none" stroke="#a4adb9" stroke-width="2"><title>R09 · K17 ↔ K18 · open</title></polyline>
+<polyline data-road="R10" points="575.91,237.31 607.48,242.34 641.13,253.56 669.38,268.46" fill="none" stroke="#c18b37" stroke-width="2" stroke-dasharray="3 4"><title>R10 · K18 ↔ K19 · damaged</title></polyline>
+<polyline data-road="R11" points="669.38,268.46 692.12,292.29 722.02,312.86 752.45,325.58" fill="none" stroke="#a4adb9" stroke-width="2"><title>R11 · K19 ↔ K20 · open</title></polyline>
+<polyline data-road="R12" points="477.26,439.81 503.84,443.18 531.88,452.53 555.14,465.77" fill="none" stroke="#a4adb9" stroke-width="2"><title>R12 · K25 ↔ K26 · open</title></polyline>
+<polyline data-road="R13" points="555.14,465.77 583.81,470.86 615.58,468.99 643.41,460.58" fill="none" stroke="#c18b37" stroke-width="2" stroke-dasharray="3 4"><title>R13 · K26 ↔ K27 · damaged</title></polyline>
+<polyline data-road="R14" points="643.41,460.58 677.58,474.34 713.09,494.90 742.07,517.69" fill="none" stroke="#dc6262" stroke-width="2" stroke-dasharray="3 4"><title>R14 · K27 ↔ K28 · closed</title></polyline>
+<polyline data-road="R15" points="742.07,517.69 763.20,487.21 780.02,449.83 788.80,413.85" fill="none" stroke="#a4adb9" stroke-width="2"><title>R15 · K28 ↔ A3 · open</title></polyline>
+<polyline data-road="R16" points="383.80,258.08 415.37,261.40 450.88,265.14 482.45,268.46" fill="none" stroke="#c18b37" stroke-width="4" stroke-dasharray="3 4"><title>R16 · K04 ↔ K17 · damaged</title></polyline>
+<polyline data-road="R17" points="373.41,445.00 406.64,443.34 444.03,441.47 477.26,439.81" fill="none" stroke="#a4adb9" stroke-width="4"><title>R17 · K11 ↔ K25 · open</title></polyline>
+<polyline data-road="R18" points="144.95,403.46 144.80,367.84 150.40,328.59 160.53,294.42" fill="none" stroke="#a4adb9" stroke-width="2"><title>R18 · K05 ↔ K01 · open</title></polyline>
+<polyline data-road="R19" points="160.53,294.42 186.44,290.63 212.61,279.42 233.22,263.27" fill="none" stroke="#a4adb9" stroke-width="2"><title>R19 · K01 ↔ K02 · open</title></polyline>
+<polyline data-road="R20" points="212.45,361.92 237.48,365.35 263.65,374.70 285.14,387.88" fill="none" stroke="#c18b37" stroke-width="2" stroke-dasharray="3 4"><title>R20 · K06 ↔ K07 · damaged</title></polyline>
+<polyline data-road="R21" points="285.14,387.88 299.99,358.03 309.34,322.51 311.11,289.23" fill="none" stroke="#a4adb9" stroke-width="2"><title>R21 · K07 ↔ K03 · open</title></polyline>
+<polyline data-road="R22" points="311.11,289.23 335.87,301.74 360.17,320.44 378.61,341.15" fill="none" stroke="#dc6262" stroke-width="2" stroke-dasharray="3 4"><title>R22 · K03 ↔ K08 · closed</title></polyline>
+<polyline data-road="R23" points="378.61,341.15 387.02,314.98 388.89,285.08 383.80,258.08" fill="none" stroke="#a4adb9" stroke-width="2"><title>R23 · K08 ↔ K04 · open</title></polyline>
+<polyline data-road="R24" points="285.14,387.88 283.53,414.16 276.06,442.20 264.38,465.77" fill="none" stroke="#a4adb9" stroke-width="2"><title>R24 · K07 ↔ K10 · open</title></polyline>
+<polyline data-road="R25" points="373.41,445.00 381.82,412.08 383.69,374.70 378.61,341.15" fill="none" stroke="#a4adb9" stroke-width="2"><title>R25 · K11 ↔ K08 · open</title></polyline>
+<polyline data-road="R26" points="181.30,502.12 174.55,535.50 161.46,571.02 144.95,600.77" fill="none" stroke="#a4adb9" stroke-width="2"><title>R26 · K09 ↔ K12 · open</title></polyline>
+<polyline data-road="R27" points="144.95,600.77 173.93,597.13 203.83,585.92 228.03,569.62" fill="none" stroke="#a4adb9" stroke-width="2"><title>R27 · K12 ↔ K13 · open</title></polyline>
+<polyline data-road="R28" points="228.03,569.62 234.78,534.67 247.86,497.29 264.38,465.77" fill="none" stroke="#a4adb9" stroke-width="2"><title>R28 · K13 ↔ K10 · open</title></polyline>
+<polyline data-road="R29" points="228.03,569.62 258.56,581.25 294.07,586.85 326.68,585.19" fill="none" stroke="#c18b37" stroke-width="2" stroke-dasharray="3 4"><title>R29 · K13 ↔ K14 · damaged</title></polyline>
+<polyline data-road="R30" points="326.68,585.19 345.84,568.99 370.14,555.91 394.18,548.85" fill="none" stroke="#a4adb9" stroke-width="2"><title>R30 · K14 ↔ K15 · open</title></polyline>
+<polyline data-road="R31" points="394.18,548.85 394.13,514.32 386.65,476.93 373.41,445.00" fill="none" stroke="#a4adb9" stroke-width="2"><title>R31 · K15 ↔ K11 · open</title></polyline>
+<polyline data-road="R32" points="264.38,465.77 288.93,501.60 311.37,544.59 326.68,585.19" fill="none" stroke="#a4adb9" stroke-width="2"><title>R32 · K10 ↔ K14 · open</title></polyline>
+<polyline data-road="R33" points="482.45,268.46 479.08,297.49 482.82,329.26 492.84,356.73" fill="none" stroke="#a4adb9" stroke-width="2"><title>R33 · K17 ↔ K21 · open</title></polyline>
+<polyline data-road="R34" points="492.84,356.73 514.33,343.54 540.50,334.20 565.53,330.77" fill="none" stroke="#dc6262" stroke-width="2" stroke-dasharray="3 4"><title>R34 · K21 ↔ K22 · closed</title></polyline>
+<polyline data-road="R35" points="565.53,330.77 575.55,301.59 579.29,267.94 575.91,237.31" fill="none" stroke="#a4adb9" stroke-width="2"><title>R35 · K22 ↔ K18 · open</title></polyline>
+<polyline data-road="R36" points="565.53,330.77 588.32,339.75 610.75,354.71 627.84,372.31" fill="none" stroke="#a4adb9" stroke-width="2"><title>R36 · K22 ↔ K23 · open</title></polyline>
+<polyline data-road="R37" points="627.84,372.31 647.41,341.57 662.37,304.18 669.38,268.46" fill="none" stroke="#a4adb9" stroke-width="2"><title>R37 · K23 ↔ K19 · open</title></polyline>
+<polyline data-road="R38" points="627.84,372.31 655.67,373.92 685.57,381.39 710.91,393.08" fill="none" stroke="#c18b37" stroke-width="2" stroke-dasharray="3 4"><title>R38 · K23 ↔ K24 · damaged</title></polyline>
+<polyline data-road="R39" points="710.91,393.08 729.97,375.01 744.92,350.71 752.45,325.58" fill="none" stroke="#a4adb9" stroke-width="2"><title>R39 · K24 ↔ K20 · open</title></polyline>
+<polyline data-road="R40" points="492.84,356.73 492.94,384.25 487.33,414.16 477.26,439.81" fill="none" stroke="#a4adb9" stroke-width="2"><title>R40 · K21 ↔ K25 · open</title></polyline>
+<polyline data-road="R41" points="555.14,465.77 583.75,440.02 609.92,406.37 627.84,372.31" fill="none" stroke="#a4adb9" stroke-width="2"><title>R41 · K26 ↔ K23 · open</title></polyline>
+<polyline data-road="R42" points="643.41,460.58 661.33,435.29 685.63,410.99 710.91,393.08" fill="none" stroke="#a4adb9" stroke-width="2"><title>R42 · K27 ↔ K24 · open</title></polyline>
+<polyline data-road="R43" points="477.26,439.81 475.55,480.52 481.15,525.38 492.84,564.42" fill="none" stroke="#a4adb9" stroke-width="2"><title>R43 · K25 ↔ K29 · open</title></polyline>
+<polyline data-road="R44" points="492.84,564.42 522.54,567.75 554.31,577.09 581.11,590.38" fill="none" stroke="#a4adb9" stroke-width="2"><title>R44 · K29 ↔ K30 · open</title></polyline>
+<polyline data-road="R45" points="581.11,590.38 579.39,549.11 570.05,504.24 555.14,465.77" fill="none" stroke="#a4adb9" stroke-width="2"><title>R45 · K30 ↔ K26 · open</title></polyline>
+<polyline data-road="R46" points="581.11,590.38 609.35,575.48 643.00,564.27 674.57,559.23" fill="none" stroke="#a4adb9" stroke-width="2"><title>R46 · K30 ↔ K31 · open</title></polyline>
+<polyline data-road="R47" points="674.57,559.23 671.04,525.64 659.82,490.12 643.41,460.58" fill="none" stroke="#a4adb9" stroke-width="2"><title>R47 · K31 ↔ K27 · open</title></polyline>
+<polyline data-road="R48" points="674.57,559.23 693.47,541.52 717.77,526.57 742.07,517.69" fill="none" stroke="#a4adb9" stroke-width="2"><title>R48 · K31 ↔ K28 · open</title></polyline>
+<polyline data-road="R49" points="581.11,590.38 555.14,603.52 530.84,624.08 513.61,647.50" fill="none" stroke="#a4adb9" stroke-width="2"><title>R49 · K30 ↔ H1 · open</title></polyline>
+<polyline data-road="R50" points="233.22,263.27 238.73,244.01 249.94,225.31 264.38,211.35" fill="none" stroke="#a4adb9" stroke-width="2"><title>R50 · K02 ↔ A1 · open</title></polyline>
+<polyline data-road="R51" points="264.38,211.35 273.57,239.75 290.39,267.79 311.11,289.23" fill="none" stroke="#a4adb9" stroke-width="2"><title>R51 · A1 ↔ K03 · open</title></polyline>
+<polyline data-road="R52" points="285.14,387.88 301.66,376.36 322.22,368.88 342.26,367.12" fill="none" stroke="#c18b37" stroke-width="2" stroke-dasharray="3 4"><title>R52 · K07 ↔ A2 · damaged</title></polyline>
+<polyline data-road="R53" points="342.26,367.12 357.84,364.31 370.92,354.97 378.61,341.15" fill="none" stroke="#a4adb9" stroke-width="2"><title>R53 · A2 ↔ K08 · open</title></polyline>
+<polyline data-road="R54" points="342.26,367.12 357.06,390.12 368.27,418.16 373.41,445.00" fill="none" stroke="#a4adb9" stroke-width="2"><title>R54 · A2 ↔ K11 · open</title></polyline>
+<polyline data-road="R55" points="326.68,585.19 309.13,603.57 296.05,627.87 290.34,652.69" fill="none" stroke="#a4adb9" stroke-width="2"><title>R55 · K14 ↔ K16 · open</title></polyline>
+<polyline data-road="R56" points="144.95,600.77 142.36,622.52 133.94,644.96 121.59,663.08" fill="none" stroke="#dc6262" stroke-width="2" stroke-dasharray="3 4"><title>R56 · K12 ↔ A6 · closed</title></polyline>
+<polyline data-road="R57" points="228.03,569.62 200.82,607.31 162.50,640.96 121.59,663.08" fill="none" stroke="#dc6262" stroke-width="2" stroke-dasharray="3 4"><title>R57 · K13 ↔ A6 · closed</title></polyline>
+<polyline data-road="R58" points="575.91,237.31 595.33,222.61 619.63,211.40 643.41,206.15" fill="none" stroke="#a4adb9" stroke-width="2"><title>R58 · K18 ↔ A4 · open</title></polyline>
+<polyline data-road="R59" points="643.41,206.15 645.49,228.69 654.84,251.12 669.38,268.46" fill="none" stroke="#a4adb9" stroke-width="2"><title>R59 · A4 ↔ K19 · open</title></polyline>
+<polyline data-road="R60" points="710.91,393.08 737.19,394.69 765.23,402.16 788.80,413.85" fill="none" stroke="#a4adb9" stroke-width="2"><title>R60 · K24 ↔ A3 · open</title></polyline>
+<polyline data-road="R61" points="752.45,325.58 757.85,356.37 770.94,388.14 788.80,413.85" fill="none" stroke="#a4adb9" stroke-width="2"><title>R61 · K20 ↔ A3 · open</title></polyline>
+<polyline data-road="R62" points="492.84,564.42 504.52,589.76 512.00,619.67 513.61,647.50" fill="none" stroke="#a4adb9" stroke-width="2"><title>R62 · K29 ↔ H1 · open</title></polyline>
+<polyline data-road="R63" points="581.11,590.38 588.63,615.52 603.59,639.82 622.64,657.88" fill="none" stroke="#a4adb9" stroke-width="2"><title>R63 · K30 ↔ K32 · open</title></polyline>
+<polyline data-road="R64" points="674.57,559.23 703.28,582.28 731.32,612.19 752.45,642.31" fill="none" stroke="#c18b37" stroke-width="2" stroke-dasharray="3 4"><title>R64 · K31 ↔ A5 · damaged</title></polyline>
+<polyline data-road="R65" points="742.07,517.69 738.64,558.14 742.38,603.00 752.45,642.31" fill="none" stroke="#a4adb9" stroke-width="2"><title>R65 · K28 ↔ A5 · open</title></polyline>
+<polyline data-route-road="R06" points="111.20,455.38 136.49,466.03 161.72,482.85 181.30,502.12" fill="none" stroke="#2563eb" stroke-width="4"/>
+<polyline data-route-road="R07" points="181.30,502.12 210.58,496.66 240.49,483.58 264.38,465.77" fill="none" stroke="#2563eb" stroke-width="4"/>
+<polyline data-route-road="R08" points="264.38,465.77 298.28,454.03 337.53,446.56 373.41,445.00" fill="none" stroke="#2563eb" stroke-width="4"/>
+<polyline data-route-road="R17" points="373.41,445.00 406.64,443.34 444.03,441.47 477.26,439.81" fill="none" stroke="#2563eb" stroke-width="4"/>
+<polyline data-route-road="R12" points="477.26,439.81 503.84,443.18 531.88,452.53 555.14,465.77" fill="none" stroke="#2563eb" stroke-width="4"/>
+<polyline data-route-road="R45" points="581.11,590.38 579.39,549.11 570.05,504.24 555.14,465.77" fill="none" stroke="#2563eb" stroke-width="4"/>
+<polyline data-route-road="R46" points="581.11,590.38 609.35,575.48 643.00,564.27 674.57,559.23" fill="none" stroke="#2563eb" stroke-width="4"/>
+<polyline data-route-road="R48" points="674.57,559.23 693.47,541.52 717.77,526.57 742.07,517.69" fill="none" stroke="#2563eb" stroke-width="4"/>
+<polyline data-route-road="R65" points="742.07,517.69 738.64,558.14 742.38,603.00 752.45,642.31" fill="none" stroke="#2563eb" stroke-width="4"/>
+<circle data-settled-node="K01" data-order="14" cx="160.53" cy="294.42" r="6.2" fill="#f3c75b"/>
+<circle cx="160.53" cy="294.42" r="3.2" fill="#64748b"><title>K01; kesinleştirme sırası 14</title></circle>
+<circle data-settled-node="K02" data-order="12" cx="233.22" cy="263.27" r="6.2" fill="#f3c75b"/>
+<circle cx="233.22" cy="263.27" r="3.2" fill="#64748b"><title>K02; kesinleştirme sırası 12</title></circle>
+<circle data-settled-node="K03" data-order="13" cx="311.11" cy="289.23" r="6.2" fill="#f3c75b"/>
+<circle cx="311.11" cy="289.23" r="3.2" fill="#64748b"><title>K03; kesinleştirme sırası 13</title></circle>
+<circle data-settled-node="K04" data-order="17" cx="383.80" cy="258.08" r="6.2" fill="#f3c75b"/>
+<circle cx="383.80" cy="258.08" r="3.2" fill="#64748b"><title>K04; kesinleştirme sırası 17</title></circle>
+<circle data-settled-node="K05" data-order="4" cx="144.95" cy="403.46" r="6.2" fill="#f3c75b"/>
+<circle cx="144.95" cy="403.46" r="3.2" fill="#64748b"><title>K05; kesinleştirme sırası 4</title></circle>
+<circle data-settled-node="K06" data-order="5" cx="212.45" cy="361.92" r="6.2" fill="#f3c75b"/>
+<circle cx="212.45" cy="361.92" r="3.2" fill="#64748b"><title>K06; kesinleştirme sırası 5</title></circle>
+<circle data-settled-node="K07" data-order="7" cx="285.14" cy="387.88" r="6.2" fill="#f3c75b"/>
+<circle cx="285.14" cy="387.88" r="3.2" fill="#64748b"><title>K07; kesinleştirme sırası 7</title></circle>
+<circle data-settled-node="K08" data-order="20" cx="378.61" cy="341.15" r="6.2" fill="#f3c75b"/>
+<circle cx="378.61" cy="341.15" r="3.2" fill="#64748b"><title>K08; kesinleştirme sırası 20</title></circle>
+<circle data-settled-node="K09" data-order="2" cx="181.30" cy="502.12" r="6.2" fill="#f3c75b"/>
+<circle cx="181.30" cy="502.12" r="3.2" fill="#64748b"><title>K09; kesinleştirme sırası 2</title></circle>
+<circle data-settled-node="K10" data-order="3" cx="264.38" cy="465.77" r="6.2" fill="#f3c75b"/>
+<circle cx="264.38" cy="465.77" r="3.2" fill="#64748b"><title>K10; kesinleştirme sırası 3</title></circle>
+<circle data-settled-node="K11" data-order="8" cx="373.41" cy="445.00" r="6.2" fill="#f3c75b"/>
+<circle cx="373.41" cy="445.00" r="3.2" fill="#64748b"><title>K11; kesinleştirme sırası 8</title></circle>
+<circle data-settled-node="K12" data-order="10" cx="144.95" cy="600.77" r="6.2" fill="#f3c75b"/>
+<circle cx="144.95" cy="600.77" r="3.2" fill="#64748b"><title>K12; kesinleştirme sırası 10</title></circle>
+<circle data-settled-node="K13" data-order="11" cx="228.03" cy="569.62" r="6.2" fill="#f3c75b"/>
+<circle cx="228.03" cy="569.62" r="3.2" fill="#64748b"><title>K13; kesinleştirme sırası 11</title></circle>
+<circle data-settled-node="K14" data-order="6" cx="326.68" cy="585.19" r="6.2" fill="#f3c75b"/>
+<circle cx="326.68" cy="585.19" r="3.2" fill="#64748b"><title>K14; kesinleştirme sırası 6</title></circle>
+<circle data-settled-node="K15" data-order="9" cx="394.18" cy="548.85" r="6.2" fill="#f3c75b"/>
+<circle cx="394.18" cy="548.85" r="3.2" fill="#64748b"><title>K15; kesinleştirme sırası 9</title></circle>
+<circle data-settled-node="K16" data-order="18" cx="290.34" cy="652.69" r="6.2" fill="#f3c75b"/>
+<circle cx="290.34" cy="652.69" r="3.2" fill="#64748b"><title>K16; kesinleştirme sırası 18</title></circle>
+<circle data-settled-node="K17" data-order="31" cx="482.45" cy="268.46" r="6.2" fill="#f3c75b"/>
+<circle cx="482.45" cy="268.46" r="3.2" fill="#64748b"><title>K17; kesinleştirme sırası 31</title></circle>
+<circle data-settled-node="K18" data-order="33" cx="575.91" cy="237.31" r="6.2" fill="#f3c75b"/>
+<circle cx="575.91" cy="237.31" r="3.2" fill="#64748b"><title>K18; kesinleştirme sırası 33</title></circle>
+<circle cx="669.38" cy="268.46" r="3.2" fill="#64748b"><title>K19; kesinleştirilmedi</title></circle>
+<circle cx="752.45" cy="325.58" r="3.2" fill="#64748b"><title>K20; kesinleştirilmedi</title></circle>
+<circle data-settled-node="K21" data-order="26" cx="492.84" cy="356.73" r="6.2" fill="#f3c75b"/>
+<circle cx="492.84" cy="356.73" r="3.2" fill="#64748b"><title>K21; kesinleştirme sırası 26</title></circle>
+<circle data-settled-node="K22" data-order="34" cx="565.53" cy="330.77" r="6.2" fill="#f3c75b"/>
+<circle cx="565.53" cy="330.77" r="3.2" fill="#64748b"><title>K22; kesinleştirme sırası 34</title></circle>
+<circle data-settled-node="K23" data-order="27" cx="627.84" cy="372.31" r="6.2" fill="#f3c75b"/>
+<circle cx="627.84" cy="372.31" r="3.2" fill="#64748b"><title>K23; kesinleştirme sırası 27</title></circle>
+<circle data-settled-node="K24" data-order="32" cx="710.91" cy="393.08" r="6.2" fill="#f3c75b"/>
+<circle cx="710.91" cy="393.08" r="3.2" fill="#64748b"><title>K24; kesinleştirme sırası 32</title></circle>
+<circle data-settled-node="K25" data-order="15" cx="477.26" cy="439.81" r="6.2" fill="#f3c75b"/>
+<circle cx="477.26" cy="439.81" r="3.2" fill="#64748b"><title>K25; kesinleştirme sırası 15</title></circle>
+<circle data-settled-node="K26" data-order="16" cx="555.14" cy="465.77" r="6.2" fill="#f3c75b"/>
+<circle cx="555.14" cy="465.77" r="3.2" fill="#64748b"><title>K26; kesinleştirme sırası 16</title></circle>
+<circle data-settled-node="K27" data-order="24" cx="643.41" cy="460.58" r="6.2" fill="#f3c75b"/>
+<circle cx="643.41" cy="460.58" r="3.2" fill="#64748b"><title>K27; kesinleştirme sırası 24</title></circle>
+<circle data-settled-node="K28" data-order="30" cx="742.07" cy="517.69" r="6.2" fill="#f3c75b"/>
+<circle cx="742.07" cy="517.69" r="3.2" fill="#64748b"><title>K28; kesinleştirme sırası 30</title></circle>
+<circle data-settled-node="K29" data-order="21" cx="492.84" cy="564.42" r="6.2" fill="#f3c75b"/>
+<circle cx="492.84" cy="564.42" r="3.2" fill="#64748b"><title>K29; kesinleştirme sırası 21</title></circle>
+<circle data-settled-node="K30" data-order="19" cx="581.11" cy="590.38" r="6.2" fill="#f3c75b"/>
+<circle cx="581.11" cy="590.38" r="3.2" fill="#64748b"><title>K30; kesinleştirme sırası 19</title></circle>
+<circle data-settled-node="K31" data-order="25" cx="674.57" cy="559.23" r="6.2" fill="#f3c75b"/>
+<circle cx="674.57" cy="559.23" r="3.2" fill="#64748b"><title>K31; kesinleştirme sırası 25</title></circle>
+<circle data-settled-node="K32" data-order="28" cx="622.64" cy="657.88" r="6.2" fill="#f3c75b"/>
+<circle cx="622.64" cy="657.88" r="3.2" fill="#64748b"><title>K32; kesinleştirme sırası 28</title></circle>
+<circle data-settled-node="H0" data-order="1" cx="111.20" cy="455.38" r="10" fill="#f3c75b"/>
+<circle cx="111.20" cy="455.38" r="7" fill="#1f4b78"><title>H0; kesinleştirme sırası 1</title></circle>
+<circle data-settled-node="H1" data-order="29" cx="513.61" cy="647.50" r="10" fill="#f3c75b"/>
+<circle cx="513.61" cy="647.50" r="7" fill="#1f4b78"><title>H1; kesinleştirme sırası 29</title></circle>
+<circle data-settled-node="A1" data-order="22" cx="264.38" cy="211.35" r="10" fill="#f3c75b"/>
+<circle cx="264.38" cy="211.35" r="7" fill="#9e3a57"><title>A1; kesinleştirme sırası 22</title></circle>
+<circle data-settled-node="A2" data-order="23" cx="342.26" cy="367.12" r="10" fill="#f3c75b"/>
+<circle cx="342.26" cy="367.12" r="7" fill="#9e3a57"><title>A2; kesinleştirme sırası 23</title></circle>
+<circle cx="788.80" cy="413.85" r="7" fill="#9e3a57"><title>A3; kesinleştirilmedi</title></circle>
+<circle cx="643.41" cy="206.15" r="7" fill="#9e3a57"><title>A4; kesinleştirilmedi</title></circle>
+<circle data-settled-node="A5" data-order="35" cx="752.45" cy="642.31" r="10" fill="#f3c75b"/>
+<circle cx="752.45" cy="642.31" r="7" fill="#9e3a57"><title>A5; kesinleştirme sırası 35</title></circle>
+<circle cx="121.59" cy="663.08" r="7" fill="#9e3a57"><title>A6; kesinleştirilmedi</title></circle>
+<text x="122.20" y="446.38" font-size="13" font-weight="bold" stroke="#f8fafc" stroke-width="3" paint-order="stroke">H0</text>
+<text x="524.61" y="638.50" font-size="13" font-weight="bold" stroke="#f8fafc" stroke-width="3" paint-order="stroke">H1</text>
+<text x="275.38" y="202.35" font-size="13" font-weight="bold" stroke="#f8fafc" stroke-width="3" paint-order="stroke">A1</text>
+<text x="353.26" y="385.12" font-size="13" font-weight="bold" stroke="#f8fafc" stroke-width="3" paint-order="stroke">A2</text>
+<text x="799.80" y="404.85" font-size="13" font-weight="bold" stroke="#f8fafc" stroke-width="3" paint-order="stroke">A3</text>
+<text x="654.41" y="197.15" font-size="13" font-weight="bold" stroke="#f8fafc" stroke-width="3" paint-order="stroke">A4</text>
+<text x="763.45" y="633.31" font-size="13" font-weight="bold" stroke="#f8fafc" stroke-width="3" paint-order="stroke">A5</text>
+<text x="132.59" y="654.08" font-size="13" font-weight="bold" stroke="#f8fafc" stroke-width="3" paint-order="stroke">A6</text>
+</g>
+<text x="36" y="770" font-size="16">Sarı halka = kesinleştirilen düğüm · Mavi çizgi = rota · Lacivert = merkez · Bordo = afet noktası</text>
+<text x="36" y="796" font-size="15">Yollar: gri açık, turuncu kesikli hasarlı, kırmızı kesikli kapalı. Düğüm üzerine gelerek arama sırasını görebilirsiniz.</text>
+<text x="36" y="822" font-size="14">Bu görselin kayıtları süre ölçümünden ayrı çalıştırmada alınır. Aynı maliyetli rotalar farklı olabilir; az düğüm daha kısa süreyi garanti etmez.</text>
+</g></svg>

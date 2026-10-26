@@ -44,6 +44,7 @@ class RouteResult:
     settled_nodes: int
     elapsed_ms: float
     algorithm: str = "dijkstra"
+    settled_order: tuple[str, ...] = ()
 
 
 def _time_heuristic(graph: Graph, target: str, costs: dict[str, float | None]) -> dict[str, float]:
@@ -77,13 +78,15 @@ def _time_heuristic(graph: Graph, target: str, costs: dict[str, float | None]) -
 
 def find_shortest_path(
     graph: Graph, start: str, target: str, *, cost_model: CostModel | None = None,
-    algorithm: str = "dijkstra"
+    algorithm: str = "dijkstra", record_search: bool = False
 ) -> RouteResult:
     """En düşük maliyetli rotayı ve ölçümleri döndürür.
 
     İncelenen düğüm: Kuyruktan alınıp maliyeti kesinleştirilen benzersiz
     düğüm sayısıdır; başlangıç ve erişildiyse hedef de sayılır.
     Hedef ilk keşfedildiğinde değil, kuyruktan alındığında arama sonlanır.
+    record_search=True kesinleştirme sırasını kaydeder. Karşılaştırmalı
+    süre deneylerinde kapalı tutulur; görsel için ayrı sorguda açılır.
     """
     if algorithm not in ("dijkstra", "astar"):
         raise ValidationError("Algoritma dijkstra veya astar olmalıdır.")
@@ -99,6 +102,7 @@ def find_shortest_path(
     distances = {start: 0.0}
     previous: dict[str, tuple[str, str]] = {}
     settled: set[str] = set()
+    settled_order: list[str] = []
     queue = [(heuristic[start], 0.0, start)]
 
     while queue:
@@ -106,6 +110,8 @@ def find_shortest_path(
         if current in settled:
             continue  # Daha pahalı eski kuyruk kayıtları yeniden incelenmez.
         settled.add(current)
+        if record_search:
+            settled_order.append(current)
         if current == target:
             break
         for neighbor, road in graph.neighbors(current):
@@ -121,7 +127,7 @@ def find_shortest_path(
 
     if target not in settled:
         return RouteResult(False, (), (), None, None, None, len(settled),
-                           (perf_counter() - started) * 1000, algorithm)
+                           (perf_counter() - started) * 1000, algorithm, tuple(settled_order))
 
     # Hedeften başlangıca ebeveynleri izleyerek yolu geri kur.
     path, road_ids = [target], []
@@ -139,4 +145,4 @@ def find_shortest_path(
     require_number(distance, "Toplam mesafe")
     require_number(base_time, "Toplam temel süre")
     return RouteResult(True, tuple(path), tuple(road_ids), distances[target],
-                       distance, base_time, len(settled), (perf_counter() - started) * 1000, algorithm)
+                       distance, base_time, len(settled), (perf_counter() - started) * 1000, algorithm, tuple(settled_order))

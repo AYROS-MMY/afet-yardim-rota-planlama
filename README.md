@@ -24,6 +24,7 @@ Mavi çerçeve seçilen rotayı gösterir. Yeşil yollar açık, turuncu kesikli
 - **SVG çıktısı:** Yol durumları, yol sınıfları, seçilen rota ve maliyet açıklamaları.
 - **Veri doğrulama:** Geçersiz kimlikler, ölçümler, bağlantılar ve yol geometrileri için açıklayıcı hatalar.
 - **Arama ölçümleri:** Maliyeti kesinleştirilen düğüm sayısı ve rota hesaplama süresi.
+- **Arama görselleri:** İki algoritmanın kesinleştirdiği düğümler aynı ölçekte yan yana gösterilir.
 
 ## Hızlı başlangıç
 
@@ -97,6 +98,24 @@ py -3.11 -m ayros --help
 
 ## Yol modeli
 
+### Büyük ağ ve arama görselleştirme
+
+İkinci senaryo **180 düğüm, 348 yol, 3 merkez ve 12 afet noktası** içerir. Önceki 40 düğümlü ağ varsayılan olarak korunur. Büyük ağı karşılaştırmak ve iki aramanın incelediği düğümleri görmek için:
+
+```powershell
+py -3.11 -m ayros data/bolgesel_ag.json --start H0 --target A11 --compare --repeats 50 --search-svg output/arama.svg
+```
+
+`output/arama.svg` dosyasını tarayıcıda açın. Sarı halkalar **maliyeti kesinleştirilen** düğümleri, mavi çizgi bulunan rotayı gösterir. Düğüm üzerine gelince sıra numarası okunur. Bu kayıtlar süre deneyinden ayrı iki sorguda alınır; `--search-svg` yalnızca `--compare` ve tek hedefle kullanılır. Erişilemeyen hedefin arama görseli de üretilebilir.
+
+![Bölgesel ağda H0-A11 aramalarının yan yana görünümü](docs/bolgesel_arama.svg)
+
+H0 → A11, hasar katsayısı 2 örneğinde iki algoritma da **53,575 dakika** bulur (terminalde iki basamakla **53,58** gösterilir). Dijkstra **129**, A* **89** düğüm inceler. [40 düğümlü ağdaki arama görünümü](docs/kucuk_ag_arama.svg) de mevcuttur. Görseller araç hareketi göstermez.
+
+Senaryonun tasarımı ve sonraki özelliklerde nasıl kullanılacağı [deney rehberinde](docs/deneyler.md) açıklanır.
+
+### Yol maliyeti ve senaryo verisi
+
 Yol ağı, çift yönlü ve ağırlıklı bir çizgedir. Düğümler yardım merkezi, kavşak veya afet noktası; kenarlar bu noktaları bağlayan yollardır. Dijkstra ve A* uygulamaları proje kodundadır; `heapq` yalnızca öncelik kuyruğu olarak kullanılır.
 
 - **Açık yol:** Maliyet temel geçiş süresidir.
@@ -138,9 +157,17 @@ py -3.11 scripts/compare_algorithms.py --repeats 50
 
 `output/algorithm_comparison.json`, 24 sorgunun rotalarını, düğüm sayılarını, ham süre örneklerini ve medyanlarını içerir. Python/platform bilgisi, UTC ölçüm zamanı ve senaryonun SHA-256 özeti de kaydedilir. Bu üretilen dosya Git'e eklenmez.
 
-**Yerel deney sonucu (Python 3.11.4, Windows, 50 tekrar):** Her iki algoritma 20 sorguda aynı minimum maliyeti buldu; A6'ya yönelik 4 sorguda rota bulunamadı. A* erişilebilen 20 sorgunun hepsinde daha az düğüm inceledi. Sorgu başına düğüm sayılarının toplamı Dijkstra için **669**, A* için **474** oldu (yaklaşık **%29 azalma**). H0 → A5, hasar katsayısı 2 örneğinde maliyet **38,08 dakika**, düğüm sayıları **39 ve 35** oldu.
+Birden fazla ağı aynı deneyde çalıştırmak için `--scenario` tekrar edilebilir:
 
-Bu deneyde sorgu medyanlarının aritmetik ortalaması Dijkstra için yaklaşık **0,078 ms**, A* için **0,092 ms** idi. Bu değer tek bir birleşik medyan değildir. Küçük ağda tahmin hazırlama maliyeti aramadan kazanılan süreyi aştı; daha az düğüm incelemek daha kısa toplam süreyi garanti etmez. Süreler bilgisayarın yüküne göre değişir ve genel bir hız üstünlüğü göstermez.
+```powershell
+py -3.11 scripts/compare_algorithms.py --scenario data/hafta3_genis_ag.json --scenario data/bolgesel_ag.json --repeats 50 --output output/ag_karsilastirma.json
+```
+
+Bu komut **96 sorgu** üretir: ilk ağda 24, bölgesel ağda 72. JSON sürüm 2'de `scenarios` her ağın kimliğini, boyutunu ve SHA-256 özetini tutar; her sonuç kendi `scenario` alanını taşır. Tek ağda eski üst düzey `scenario` ve `scenario_sha256` alanları da korunur.
+
+**Yerel deney sonucu (Python 3.11.4, Windows, 50 tekrar):** 40 düğümlü ağda 20 erişilebilir sorgunun minimum maliyetleri aynı, A6'ya yönelik 4 sorgu erişilemezdir. Düğüm sayılarının toplamı Dijkstra için **669**, A* için **474** oldu (yaklaşık **%29 azalma**). 180 düğümlü ağda 66 erişilebilir sorgunun maliyetleri aynı, A12'ye yönelik 6 sorgu erişilemezdir. Toplamlar **7203 ve 5094** oldu (yaklaşık **%29 azalma**). Her ağdaki erişilebilir sorguların tamamında A* daha az düğüm inceledi.
+
+Sorgu medyanlarının aritmetik ortalaması 40 düğümlü ağda yaklaşık **0,088 / 0,104 ms**, 180 düğümlü ağda **0,409 / 0,501 ms** oldu (Dijkstra / A*). Bunlar tek bir birleşik medyan değildir. Hazırlık dahil bu deneyde A* iki ağda da toplam sürede üstünlük göstermedi. Süreler bilgisayarın yüküne göre değişir. İki farklı topoloji, genel bir ölçeklenme veya karmaşıklık kanıtı değildir; düğüm sayısı yanında yol sayısı ve ağ yapısı da değişmektedir.
 
 ## Proje yapısı
 
@@ -158,7 +185,7 @@ tests/       Veri modeli, rota doğruluğu, geometri ve CLI testleri
 py -3.11 -m unittest discover -s tests -v
 ```
 
-**59 test metodu**, veri doğrulama, kapalı yollar, hasar etkisi, ulaşılamayan hedefler, yol geometrisi, köprü kapanmaları, SVG ve komut satırı davranışlarını kapsar. Önceki 48 küçük ağ sorgusu bağımsız tam yol taramasıyla kontrol edilir. A* için 12 sabit tohumlu küçük ağdaki **144 sorgu** ve ana senaryodaki **24 sorgu** bağımsız Bellman–Ford hesabıyla karşılaştırılır. Tahminin alt sınır ve tutarlılık koşulları, sıfır tahmin durumları, ısınmaların ölçüme katılmaması, sıra değişimi ve JSON deney çıktısı ayrıca sınanır. Döngü içindeki bu sorgular 59 test metoduna ek test sayısı olarak sayılmaz.
+**67 test metodu**, veri doğrulama, kapalı yollar, hasar etkisi, ulaşılamayan hedefler, yol geometrisi, köprü kapanmaları, SVG ve komut satırı davranışlarını kapsar. Önceki 48 küçük ağ sorgusu bağımsız tam yol taramasıyla kontrol edilir. A* için 12 sabit tohumlu küçük ağdaki **144 sorgu**, 40 düğümlü ağdaki **24 sorgu** ve bölgesel ağdaki **72 sorgu** bağımsız Bellman–Ford hesabıyla karşılaştırılır. Tahminin tutarlılığı, arama kayıtlarının sonuçları değiştirmemesi, SVG düğümlerinin tam kayda eşitliği, düzlemsel topoloji, köprü kapanmaları ve çoklu ağ deney dosyası ayrıca sınanır. Döngü içindeki sorgular test metodu sayısına eklenmez.
 
 Hesaplama süresi maliyet hazırlama, arama ve rota kurmayı içerir; dosya okuma ve SVG üretimini içermez. Tek çalıştırmanın süresi karşılaştırmalı performans sonucu olarak değerlendirilmez.
 
