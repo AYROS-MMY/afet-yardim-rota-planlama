@@ -35,7 +35,8 @@ def write_svg(scenario: Scenario, path: str | Path, *, route: RouteResult | None
                        break_long_words=False, break_on_hyphens=False) if route is not None and route.found else []
     height = legend_y + 140 if route is None else legend_y + 200 + 26 * max(1, len(route_lines))
     route_roads = set(route.road_ids) if route is not None and route.found else set()
-    route_label = "Rota hesaplanmadı" if route is None else "Mavi çerçeve = Dijkstra rotası" if route.found else "Dijkstra • Rota bulunamadı"
+    algorithm_name = "A*" if route is not None and route.algorithm == "astar" else "Dijkstra"
+    route_label = "Rota hesaplanmadı" if route is None else f"Mavi çerçeve = {algorithm_name} rotası" if route.found else f"{algorithm_name} • Rota bulunamadı"
     parts = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc">',
              f'<title id="title">{escape(scenario.name)}</title>',
              '<desc id="desc">Sentetik afet ağı. Yeşil yollar açık, turuncu kesikli yollar hasarlı, kırmızı noktalı yollar kapalıdır. Yol ayrıntıları üzerine gelince gösterilir.</desc>',
