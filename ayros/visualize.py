@@ -12,13 +12,14 @@ from .scenario import Scenario
 def write_svg(scenario: Scenario, path: str | Path, *, route: RouteResult | None = None,
               cost_model: CostModel | None = None) -> None:
     nodes = scenario.graph.nodes
-    detailed = any(road.via for road in scenario.graph.roads.values())
+    dense = len(nodes) > 80
+    detailed = dense or any(road.via for road in scenario.graph.roads.values())
     coordinates = [(n.x_km, n.y_km) for n in nodes.values()]
     coordinates += [p for road in scenario.graph.roads.values() for p in road.via]
     coordinates += list(scenario.river)
     min_x, max_x = min(p[0] for p in coordinates), max(p[0] for p in coordinates)
     min_y, max_y = min(p[1] for p in coordinates), max(p[1] for p in coordinates)
-    width, graph_height = (1400, 780) if detailed else (1280, 640) if len(nodes) > 15 else (960, 350)
+    width, graph_height = (1800, 1000) if dense else (1400, 780) if detailed else (1280, 640) if len(nodes) > 15 else (960, 350)
     scale = min((width - 180) / max(max_x - min_x, 1), graph_height / max(max_y - min_y, 1))
     offset_x = (width - (max_x - min_x) * scale) / 2
 
@@ -30,12 +31,15 @@ def write_svg(scenario: Scenario, path: str | Path, *, route: RouteResult | None
     fills = {NodeType.AID_CENTER: "#1f4b78", NodeType.INTERSECTION: "#65746e", NodeType.DISASTER_AREA: "#9e3a57"}
     type_names = {"main": "Ana yol", "secondary": "İkincil yol", "local": "Mahalle sokağı", "bridge": "Köprü"}
     line_widths = {"main": 7, "secondary": 4, "local": 2.5, "bridge": 7}
+    if dense:
+        line_widths = {"main": 3, "secondary": 2, "local": 1.5, "bridge": 3}
     legend_y = 165 + graph_height + 40
     route_lines = wrap("Rota: " + " → ".join(route.path), width=(width - 96) // 10,
                        break_long_words=False, break_on_hyphens=False) if route is not None and route.found else []
     height = legend_y + 140 if route is None else legend_y + 200 + 26 * max(1, len(route_lines))
     route_roads = set(route.road_ids) if route is not None and route.found else set()
-    route_label = "Rota hesaplanmadı" if route is None else "Mavi çerçeve = Dijkstra rotası" if route.found else "Dijkstra • Rota bulunamadı"
+    algorithm_name = "A*" if route is not None and route.algorithm == "astar" else "Dijkstra"
+    route_label = "Rota hesaplanmadı" if route is None else f"Mavi çerçeve = {algorithm_name} rotası" if route.found else f"{algorithm_name} • Rota bulunamadı"
     parts = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc">',
              f'<title id="title">{escape(scenario.name)}</title>',
              '<desc id="desc">Sentetik afet ağı. Yeşil yollar açık, turuncu kesikli yollar hasarlı, kırmızı noktalı yollar kapalıdır. Yol ayrıntıları üzerine gelince gösterilir.</desc>',
@@ -47,9 +51,10 @@ def write_svg(scenario: Scenario, path: str | Path, *, route: RouteResult | None
     if cost_model is not None:
         parts.append(f'<text x="48" y="132" font-size="13">Hasar katsayısı: {cost_model.damaged_factor:g} • Yol üzerine gelin: tür, mesafe ve süre • Rota üzerindeki süreler dakika</text>')
     if scenario.river:
+        bridge_count = sum(r.road_type == 'bridge' for r in scenario.graph.roads.values())
         river_points = " ".join(f"{x:.1f},{y:.1f}" for x, y in map(project, scenario.river))
         parts.extend([f'<polyline data-map-feature="river" points="{river_points}" stroke="#d9e8df" stroke-width="{scale*0.85:.1f}" fill="none" stroke-linejoin="round"/>',
-                      f'<polyline points="{river_points}" stroke="#add9e8" stroke-width="{scale*0.45:.1f}" fill="none" stroke-linejoin="round"><title>Sentetik dere koridoru; yakalar yalnızca iki köprüyle bağlıdır.</title></polyline>',
+                      f'<polyline points="{river_points}" stroke="#add9e8" stroke-width="{scale*0.45:.1f}" fill="none" stroke-linejoin="round"><title>Sentetik dere koridoru; yakalar {bridge_count} köprüyle bağlıdır.</title></polyline>',
                       '<text x="65" y="200" font-size="12" fill="#73867b" letter-spacing="2">BATI YERLEŞİMİ</text>',
                       f'<text x="{width-225}" y="200" font-size="12" fill="#73867b" letter-spacing="2">DOĞU YERLEŞİMİ</text>'])
 
@@ -77,6 +82,8 @@ def write_svg(scenario: Scenario, path: str | Path, *, route: RouteResult | None
             (x1, y1), (x2, y2) = geometry
             parts.append(f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" {style}/>')
         parts.append('</g>')
+        if dense:
+            continue  # Büyük ağda yol ayrıntıları üzerine gelince okunur.
         # Yoğun ağda süre yalnızca rota üzerinde görünür; tüm süreler başlıkta saklıdır.
         secondary = cost_label if not detailed or road.id in route_roads else ""
         label_width = max(30, max(len(road.id), len(secondary)) * 6.5 + 8)
@@ -104,10 +111,12 @@ def write_svg(scenario: Scenario, path: str | Path, *, route: RouteResult | None
             detail += f"; {node.affected_count} afetzede, {node.injured_count} yaralı, aciliyet {node.urgency_level}/5"
         endpoint = route is not None and route.found and node.id in (route.path[0], route.path[-1])
         border = ' stroke="#2563eb" stroke-width="4"' if endpoint else ' stroke="#f8faf7" stroke-width="2"'
-        radius = 14 if detailed and node.node_type == NodeType.INTERSECTION else 21
+        radius = (5 if dense else 14) if detailed and node.node_type == NodeType.INTERSECTION else (13 if dense else 21)
         font_size = 10 if radius == 14 else 14
         parts.append(f'<g><title>{escape(detail)}</title><circle cx="{x:.1f}" cy="{y:.1f}" r="{radius}" fill="{fills[node.node_type]}"{border}/>')
-        parts.append(f'<text x="{x:.1f}" y="{y+4:.1f}" text-anchor="middle" font-size="{font_size}" fill="white">{escape(node.id)}</text></g>')
+        if not dense or node.node_type != NodeType.INTERSECTION:
+            parts.append(f'<text x="{x:.1f}" y="{y+4:.1f}" text-anchor="middle" font-size="{font_size}" fill="white">{escape(node.id)}</text>')
+        parts.append('</g>')
     road_legend = " · Kalın çizgi ana yol, ince çizgi mahalle sokağı." if detailed else ""
     parts.extend([f'<text x="48" y="{legend_y}" font-size="14">Düğümler: Lacivert = Yardım merkezi | Gri = Kavşak | Bordo = Afet noktası</text>',
                   f'<text x="48" y="{legend_y+28}" font-size="14">Yollar: Yeşil = Açık | Turuncu kesikli = Hasarlı | Kırmızı noktalı = Kapalı</text>',

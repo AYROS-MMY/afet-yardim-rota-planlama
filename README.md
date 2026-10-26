@@ -2,27 +2,29 @@
 <p align="center"><strong>Afet Yardım Rota Optimizasyon Sistemi</strong></p>
 <p align="center">Python ile çizge modelleme, yol koşullarına duyarlı rota hesabı ve SVG görselleştirme.</p>
 
-AYROS MMY, simüle edilmiş bir afet bölgesinde yardım merkezlerinden afet noktalarına ulaşım rotaları hesaplayan bir akademik projedir. Dijkstra algoritması, açık ve hasarlı yolların tahmini geçiş sürelerini değerlendirerek en düşük süre maliyetli rotayı bulur; kapalı yolları aramaya dahil etmez.
+AYROS MMY, simüle edilmiş bir afet bölgesinde yardım merkezlerinden afet noktalarına ulaşım rotaları hesaplayan bir akademik projedir. Dijkstra ve A* algoritmaları, açık ve hasarlı yolların tahmini geçiş sürelerini değerlendirerek en düşük süre maliyetli rotayı bulur; kapalı yolları aramaya dahil etmez.
 
 **Mevcut sürüm:** Komut satırı uygulaması · Python 3.11+ · Yalnızca standart kütüphane
 
-[Hızlı başlangıç](#hızlı-başlangıç) · [Kullanım](#kullanım) · [Yol modeli](#yol-modeli) · [Testler](#testler) · [Yol haritası](#yol-haritası)
+[Hızlı başlangıç](#hızlı-başlangıç) · [Kullanım](#kullanım) · [Algoritmalar](#algoritmalar-ve-karşılaştırma) · [Yol modeli](#yol-modeli) · [Testler](#testler) · [Yol haritası](#yol-haritası)
 
 ## Önizleme
 
-![Düzensiz yerleşim ağında H0 merkezinden A5 afet noktasına hesaplanan rota](docs/hafta3_genis_rota.svg)
+![Düzensiz yerleşim ağında A* ile H0 merkezinden A5 afet noktasına hesaplanan rota](docs/astar_rota.svg)
 
 Mavi çerçeve seçilen rotayı gösterir. Yeşil yollar açık, turuncu kesikli yollar hasarlı, kırmızı noktalı yollar kapalıdır. SVG dosyasını tarayıcıda açarak yolların üzerine geldiğinizde tür, mesafe ve süre ayrıntılarını görebilirsiniz.
 
 ## Özellikler
 
-- **Dijkstra ile rota hesabı:** Başlangıç ve hedef seçimi; rota, toplam maliyet, temel süre ve mesafe çıktısı.
+- **Dijkstra ve A* ile rota hesabı:** Başlangıç ve hedef seçimi; rota, toplam maliyet, temel süre ve mesafe çıktısı.
+- **Tekrarlı karşılaştırma:** Aynı sorguda eşit maliyet kontrolü, incelenen düğümler ve medyan hesaplama süresi.
 - **Yol koşullarının modellenmesi:** Değiştirilebilir hasar katsayısı ve kapalı yolların elenmesi.
 - **Toplu erişilebilirlik sorgusu:** Bir merkezden bütün afet noktalarına bağımsız rota hesabı.
 - **Geometri içeren senaryolar:** Düzensiz mahalleler, ana yollar, ara sokaklar, çıkmazlar ve köprüler.
 - **SVG çıktısı:** Yol durumları, yol sınıfları, seçilen rota ve maliyet açıklamaları.
 - **Veri doğrulama:** Geçersiz kimlikler, ölçümler, bağlantılar ve yol geometrileri için açıklayıcı hatalar.
 - **Arama ölçümleri:** Maliyeti kesinleştirilen düğüm sayısı ve rota hesaplama süresi.
+- **Arama görselleri:** İki algoritmanın kesinleştirdiği düğümler aynı ölçekte yan yana gösterilir.
 
 ## Hızlı başlangıç
 
@@ -36,13 +38,13 @@ cd afet-yardim-rota-planlama
 Güncel uygulama henüz geliştirme dalındadır:
 
 ```bash
-git switch hafta-3-dijkstra
+git switch hafta-4-astar
 ```
 
 Windows'ta proje klasöründeki terminalden çalıştırın:
 
 ```powershell
-py -3.11 -m ayros --start H0 --target A5 --svg output/rota.svg
+py -3.11 -m ayros --start H0 --target A5 --algorithm astar --svg output/rota.svg
 ```
 
 macOS/Linux üzerinde aynı komutta `py -3.11` yerine Python 3.11+ yorumlayıcınızın `python3` komutunu kullanın. Oluşan `output/rota.svg` dosyasını tarayıcıda açın. `output/` klasörü gerektiğinde oluşturulur ve Git takibine alınmaz.
@@ -58,11 +60,23 @@ Toplam mesafe: 17.60 km
 
 ## Kullanım
 
+Algoritmayı seçin veya aynı sorguda ikisini karşılaştırın:
+
+```powershell
+py -3.11 -m ayros --start H0 --target A5 --algorithm dijkstra
+py -3.11 -m ayros --start H0 --target A5 --algorithm astar
+py -3.11 -m ayros --start H0 --target A5 --compare --repeats 50
+```
+
+Algoritma belirtilmezse Dijkstra kullanılır. `--compare` iki algoritmayı çalıştırır; bu seçenek `--algorithm` ve `--svg` ile birlikte kullanılmaz. `--repeats` yalnızca karşılaştırma için geçerlidir ve 1–1000 arasında seçilir; varsayılanı 30'dur.
+
 Seçilen merkezden bütün afet noktalarını sorgulayın:
 
 ```powershell
 py -3.11 -m ayros --start H0 --all-targets
 py -3.11 -m ayros --start H1 --all-targets
+py -3.11 -m ayros --start H0 --all-targets --algorithm astar
+py -3.11 -m ayros --start H0 --all-targets --compare --repeats 50
 ```
 
 Hasarın ek süre etkisini kaldırarak rota seçimini karşılaştırın:
@@ -84,7 +98,25 @@ py -3.11 -m ayros --help
 
 ## Yol modeli
 
-Yol ağı, çift yönlü ve ağırlıklı bir çizgedir. Düğümler yardım merkezi, kavşak veya afet noktası; kenarlar bu noktaları bağlayan yollardır. Dijkstra uygulaması proje kodundadır; `heapq` yalnızca öncelik kuyruğu olarak kullanılır.
+### Büyük ağ ve arama görselleştirme
+
+İkinci senaryo **180 düğüm, 348 yol, 3 merkez ve 12 afet noktası** içerir. Önceki 40 düğümlü ağ varsayılan olarak korunur. Büyük ağı karşılaştırmak ve iki aramanın incelediği düğümleri görmek için:
+
+```powershell
+py -3.11 -m ayros data/bolgesel_ag.json --start H0 --target A11 --compare --repeats 50 --search-svg output/arama.svg
+```
+
+`output/arama.svg` dosyasını tarayıcıda açın. Sarı halkalar **maliyeti kesinleştirilen** düğümleri, mavi çizgi bulunan rotayı gösterir. Düğüm üzerine gelince sıra numarası okunur. Bu kayıtlar süre deneyinden ayrı iki sorguda alınır; `--search-svg` yalnızca `--compare` ve tek hedefle kullanılır. Erişilemeyen hedefin arama görseli de üretilebilir.
+
+![Bölgesel ağda H0-A11 aramalarının yan yana görünümü](docs/bolgesel_arama.svg)
+
+H0 → A11, hasar katsayısı 2 örneğinde iki algoritma da **53,575 dakika** bulur (terminalde iki basamakla **53,58** gösterilir). Dijkstra **129**, A* **89** düğüm inceler. [40 düğümlü ağdaki arama görünümü](docs/kucuk_ag_arama.svg) de mevcuttur. Görseller araç hareketi göstermez.
+
+Senaryonun tasarımı ve sonraki özelliklerde nasıl kullanılacağı [deney rehberinde](docs/deneyler.md) açıklanır.
+
+### Yol maliyeti ve senaryo verisi
+
+Yol ağı, çift yönlü ve ağırlıklı bir çizgedir. Düğümler yardım merkezi, kavşak veya afet noktası; kenarlar bu noktaları bağlayan yollardır. Dijkstra ve A* uygulamaları proje kodundadır; `heapq` yalnızca öncelik kuyruğu olarak kullanılır.
 
 - **Açık yol:** Maliyet temel geçiş süresidir.
 - **Hasarlı yol:** Maliyet, temel süre × hasar katsayısıdır. Katsayı varsayılan olarak **2**, en az **1** olur.
@@ -109,13 +141,41 @@ Senaryoyu aynı verilerle yeniden üretmek için:
 py -3.11 scripts/generate_week3_scenario.py
 ```
 
+## Algoritmalar ve karşılaştırma
+
+Dijkstra, başlangıçtan gelen birikmiş süreyi (`g`) kullanır. A*, buna hedefe kalan sürenin alt sınırını (`h`) ekleyerek `f = g + h` değeriyle öncelik verir. İki terim de **dakikadır**. Hedef ilk görüldüğünde değil, öncelik kuyruğundan alındığında arama biter.
+
+A* tahmini `h(n) = alpha × Öklid(n, hedef)` biçimindedir. `alpha`, geçilebilir yolların **süre maliyeti / uçlar arasındaki kuş uçuşu mesafe** oranlarının en küçüğüdür. Böylece her kenarda `alpha × mesafe ≤ maliyet` sağlanır; üçgen eşitsizliği tahmini tutarlı kılar. Kapalı yollar hesaba katılmaz. Aynı koordinattaki uçlar oran hesabında atlanır; güvenli bir ölçek üretilemezse `h = 0` kullanılır. Bu seçim farklı hızlara sahip eski JSON senaryolarını da destekler. A*'ın teorik temeli için [Hart, Nilsson ve Raphael'in çalışması](https://www.cs.auckland.ac.nz/courses/compsci709s2c/resources/Mike.d/astarNilsson.pdf) incelenebilir.
+
+Ölçümler her algoritma için **2 ısınma çalıştırmasından** sonra alınır. Algoritmaların sırası her turda değiştirilir; sonuçta **medyan** süre gösterilir. Maliyet ve A* tahmini hazırlama, arama ve rotayı geri kurma süreye dahildir. JSON okuma, terminal çıktısı ve SVG üretimi dahil değildir. İncelenen düğüm sayısı, kuyruktan alınıp maliyeti kesinleştirilen benzersiz düğümlerdir; başlangıç ve erişilen hedef de sayılır. Eşit maliyetli birden fazla rota varsa düğüm dizileri farklı olabilir.
+
+İki merkez × altı hedef × iki hasar katsayısı deneyini yeniden çalıştırın:
+
+```powershell
+py -3.11 scripts/compare_algorithms.py --repeats 50
+```
+
+`output/algorithm_comparison.json`, 24 sorgunun rotalarını, düğüm sayılarını, ham süre örneklerini ve medyanlarını içerir. Python/platform bilgisi, UTC ölçüm zamanı ve senaryonun SHA-256 özeti de kaydedilir. Bu üretilen dosya Git'e eklenmez.
+
+Birden fazla ağı aynı deneyde çalıştırmak için `--scenario` tekrar edilebilir:
+
+```powershell
+py -3.11 scripts/compare_algorithms.py --scenario data/hafta3_genis_ag.json --scenario data/bolgesel_ag.json --repeats 50 --output output/ag_karsilastirma.json
+```
+
+Bu komut **96 sorgu** üretir: ilk ağda 24, bölgesel ağda 72. JSON sürüm 2'de `scenarios` her ağın kimliğini, boyutunu ve SHA-256 özetini tutar; her sonuç kendi `scenario` alanını taşır. Tek ağda eski üst düzey `scenario` ve `scenario_sha256` alanları da korunur.
+
+**Yerel deney sonucu (Python 3.11.4, Windows, 50 tekrar):** 40 düğümlü ağda 20 erişilebilir sorgunun minimum maliyetleri aynı, A6'ya yönelik 4 sorgu erişilemezdir. Düğüm sayılarının toplamı Dijkstra için **669**, A* için **474** oldu (yaklaşık **%29 azalma**). 180 düğümlü ağda 66 erişilebilir sorgunun maliyetleri aynı, A12'ye yönelik 6 sorgu erişilemezdir. Toplamlar **7203 ve 5094** oldu (yaklaşık **%29 azalma**). Her ağdaki erişilebilir sorguların tamamında A* daha az düğüm inceledi.
+
+Sorgu medyanlarının aritmetik ortalaması 40 düğümlü ağda yaklaşık **0,088 / 0,104 ms**, 180 düğümlü ağda **0,409 / 0,501 ms** oldu (Dijkstra / A*). Bunlar tek bir birleşik medyan değildir. Hazırlık dahil bu deneyde A* iki ağda da toplam sürede üstünlük göstermedi. Süreler bilgisayarın yüküne göre değişir. İki farklı topoloji, genel bir ölçeklenme veya karmaşıklık kanıtı değildir; düğüm sayısı yanında yol sayısı ve ağ yapısı da değişmektedir.
+
 ## Proje yapısı
 
 ```text
-ayros/       Çizge modeli, senaryo doğrulama, Dijkstra, CLI ve SVG üretimi
+ayros/       Çizge modeli, Dijkstra, A*, karşılaştırma, CLI ve SVG üretimi
 data/        Çalıştırılabilir senaryolar ve küçük doğrulama örneği
 docs/        Proje görselleri ve mevcut teknik notlar
-scripts/     Tekrarlanabilir senaryo üretimi
+scripts/     Tekrarlanabilir senaryo üretimi ve karşılaştırma deneyi
 tests/       Veri modeli, rota doğruluğu, geometri ve CLI testleri
 ```
 
@@ -125,7 +185,7 @@ tests/       Veri modeli, rota doğruluğu, geometri ve CLI testleri
 py -3.11 -m unittest discover -s tests -v
 ```
 
-**47 test**, veri doğrulama, kapalı yollar, hasar etkisi, ulaşılamayan hedefler, yol geometrisi, köprü kapanmaları, SVG ve komut satırı davranışlarını kapsar. Küçük ağlarda **48 sorgu** bağımsız tam yol taramasıyla, ana senaryoda **24 sorgu** test kodundaki bağımsız Bellman–Ford hesabıyla karşılaştırılır.
+**67 test metodu**, veri doğrulama, kapalı yollar, hasar etkisi, ulaşılamayan hedefler, yol geometrisi, köprü kapanmaları, SVG ve komut satırı davranışlarını kapsar. Önceki 48 küçük ağ sorgusu bağımsız tam yol taramasıyla kontrol edilir. A* için 12 sabit tohumlu küçük ağdaki **144 sorgu**, 40 düğümlü ağdaki **24 sorgu** ve bölgesel ağdaki **72 sorgu** bağımsız Bellman–Ford hesabıyla karşılaştırılır. Tahminin tutarlılığı, arama kayıtlarının sonuçları değiştirmemesi, SVG düğümlerinin tam kayda eşitliği, düzlemsel topoloji, köprü kapanmaları ve çoklu ağ deney dosyası ayrıca sınanır. Döngü içindeki sorgular test metodu sayısına eklenmez.
 
 Hesaplama süresi maliyet hazırlama, arama ve rota kurmayı içerir; dosya okuma ve SVG üretimini içermez. Tek çalıştırmanın süresi karşılaştırmalı performans sonucu olarak değerlendirilmez.
 
@@ -134,7 +194,7 @@ Hesaplama süresi maliyet hazırlama, arama ve rota kurmayı içerir; dosya okum
 - [x] Çizge modeli ve JSON senaryo doğrulama
 - [x] Dijkstra, yol durumu maliyeti ve erişilebilirlik sorguları
 - [x] Geometri içeren yol ağı ve SVG rota görselleştirme
-- [ ] A* ve aynı koşullarda algoritma karşılaştırması
+- [x] A* ve aynı koşullarda algoritma karşılaştırması
 - [ ] Afet noktalarının önceliklendirilmesi
 - [ ] Temel çoklu araç görev dağıtımı
 - [ ] Yol koşulları değiştiğinde otomatik yeniden planlama

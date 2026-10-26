@@ -1,4 +1,4 @@
-"""Dijkstra ile iki düğüm arasında en düşük süre maliyetli rota.
+"""Dijkstra ve A* ile iki düğüm arasında en düşük süre maliyetli rota.
 
 Kendi uygulamamızdır; heapq yalnızca öncelik kuyruğunu sağlar.
 Bu modül arayüzden bağımsızdır ve çizge verisini değiştirmez.
@@ -6,7 +6,7 @@ Bu modül arayüzden bağımsızdır ve çizge verisini değiştirmez.
 
 from dataclasses import dataclass
 from heapq import heappop, heappush
-from math import fsum
+from math import fsum, hypot, isfinite, nextafter
 from time import perf_counter
 
 from .model import Graph, Road, RoadStatus, ValidationError, require_number, require_text
@@ -43,17 +43,53 @@ class RouteResult:
     base_time_min: float | None
     settled_nodes: int
     elapsed_ms: float
+    algorithm: str = "dijkstra"
+    settled_order: tuple[str, ...] = ()
+
+
+def _time_heuristic(graph: Graph, target: str, costs: dict[str, float | None]) -> dict[str, float]:
+    """h(n)=alpha*Öklid(n,hedef), alpha=min(geçilebilir yol maliyeti/Öklid).
+
+    alpha dk/km birimindedir. Her kenarda alpha*d(u,v)<=c(u,v) olduğu
+    için üçgen eşitsizliği h(u)<=c(u,v)+h(v) verir. Dolayısıyla tahmin
+    tutarlıdır ve kalan süreyi aşmaz. Eski, farklı hızdaki senaryolar da
+    desteklenir. Koordinatlar sayısal sınırı aşarsa tüm tahminler sıfırdır.
+    """
+    zero = {node_id: 0.0 for node_id in graph.nodes}
+    scale = float("inf")
+    for road in graph.roads.values():
+        cost = costs[road.id]
+        if cost is None:
+            continue
+        a, b = graph.nodes[road.source], graph.nodes[road.target]
+        direct = hypot(a.x_km - b.x_km, a.y_km - b.y_km)
+        if not isfinite(direct):
+            return zero
+        if direct > 0:
+            scale = min(scale, cost / direct)
+    if not isfinite(scale) or scale <= 0:
+        return zero
+    scale = nextafter(scale, 0.0)  # Bölme yuvarlamasında alt sınır yönünde kal.
+    goal = graph.nodes[target]
+    estimates = {node_id: scale * hypot(node.x_km - goal.x_km, node.y_km - goal.y_km)
+                 for node_id, node in graph.nodes.items()}
+    return estimates if all(isfinite(h) for h in estimates.values()) else zero
 
 
 def find_shortest_path(
-    graph: Graph, start: str, target: str, *, cost_model: CostModel | None = None
+    graph: Graph, start: str, target: str, *, cost_model: CostModel | None = None,
+    algorithm: str = "dijkstra", record_search: bool = False
 ) -> RouteResult:
     """En düşük maliyetli rotayı ve ölçümleri döndürür.
 
     İncelenen düğüm: Kuyruktan alınıp maliyeti kesinleştirilen benzersiz
     düğüm sayısıdır; başlangıç ve erişildiyse hedef de sayılır.
     Hedef ilk keşfedildiğinde değil, kuyruktan alındığında arama sonlanır.
+    record_search=True kesinleştirme sırasını kaydeder. Karşılaştırmalı
+    süre deneylerinde kapalı tutulur; görsel için ayrı sorguda açılır.
     """
+    if algorithm not in ("dijkstra", "astar"):
+        raise ValidationError("Algoritma dijkstra veya astar olmalıdır.")
     for name, node_id in (("Başlangıç", start), ("Hedef", target)):
         require_text(node_id, name)
         if node_id not in graph.nodes:
@@ -62,16 +98,20 @@ def find_shortest_path(
     started = perf_counter()
     # Her yolun maliyetini bir kez doğrula ve hesapla.
     costs = {road.id: model.cost_minutes(road) for road in graph.roads.values()}
+    heuristic = _time_heuristic(graph, target, costs) if algorithm == "astar" else dict.fromkeys(graph.nodes, 0.0)
     distances = {start: 0.0}
     previous: dict[str, tuple[str, str]] = {}
     settled: set[str] = set()
-    queue = [(0.0, start)]
+    settled_order: list[str] = []
+    queue = [(heuristic[start], 0.0, start)]
 
     while queue:
-        current_cost, current = heappop(queue)
+        _, current_cost, current = heappop(queue)
         if current in settled:
             continue  # Daha pahalı eski kuyruk kayıtları yeniden incelenmez.
         settled.add(current)
+        if record_search:
+            settled_order.append(current)
         if current == target:
             break
         for neighbor, road in graph.neighbors(current):
@@ -83,11 +123,11 @@ def find_shortest_path(
             if candidate < distances.get(neighbor, float("inf")):
                 distances[neighbor] = candidate
                 previous[neighbor] = (current, road.id)
-                heappush(queue, (candidate, neighbor))
+                heappush(queue, (candidate + heuristic[neighbor], candidate, neighbor))
 
     if target not in settled:
         return RouteResult(False, (), (), None, None, None, len(settled),
-                           (perf_counter() - started) * 1000)
+                           (perf_counter() - started) * 1000, algorithm, tuple(settled_order))
 
     # Hedeften başlangıca ebeveynleri izleyerek yolu geri kur.
     path, road_ids = [target], []
@@ -105,4 +145,4 @@ def find_shortest_path(
     require_number(distance, "Toplam mesafe")
     require_number(base_time, "Toplam temel süre")
     return RouteResult(True, tuple(path), tuple(road_ids), distances[target],
-                       distance, base_time, len(settled), (perf_counter() - started) * 1000)
+                       distance, base_time, len(settled), (perf_counter() - started) * 1000, algorithm, tuple(settled_order))
