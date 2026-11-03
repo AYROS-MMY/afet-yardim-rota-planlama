@@ -8,7 +8,7 @@
 - 348 yol: 287 açık, 47 hasarlı, 14 kapalı. Yollar çift yönlüdür.
 - Üç köprü: K001–K002, K003–K004, K005–K006. Dereyi geçen başka bağlantı yoktur.
 - A12'nin iki girişi kapalıdır. Diğer 11 afet noktasına bütün merkezlerden ulaşılabilir.
-- Afetzede, yaralı ve aciliyet alanları mevcut şemayla doldurulur. Bu alanlar henüz rota seçimini etkilemez.
+- Afetzede, yaralı ve aciliyet alanları ihtiyaç puanında kullanılır. Seçilen hedefin rota maliyetini değiştirmez; [önceliklendirme modülü](onceliklendirme.md) ihtiyacı ve erişimi ayrı sunar.
 
 Üretici sabit `20261026` tohumu kullanır. Noktalar iki yakaya düzensiz yerleştirilir; en az 0,7 km aralık bırakılır. Her yakada önce bağlı bir yol omurgası, sonra kısa yerel bağlantılar kurulur. Ortak kavşak dışındaki yol kesişimleri engellenir. Kapalı yan yollar omurgayı koparmaz; A12 kontrollü erişilemez örnektir. Koordinatlar km, yol maliyetleri dakikadır. Hız varsayımları ana/ikincil/yerel/köprü için 40/30/20/25 km/saattir. Bu sentetik üretim yöntemi gerçek şehirlerin dağılımını temsil etme iddiası taşımaz.
 
@@ -40,7 +40,7 @@ Sarı halkalar kuyruktan alınıp maliyeti kesinleştirilen benzersiz düğümle
 
 ## Sonraki geliştirmelerde kullanım
 
-1. **Önceliklendirme:** A01–A12 ihtiyaç alanlarından gerekçeli puan üretin. A12'nin yüksek ihtiyacı olabileceği ile erişilemez olması ayrı bilgiler olarak gösterilmeli. Kabul ölçütü: eşit girdide aynı puan ve açık bir eşitlik bozma kuralı.
+1. **Önceliklendirme tamamlandı:** A01–A12 ihtiyaç alanlarından açıklanabilir puan üretilir. A12 erişilemez olsa da ihtiyaç sırasında korunur. Eşit girdide aynı puan ve açık eşitlik kuralı test edilir. Üç ağırlık profili için `scripts/analyze_priorities.py` kullanılabilir; politika saha görüşleriyle henüz doğrulanmamıştır.
 2. **Araç atama:** Araç kayıtlarını merkez kimlikleriyle ilişkilendiren ayrı bir model ekleyin. Yol modeline araç durumunu gömmeyin. Boş araç, kapasite ve ulaşılamayan hedef davranışını sınayın; birden çok hedef sorgulamak araç ataması sayılmaz.
 3. **Yeniden planlama:** Senaryo kopyasında bir köprüyü kapatıp kalan iki köprü üzerinden alternatif rotayı deneyin. Üçü kapandığında karşı yakaya erişim kesilir. Şimdiki kapanma testleri sabit durumları sınar; olay işleme ve otomatik rota yenileme henüz yoktur.
 4. **Arayüz:** Aynı rota sonuçlarını ve arama kayıtlarını tüketin. Hesaplama ve çizimi ayrı tutun. Güncel durum, kullanıcı kontrolü ve hareket gösterimi ayrı geliştirme adımlarıdır.

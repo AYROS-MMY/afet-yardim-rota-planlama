@@ -1,0 +1,195 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="876" viewBox="0 0 1320 876" role="img" aria-labelledby="title desc">
+<title id="title">İhtiyaç öncelikleri ve erişilebilirlik</title>
+<desc id="desc">Azalan ihtiyaç puanı. Çubuklar aciliyet, yaralı ve afetzede katkılarını gösterir. Ulaşılamayan noktalar puan sıralamasında korunur.</desc>
+<rect width="1320" height="876" fill="#f8fafc"/>
+<g font-family="Arial, sans-serif" fill="#17263c">
+<text x="36" y="42" font-size="26" font-weight="bold">İhtiyaç öncelikleri ve erişilebilirlik</text>
+<text x="36" y="73" font-size="16">Bölgesel afet ağı | Merkez H0 | dijkstra | Hasar katsayısı 2</text>
+<text x="36" y="101" font-size="15">Ağırlıklar: aciliyet %50, yaralı %30, afetzede %20. Referanslar: 100 yaralı, 500 afetzede.</text>
+<text x="36" y="127" font-size="14">İhtiyaç sırası araç ataması veya ziyaret sırası değildir. Rota süresi puana eklenmez.</text>
+<rect x="24" y="145" width="1272" height="38" rx="5" fill="#e2e8f0"/>
+<text x="36" y="170" font-size="14" font-weight="bold">Sıra</text>
+<text x="100" y="170" font-size="14" font-weight="bold">Nokta</text>
+<text x="200" y="170" font-size="14" font-weight="bold">Puan katkıları 0–100</text>
+<text x="728" y="170" font-size="14" font-weight="bold">Puan</text>
+<text x="820" y="170" font-size="14" font-weight="bold">Aciliyet</text>
+<text x="920" y="170" font-size="14" font-weight="bold">Yaralı</text>
+<text x="1020" y="170" font-size="14" font-weight="bold">Afetzede</text>
+<text x="1130" y="170" font-size="14" font-weight="bold">Merkezden süre</text>
+<g data-node="A08" data-rank="1" data-score="63.24" data-reachable="true"><title>A08; ihtiyaç 63.2400; katkılar 50.0000 + 6.0000 + 7.2400; referans aşımı yaralı=False, afetzede=False</title>
+<rect x="24" y="190" width="1272" height="44" fill="#ffffff"/>
+<rect x="200" y="201" width="500" height="22" rx="3" fill="#e2e8f0"/>
+<rect data-contribution="urgency" x="200.0000" y="201" width="250.0000" height="22" fill="#1d4ed8"/>
+<rect data-contribution="injured" x="450.0000" y="201" width="30.0000" height="22" fill="#b45309"/>
+<rect data-contribution="affected" x="480.0000" y="201" width="36.2000" height="22" fill="#15803d"/>
+<text x="36" y="218" font-size="14">1</text>
+<text x="100" y="218" font-size="14">A08</text>
+<text x="728" y="218" font-size="14">63.24</text>
+<text x="820" y="218" font-size="14">5/5</text>
+<text x="920" y="218" font-size="14">20</text>
+<text x="1020" y="218" font-size="14">181</text>
+<text x="1130" y="218" font-size="14">59.74 dk</text>
+</g>
+<g data-node="A03" data-rank="2" data-score="61.94" data-reachable="true"><title>A03; ihtiyaç 61.9400; katkılar 50.0000 + 8.1000 + 3.8400; referans aşımı yaralı=False, afetzede=False</title>
+<rect x="24" y="238" width="1272" height="44" fill="#f1f5f9"/>
+<rect x="200" y="249" width="500" height="22" rx="3" fill="#e2e8f0"/>
+<rect data-contribution="urgency" x="200.0000" y="249" width="250.0000" height="22" fill="#1d4ed8"/>
+<rect data-contribution="injured" x="450.0000" y="249" width="40.5000" height="22" fill="#b45309"/>
+<rect data-contribution="affected" x="490.5000" y="249" width="19.2000" height="22" fill="#15803d"/>
+<text x="36" y="266" font-size="14">2</text>
+<text x="100" y="266" font-size="14">A03</text>
+<text x="728" y="266" font-size="14">61.94</text>
+<text x="820" y="266" font-size="14">5/5</text>
+<text x="920" y="266" font-size="14">27</text>
+<text x="1020" y="266" font-size="14">96</text>
+<text x="1130" y="266" font-size="14">36.40 dk</text>
+</g>
+<g data-node="A11" data-rank="3" data-score="61.58" data-reachable="true"><title>A11; ihtiyaç 61.5800; katkılar 40.0000 + 12.3000 + 9.2800; referans aşımı yaralı=False, afetzede=False</title>
+<rect x="24" y="286" width="1272" height="44" fill="#ffffff"/>
+<rect x="200" y="297" width="500" height="22" rx="3" fill="#e2e8f0"/>
+<rect data-contribution="urgency" x="200.0000" y="297" width="200.0000" height="22" fill="#1d4ed8"/>
+<rect data-contribution="injured" x="400.0000" y="297" width="61.5000" height="22" fill="#b45309"/>
+<rect data-contribution="affected" x="461.5000" y="297" width="46.4000" height="22" fill="#15803d"/>
+<text x="36" y="314" font-size="14">3</text>
+<text x="100" y="314" font-size="14">A11</text>
+<text x="728" y="314" font-size="14">61.58</text>
+<text x="820" y="314" font-size="14">4/5</text>
+<text x="920" y="314" font-size="14">41</text>
+<text x="1020" y="314" font-size="14">232</text>
+<text x="1130" y="314" font-size="14">53.58 dk</text>
+</g>
+<g data-node="A06" data-rank="4" data-score="47.68" data-reachable="true"><title>A06; ihtiyaç 47.6800; katkılar 40.0000 + 1.8000 + 5.8800; referans aşımı yaralı=False, afetzede=False</title>
+<rect x="24" y="334" width="1272" height="44" fill="#f1f5f9"/>
+<rect x="200" y="345" width="500" height="22" rx="3" fill="#e2e8f0"/>
+<rect data-contribution="urgency" x="200.0000" y="345" width="200.0000" height="22" fill="#1d4ed8"/>
+<rect data-contribution="injured" x="400.0000" y="345" width="9.0000" height="22" fill="#b45309"/>
+<rect data-contribution="affected" x="409.0000" y="345" width="29.4000" height="22" fill="#15803d"/>
+<text x="36" y="362" font-size="14">4</text>
+<text x="100" y="362" font-size="14">A06</text>
+<text x="728" y="362" font-size="14">47.68</text>
+<text x="820" y="362" font-size="14">4/5</text>
+<text x="920" y="362" font-size="14">6</text>
+<text x="1020" y="362" font-size="14">147</text>
+<text x="1130" y="362" font-size="14">22.58 dk</text>
+</g>
+<g data-node="A01" data-rank="5" data-score="46.38" data-reachable="true"><title>A01; ihtiyaç 46.3800; katkılar 40.0000 + 3.9000 + 2.4800; referans aşımı yaralı=False, afetzede=False</title>
+<rect x="24" y="382" width="1272" height="44" fill="#ffffff"/>
+<rect x="200" y="393" width="500" height="22" rx="3" fill="#e2e8f0"/>
+<rect data-contribution="urgency" x="200.0000" y="393" width="200.0000" height="22" fill="#1d4ed8"/>
+<rect data-contribution="injured" x="400.0000" y="393" width="19.5000" height="22" fill="#b45309"/>
+<rect data-contribution="affected" x="419.5000" y="393" width="12.4000" height="22" fill="#15803d"/>
+<text x="36" y="410" font-size="14">5</text>
+<text x="100" y="410" font-size="14">A01</text>
+<text x="728" y="410" font-size="14">46.38</text>
+<text x="820" y="410" font-size="14">4/5</text>
+<text x="920" y="410" font-size="14">13</text>
+<text x="1020" y="410" font-size="14">62</text>
+<text x="1130" y="410" font-size="14">18.98 dk</text>
+</g>
+<g data-node="A09" data-rank="6" data-score="46.02" data-reachable="true"><title>A09; ihtiyaç 46.0200; katkılar 30.0000 + 8.1000 + 7.9200; referans aşımı yaralı=False, afetzede=False</title>
+<rect x="24" y="430" width="1272" height="44" fill="#f1f5f9"/>
+<rect x="200" y="441" width="500" height="22" rx="3" fill="#e2e8f0"/>
+<rect data-contribution="urgency" x="200.0000" y="441" width="150.0000" height="22" fill="#1d4ed8"/>
+<rect data-contribution="injured" x="350.0000" y="441" width="40.5000" height="22" fill="#b45309"/>
+<rect data-contribution="affected" x="390.5000" y="441" width="39.6000" height="22" fill="#15803d"/>
+<text x="36" y="458" font-size="14">6</text>
+<text x="100" y="458" font-size="14">A09</text>
+<text x="728" y="458" font-size="14">46.02</text>
+<text x="820" y="458" font-size="14">3/5</text>
+<text x="920" y="458" font-size="14">27</text>
+<text x="1020" y="458" font-size="14">198</text>
+<text x="1130" y="458" font-size="14">69.86 dk</text>
+</g>
+<g data-node="A04" data-rank="7" data-score="44.72" data-reachable="true"><title>A04; ihtiyaç 44.7200; katkılar 30.0000 + 10.2000 + 4.5200; referans aşımı yaralı=False, afetzede=False</title>
+<rect x="24" y="478" width="1272" height="44" fill="#ffffff"/>
+<rect x="200" y="489" width="500" height="22" rx="3" fill="#e2e8f0"/>
+<rect data-contribution="urgency" x="200.0000" y="489" width="150.0000" height="22" fill="#1d4ed8"/>
+<rect data-contribution="injured" x="350.0000" y="489" width="51.0000" height="22" fill="#b45309"/>
+<rect data-contribution="affected" x="401.0000" y="489" width="22.6000" height="22" fill="#15803d"/>
+<text x="36" y="506" font-size="14">7</text>
+<text x="100" y="506" font-size="14">A04</text>
+<text x="728" y="506" font-size="14">44.72</text>
+<text x="820" y="506" font-size="14">3/5</text>
+<text x="920" y="506" font-size="14">34</text>
+<text x="1020" y="506" font-size="14">113</text>
+<text x="1130" y="506" font-size="14">9.34 dk</text>
+</g>
+<g data-node="A12" data-rank="8" data-score="31.76" data-reachable="false"><title>A12; ihtiyaç 31.7600; katkılar 20.0000 + 1.8000 + 9.9600; referans aşımı yaralı=False, afetzede=False</title>
+<rect x="24" y="526" width="1272" height="44" fill="#fff1f2"/>
+<rect x="200" y="537" width="500" height="22" rx="3" fill="#e2e8f0"/>
+<rect data-contribution="urgency" x="200.0000" y="537" width="100.0000" height="22" fill="#1d4ed8"/>
+<rect data-contribution="injured" x="300.0000" y="537" width="9.0000" height="22" fill="#b45309"/>
+<rect data-contribution="affected" x="309.0000" y="537" width="49.8000" height="22" fill="#15803d"/>
+<text x="36" y="554" font-size="14">8</text>
+<text x="100" y="554" font-size="14">A12</text>
+<text x="728" y="554" font-size="14">31.76</text>
+<text x="820" y="554" font-size="14">2/5</text>
+<text x="920" y="554" font-size="14">6</text>
+<text x="1020" y="554" font-size="14">249</text>
+<text x="1130" y="554" font-size="14">ULAŞILAMIYOR</text>
+</g>
+<g data-node="A07" data-rank="9" data-score="30.46" data-reachable="true"><title>A07; ihtiyaç 30.4600; katkılar 20.0000 + 3.9000 + 6.5600; referans aşımı yaralı=False, afetzede=False</title>
+<rect x="24" y="574" width="1272" height="44" fill="#ffffff"/>
+<rect x="200" y="585" width="500" height="22" rx="3" fill="#e2e8f0"/>
+<rect data-contribution="urgency" x="200.0000" y="585" width="100.0000" height="22" fill="#1d4ed8"/>
+<rect data-contribution="injured" x="300.0000" y="585" width="19.5000" height="22" fill="#b45309"/>
+<rect data-contribution="affected" x="319.5000" y="585" width="32.8000" height="22" fill="#15803d"/>
+<text x="36" y="602" font-size="14">9</text>
+<text x="100" y="602" font-size="14">A07</text>
+<text x="728" y="602" font-size="14">30.46</text>
+<text x="820" y="602" font-size="14">2/5</text>
+<text x="920" y="602" font-size="14">13</text>
+<text x="1020" y="602" font-size="14">164</text>
+<text x="1130" y="602" font-size="14">48.62 dk</text>
+</g>
+<g data-node="A02" data-rank="10" data-score="29.16" data-reachable="true"><title>A02; ihtiyaç 29.1600; katkılar 20.0000 + 6.0000 + 3.1600; referans aşımı yaralı=False, afetzede=False</title>
+<rect x="24" y="622" width="1272" height="44" fill="#f1f5f9"/>
+<rect x="200" y="633" width="500" height="22" rx="3" fill="#e2e8f0"/>
+<rect data-contribution="urgency" x="200.0000" y="633" width="100.0000" height="22" fill="#1d4ed8"/>
+<rect data-contribution="injured" x="300.0000" y="633" width="30.0000" height="22" fill="#b45309"/>
+<rect data-contribution="affected" x="330.0000" y="633" width="15.8000" height="22" fill="#15803d"/>
+<text x="36" y="650" font-size="14">10</text>
+<text x="100" y="650" font-size="14">A02</text>
+<text x="728" y="650" font-size="14">29.16</text>
+<text x="820" y="650" font-size="14">2/5</text>
+<text x="920" y="650" font-size="14">20</text>
+<text x="1020" y="650" font-size="14">79</text>
+<text x="1130" y="650" font-size="14">19.86 dk</text>
+</g>
+<g data-node="A10" data-rank="11" data-score="28.8" data-reachable="true"><title>A10; ihtiyaç 28.8000; katkılar 10.0000 + 10.2000 + 8.6000; referans aşımı yaralı=False, afetzede=False</title>
+<rect x="24" y="670" width="1272" height="44" fill="#ffffff"/>
+<rect x="200" y="681" width="500" height="22" rx="3" fill="#e2e8f0"/>
+<rect data-contribution="urgency" x="200.0000" y="681" width="50.0000" height="22" fill="#1d4ed8"/>
+<rect data-contribution="injured" x="250.0000" y="681" width="51.0000" height="22" fill="#b45309"/>
+<rect data-contribution="affected" x="301.0000" y="681" width="43.0000" height="22" fill="#15803d"/>
+<text x="36" y="698" font-size="14">11</text>
+<text x="100" y="698" font-size="14">A10</text>
+<text x="728" y="698" font-size="14">28.80</text>
+<text x="820" y="698" font-size="14">1/5</text>
+<text x="920" y="698" font-size="14">34</text>
+<text x="1020" y="698" font-size="14">215</text>
+<text x="1130" y="698" font-size="14">50.98 dk</text>
+</g>
+<g data-node="A05" data-rank="12" data-score="27.5" data-reachable="true"><title>A05; ihtiyaç 27.5000; katkılar 10.0000 + 12.3000 + 5.2000; referans aşımı yaralı=False, afetzede=False</title>
+<rect x="24" y="718" width="1272" height="44" fill="#f1f5f9"/>
+<rect x="200" y="729" width="500" height="22" rx="3" fill="#e2e8f0"/>
+<rect data-contribution="urgency" x="200.0000" y="729" width="50.0000" height="22" fill="#1d4ed8"/>
+<rect data-contribution="injured" x="250.0000" y="729" width="61.5000" height="22" fill="#b45309"/>
+<rect data-contribution="affected" x="311.5000" y="729" width="26.0000" height="22" fill="#15803d"/>
+<text x="36" y="746" font-size="14">12</text>
+<text x="100" y="746" font-size="14">A05</text>
+<text x="728" y="746" font-size="14">27.50</text>
+<text x="820" y="746" font-size="14">1/5</text>
+<text x="920" y="746" font-size="14">41</text>
+<text x="1020" y="746" font-size="14">130</text>
+<text x="1130" y="746" font-size="14">29.67 dk</text>
+</g>
+<rect x="36" y="777" width="16" height="16" fill="#1d4ed8"/>
+<text x="60" y="791" font-size="15">Aciliyet</text>
+<rect x="200" y="777" width="16" height="16" fill="#b45309"/>
+<text x="224" y="791" font-size="15">Yaralı sayısı</text>
+<rect x="400" y="777" width="16" height="16" fill="#15803d"/>
+<text x="424" y="791" font-size="15">Afetzede sayısı</text>
+<text x="36" y="819" font-size="14">Eşit puanda: aciliyet, yaralı, afetzede azalan; son eşitlikte kimlik artan. Gösterimde puanlar yuvarlanır.</text>
+<text x="36" y="843" font-size="14">Eğitim amaçlı deneysel politika. Referansı aşan sayılar puanı büyütmez; ham değerler çıktıda korunur.</text>
+</g></svg>
