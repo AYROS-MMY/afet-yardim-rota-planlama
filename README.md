@@ -4,6 +4,8 @@
 
 AYROS MMY, simüle edilmiş bir afet bölgesinde yardım merkezlerinden afet noktalarına ulaşım rotaları hesaplayan bir akademik projedir. Dijkstra ve A* algoritmaları, açık ve hasarlı yolların tahmini geçiş sürelerini değerlendirerek en düşük süre maliyetli rotayı bulur; kapalı yolları aramaya dahil etmez.
 
+Afet noktaları ayrıca aciliyet, yaralı ve etkilenen kişi sayısına göre açıklanabilir bir ihtiyaç puanıyla sıralanır. Merkezden erişilebilirlik ve rota süresi bu puandan ayrı gösterilir.
+
 **Mevcut sürüm:** Komut satırı uygulaması · Python 3.11+ · Yalnızca standart kütüphane
 
 [Hızlı başlangıç](#hızlı-başlangıç) · [Kullanım](#kullanım) · [Algoritmalar](#algoritmalar-ve-karşılaştırma) · [Yol modeli](#yol-modeli) · [Testler](#testler) · [Yol haritası](#yol-haritası)
@@ -25,6 +27,8 @@ Mavi çerçeve seçilen rotayı gösterir. Yeşil yollar açık, turuncu kesikli
 - **Veri doğrulama:** Geçersiz kimlikler, ölçümler, bağlantılar ve yol geometrileri için açıklayıcı hatalar.
 - **Arama ölçümleri:** Maliyeti kesinleştirilen düğüm sayısı ve rota hesaplama süresi.
 - **Arama görselleri:** İki algoritmanın kesinleştirdiği düğümler aynı ölçekte yan yana gösterilir.
+- **İhtiyaç önceliklendirme:** Değiştirilebilir ağırlıklar, sabit referanslar ve kararlı eşitlik kurallarıyla 0–100 puan.
+- **Açıklanabilir çıktılar:** Her ölçütün puan katkısı, erişilemeyen noktalar, JSON dışa aktarım ve SVG karşılaştırması.
 
 ## Hızlı başlangıç
 
@@ -38,7 +42,7 @@ cd afet-yardim-rota-planlama
 Güncel uygulama henüz geliştirme dalındadır:
 
 ```bash
-git switch hafta-4-astar
+git switch hafta-5-onceliklendirme
 ```
 
 Windows'ta proje klasöründeki terminalden çalıştırın:
@@ -59,6 +63,31 @@ Toplam mesafe: 17.60 km
 ```
 
 ## Kullanım
+
+### İhtiyaç öncelikleri
+
+```powershell
+py -3.11 -m ayros data/bolgesel_ag.json --start H0 --prioritize --priority-svg output/oncelik.svg --priority-json output/oncelik.json
+```
+
+![Bölgesel ağdaki ihtiyaç puanları ve merkezden erişim](docs/oncelik_siralamasi.svg)
+
+Varsayılan politikada ilk üç nokta **A08: 63,24**, **A03: 61,94**, **A11: 61,58** puandır. A12 **31,76** puanla listede kalır; iki girişi kapalı olduğu için erişimi ayrıca **ULAŞILAMIYOR** olarak gösterilir. Puan sırası araç ataması veya ziyaret sırası değildir.
+
+Formül: `100 × [0,50 × aciliyet/5 + 0,30 × min(yaralı/100, 1) + 0,20 × min(afetzede/500, 1)]`.
+
+Ağırlıklar ve 100/500 referansları eğitim amaçlı başlangıç varsayımlarıdır; kurum onaylı karar ölçütleri değildir. Aciliyet 1–5 aralığında olduğundan en düşük aciliyet de puana katkı verir. Yaralı sayısı afetzede sayısının bir alt kümesidir; ayrı katkı yaralı ihtiyacına ek ağırlık vermek içindir.
+
+`data/oncelik_politikasi.json` dosyasının bir kopyasını düzenleyip `--priority-policy DOSYA` ile kullanabilirsiniz. Ağırlıklar 0–1 aralığında ve toplamları 1; referanslar pozitif tam sayı olmalıdır. Sabit referanslar sayesinde başka bir hedefin eklenmesi mevcut puanları değiştirmez. Referansı aşan katkılar doyurulur, ham sayılar JSON'da korunur. Eşit puanda aciliyet, yaralı ve afetzede sayıları azalan, son eşitlikte kimlik artan sırada değerlendirilir. Sıralama yuvarlanmamış puanlarla yapılır.
+
+```powershell
+py -3.11 -m ayros data/bolgesel_ag.json --start H1 --prioritize --algorithm astar --priority-policy data/oncelik_politikasi.json
+py -3.11 scripts/analyze_priorities.py
+```
+
+Deney iki ağda üç politika, her merkez, iki hasar katsayısı ve iki algoritmayla **60 değerlendirme ve 576 hedef kaydı** üretir. Aynı politikada merkez, yol maliyeti ve algoritma değişse de ihtiyaç sırası korunur. Etkilenen kişi sayısına daha yüksek ağırlık veren örnekte bölgesel ağın ilk hedefi A11 olur. Ayrıntılar: [Önceliklendirme yöntemi](docs/onceliklendirme.md).
+
+### Rota ve algoritma karşılaştırması
 
 Algoritmayı seçin veya aynı sorguda ikisini karşılaştırın:
 
@@ -172,7 +201,7 @@ Sorgu medyanlarının aritmetik ortalaması 40 düğümlü ağda yaklaşık **0,
 ## Proje yapısı
 
 ```text
-ayros/       Çizge modeli, Dijkstra, A*, karşılaştırma, CLI ve SVG üretimi
+ayros/       Çizge, rota, ihtiyaç önceliği, CLI ve JSON/SVG üretimi
 data/        Çalıştırılabilir senaryolar ve küçük doğrulama örneği
 docs/        Proje görselleri ve mevcut teknik notlar
 scripts/     Tekrarlanabilir senaryo üretimi ve karşılaştırma deneyi
@@ -185,7 +214,7 @@ tests/       Veri modeli, rota doğruluğu, geometri ve CLI testleri
 py -3.11 -m unittest discover -s tests -v
 ```
 
-**67 test metodu**, veri doğrulama, kapalı yollar, hasar etkisi, ulaşılamayan hedefler, yol geometrisi, köprü kapanmaları, SVG ve komut satırı davranışlarını kapsar. Önceki 48 küçük ağ sorgusu bağımsız tam yol taramasıyla kontrol edilir. A* için 12 sabit tohumlu küçük ağdaki **144 sorgu**, 40 düğümlü ağdaki **24 sorgu** ve bölgesel ağdaki **72 sorgu** bağımsız Bellman–Ford hesabıyla karşılaştırılır. Tahminin tutarlılığı, arama kayıtlarının sonuçları değiştirmemesi, SVG düğümlerinin tam kayda eşitliği, düzlemsel topoloji, köprü kapanmaları ve çoklu ağ deney dosyası ayrıca sınanır. Döngü içindeki sorgular test metodu sayısına eklenmez.
+**90 test metodu**, veri doğrulama, kapalı yollar, hasar etkisi, ulaşılamayan hedefler, yol geometrisi, köprü kapanmaları, SVG ve komut satırı davranışlarını kapsar. Önceki 48 küçük ağ sorgusu bağımsız tam yol taramasıyla kontrol edilir. A* için 12 sabit tohumlu küçük ağdaki **144 sorgu**, 40 düğümlü ağdaki **24 sorgu** ve bölgesel ağdaki **72 sorgu** bağımsız Bellman–Ford hesabıyla karşılaştırılır. Tahminin tutarlılığı, arama kayıtlarının sonuçları değiştirmemesi, SVG düğümlerinin tam kayda eşitliği, düzlemsel topoloji, köprü kapanmaları ve çoklu ağ deney dosyası ayrıca sınanır. Döngü içindeki sorgular test metodu sayısına eklenmez. Önceliklendirme için eklenen 23 test; puan hesabı, 300 bağımsız rasyonel örnek, monotonluk, doygunluk, eşitlik, erişim bağımsızlığı, JSON/SVG ve CLI hata durumlarını kapsar.
 
 Hesaplama süresi maliyet hazırlama, arama ve rota kurmayı içerir; dosya okuma ve SVG üretimini içermez. Tek çalıştırmanın süresi karşılaştırmalı performans sonucu olarak değerlendirilmez.
 
@@ -195,7 +224,7 @@ Hesaplama süresi maliyet hazırlama, arama ve rota kurmayı içerir; dosya okum
 - [x] Dijkstra, yol durumu maliyeti ve erişilebilirlik sorguları
 - [x] Geometri içeren yol ağı ve SVG rota görselleştirme
 - [x] A* ve aynı koşullarda algoritma karşılaştırması
-- [ ] Afet noktalarının önceliklendirilmesi
+- [x] Afet noktalarının açıklanabilir ihtiyaç puanı ve merkezden erişim değerlendirmesi
 - [ ] Temel çoklu araç görev dağıtımı
 - [ ] Yol koşulları değiştiğinde otomatik yeniden planlama
 

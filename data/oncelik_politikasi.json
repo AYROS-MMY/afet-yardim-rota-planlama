@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "urgency_weight": 0.5,
+  "injured_weight": 0.3,
+  "affected_weight": 0.2,
+  "injured_reference": 100,
+  "affected_reference": 500
+}
