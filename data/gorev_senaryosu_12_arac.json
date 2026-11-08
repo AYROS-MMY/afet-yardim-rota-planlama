@@ -1,0 +1,203 @@
+{
+  "schema_version": 2,
+  "vehicles": [
+    {
+      "id": "V01",
+      "center": "H0",
+      "capacity": 120,
+      "available": true,
+      "service": "logistics"
+    },
+    {
+      "id": "V02",
+      "center": "H0",
+      "capacity": 80,
+      "available": true,
+      "service": "logistics"
+    },
+    {
+      "id": "V03",
+      "center": "H1",
+      "capacity": 150,
+      "available": true,
+      "service": "logistics"
+    },
+    {
+      "id": "V04",
+      "center": "H2",
+      "capacity": 100,
+      "available": true,
+      "service": "logistics"
+    },
+    {
+      "id": "V05",
+      "center": "H2",
+      "capacity": 200,
+      "available": false,
+      "service": "logistics"
+    },
+    {
+      "id": "V06",
+      "center": "H1",
+      "capacity": 60,
+      "available": true,
+      "service": "logistics"
+    },
+    {
+      "id": "S01",
+      "center": "H2",
+      "capacity": 1,
+      "available": true,
+      "service": "medical"
+    },
+    {
+      "id": "S02",
+      "center": "H0",
+      "capacity": 1,
+      "available": true,
+      "service": "medical"
+    },
+    {
+      "id": "K01",
+      "center": "H0",
+      "capacity": 1,
+      "available": true,
+      "service": "rescue"
+    },
+    {
+      "id": "K02",
+      "center": "H2",
+      "capacity": 1,
+      "available": true,
+      "service": "rescue"
+    },
+    {
+      "id": "V07",
+      "center": "H1",
+      "capacity": 100,
+      "available": true,
+      "service": "logistics"
+    },
+    {
+      "id": "V08",
+      "center": "H0",
+      "capacity": 100,
+      "available": true,
+      "service": "logistics"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "A01-L",
+      "target": "A01",
+      "service": "logistics",
+      "quantity": 45,
+      "urgency": 3
+    },
+    {
+      "id": "A02-L",
+      "target": "A02",
+      "service": "logistics",
+      "quantity": 90,
+      "urgency": 3
+    },
+    {
+      "id": "A03-L",
+      "target": "A03",
+      "service": "logistics",
+      "quantity": 80,
+      "urgency": 4
+    },
+    {
+      "id": "A04-L",
+      "target": "A04",
+      "service": "logistics",
+      "quantity": 50,
+      "urgency": 3
+    },
+    {
+      "id": "A05-L",
+      "target": "A05",
+      "service": "logistics",
+      "quantity": 70,
+      "urgency": 3
+    },
+    {
+      "id": "A06-L",
+      "target": "A06",
+      "service": "logistics",
+      "quantity": 40,
+      "urgency": 3
+    },
+    {
+      "id": "A07-L",
+      "target": "A07",
+      "service": "logistics",
+      "quantity": 65,
+      "urgency": 3
+    },
+    {
+      "id": "A08-L",
+      "target": "A08",
+      "service": "logistics",
+      "quantity": 120,
+      "urgency": 5
+    },
+    {
+      "id": "A09-L",
+      "target": "A09",
+      "service": "logistics",
+      "quantity": 55,
+      "urgency": 3
+    },
+    {
+      "id": "A10-L",
+      "target": "A10",
+      "service": "logistics",
+      "quantity": 85,
+      "urgency": 3
+    },
+    {
+      "id": "A11-L",
+      "target": "A11",
+      "service": "logistics",
+      "quantity": 200,
+      "urgency": 4
+    },
+    {
+      "id": "A12-L",
+      "target": "A12",
+      "service": "logistics",
+      "quantity": 30,
+      "urgency": 3
+    },
+    {
+      "id": "A08-S",
+      "target": "A08",
+      "service": "medical",
+      "quantity": 1,
+      "urgency": 5
+    },
+    {
+      "id": "A08-K",
+      "target": "A08",
+      "service": "rescue",
+      "quantity": 1,
+      "urgency": 4
+    },
+    {
+      "id": "A03-K",
+      "target": "A03",
+      "service": "rescue",
+      "quantity": 1,
+      "urgency": 5
+    },
+    {
+      "id": "A11-S",
+      "target": "A11",
+      "service": "medical",
+      "quantity": 1,
+      "urgency": 4
+    }
+  ]
+}
