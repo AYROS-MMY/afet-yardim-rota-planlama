@@ -10,9 +10,9 @@ Afet noktaları ayrıca aciliyet, yaralı ve etkilenen kişi sayısına göre a�
 
 [Hızlı başlangıç](#hızlı-başlangıç) · [Kullanım](#kullanım) · [Algoritmalar](#algoritmalar-ve-karşılaştırma) · [Yol modeli](#yol-modeli) · [Testler](#testler) · [Yol haritası](#yol-haritası)
 
-**Güncel geliştirme:** 5. hafta · İhtiyaç önceliklendirme ve erişim değerlendirmesi
+**Güncel geliştirme:** 6. hafta · Hizmet türüne göre araç atama ve açıklanabilir görev planı
 
-[Çalıştırılabilir proje ve görseller](https://github.com/AYROS-MMY/afet-yardim-rota-planlama/tree/hafta-5-onceliklendirme) · [5. hafta değişiklikleri](https://github.com/AYROS-MMY/afet-yardim-rota-planlama/pull/6)
+[Çalıştırılabilir proje ve görseller](https://github.com/AYROS-MMY/afet-yardim-rota-planlama/tree/hafta-6-arac-atama) · [6. hafta değişiklikleri](https://github.com/AYROS-MMY/afet-yardim-rota-planlama/pull/7)
 
 ## Projenin amacı ve işleyişi
 
@@ -23,11 +23,11 @@ Afet sonrası yol kapanmaları ve hasarlar, yardım merkezlerinden ihtiyaç nokt
 3. Seçilen merkezden hedeflere Dijkstra veya A* ile rota hesapla.
 4. İhtiyaç sırasını, erişim durumunu ve rota süresini birlikte incele.
 
-İhtiyaç puanı hedefin durumunu, rota süresi ise seçilen merkezden ulaşımı ifade eder. Araç kapasitesi ve müsaitliğini kullanan görev ataması yol haritasındaki sonraki adımdır.
+İhtiyaç puanı hedefin durumunu, rota süresi ise seçilen merkezden ulaşımı ifade eder. Lojistik, sağlık ve kurtarma görevleri uygun tür, kapasite, müsaitlik ve rota süresine göre ayrı atanır. Atama, gerçekleşmiş teslimat değildir.
 
 ## Önizleme
 
-![Düzensiz yerleşim ağında A* ile H0 merkezinden A5 afet noktasına hesaplanan rota](https://github.com/AYROS-MMY/afet-yardim-rota-planlama/raw/hafta-5-onceliklendirme/docs/astar_rota.svg)
+![Düzensiz yerleşim ağında A* ile H0 merkezinden A5 afet noktasına hesaplanan rota](https://github.com/AYROS-MMY/afet-yardim-rota-planlama/raw/hafta-6-arac-atama/docs/astar_rota.svg)
 
 Mavi çerçeve seçilen rotayı gösterir. Yeşil yollar açık, turuncu kesikli yollar hasarlı, kırmızı noktalı yollar kapalıdır. SVG dosyasını tarayıcıda açarak yolların üzerine geldiğinizde tür, mesafe ve süre ayrıntılarını görebilirsiniz.
 
@@ -57,7 +57,7 @@ cd afet-yardim-rota-planlama
 Güncel uygulama henüz geliştirme dalındadır:
 
 ```bash
-git switch hafta-5-onceliklendirme
+git switch hafta-6-arac-atama
 ```
 
 Windows'ta proje klasöründeki terminalden çalıştırın:
@@ -77,6 +77,20 @@ Temel süre (hasar etkisi hariç): 34.84 dk
 Toplam mesafe: 17.60 km
 ```
 
+## 6. hafta araç görev planı
+
+```powershell
+py -3.11 -m ayros.dispatch --json output/hafta6_atama.json --svg output/hafta6_atama.svg --html output/hafta6_araclar.html
+```
+
+Oluşan HTML dosyasını tarayıcıda açın. Araç veya bölge seçimi rotaları filtreler; kartlar başlangıç, hedef, planlanan yük/kapasite ve tahmini ulaşım süresini gösterir.
+
+12 araçlı senaryoda **16 görevin 11'i atanır**. **930 koli ihtiyaç, 455 koli planlanan yük ve 475 koliye henüz araç atanmadığı** ayrı gösterilir. Sağlık ve kurtarma ekipleri koli miktarına eklenmez. Hareket ve gerçekleşmiş teslimat henüz modellenmez.
+
+![Araç görev planı](https://github.com/AYROS-MMY/afet-yardim-rota-planlama/raw/hafta-6-arac-atama/docs/arac_atama.svg)
+
+35 yeni test; görev türü, kapasite, müsaitlik, bağımsız ihtiyaçlar, eski veri uyumluluğu ve açgözlü yöntemin sınırlarını kapsar. [Teknik açıklama](https://github.com/AYROS-MMY/afet-yardim-rota-planlama/blob/hafta-6-arac-atama/docs/arac_atama.md) · [7–9. hafta planı](https://github.com/AYROS-MMY/afet-yardim-rota-planlama/blob/hafta-6-arac-atama/docs/yol_haritasi.md)
+
 ## Kullanım
 
 ### İhtiyaç öncelikleri
@@ -85,7 +99,7 @@ Toplam mesafe: 17.60 km
 py -3.11 -m ayros data/bolgesel_ag.json --start H0 --prioritize --priority-svg output/oncelik.svg --priority-json output/oncelik.json
 ```
 
-![Bölgesel ağdaki ihtiyaç puanları ve merkezden erişim](https://github.com/AYROS-MMY/afet-yardim-rota-planlama/raw/hafta-5-onceliklendirme/docs/oncelik_siralamasi.svg)
+![Bölgesel ağdaki ihtiyaç puanları ve merkezden erişim](https://github.com/AYROS-MMY/afet-yardim-rota-planlama/raw/hafta-6-arac-atama/docs/oncelik_siralamasi.svg)
 
 Varsayılan politikada ilk üç nokta **A08: 63,24**, **A03: 61,94**, **A11: 61,58** puandır. A12 **31,76** puanla listede kalır; iki girişi kapalı olduğu için erişimi ayrıca **ULAŞILAMIYOR** olarak gösterilir. Puan sırası araç ataması veya ziyaret sırası değildir.
 
@@ -100,7 +114,7 @@ py -3.11 -m ayros data/bolgesel_ag.json --start H1 --prioritize --algorithm asta
 py -3.11 scripts/analyze_priorities.py
 ```
 
-Deney iki ağda üç politika, her merkez, iki hasar katsayısı ve iki algoritmayla **60 değerlendirme ve 576 hedef kaydı** üretir. Aynı politikada merkez, yol maliyeti ve algoritma değişse de ihtiyaç sırası korunur. Etkilenen kişi sayısına daha yüksek ağırlık veren örnekte bölgesel ağın ilk hedefi A11 olur. Ayrıntılar: [Önceliklendirme yöntemi](https://github.com/AYROS-MMY/afet-yardim-rota-planlama/blob/hafta-5-onceliklendirme/docs/onceliklendirme.md).
+Deney iki ağda üç politika, her merkez, iki hasar katsayısı ve iki algoritmayla **60 değerlendirme ve 576 hedef kaydı** üretir. Aynı politikada merkez, yol maliyeti ve algoritma değişse de ihtiyaç sırası korunur. Etkilenen kişi sayısına daha yüksek ağırlık veren örnekte bölgesel ağın ilk hedefi A11 olur. Ayrıntılar: [Önceliklendirme yöntemi](https://github.com/AYROS-MMY/afet-yardim-rota-planlama/blob/hafta-6-arac-atama/docs/onceliklendirme.md).
 
 ### Rota ve algoritma karşılaştırması
 
@@ -129,7 +143,7 @@ Hasarın ek süre etkisini kaldırarak rota seçimini karşılaştırın:
 py -3.11 -m ayros --start H0 --target A5 --damage-factor 1 --svg output/hasar_1.svg
 ```
 
-Bu sorgu farklı bir rota üzerinden **28,90 dakika** ve **15,18 km** verir. [Karşılaştırma görseli](https://github.com/AYROS-MMY/afet-yardim-rota-planlama/blob/hafta-5-onceliklendirme/docs/hafta3_hasar_1.svg) depoda hazır bulunur. Katsayının 1 olması kapalı yolları açmaz.
+Bu sorgu farklı bir rota üzerinden **28,90 dakika** ve **15,18 km** verir. [Karşılaştırma görseli](https://github.com/AYROS-MMY/afet-yardim-rota-planlama/blob/hafta-6-arac-atama/docs/hafta3_hasar_1.svg) depoda hazır bulunur. Katsayının 1 olması kapalı yolları açmaz.
 
 Kendi JSON senaryonuzu veya küçük doğrulama örneğini çalıştırın:
 
@@ -152,11 +166,11 @@ py -3.11 -m ayros data/bolgesel_ag.json --start H0 --target A11 --compare --repe
 
 `output/arama.svg` dosyasını tarayıcıda açın. Sarı halkalar **maliyeti kesinleştirilen** düğümleri, mavi çizgi bulunan rotayı gösterir. Düğüm üzerine gelince sıra numarası okunur. Bu kayıtlar süre deneyinden ayrı iki sorguda alınır; `--search-svg` yalnızca `--compare` ve tek hedefle kullanılır. Erişilemeyen hedefin arama görseli de üretilebilir.
 
-![Bölgesel ağda H0-A11 aramalarının yan yana görünümü](https://github.com/AYROS-MMY/afet-yardim-rota-planlama/raw/hafta-5-onceliklendirme/docs/bolgesel_arama.svg)
+![Bölgesel ağda H0-A11 aramalarının yan yana görünümü](https://github.com/AYROS-MMY/afet-yardim-rota-planlama/raw/hafta-6-arac-atama/docs/bolgesel_arama.svg)
 
-H0 → A11, hasar katsayısı 2 örneğinde iki algoritma da **53,575 dakika** bulur (terminalde iki basamakla **53,58** gösterilir). Dijkstra **129**, A* **89** düğüm inceler. [40 düğümlü ağdaki arama görünümü](https://github.com/AYROS-MMY/afet-yardim-rota-planlama/blob/hafta-5-onceliklendirme/docs/kucuk_ag_arama.svg) de mevcuttur. Görseller araç hareketi göstermez.
+H0 → A11, hasar katsayısı 2 örneğinde iki algoritma da **53,575 dakika** bulur (terminalde iki basamakla **53,58** gösterilir). Dijkstra **129**, A* **89** düğüm inceler. [40 düğümlü ağdaki arama görünümü](https://github.com/AYROS-MMY/afet-yardim-rota-planlama/blob/hafta-6-arac-atama/docs/kucuk_ag_arama.svg) de mevcuttur. Görseller araç hareketi göstermez.
 
-Senaryonun tasarımı ve sonraki özelliklerde nasıl kullanılacağı [deney rehberinde](https://github.com/AYROS-MMY/afet-yardim-rota-planlama/blob/hafta-5-onceliklendirme/docs/deneyler.md) açıklanır.
+Senaryonun tasarımı ve sonraki özelliklerde nasıl kullanılacağı [deney rehberinde](https://github.com/AYROS-MMY/afet-yardim-rota-planlama/blob/hafta-6-arac-atama/docs/deneyler.md) açıklanır.
 
 ### Yol maliyeti ve senaryo verisi
 
@@ -229,7 +243,7 @@ tests/       Veri modeli, rota doğruluğu, geometri ve CLI testleri
 py -3.11 -m unittest discover -s tests -v
 ```
 
-**90 test metodu**, veri doğrulama, kapalı yollar, hasar etkisi, ulaşılamayan hedefler, yol geometrisi, köprü kapanmaları, SVG ve komut satırı davranışlarını kapsar. Önceki 48 küçük ağ sorgusu bağımsız tam yol taramasıyla kontrol edilir. A* için 12 sabit tohumlu küçük ağdaki **144 sorgu**, 40 düğümlü ağdaki **24 sorgu** ve bölgesel ağdaki **72 sorgu** bağımsız Bellman–Ford hesabıyla karşılaştırılır. Tahminin tutarlılığı, arama kayıtlarının sonuçları değiştirmemesi, SVG düğümlerinin tam kayda eşitliği, düzlemsel topoloji, köprü kapanmaları ve çoklu ağ deney dosyası ayrıca sınanır. Döngü içindeki sorgular test metodu sayısına eklenmez. Önceliklendirme için eklenen 23 test; puan hesabı, 300 bağımsız rasyonel örnek, monotonluk, doygunluk, eşitlik, erişim bağımsızlığı, JSON/SVG ve CLI hata durumlarını kapsar.
+**125 test metodu**, veri doğrulama, kapalı yollar, hasar etkisi, ulaşılamayan hedefler, yol geometrisi, köprü kapanmaları, SVG ve komut satırı davranışlarını kapsar. Önceki 48 küçük ağ sorgusu bağımsız tam yol taramasıyla kontrol edilir. A* için 12 sabit tohumlu küçük ağdaki **144 sorgu**, 40 düğümlü ağdaki **24 sorgu** ve bölgesel ağdaki **72 sorgu** bağımsız Bellman–Ford hesabıyla karşılaştırılır. Tahminin tutarlılığı, arama kayıtlarının sonuçları değiştirmemesi, SVG düğümlerinin tam kayda eşitliği, düzlemsel topoloji, köprü kapanmaları ve çoklu ağ deney dosyası ayrıca sınanır. Döngü içindeki sorgular test metodu sayısına eklenmez. Önceliklendirme için eklenen 23 test; puan hesabı, 300 bağımsız rasyonel örnek, monotonluk, doygunluk, eşitlik, erişim bağımsızlığı, JSON/SVG ve CLI hata durumlarını kapsar.
 
 Hesaplama süresi maliyet hazırlama, arama ve rota kurmayı içerir; dosya okuma ve SVG üretimini içermez. Tek çalıştırmanın süresi karşılaştırmalı performans sonucu olarak değerlendirilmez.
 
@@ -240,7 +254,8 @@ Hesaplama süresi maliyet hazırlama, arama ve rota kurmayı içerir; dosya okum
 - [x] Geometri içeren yol ağı ve SVG rota görselleştirme
 - [x] A* ve aynı koşullarda algoritma karşılaştırması
 - [x] Afet noktalarının açıklanabilir ihtiyaç puanı ve merkezden erişim değerlendirmesi
-- [ ] Temel çoklu araç görev dağıtımı
+- [x] Hizmet türü, kapasite ve müsaitlik ile tek turluk araç atama
+- [ ] Araç hareketi, teslimat takibi ve kontrollü kısmi teslimat
 - [ ] Yol koşulları değiştiğinde otomatik yeniden planlama
 
 ## Ekip ve akademik bağlam
