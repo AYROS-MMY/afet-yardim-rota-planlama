@@ -171,7 +171,7 @@ def main() -> int:
             write_svg(scenario, args.svg, route=route, cost_model=cost_model)
             print(f"\nÇizge görseli: {args.svg}")
         if route is None and not args.all_targets and not args.prioritize:
-            print("\nRota için --start ve --target kullanın. Araç atama henüz yoktur.")
+            print("\nRota için --start ve --target kullanın. Araç atama için: py -3.11 -m ayros.dispatch")
         return 3 if route is not None and not route.found and not args.all_targets else 0
     except (ValidationError, OSError) as error:
         print(f"Hata: {error}", file=sys.stderr)

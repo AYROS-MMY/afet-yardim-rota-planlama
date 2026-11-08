@@ -1,0 +1,724 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1457" width="1200" height="1457" role="img" aria-labelledby="map-title">
+<title id="map-title">AYROS MMY — Araçların başlangıç merkezleri ve hedef rotaları</title>
+<rect width="1200" height="1457" fill="#ffffff"/>
+<g font-family="Arial, sans-serif" fill="#172033">
+<defs>
+<marker id="arrow-0" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb"/></marker>
+<marker id="arrow-1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7c3aed"/></marker>
+<marker id="arrow-2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#0f766e"/></marker>
+<marker id="arrow-3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#c2410c"/></marker>
+<marker id="arrow-4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#be185d"/></marker>
+<marker id="arrow-5" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#0369a1"/></marker>
+<marker id="arrow-6" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#854d0e"/></marker>
+<marker id="arrow-7" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/></marker>
+<marker id="arrow-8" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb"/></marker>
+<marker id="arrow-9" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7c3aed"/></marker>
+<marker id="arrow-10" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#0f766e"/></marker>
+</defs>
+<text x="40" y="44" font-size="28" fill="#172033">AYROS MMY | Öncelikten araç görevine</text>
+<text x="40" y="77" font-size="19" fill="#172033">11 görev atandı • 5 görev bekliyor • 455 koli planlandı</text>
+<text x="40" y="108" font-size="15" fill="#172033">Başlangıç anı: araçlar merkezlerinde • Kare = çıkış merkezi • Halka = hedef • Oklar = gidiş yönü</text>
+<rect x="30" y="130" width="1140" height="600" rx="12" fill="#f8fafc" stroke="#dbe3ed"/>
+<polyline points="606.96,705.00 606.96,145.00" stroke="#dbeafe" stroke-width="18" fill="none"/>
+<polyline points="1001.57,638.67 1010.19,616.61" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="372.23,289.19 352.88,303.48" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="881.59,194.39 872.14,172.23" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="959.09,252.04 947.59,230.68" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="745.45,204.32 723.42,193.99" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="322.13,421.75 339.77,438.61" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="975.82,423.32 957.68,439.75" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="429.60,339.52 448.62,355.08" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="406.13,311.69 396.91,334.70" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="396.81,264.51 410.02,243.52" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="705.41,425.17 721.04,405.89" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="273.17,349.05 250.23,358.54" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="930.82,488.61 927.26,464.03" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="975.82,624.52 963.04,646.02" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="305.16,456.86 281.49,448.77" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="755.41,419.23 778.31,429.69" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="490.90,612.65 496.50,588.04" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="223.51,314.31 238.53,334.63" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="719.93,324.84 694.71,321.95" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="995.57,589.45 1015.56,573.69" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="318.21,228.33 295.17,216.96" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="263.88,622.44 238.10,623.41" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="861.61,220.89 837.56,230.44" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="823.95,199.76 844.27,183.73" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="367.73,260.96 345.90,246.87" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="710.07,276.89 723.89,254.62" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="512.66,640.85 486.34,641.76" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="758.39,310.18 757.35,336.51" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="355.09,329.80 352.88,303.48" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="640.49,255.66 660.98,272.63" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="250.23,358.54 238.53,334.63" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="705.41,425.17 692.70,401.46" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="361.16,224.54 345.90,246.87" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="957.68,439.75 981.82,452.56" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="482.95,294.12 502.87,312.87" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="469.17,586.46 496.50,588.04" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="808.63,587.37 782.54,596.49" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="753.97,230.64 745.45,204.32" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="427.96,379.06 419.74,405.95" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="437.28,250.53 410.02,243.52" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="268.58,588.00 240.71,583.74" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="875.22,322.72 887.49,348.14" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="755.41,419.23 738.21,441.67" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="281.49,448.77 280.38,477.11" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="372.23,289.19 367.73,260.96" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="871.23,399.88 883.91,426.07" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="472.83,557.46 469.17,586.46" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="367.73,260.96 396.81,264.51" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="975.82,624.52 1001.57,638.67" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="273.71,420.10 247.65,433.82" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="490.90,612.65 486.34,641.76" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="774.09,630.26 761.61,657.05" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="273.71,420.10 281.49,448.77" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="467.83,471.58 475.64,500.45" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="963.04,646.02 941.15,625.56" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="872.14,172.23 844.27,183.73" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="995.57,589.45 967.77,577.78" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="957.68,439.75 933.77,420.98" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="802.32,489.92 785.89,464.30" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="758.39,310.18 787.10,299.08" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="984.20,512.99 953.55,509.84" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="995.57,589.45 1010.19,616.61" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="241.25,473.69 216.50,455.18" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="930.82,488.61 953.55,509.84" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="235.61,552.56 240.71,583.74" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="427.96,379.06 448.62,355.08" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="741.09,490.39 771.44,499.81" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="407.74,591.29 378.70,605.07" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="707.56,222.13 723.42,193.99" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="802.32,489.92 771.44,499.81" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="975.28,213.74 947.59,230.68" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="881.69,526.20 861.57,500.65" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="429.60,339.52 396.91,334.70" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="881.59,194.39 861.61,220.89" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="918.01,215.62 947.59,230.68" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="891.38,624.72 913.31,649.80" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="318.21,228.33 345.90,246.87" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="883.91,426.07 863.32,452.97" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="204.56,423.32 216.50,455.18" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="741.09,490.39 710.98,506.35" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="871.23,399.88 847.32,375.54" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="881.59,194.39 908.69,173.64" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="223.44,659.70 257.58,660.57" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="247.65,433.82 239.47,400.66" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="372.16,449.95 339.77,438.61" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="324.61,582.34 357.94,574.09" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="268.58,588.00 263.88,622.44" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="774.09,630.26 782.54,596.49" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="493.01,346.30 502.87,312.87" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="774.09,630.26 806.34,643.67" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="372.16,449.95 406.43,442.20" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="771.44,499.81 782.80,533.14" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="778.31,429.69 785.89,464.30" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="373.47,541.80 357.94,574.09" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="975.28,213.74 988.06,180.14" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="338.69,624.52 304.02,634.41" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="942.29,188.59 918.01,215.62" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="707.56,222.13 723.89,254.62" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="705.41,425.17 738.21,441.67" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="942.29,188.59 908.69,173.64" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="984.20,512.99 1015.15,493.11" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="273.17,349.05 295.40,378.49" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="913.31,649.80 941.15,625.56" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="539.66,562.65 527.15,527.85" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="238.10,222.13 226.43,257.23" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="390.77,660.47 427.79,659.90" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="926.83,535.52 953.55,509.84" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="406.13,311.69 439.39,294.99" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="355.09,329.80 371.09,363.43" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="378.70,605.07 357.94,574.09" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="251.14,285.20 226.43,257.23" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="787.10,299.08 822.07,312.40" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="789.75,355.25 757.35,336.51" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="216.50,455.18 247.65,433.82" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="475.64,500.45 438.19,505.68" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="875.22,322.72 912.71,317.43" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="573.43,255.66 544.05,279.94" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="710.98,506.35 673.02,501.46" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="406.43,442.20 419.74,405.95" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="396.91,334.70 371.09,363.43" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="257.58,660.57 263.88,622.44" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="475.64,500.45 508.04,479.12" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="318.21,345.86 301.10,310.92" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="957.68,439.75 927.26,464.03" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="305.16,456.86 322.13,421.75" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="719.93,324.84 757.35,336.51" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="506.36,188.59 545.79,192.55" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="318.21,345.86 295.40,378.49" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="238.10,222.13 214.32,190.14" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="264.18,513.83 280.38,477.11" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="223.51,314.31 251.14,285.20" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="841.69,624.52 806.34,643.67" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="318.21,345.86 355.09,329.80" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="959.09,252.04 921.16,265.89" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="368.81,404.18 371.09,363.43" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="508.04,479.12 504.88,438.35" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="640.49,590.99 663.53,625.06" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="823.95,199.76 785.62,184.00" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="263.88,622.44 304.02,634.41" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="975.82,423.32 1011.57,401.09" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="469.17,586.46 442.38,619.52" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="442.38,619.52 427.79,659.90" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="427.96,379.06 467.83,396.30" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="482.95,294.12 439.39,294.99" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="753.97,230.64 791.66,253.28" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="573.43,590.99 539.66,562.65" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="338.69,624.52 324.61,582.34" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="442.38,619.52 407.74,591.29" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="785.62,184.00 745.45,204.32" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="761.61,657.05 722.55,633.04" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="829.65,546.59 808.63,587.37" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="791.66,253.28 787.10,299.08" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="926.83,535.52 881.69,526.20" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="736.50,586.86 782.54,596.49" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="857.15,273.60 837.56,230.44" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="544.05,279.94 516.49,241.24" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="863.32,452.97 861.57,500.65" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="324.61,582.34 313.88,535.69" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="235.61,552.56 264.18,513.83" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="847.32,375.54 887.49,348.14" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="829.65,546.59 782.80,533.14" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="319.78,174.68 295.17,216.96" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="710.07,276.89 660.98,272.63" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="841.69,624.52 891.38,624.72" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="539.66,562.65 496.50,588.04" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="912.71,317.43 921.16,265.89" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="508.04,479.12 527.15,527.85" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="544.05,279.94 502.87,312.87" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="506.36,188.59 516.49,241.24" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="493.01,346.30 546.87,344.92" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="959.09,252.04 1013.65,259.08" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="829.65,546.59 881.69,526.20" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="640.49,423.32 692.70,401.46" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="722.55,633.04 663.53,625.06" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="506.36,188.59 448.51,173.80" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="573.43,423.32 504.88,438.35" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="1003.59,328.79 1013.65,259.08" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="573.43,590.99 640.49,590.99" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="573.43,423.32 640.49,423.32" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="573.43,255.66 640.49,255.66" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="184.44,678.17 223.44,659.70" stroke="#e11d48" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="184.44,678.17 257.58,660.57" stroke="#e11d48" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="692.70,401.46 721.04,405.89" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="975.82,423.32 981.82,452.56" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="305.16,456.86 280.38,477.11" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="837.56,230.44 823.95,199.76" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="469.17,586.46 490.90,612.65" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="975.82,624.52 941.15,625.56" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="372.23,289.19 396.81,264.51" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="975.82,624.52 1010.19,616.61" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="512.66,640.85 490.90,612.65" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="406.13,311.69 429.60,339.52" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="872.14,172.23 908.69,173.64" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="755.41,419.23 721.04,405.89" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="247.65,433.82 281.49,448.77" stroke="#e11d48" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="367.73,260.96 361.16,224.54" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="273.17,349.05 238.53,334.63" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="771.44,499.81 785.89,464.30" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="753.97,230.64 723.89,254.62" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="472.83,557.46 496.50,588.04" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="881.59,194.39 844.27,183.73" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="305.16,456.86 339.77,438.61" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="223.44,659.70 238.10,623.41" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="1001.57,638.67 963.04,646.02" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="241.25,473.69 280.38,477.11" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="273.71,420.10 239.47,400.66" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="427.96,379.06 429.60,339.52" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="738.21,441.67 721.04,405.89" stroke="#e11d48" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="912.71,317.43 887.49,348.14" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="240.71,583.74 238.10,623.41" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="372.23,289.19 406.13,311.69" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="467.83,471.58 508.04,479.12" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="861.61,220.89 844.27,183.73" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="758.39,310.18 719.93,324.84" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="942.29,188.59 975.28,213.74" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="975.28,213.74 959.09,252.04" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="204.56,423.32 239.47,400.66" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="738.21,441.67 778.31,429.69" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="707.56,222.13 745.45,204.32" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="257.58,660.57 238.10,623.41" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="355.09,329.80 396.91,334.70" stroke="#e11d48" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="975.82,423.32 933.77,420.98" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="942.29,188.59 947.59,230.68" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="437.28,250.53 396.81,264.51" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="918.01,215.62 908.69,173.64" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="318.21,228.33 361.16,224.54" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="861.61,220.89 823.95,199.76" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="1015.56,573.69 1010.19,616.61" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="250.23,358.54 239.47,400.66" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="927.26,464.03 933.77,420.98" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="338.69,624.52 378.70,605.07" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="437.28,250.53 439.39,294.99" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="368.81,404.18 339.77,438.61" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="318.21,345.86 273.17,349.05" stroke="#e11d48" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="467.83,471.58 438.19,505.68" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="493.01,346.30 448.62,355.08" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="467.83,396.30 448.62,355.08" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="372.16,449.95 368.81,404.18" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="241.25,473.69 264.18,513.83" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="761.61,657.05 806.34,643.67" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="273.71,420.10 295.40,378.49" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="926.83,535.52 930.82,488.61" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="707.56,222.13 753.97,230.64" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="802.32,489.92 782.80,533.14" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="710.07,276.89 694.71,321.95" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="787.10,299.08 757.35,336.51" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="1015.56,573.69 967.77,577.78" stroke="#e11d48" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="736.50,586.86 722.55,633.04" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="235.61,552.56 268.58,588.00" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="719.93,324.84 710.07,276.89" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="467.83,396.30 419.74,405.95" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="442.38,619.52 486.34,641.76" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="250.23,358.54 295.40,378.49" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="841.69,624.52 808.63,587.37" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="891.38,624.72 941.15,625.56" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="467.83,471.58 504.88,438.35" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="913.31,649.80 963.04,646.02" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="322.13,421.75 368.81,404.18" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="883.91,426.07 933.77,420.98" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="918.01,215.62 921.16,265.89" stroke="#e11d48" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="251.14,285.20 238.53,334.63" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="791.66,253.28 837.56,230.44" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="774.09,630.26 722.55,633.04" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="741.09,490.39 785.89,464.30" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="857.15,273.60 822.07,312.40" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="301.10,310.92 352.88,303.48" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="875.22,322.72 857.15,273.60" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="361.16,224.54 410.02,243.52" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="981.82,452.56 1015.15,493.11" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="407.74,591.29 357.94,574.09" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="927.26,464.03 953.55,509.84" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="806.34,643.67 782.54,596.49" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="482.95,294.12 493.01,346.30" stroke="#e11d48" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="871.23,399.88 863.32,452.97" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="318.21,228.33 319.78,174.68" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="789.75,355.25 822.07,312.40" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="875.22,322.72 822.07,312.40" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="871.23,399.88 887.49,348.14" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="264.18,513.83 313.88,535.69" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="546.87,344.92 502.87,312.87" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="829.65,546.59 861.57,500.65" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="324.61,582.34 304.02,634.41" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="467.83,396.30 504.88,438.35" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="301.10,310.92 251.14,285.20" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="390.77,660.47 378.70,605.07" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="545.79,192.55 516.49,241.24" stroke="#e11d48" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="345.90,246.87 352.88,303.48" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="472.83,557.46 475.64,500.45" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="223.51,314.31 226.43,257.23" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="238.10,222.13 295.17,216.96" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="268.58,588.00 304.02,634.41" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="573.43,255.66 516.49,241.24" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="926.83,535.52 967.77,577.78" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="1011.57,401.09 981.82,452.56" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="741.09,490.39 782.80,533.14" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="694.71,321.95 660.98,272.63" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="373.47,541.80 313.88,535.69" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="373.47,541.80 407.74,591.29" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="802.32,489.92 861.57,500.65" stroke="#e11d48" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="789.75,355.25 847.32,375.54" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="486.34,641.76 427.79,659.90" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="930.82,488.61 881.69,526.20" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="472.83,557.46 527.15,527.85" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="482.95,294.12 544.05,279.94" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="785.62,184.00 723.42,193.99" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="338.69,624.52 390.77,660.47" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="857.15,273.60 921.16,265.89" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="419.74,405.95 371.09,363.43" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="640.49,423.32 705.41,425.17" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="758.39,310.18 723.89,254.62" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="984.20,512.99 967.77,577.78" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="214.32,190.14 226.43,257.23" stroke="#e11d48" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="984.20,512.99 1015.56,573.69" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="573.43,255.66 545.79,192.55" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="791.66,253.28 785.62,184.00" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="406.43,442.20 438.19,505.68" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="736.50,586.86 808.63,587.37" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="755.41,419.23 789.75,355.25" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="1011.57,401.09 1003.59,328.79" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="373.47,541.80 438.19,505.68" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="841.69,624.52 913.31,649.80" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="437.28,250.53 448.51,173.80" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="240.71,583.74 223.44,659.70" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="573.43,590.99 527.15,527.85" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="573.43,590.99 512.66,640.85" stroke="#e11d48" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="847.32,375.54 863.32,452.97" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="235.61,552.56 241.25,473.69" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="692.70,401.46 694.71,321.95" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="410.02,243.52 448.51,173.80" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="736.50,586.86 663.53,625.06" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="512.66,640.85 539.66,562.65" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="573.43,423.32 546.87,344.92" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="1013.65,259.08 988.06,180.14" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="640.49,423.32 673.02,501.46" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="214.32,190.14 295.17,216.96" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="1003.59,328.79 912.71,317.43" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="1011.57,401.09 1015.15,493.11" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="640.49,590.99 673.02,501.46" stroke="#e11d48" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="545.79,192.55 448.51,173.80" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="723.42,193.99 660.98,272.63" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="710.98,506.35 778.31,429.69" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="761.61,657.05 663.53,625.06" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="372.16,449.95 313.88,535.69" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 4"/>
+<polyline points="319.78,174.68 214.32,190.14" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="238.10,222.13 301.10,310.92" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="995.57,589.45 891.38,624.72" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="640.49,590.99 710.98,506.35" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<polyline points="204.56,423.32 223.51,314.31" stroke="#b6c3d0" stroke-width="1.5" fill="none"/>
+<g data-route-vehicle="V03" data-route-target="A08">
+<polyline data-vehicle="V03" data-road="R190" points="975.82,624.52 1010.19,616.61" stroke="#2563eb" stroke-width="4" fill="none" stroke-linejoin="round"><title>V03: H1 → A08</title></polyline>
+<polyline data-vehicle="V03" data-road="R062" points="1010.19,616.61 995.57,589.45" stroke="#2563eb" stroke-width="4" fill="none" stroke-linejoin="round"><title>V03: H1 → A08</title></polyline>
+<polyline data-vehicle="V03" data-road="R057" points="995.57,589.45 967.77,577.78" stroke="#2563eb" stroke-width="4" fill="none" stroke-linejoin="round" marker-end="url(#arrow-0)"><title>V03: H1 → A08</title></polyline>
+<polyline data-vehicle="V03" data-road="R293" points="967.77,577.78 926.83,535.52" stroke="#2563eb" stroke-width="4" fill="none" stroke-linejoin="round"><title>V03: H1 → A08</title></polyline>
+<polyline data-vehicle="V03" data-road="R153" points="926.83,535.52 881.69,526.20" stroke="#2563eb" stroke-width="4" fill="none" stroke-linejoin="round"><title>V03: H1 → A08</title></polyline>
+<polyline data-vehicle="V03" data-road="R072" points="881.69,526.20 861.57,500.65" stroke="#2563eb" stroke-width="4" fill="none" stroke-linejoin="round"><title>V03: H1 → A08</title></polyline>
+<polyline data-vehicle="V03" data-road="R157" points="861.57,500.65 863.32,452.97" stroke="#2563eb" stroke-width="4" fill="none" stroke-linejoin="round" marker-end="url(#arrow-0)"><title>V03: H1 → A08</title></polyline>
+<polyline data-vehicle="V03" data-road="R078" points="863.32,452.97 883.91,426.07" stroke="#2563eb" stroke-width="4" fill="none" stroke-linejoin="round"><title>V03: H1 → A08</title></polyline>
+<polyline data-vehicle="V03" data-road="R046" points="883.91,426.07 871.23,399.88" stroke="#2563eb" stroke-width="4" fill="none" stroke-linejoin="round"><title>V03: H1 → A08</title></polyline>
+<polyline data-vehicle="V03" data-road="R081" points="871.23,399.88 847.32,375.54" stroke="#2563eb" stroke-width="4" fill="none" stroke-linejoin="round"><title>V03: H1 → A08</title></polyline>
+<polyline data-vehicle="V03" data-road="R160" points="847.32,375.54 887.49,348.14" stroke="#2563eb" stroke-width="4" fill="none" stroke-linejoin="round" marker-end="url(#arrow-0)"><title>V03: H1 → A08</title></polyline>
+<polyline data-vehicle="V03" data-road="R042" points="887.49,348.14 875.22,322.72" stroke="#2563eb" stroke-width="4" fill="none" stroke-linejoin="round" marker-end="url(#arrow-0)"><title>V03: H1 → A08</title></polyline>
+</g>
+<g data-route-vehicle="S01" data-route-target="A08">
+<polyline data-vehicle="S01" data-road="R223" points="942.29,188.59 947.59,230.68" stroke="#7c3aed" stroke-width="4" fill="none" stroke-linejoin="round"><title>S01: H2 → A08</title></polyline>
+<polyline data-vehicle="S01" data-road="R004" points="947.59,230.68 959.09,252.04" stroke="#7c3aed" stroke-width="4" fill="none" stroke-linejoin="round"><title>S01: H2 → A08</title></polyline>
+<polyline data-vehicle="S01" data-road="R134" points="959.09,252.04 921.16,265.89" stroke="#7c3aed" stroke-width="4" fill="none" stroke-linejoin="round" marker-end="url(#arrow-1)"><title>S01: H2 → A08</title></polyline>
+<polyline data-vehicle="S01" data-road="R166" points="921.16,265.89 912.71,317.43" stroke="#7c3aed" stroke-width="4" fill="none" stroke-linejoin="round"><title>S01: H2 → A08</title></polyline>
+<polyline data-vehicle="S01" data-road="R116" points="912.71,317.43 875.22,322.72" stroke="#7c3aed" stroke-width="4" fill="none" stroke-linejoin="round" marker-end="url(#arrow-1)"><title>S01: H2 → A08</title></polyline>
+</g>
+<g data-route-vehicle="K01" data-route-target="A03">
+<polyline data-vehicle="K01" data-road="R079" points="204.56,423.32 216.50,455.18" stroke="#0f766e" stroke-width="4" fill="none" stroke-linejoin="round"><title>K01: H0 → A03</title></polyline>
+<polyline data-vehicle="K01" data-road="R114" points="216.50,455.18 247.65,433.82" stroke="#0f766e" stroke-width="4" fill="none" stroke-linejoin="round"><title>K01: H0 → A03</title></polyline>
+<polyline data-vehicle="K01" data-road="R050" points="247.65,433.82 273.71,420.10" stroke="#0f766e" stroke-width="4" fill="none" stroke-linejoin="round" marker-end="url(#arrow-2)"><title>K01: H0 → A03</title></polyline>
+<polyline data-vehicle="K01" data-road="R053" points="273.71,420.10 281.49,448.77" stroke="#0f766e" stroke-width="4" fill="none" stroke-linejoin="round"><title>K01: H0 → A03</title></polyline>
+<polyline data-vehicle="K01" data-road="R015" points="281.49,448.77 305.16,456.86" stroke="#0f766e" stroke-width="4" fill="none" stroke-linejoin="round"><title>K01: H0 → A03</title></polyline>
+<polyline data-vehicle="K01" data-road="R125" points="305.16,456.86 322.13,421.75" stroke="#0f766e" stroke-width="4" fill="none" stroke-linejoin="round"><title>K01: H0 → A03</title></polyline>
+<polyline data-vehicle="K01" data-road="R258" points="322.13,421.75 368.81,404.18" stroke="#0f766e" stroke-width="4" fill="none" stroke-linejoin="round" marker-end="url(#arrow-2)"><title>K01: H0 → A03</title></polyline>
+<polyline data-vehicle="K01" data-road="R135" points="368.81,404.18 371.09,363.43" stroke="#0f766e" stroke-width="4" fill="none" stroke-linejoin="round"><title>K01: H0 → A03</title></polyline>
+<polyline data-vehicle="K01" data-road="R120" points="371.09,363.43 396.91,334.70" stroke="#0f766e" stroke-width="4" fill="none" stroke-linejoin="round"><title>K01: H0 → A03</title></polyline>
+<polyline data-vehicle="K01" data-road="R009" points="396.91,334.70 406.13,311.69" stroke="#0f766e" stroke-width="4" fill="none" stroke-linejoin="round"><title>K01: H0 → A03</title></polyline>
+<polyline data-vehicle="K01" data-road="R108" points="406.13,311.69 439.39,294.99" stroke="#0f766e" stroke-width="4" fill="none" stroke-linejoin="round" marker-end="url(#arrow-2)"><title>K01: H0 → A03</title></polyline>
+<polyline data-vehicle="K01" data-road="R144" points="439.39,294.99 482.95,294.12" stroke="#0f766e" stroke-width="4" fill="none" stroke-linejoin="round"><title>K01: H0 → A03</title></polyline>
+<polyline data-vehicle="K01" data-road="R304" points="482.95,294.12 544.05,279.94" stroke="#0f766e" stroke-width="4" fill="none" stroke-linejoin="round"><title>K01: H0 → A03</title></polyline>
+<polyline data-vehicle="K01" data-road="R156" points="544.05,279.94 516.49,241.24" stroke="#0f766e" stroke-width="4" fill="none" stroke-linejoin="round"><title>K01: H0 → A03</title></polyline>
+<polyline data-vehicle="K01" data-road="R169" points="516.49,241.24 506.36,188.59" stroke="#0f766e" stroke-width="4" fill="none" stroke-linejoin="round" marker-end="url(#arrow-2)"><title>K01: H0 → A03</title></polyline>
+</g>
+<g data-route-vehicle="K02" data-route-target="A08">
+<polyline data-vehicle="K02" data-road="R223" points="942.29,188.59 947.59,230.68" stroke="#c2410c" stroke-width="4" fill="none" stroke-linejoin="round"><title>K02: H2 → A08</title></polyline>
+<polyline data-vehicle="K02" data-road="R004" points="947.59,230.68 959.09,252.04" stroke="#c2410c" stroke-width="4" fill="none" stroke-linejoin="round"><title>K02: H2 → A08</title></polyline>
+<polyline data-vehicle="K02" data-road="R134" points="959.09,252.04 921.16,265.89" stroke="#c2410c" stroke-width="4" fill="none" stroke-linejoin="round" marker-end="url(#arrow-3)"><title>K02: H2 → A08</title></polyline>
+<polyline data-vehicle="K02" data-road="R166" points="921.16,265.89 912.71,317.43" stroke="#c2410c" stroke-width="4" fill="none" stroke-linejoin="round"><title>K02: H2 → A08</title></polyline>
+<polyline data-vehicle="K02" data-road="R116" points="912.71,317.43 875.22,322.72" stroke="#c2410c" stroke-width="4" fill="none" stroke-linejoin="round" marker-end="url(#arrow-3)"><title>K02: H2 → A08</title></polyline>
+</g>
+<g data-route-vehicle="V01" data-route-target="A03">
+<polyline data-vehicle="V01" data-road="R079" points="204.56,423.32 216.50,455.18" stroke="#be185d" stroke-width="4" fill="none" stroke-linejoin="round"><title>V01: H0 → A03</title></polyline>
+<polyline data-vehicle="V01" data-road="R114" points="216.50,455.18 247.65,433.82" stroke="#be185d" stroke-width="4" fill="none" stroke-linejoin="round"><title>V01: H0 → A03</title></polyline>
+<polyline data-vehicle="V01" data-road="R050" points="247.65,433.82 273.71,420.10" stroke="#be185d" stroke-width="4" fill="none" stroke-linejoin="round" marker-end="url(#arrow-4)"><title>V01: H0 → A03</title></polyline>
+<polyline data-vehicle="V01" data-road="R053" points="273.71,420.10 281.49,448.77" stroke="#be185d" stroke-width="4" fill="none" stroke-linejoin="round"><title>V01: H0 → A03</title></polyline>
+<polyline data-vehicle="V01" data-road="R015" points="281.49,448.77 305.16,456.86" stroke="#be185d" stroke-width="4" fill="none" stroke-linejoin="round"><title>V01: H0 → A03</title></polyline>
+<polyline data-vehicle="V01" data-road="R125" points="305.16,456.86 322.13,421.75" stroke="#be185d" stroke-width="4" fill="none" stroke-linejoin="round"><title>V01: H0 → A03</title></polyline>
+<polyline data-vehicle="V01" data-road="R258" points="322.13,421.75 368.81,404.18" stroke="#be185d" stroke-width="4" fill="none" stroke-linejoin="round" marker-end="url(#arrow-4)"><title>V01: H0 → A03</title></polyline>
+<polyline data-vehicle="V01" data-road="R135" points="368.81,404.18 371.09,363.43" stroke="#be185d" stroke-width="4" fill="none" stroke-linejoin="round"><title>V01: H0 → A03</title></polyline>
+<polyline data-vehicle="V01" data-road="R120" points="371.09,363.43 396.91,334.70" stroke="#be185d" stroke-width="4" fill="none" stroke-linejoin="round"><title>V01: H0 → A03</title></polyline>
+<polyline data-vehicle="V01" data-road="R009" points="396.91,334.70 406.13,311.69" stroke="#be185d" stroke-width="4" fill="none" stroke-linejoin="round"><title>V01: H0 → A03</title></polyline>
+<polyline data-vehicle="V01" data-road="R108" points="406.13,311.69 439.39,294.99" stroke="#be185d" stroke-width="4" fill="none" stroke-linejoin="round" marker-end="url(#arrow-4)"><title>V01: H0 → A03</title></polyline>
+<polyline data-vehicle="V01" data-road="R144" points="439.39,294.99 482.95,294.12" stroke="#be185d" stroke-width="4" fill="none" stroke-linejoin="round"><title>V01: H0 → A03</title></polyline>
+<polyline data-vehicle="V01" data-road="R304" points="482.95,294.12 544.05,279.94" stroke="#be185d" stroke-width="4" fill="none" stroke-linejoin="round"><title>V01: H0 → A03</title></polyline>
+<polyline data-vehicle="V01" data-road="R156" points="544.05,279.94 516.49,241.24" stroke="#be185d" stroke-width="4" fill="none" stroke-linejoin="round"><title>V01: H0 → A03</title></polyline>
+<polyline data-vehicle="V01" data-road="R169" points="516.49,241.24 506.36,188.59" stroke="#be185d" stroke-width="4" fill="none" stroke-linejoin="round" marker-end="url(#arrow-4)"><title>V01: H0 → A03</title></polyline>
+</g>
+<g data-route-vehicle="S02" data-route-target="A11">
+<polyline data-vehicle="S02" data-road="R079" points="204.56,423.32 216.50,455.18" stroke="#0369a1" stroke-width="4" fill="none" stroke-linejoin="round"><title>S02: H0 → A11</title></polyline>
+<polyline data-vehicle="S02" data-road="R063" points="216.50,455.18 241.25,473.69" stroke="#0369a1" stroke-width="4" fill="none" stroke-linejoin="round"><title>S02: H0 → A11</title></polyline>
+<polyline data-vehicle="S02" data-road="R239" points="241.25,473.69 264.18,513.83" stroke="#0369a1" stroke-width="4" fill="none" stroke-linejoin="round" marker-end="url(#arrow-5)"><title>S02: H0 → A11</title></polyline>
+<polyline data-vehicle="S02" data-road="R279" points="264.18,513.83 313.88,535.69" stroke="#0369a1" stroke-width="4" fill="none" stroke-linejoin="round"><title>S02: H0 → A11</title></polyline>
+<polyline data-vehicle="S02" data-road="R158" points="313.88,535.69 324.61,582.34" stroke="#0369a1" stroke-width="4" fill="none" stroke-linejoin="round"><title>S02: H0 → A11</title></polyline>
+<polyline data-vehicle="S02" data-road="R086" points="324.61,582.34 357.94,574.09" stroke="#0369a1" stroke-width="4" fill="none" stroke-linejoin="round"><title>S02: H0 → A11</title></polyline>
+<polyline data-vehicle="S02" data-road="R110" points="357.94,574.09 378.70,605.07" stroke="#0369a1" stroke-width="4" fill="none" stroke-linejoin="round" marker-end="url(#arrow-5)"><title>S02: H0 → A11</title></polyline>
+<polyline data-vehicle="S02" data-road="R068" points="378.70,605.07 407.74,591.29" stroke="#0369a1" stroke-width="4" fill="none" stroke-linejoin="round"><title>S02: H0 → A11</title></polyline>
+<polyline data-vehicle="S02" data-road="R148" points="407.74,591.29 442.38,619.52" stroke="#0369a1" stroke-width="4" fill="none" stroke-linejoin="round"><title>S02: H0 → A11</title></polyline>
+<polyline data-vehicle="S02" data-road="R141" points="442.38,619.52 469.17,586.46" stroke="#0369a1" stroke-width="4" fill="none" stroke-linejoin="round"><title>S02: H0 → A11</title></polyline>
+<polyline data-vehicle="S02" data-road="R036" points="469.17,586.46 496.50,588.04" stroke="#0369a1" stroke-width="4" fill="none" stroke-linejoin="round" marker-end="url(#arrow-5)"><title>S02: H0 → A11</title></polyline>
+<polyline data-vehicle="S02" data-road="R165" points="496.50,588.04 539.66,562.65" stroke="#0369a1" stroke-width="4" fill="none" stroke-linejoin="round"><title>S02: H0 → A11</title></polyline>
+<polyline data-vehicle="S02" data-road="R146" points="539.66,562.65 573.43,590.99" stroke="#0369a1" stroke-width="4" fill="none" stroke-linejoin="round"><title>S02: H0 → A11</title></polyline>
+<polyline data-vehicle="S02" data-road="R178" points="573.43,590.99 640.49,590.99" stroke="#0369a1" stroke-width="4" fill="none" stroke-linejoin="round"><title>S02: H0 → A11</title></polyline>
+<polyline data-vehicle="S02" data-road="R137" points="640.49,590.99 663.53,625.06" stroke="#0369a1" stroke-width="4" fill="none" stroke-linejoin="round" marker-end="url(#arrow-5)"><title>S02: H0 → A11</title></polyline>
+<polyline data-vehicle="S02" data-road="R174" points="663.53,625.06 722.55,633.04" stroke="#0369a1" stroke-width="4" fill="none" stroke-linejoin="round"><title>S02: H0 → A11</title></polyline>
+<polyline data-vehicle="S02" data-road="R150" points="722.55,633.04 761.61,657.05" stroke="#0369a1" stroke-width="4" fill="none" stroke-linejoin="round"><title>S02: H0 → A11</title></polyline>
+<polyline data-vehicle="S02" data-road="R052" points="761.61,657.05 774.09,630.26" stroke="#0369a1" stroke-width="4" fill="none" stroke-linejoin="round"><title>S02: H0 → A11</title></polyline>
+<polyline data-vehicle="S02" data-road="R090" points="774.09,630.26 806.34,643.67" stroke="#0369a1" stroke-width="4" fill="none" stroke-linejoin="round" marker-end="url(#arrow-5)"><title>S02: H0 → A11</title></polyline>
+<polyline data-vehicle="S02" data-road="R132" points="806.34,643.67 841.69,624.52" stroke="#0369a1" stroke-width="4" fill="none" stroke-linejoin="round" marker-end="url(#arrow-5)"><title>S02: H0 → A11</title></polyline>
+</g>
+<g data-route-vehicle="V02" data-route-target="A06">
+<polyline data-vehicle="V02" data-road="R079" points="204.56,423.32 216.50,455.18" stroke="#854d0e" stroke-width="4" fill="none" stroke-linejoin="round"><title>V02: H0 → A06</title></polyline>
+<polyline data-vehicle="V02" data-road="R063" points="216.50,455.18 241.25,473.69" stroke="#854d0e" stroke-width="4" fill="none" stroke-linejoin="round"><title>V02: H0 → A06</title></polyline>
+<polyline data-vehicle="V02" data-road="R239" points="241.25,473.69 264.18,513.83" stroke="#854d0e" stroke-width="4" fill="none" stroke-linejoin="round" marker-end="url(#arrow-6)"><title>V02: H0 → A06</title></polyline>
+<polyline data-vehicle="V02" data-road="R159" points="264.18,513.83 235.61,552.56" stroke="#854d0e" stroke-width="4" fill="none" stroke-linejoin="round"><title>V02: H0 → A06</title></polyline>
+<polyline data-vehicle="V02" data-road="R065" points="235.61,552.56 240.71,583.74" stroke="#854d0e" stroke-width="4" fill="none" stroke-linejoin="round"><title>V02: H0 → A06</title></polyline>
+<polyline data-vehicle="V02" data-road="R041" points="240.71,583.74 268.58,588.00" stroke="#854d0e" stroke-width="4" fill="none" stroke-linejoin="round"><title>V02: H0 → A06</title></polyline>
+<polyline data-vehicle="V02" data-road="R087" points="268.58,588.00 263.88,622.44" stroke="#854d0e" stroke-width="4" fill="none" stroke-linejoin="round" marker-end="url(#arrow-6)"><title>V02: H0 → A06</title></polyline>
+<polyline data-vehicle="V02" data-road="R139" points="263.88,622.44 304.02,634.41" stroke="#854d0e" stroke-width="4" fill="none" stroke-linejoin="round"><title>V02: H0 → A06</title></polyline>
+<polyline data-vehicle="V02" data-road="R096" points="304.02,634.41 338.69,624.52" stroke="#854d0e" stroke-width="4" fill="none" stroke-linejoin="round" marker-end="url(#arrow-6)"><title>V02: H0 → A06</title></polyline>
+</g>
+<g data-route-vehicle="V08" data-route-target="A01">
+<polyline data-vehicle="V08" data-road="R348" points="204.56,423.32 223.51,314.31" stroke="#334155" stroke-width="4" fill="none" stroke-linejoin="round"><title>V08: H0 → A01</title></polyline>
+<polyline data-vehicle="V08" data-road="R131" points="223.51,314.31 251.14,285.20" stroke="#334155" stroke-width="4" fill="none" stroke-linejoin="round"><title>V08: H0 → A01</title></polyline>
+<polyline data-vehicle="V08" data-road="R111" points="251.14,285.20 226.43,257.23" stroke="#334155" stroke-width="4" fill="none" stroke-linejoin="round" marker-end="url(#arrow-7)"><title>V08: H0 → A01</title></polyline>
+<polyline data-vehicle="V08" data-road="R105" points="226.43,257.23 238.10,222.13" stroke="#334155" stroke-width="4" fill="none" stroke-linejoin="round" marker-end="url(#arrow-7)"><title>V08: H0 → A01</title></polyline>
+</g>
+<g data-route-vehicle="V06" data-route-target="A09">
+<polyline data-vehicle="V06" data-road="R190" points="975.82,624.52 1010.19,616.61" stroke="#2563eb" stroke-width="4" fill="none" stroke-linejoin="round"><title>V06: H1 → A09</title></polyline>
+<polyline data-vehicle="V06" data-road="R062" points="1010.19,616.61 995.57,589.45" stroke="#2563eb" stroke-width="4" fill="none" stroke-linejoin="round"><title>V06: H1 → A09</title></polyline>
+<polyline data-vehicle="V06" data-road="R020" points="995.57,589.45 1015.56,573.69" stroke="#2563eb" stroke-width="4" fill="none" stroke-linejoin="round" marker-end="url(#arrow-8)"><title>V06: H1 → A09</title></polyline>
+<polyline data-vehicle="V06" data-road="R313" points="1015.56,573.69 984.20,512.99" stroke="#2563eb" stroke-width="4" fill="none" stroke-linejoin="round"><title>V06: H1 → A09</title></polyline>
+<polyline data-vehicle="V06" data-road="R061" points="984.20,512.99 953.55,509.84" stroke="#2563eb" stroke-width="4" fill="none" stroke-linejoin="round"><title>V06: H1 → A09</title></polyline>
+<polyline data-vehicle="V06" data-road="R064" points="953.55,509.84 930.82,488.61" stroke="#2563eb" stroke-width="4" fill="none" stroke-linejoin="round"><title>V06: H1 → A09</title></polyline>
+<polyline data-vehicle="V06" data-road="R013" points="930.82,488.61 927.26,464.03" stroke="#2563eb" stroke-width="4" fill="none" stroke-linejoin="round" marker-end="url(#arrow-8)"><title>V06: H1 → A09</title></polyline>
+<polyline data-vehicle="V06" data-road="R124" points="927.26,464.03 957.68,439.75" stroke="#2563eb" stroke-width="4" fill="none" stroke-linejoin="round"><title>V06: H1 → A09</title></polyline>
+<polyline data-vehicle="V06" data-road="R007" points="957.68,439.75 975.82,423.32" stroke="#2563eb" stroke-width="4" fill="none" stroke-linejoin="round" marker-end="url(#arrow-8)"><title>V06: H1 → A09</title></polyline>
+</g>
+<g data-route-vehicle="V04" data-route-target="A04">
+<polyline data-vehicle="V04" data-road="R100" points="942.29,188.59 908.69,173.64" stroke="#7c3aed" stroke-width="4" fill="none" stroke-linejoin="round"><title>V04: H2 → A04</title></polyline>
+<polyline data-vehicle="V04" data-road="R082" points="908.69,173.64 881.59,194.39" stroke="#7c3aed" stroke-width="4" fill="none" stroke-linejoin="round"><title>V04: H2 → A04</title></polyline>
+<polyline data-vehicle="V04" data-road="R074" points="881.59,194.39 861.61,220.89" stroke="#7c3aed" stroke-width="4" fill="none" stroke-linejoin="round" marker-end="url(#arrow-9)"><title>V04: H2 → A04</title></polyline>
+<polyline data-vehicle="V04" data-road="R023" points="861.61,220.89 837.56,230.44" stroke="#7c3aed" stroke-width="4" fill="none" stroke-linejoin="round"><title>V04: H2 → A04</title></polyline>
+<polyline data-vehicle="V04" data-road="R262" points="837.56,230.44 791.66,253.28" stroke="#7c3aed" stroke-width="4" fill="none" stroke-linejoin="round"><title>V04: H2 → A04</title></polyline>
+<polyline data-vehicle="V04" data-road="R145" points="791.66,253.28 753.97,230.64" stroke="#7c3aed" stroke-width="4" fill="none" stroke-linejoin="round"><title>V04: H2 → A04</title></polyline>
+<polyline data-vehicle="V04" data-road="R199" points="753.97,230.64 723.89,254.62" stroke="#7c3aed" stroke-width="4" fill="none" stroke-linejoin="round" marker-end="url(#arrow-9)"><title>V04: H2 → A04</title></polyline>
+<polyline data-vehicle="V04" data-road="R026" points="723.89,254.62 710.07,276.89" stroke="#7c3aed" stroke-width="4" fill="none" stroke-linejoin="round"><title>V04: H2 → A04</title></polyline>
+<polyline data-vehicle="V04" data-road="R163" points="710.07,276.89 660.98,272.63" stroke="#7c3aed" stroke-width="4" fill="none" stroke-linejoin="round"><title>V04: H2 → A04</title></polyline>
+<polyline data-vehicle="V04" data-road="R030" points="660.98,272.63 640.49,255.66" stroke="#7c3aed" stroke-width="4" fill="none" stroke-linejoin="round"><title>V04: H2 → A04</title></polyline>
+<polyline data-vehicle="V04" data-road="R180" points="640.49,255.66 573.43,255.66" stroke="#7c3aed" stroke-width="4" fill="none" stroke-linejoin="round" marker-end="url(#arrow-9)"><title>V04: H2 → A04</title></polyline>
+<polyline data-vehicle="V04" data-road="R117" points="573.43,255.66 544.05,279.94" stroke="#7c3aed" stroke-width="4" fill="none" stroke-linejoin="round"><title>V04: H2 → A04</title></polyline>
+<polyline data-vehicle="V04" data-road="R304" points="544.05,279.94 482.95,294.12" stroke="#7c3aed" stroke-width="4" fill="none" stroke-linejoin="round"><title>V04: H2 → A04</title></polyline>
+<polyline data-vehicle="V04" data-road="R144" points="482.95,294.12 439.39,294.99" stroke="#7c3aed" stroke-width="4" fill="none" stroke-linejoin="round"><title>V04: H2 → A04</title></polyline>
+<polyline data-vehicle="V04" data-road="R108" points="439.39,294.99 406.13,311.69" stroke="#7c3aed" stroke-width="4" fill="none" stroke-linejoin="round" marker-end="url(#arrow-9)"><title>V04: H2 → A04</title></polyline>
+<polyline data-vehicle="V04" data-road="R009" points="406.13,311.69 396.91,334.70" stroke="#7c3aed" stroke-width="4" fill="none" stroke-linejoin="round"><title>V04: H2 → A04</title></polyline>
+<polyline data-vehicle="V04" data-road="R120" points="396.91,334.70 371.09,363.43" stroke="#7c3aed" stroke-width="4" fill="none" stroke-linejoin="round"><title>V04: H2 → A04</title></polyline>
+<polyline data-vehicle="V04" data-road="R135" points="371.09,363.43 368.81,404.18" stroke="#7c3aed" stroke-width="4" fill="none" stroke-linejoin="round"><title>V04: H2 → A04</title></polyline>
+<polyline data-vehicle="V04" data-road="R258" points="368.81,404.18 322.13,421.75" stroke="#7c3aed" stroke-width="4" fill="none" stroke-linejoin="round" marker-end="url(#arrow-9)"><title>V04: H2 → A04</title></polyline>
+<polyline data-vehicle="V04" data-road="R125" points="322.13,421.75 305.16,456.86" stroke="#7c3aed" stroke-width="4" fill="none" stroke-linejoin="round" marker-end="url(#arrow-9)"><title>V04: H2 → A04</title></polyline>
+</g>
+<g data-route-vehicle="V07" data-route-target="A07">
+<polyline data-vehicle="V07" data-road="R190" points="975.82,624.52 1010.19,616.61" stroke="#0f766e" stroke-width="4" fill="none" stroke-linejoin="round"><title>V07: H1 → A07</title></polyline>
+<polyline data-vehicle="V07" data-road="R062" points="1010.19,616.61 995.57,589.45" stroke="#0f766e" stroke-width="4" fill="none" stroke-linejoin="round"><title>V07: H1 → A07</title></polyline>
+<polyline data-vehicle="V07" data-road="R057" points="995.57,589.45 967.77,577.78" stroke="#0f766e" stroke-width="4" fill="none" stroke-linejoin="round" marker-end="url(#arrow-10)"><title>V07: H1 → A07</title></polyline>
+<polyline data-vehicle="V07" data-road="R293" points="967.77,577.78 926.83,535.52" stroke="#0f766e" stroke-width="4" fill="none" stroke-linejoin="round"><title>V07: H1 → A07</title></polyline>
+<polyline data-vehicle="V07" data-road="R153" points="926.83,535.52 881.69,526.20" stroke="#0f766e" stroke-width="4" fill="none" stroke-linejoin="round"><title>V07: H1 → A07</title></polyline>
+<polyline data-vehicle="V07" data-road="R072" points="881.69,526.20 861.57,500.65" stroke="#0f766e" stroke-width="4" fill="none" stroke-linejoin="round"><title>V07: H1 → A07</title></polyline>
+<polyline data-vehicle="V07" data-road="R157" points="861.57,500.65 863.32,452.97" stroke="#0f766e" stroke-width="4" fill="none" stroke-linejoin="round" marker-end="url(#arrow-10)"><title>V07: H1 → A07</title></polyline>
+<polyline data-vehicle="V07" data-road="R078" points="863.32,452.97 883.91,426.07" stroke="#0f766e" stroke-width="4" fill="none" stroke-linejoin="round"><title>V07: H1 → A07</title></polyline>
+<polyline data-vehicle="V07" data-road="R046" points="883.91,426.07 871.23,399.88" stroke="#0f766e" stroke-width="4" fill="none" stroke-linejoin="round"><title>V07: H1 → A07</title></polyline>
+<polyline data-vehicle="V07" data-road="R081" points="871.23,399.88 847.32,375.54" stroke="#0f766e" stroke-width="4" fill="none" stroke-linejoin="round"><title>V07: H1 → A07</title></polyline>
+<polyline data-vehicle="V07" data-road="R300" points="847.32,375.54 789.75,355.25" stroke="#0f766e" stroke-width="4" fill="none" stroke-linejoin="round" marker-end="url(#arrow-10)"><title>V07: H1 → A07</title></polyline>
+<polyline data-vehicle="V07" data-road="R113" points="789.75,355.25 757.35,336.51" stroke="#0f766e" stroke-width="4" fill="none" stroke-linejoin="round"><title>V07: H1 → A07</title></polyline>
+<polyline data-vehicle="V07" data-road="R028" points="757.35,336.51 758.39,310.18" stroke="#0f766e" stroke-width="4" fill="none" stroke-linejoin="round"><title>V07: H1 → A07</title></polyline>
+<polyline data-vehicle="V07" data-road="R310" points="758.39,310.18 723.89,254.62" stroke="#0f766e" stroke-width="4" fill="none" stroke-linejoin="round"><title>V07: H1 → A07</title></polyline>
+<polyline data-vehicle="V07" data-road="R098" points="723.89,254.62 707.56,222.13" stroke="#0f766e" stroke-width="4" fill="none" stroke-linejoin="round" marker-end="url(#arrow-10)"><title>V07: H1 → A07</title></polyline>
+</g>
+<rect x="196.56287425149696" y="415.32335329341316" width="16" height="16" fill="#172033" stroke="white" stroke-width="2"/>
+<text x="214.56" y="413.32" font-size="15" fill="#334155">H0</text>
+<rect x="967.8203592814373" y="616.5209580838324" width="16" height="16" fill="#172033" stroke="white" stroke-width="2"/>
+<text x="985.82" y="614.52" font-size="15" fill="#334155">H1</text>
+<rect x="934.2874251497008" y="180.59281437125745" width="16" height="16" fill="#172033" stroke="white" stroke-width="2"/>
+<text x="952.29" y="178.59" font-size="15" fill="#334155">H2</text>
+<circle cx="238.09580838323353" cy="222.12574850299399" r="7" fill="#334155" stroke="white" stroke-width="2"/>
+<circle data-target-vehicle="V08" data-target-region="A01" cx="238.09580838323353" cy="222.12574850299399" r="12" fill="none" stroke="#334155" stroke-width="2"/>
+<text x="248.1" y="212.13" font-size="15" fill="#334155">A01</text>
+<circle cx="372.22754491017963" cy="289.19161676646706" r="7" fill="#334155" stroke="white" stroke-width="2"/>
+<text x="382.23" y="279.19" font-size="15" fill="#334155">A02</text>
+<circle cx="506.3592814371258" cy="188.59281437125745" r="7" fill="#334155" stroke="white" stroke-width="2"/>
+<circle data-target-vehicle="K01" data-target-region="A03" cx="506.3592814371258" cy="188.59281437125745" r="12" fill="none" stroke="#0f766e" stroke-width="2"/>
+<circle data-target-vehicle="V01" data-target-region="A03" cx="506.3592814371258" cy="188.59281437125745" r="12" fill="none" stroke="#be185d" stroke-width="2"/>
+<text x="516.36" y="178.59" font-size="15" fill="#be185d">A03</text>
+<circle cx="305.1616766467066" cy="456.85628742514973" r="7" fill="#7c3aed" stroke="white" stroke-width="2"/>
+<circle data-target-vehicle="V04" data-target-region="A04" cx="305.1616766467066" cy="456.85628742514973" r="12" fill="none" stroke="#7c3aed" stroke-width="2"/>
+<text x="315.16" y="446.86" font-size="15" fill="#7c3aed">A04</text>
+<circle cx="472.8263473053893" cy="557.4550898203593" r="7" fill="#334155" stroke="white" stroke-width="2"/>
+<text x="482.83" y="547.46" font-size="15" fill="#334155">A05</text>
+<circle cx="338.6946107784431" cy="624.5209580838324" r="7" fill="#854d0e" stroke="white" stroke-width="2"/>
+<circle data-target-vehicle="V02" data-target-region="A06" cx="338.6946107784431" cy="624.5209580838324" r="12" fill="none" stroke="#854d0e" stroke-width="2"/>
+<text x="348.69" y="614.52" font-size="15" fill="#854d0e">A06</text>
+<circle cx="707.556886227545" cy="222.12574850299399" r="7" fill="#0f766e" stroke="white" stroke-width="2"/>
+<circle data-target-vehicle="V07" data-target-region="A07" cx="707.556886227545" cy="222.12574850299399" r="12" fill="none" stroke="#0f766e" stroke-width="2"/>
+<text x="717.56" y="212.13" font-size="15" fill="#0f766e">A07</text>
+<circle cx="875.2215568862276" cy="322.7245508982036" r="7" fill="#334155" stroke="white" stroke-width="2"/>
+<circle data-target-vehicle="V03" data-target-region="A08" cx="875.2215568862276" cy="322.7245508982036" r="12" fill="none" stroke="#2563eb" stroke-width="2"/>
+<circle data-target-vehicle="S01" data-target-region="A08" cx="875.2215568862276" cy="322.7245508982036" r="12" fill="none" stroke="#7c3aed" stroke-width="2"/>
+<circle data-target-vehicle="K02" data-target-region="A08" cx="875.2215568862276" cy="322.7245508982036" r="12" fill="none" stroke="#c2410c" stroke-width="2"/>
+<text x="885.22" y="312.72" font-size="15" fill="#c2410c">A08</text>
+<circle cx="975.8203592814373" cy="423.32335329341316" r="7" fill="#2563eb" stroke="white" stroke-width="2"/>
+<circle data-target-vehicle="V06" data-target-region="A09" cx="975.8203592814373" cy="423.32335329341316" r="12" fill="none" stroke="#2563eb" stroke-width="2"/>
+<text x="985.82" y="413.32" font-size="15" fill="#2563eb">A09</text>
+<circle cx="741.0898203592815" cy="490.38922155688624" r="7" fill="#334155" stroke="white" stroke-width="2"/>
+<text x="751.09" y="480.39" font-size="15" fill="#334155">A10</text>
+<circle cx="841.6886227544911" cy="624.5209580838324" r="7" fill="#334155" stroke="white" stroke-width="2"/>
+<circle data-target-vehicle="S02" data-target-region="A11" cx="841.6886227544911" cy="624.5209580838324" r="12" fill="none" stroke="#0369a1" stroke-width="2"/>
+<text x="851.69" y="614.52" font-size="15" fill="#0369a1">A11</text>
+<circle cx="184.4431137724551" cy="678.1736526946108" r="7" fill="#e11d48" stroke="white" stroke-width="2"/>
+<text x="194.44" y="668.17" font-size="15" fill="#e11d48">A12</text>
+<path d="M 204.56287425149696 423.32335329341316 L 192 403.32335329341316" stroke="#64748b" fill="none"/>
+<g data-center="H0"><rect x="32" y="388.32335329341316" width="160" height="132" rx="5" fill="white" stroke="#94a3b8"/>
+<text x="40" y="407.32335329341316" font-size="13" fill="#172033">BAŞLANGIÇ H0</text>
+<text x="40" y="428.32335329341316" font-size="13" fill="#0f766e">K01 → A03</text>
+<text x="40" y="448.32335329341316" font-size="13" fill="#0369a1">S02 → A11</text>
+<text x="40" y="468.32335329341316" font-size="13" fill="#be185d">V01 → A03</text>
+<text x="40" y="488.32335329341316" font-size="13" fill="#854d0e">V02 → A06</text>
+<text x="40" y="508.32335329341316" font-size="13" fill="#334155">V08 → A01</text>
+</g>
+<path d="M 975.8203592814373 624.5209580838324 L 987 643" stroke="#64748b" fill="none"/>
+<g data-center="H1"><rect x="987" y="628" width="176" height="92" rx="5" fill="white" stroke="#94a3b8"/>
+<text x="995" y="647" font-size="13" fill="#172033">BAŞLANGIÇ H1</text>
+<text x="995" y="668" font-size="13" fill="#2563eb">V03 → A08</text>
+<text x="995" y="688" font-size="13" fill="#2563eb">V06 → A09</text>
+<text x="995" y="708" font-size="13" fill="#0f766e">V07 → A07</text>
+</g>
+<path d="M 942.2874251497008 188.59281437125745 L 987 168.59281437125745" stroke="#64748b" fill="none"/>
+<g data-center="H2"><rect x="987" y="153.59281437125745" width="176" height="112" rx="5" fill="white" stroke="#94a3b8"/>
+<text x="995" y="172.59281437125745" font-size="13" fill="#172033">BAŞLANGIÇ H2</text>
+<text x="995" y="193.59281437125745" font-size="13" fill="#c2410c">K02 → A08</text>
+<text x="995" y="213.59281437125745" font-size="13" fill="#7c3aed">S01 → A08</text>
+<text x="995" y="233.59281437125745" font-size="13" fill="#7c3aed">V04 → A04</text>
+<text x="995" y="253.59281437125745" font-size="13" fill="#64748b">V05 müsait değil</text>
+</g>
+<text x="40" y="759" font-size="15" fill="#172033">Yollar: gri açık • turuncu kesikli hasarlı • kırmızı kesikli kapalı. Ağ sentetiktir.</text>
+<text x="40" y="785" font-size="14" fill="#172033">Bu bir görev planıdır; araçlar henüz hareket etmez. Ortak yollarda renkler örtüşebilir.</text>
+<text x="40" y="822" font-size="16" fill="#172033">Sıra</text>
+<text x="100" y="822" font-size="16" fill="#172033">Hedef</text>
+<text x="190" y="822" font-size="16" fill="#172033">Görev</text>
+<text x="275" y="822" font-size="16" fill="#172033">Talep</text>
+<text x="375" y="822" font-size="16" fill="#172033">Araç</text>
+<text x="510" y="822" font-size="16" fill="#172033">Çıkış → hedef</text>
+<text x="680" y="822" font-size="16" fill="#172033">Sonuç / tahmini süre</text>
+<rect x="30" y="830" width="1140" height="37" fill="#f1f5f9"/>
+<text x="40" y="853" font-size="15" fill="#2563eb">1</text>
+<text x="100" y="853" font-size="15" fill="#2563eb">A08</text>
+<text x="190" y="853" font-size="15" fill="#2563eb">Lojistik</text>
+<text x="275" y="853" font-size="15" fill="#2563eb">120 koli</text>
+<text x="375" y="853" font-size="15" fill="#2563eb">V03</text>
+<text x="510" y="853" font-size="15" fill="#2563eb">H1 → A08</text>
+<text x="680" y="853" font-size="15" fill="#2563eb">30.58 dk • 13.64 km • kapasite 150</text>
+<rect x="30" y="867" width="1140" height="37" fill="#ffffff"/>
+<text x="40" y="890" font-size="15" fill="#7c3aed">2</text>
+<text x="100" y="890" font-size="15" fill="#7c3aed">A08</text>
+<text x="190" y="890" font-size="15" fill="#7c3aed">Sağlık</text>
+<text x="275" y="890" font-size="15" fill="#7c3aed">1 ekip</text>
+<text x="375" y="890" font-size="15" fill="#7c3aed">S01</text>
+<text x="510" y="890" font-size="15" fill="#7c3aed">H2 → A08</text>
+<text x="680" y="890" font-size="15" fill="#7c3aed">12.14 dk • 5.90 km • kapasite 1</text>
+<rect x="30" y="904" width="1140" height="37" fill="#f1f5f9"/>
+<text x="40" y="927" font-size="15" fill="#0f766e">3</text>
+<text x="100" y="927" font-size="15" fill="#0f766e">A03</text>
+<text x="190" y="927" font-size="15" fill="#0f766e">Kurtarma</text>
+<text x="275" y="927" font-size="15" fill="#0f766e">1 ekip</text>
+<text x="375" y="927" font-size="15" fill="#0f766e">K01</text>
+<text x="510" y="927" font-size="15" fill="#0f766e">H0 → A03</text>
+<text x="680" y="927" font-size="15" fill="#0f766e">36.40 dk • 17.76 km • kapasite 1</text>
+<rect x="30" y="941" width="1140" height="37" fill="#ffffff"/>
+<text x="40" y="964" font-size="15" fill="#c2410c">4</text>
+<text x="100" y="964" font-size="15" fill="#c2410c">A08</text>
+<text x="190" y="964" font-size="15" fill="#c2410c">Kurtarma</text>
+<text x="275" y="964" font-size="15" fill="#c2410c">1 ekip</text>
+<text x="375" y="964" font-size="15" fill="#c2410c">K02</text>
+<text x="510" y="964" font-size="15" fill="#c2410c">H2 → A08</text>
+<text x="680" y="964" font-size="15" fill="#c2410c">12.14 dk • 5.90 km • kapasite 1</text>
+<rect x="30" y="978" width="1140" height="37" fill="#f1f5f9"/>
+<text x="40" y="1001" font-size="15" fill="#be185d">5</text>
+<text x="100" y="1001" font-size="15" fill="#be185d">A03</text>
+<text x="190" y="1001" font-size="15" fill="#be185d">Lojistik</text>
+<text x="275" y="1001" font-size="15" fill="#be185d">80 koli</text>
+<text x="375" y="1001" font-size="15" fill="#be185d">V01</text>
+<text x="510" y="1001" font-size="15" fill="#be185d">H0 → A03</text>
+<text x="680" y="1001" font-size="15" fill="#be185d">36.40 dk • 17.76 km • kapasite 120</text>
+<rect x="30" y="1015" width="1140" height="37" fill="#ffffff"/>
+<text x="40" y="1038" font-size="15" fill="#475569">6</text>
+<text x="100" y="1038" font-size="15" fill="#475569">A11</text>
+<text x="190" y="1038" font-size="15" fill="#475569">Lojistik</text>
+<text x="275" y="1038" font-size="15" fill="#475569">200 koli</text>
+<text x="375" y="1038" font-size="15" fill="#475569">—</text>
+<text x="510" y="1038" font-size="15" fill="#475569">—</text>
+<text x="680" y="1038" font-size="15" fill="#475569">Boş araçların kapasitesi yetersiz</text>
+<rect x="30" y="1052" width="1140" height="37" fill="#f1f5f9"/>
+<text x="40" y="1075" font-size="15" fill="#0369a1">7</text>
+<text x="100" y="1075" font-size="15" fill="#0369a1">A11</text>
+<text x="190" y="1075" font-size="15" fill="#0369a1">Sağlık</text>
+<text x="275" y="1075" font-size="15" fill="#0369a1">1 ekip</text>
+<text x="375" y="1075" font-size="15" fill="#0369a1">S02</text>
+<text x="510" y="1075" font-size="15" fill="#0369a1">H0 → A11</text>
+<text x="680" y="1075" font-size="15" fill="#0369a1">53.58 dk • 25.26 km • kapasite 1</text>
+<rect x="30" y="1089" width="1140" height="37" fill="#ffffff"/>
+<text x="40" y="1112" font-size="15" fill="#854d0e">8</text>
+<text x="100" y="1112" font-size="15" fill="#854d0e">A06</text>
+<text x="190" y="1112" font-size="15" fill="#854d0e">Lojistik</text>
+<text x="275" y="1112" font-size="15" fill="#854d0e">40 koli</text>
+<text x="375" y="1112" font-size="15" fill="#854d0e">V02</text>
+<text x="510" y="1112" font-size="15" fill="#854d0e">H0 → A06</text>
+<text x="680" y="1112" font-size="15" fill="#854d0e">22.58 dk • 9.94 km • kapasite 80</text>
+<rect x="30" y="1126" width="1140" height="37" fill="#f1f5f9"/>
+<text x="40" y="1149" font-size="15" fill="#334155">9</text>
+<text x="100" y="1149" font-size="15" fill="#334155">A01</text>
+<text x="190" y="1149" font-size="15" fill="#334155">Lojistik</text>
+<text x="275" y="1149" font-size="15" fill="#334155">45 koli</text>
+<text x="375" y="1149" font-size="15" fill="#334155">V08</text>
+<text x="510" y="1149" font-size="15" fill="#334155">H0 → A01</text>
+<text x="680" y="1149" font-size="15" fill="#334155">18.98 dk • 6.73 km • kapasite 100</text>
+<rect x="30" y="1163" width="1140" height="37" fill="#ffffff"/>
+<text x="40" y="1186" font-size="15" fill="#2563eb">10</text>
+<text x="100" y="1186" font-size="15" fill="#2563eb">A09</text>
+<text x="190" y="1186" font-size="15" fill="#2563eb">Lojistik</text>
+<text x="275" y="1186" font-size="15" fill="#2563eb">55 koli</text>
+<text x="375" y="1186" font-size="15" fill="#2563eb">V06</text>
+<text x="510" y="1186" font-size="15" fill="#2563eb">H1 → A09</text>
+<text x="680" y="1186" font-size="15" fill="#2563eb">21.69 dk • 9.28 km • kapasite 60</text>
+<rect x="30" y="1200" width="1140" height="37" fill="#f1f5f9"/>
+<text x="40" y="1223" font-size="15" fill="#7c3aed">11</text>
+<text x="100" y="1223" font-size="15" fill="#7c3aed">A04</text>
+<text x="190" y="1223" font-size="15" fill="#7c3aed">Lojistik</text>
+<text x="275" y="1223" font-size="15" fill="#7c3aed">50 koli</text>
+<text x="375" y="1223" font-size="15" fill="#7c3aed">V04</text>
+<text x="510" y="1223" font-size="15" fill="#7c3aed">H2 → A04</text>
+<text x="680" y="1223" font-size="15" fill="#7c3aed">52.84 dk • 24.16 km • kapasite 100</text>
+<rect x="30" y="1237" width="1140" height="37" fill="#ffffff"/>
+<text x="40" y="1260" font-size="15" fill="#475569">12</text>
+<text x="100" y="1260" font-size="15" fill="#475569">A12</text>
+<text x="190" y="1260" font-size="15" fill="#475569">Lojistik</text>
+<text x="275" y="1260" font-size="15" fill="#475569">30 koli</text>
+<text x="375" y="1260" font-size="15" fill="#475569">—</text>
+<text x="510" y="1260" font-size="15" fill="#475569">—</text>
+<text x="680" y="1260" font-size="15" fill="#475569">Hiçbir merkezden ulaşılamıyor</text>
+<rect x="30" y="1274" width="1140" height="37" fill="#f1f5f9"/>
+<text x="40" y="1297" font-size="15" fill="#0f766e">13</text>
+<text x="100" y="1297" font-size="15" fill="#0f766e">A07</text>
+<text x="190" y="1297" font-size="15" fill="#0f766e">Lojistik</text>
+<text x="275" y="1297" font-size="15" fill="#0f766e">65 koli</text>
+<text x="375" y="1297" font-size="15" fill="#0f766e">V07</text>
+<text x="510" y="1297" font-size="15" fill="#0f766e">H1 → A07</text>
+<text x="680" y="1297" font-size="15" fill="#0f766e">45.34 dk • 18.12 km • kapasite 100</text>
+<rect x="30" y="1311" width="1140" height="37" fill="#ffffff"/>
+<text x="40" y="1334" font-size="15" fill="#475569">14</text>
+<text x="100" y="1334" font-size="15" fill="#475569">A02</text>
+<text x="190" y="1334" font-size="15" fill="#475569">Lojistik</text>
+<text x="275" y="1334" font-size="15" fill="#475569">90 koli</text>
+<text x="375" y="1334" font-size="15" fill="#475569">—</text>
+<text x="510" y="1334" font-size="15" fill="#475569">—</text>
+<text x="680" y="1334" font-size="15" fill="#475569">Boş ve uygun araç yok</text>
+<rect x="30" y="1348" width="1140" height="37" fill="#f1f5f9"/>
+<text x="40" y="1371" font-size="15" fill="#475569">15</text>
+<text x="100" y="1371" font-size="15" fill="#475569">A10</text>
+<text x="190" y="1371" font-size="15" fill="#475569">Lojistik</text>
+<text x="275" y="1371" font-size="15" fill="#475569">85 koli</text>
+<text x="375" y="1371" font-size="15" fill="#475569">—</text>
+<text x="510" y="1371" font-size="15" fill="#475569">—</text>
+<text x="680" y="1371" font-size="15" fill="#475569">Boş ve uygun araç yok</text>
+<rect x="30" y="1385" width="1140" height="37" fill="#ffffff"/>
+<text x="40" y="1408" font-size="15" fill="#475569">16</text>
+<text x="100" y="1408" font-size="15" fill="#475569">A05</text>
+<text x="190" y="1408" font-size="15" fill="#475569">Lojistik</text>
+<text x="275" y="1408" font-size="15" fill="#475569">70 koli</text>
+<text x="375" y="1408" font-size="15" fill="#475569">—</text>
+<text x="510" y="1408" font-size="15" fill="#475569">—</text>
+<text x="680" y="1408" font-size="15" fill="#475569">Boş ve uygun araç yok</text>
+</g></svg>
