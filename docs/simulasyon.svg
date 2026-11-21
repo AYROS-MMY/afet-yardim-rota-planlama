@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="900" viewBox="0 0 1120 900" role="img" aria-labelledby="title desc">
+<title id="title">Yol değişince araç ne yapar</title>
+<desc id="desc">Aynı 100 koli görevinin normal, alternatif rotalı ve yolu kapalı üç koşulu. Mavi kalan rota, gri açık yol, kırmızı kapalı yol.</desc>
+<rect width="1120" height="900" fill="white"/>
+<style>text{font-family:Arial,sans-serif;fill:#162438} .body{font-size:21px} .small{font-size:18px;fill:#43536b} .head{font-size:24px;font-weight:700}</style>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#2453d6"/></marker></defs>
+<text x="12" y="32" class="head">Yol değişince araç ne yapar?</text>
+<text x="12" y="65" class="small">V1: 120 koli kapasiteli lojistik araç  |  Görev A-L: A bölgesine 100 koli</text>
+<rect x="8" y="90" width="1104" height="220" rx="8" fill="#f6f8fc" stroke="#ced7e5"/>
+<text x="25" y="122" class="head">1  Yol açık</text>
+<path d="M60 258 L275 258" fill="none" stroke="#b2bdcd" stroke-width="4" stroke-dasharray="none"/>
+<text x="167.5" y="246.0" class="small">R1 · 2 dk</text>
+<path d="M275 258 L490 258" fill="none" stroke="#b2bdcd" stroke-width="4" stroke-dasharray="none"/>
+<text x="382.5" y="286.0" class="small">R2 · 2 dk</text>
+<path d="M275 258 L275 163" fill="none" stroke="#b2bdcd" stroke-width="4" stroke-dasharray="none"/>
+<text x="160.0" y="210.5" class="small">R3 · 3 dk</text>
+<path d="M275 163 L490 258" fill="none" stroke="#b2bdcd" stroke-width="4" stroke-dasharray="none"/>
+<text x="382.5" y="198.5" class="small">R4 · 3 dk</text>
+<path d="M60 258 L253.5 258.0" fill="none" stroke="#2453d6" stroke-width="5" marker-end="url(#arrow)"/>
+<path d="M275 258 L468.5 258.0" fill="none" stroke="#2453d6" stroke-width="5" marker-end="url(#arrow)"/>
+<rect x="52" y="250" width="16" height="16" fill="#18273d"/>
+<text x="73" y="282" class="small">H0</text>
+<circle cx="275" cy="258" r="8" fill="#18273d"/>
+<text x="288" y="282" class="small">K</text>
+<circle cx="275" cy="163" r="8" fill="#18273d"/>
+<text x="288" y="151" class="small">B</text>
+<circle cx="490" cy="258" r="8" fill="#18273d"/>
+<text x="503" y="282" class="small">A</text>
+<circle cx="60" cy="258" r="16" fill="white" stroke="#2453d6" stroke-width="4"/>
+<text x="50" y="264" class="small">V1</text>
+<text x="600" y="159" class="body">Gösterilen an: 0 dakika</text>
+<text x="600" y="191" class="body">Araç konumu: H0  |  Hedef: A</text>
+<text x="600" y="223" class="body">Kalan rota: H0 → K → A</text>
+<text x="600" y="260" class="body">Sonuç: 4. dakikada 100 koli teslim</text>
+<text x="600" y="290" class="small">Aynı araç ve görev korunur; merkeze geri dönülmez.</text>
+<rect x="8" y="325" width="1104" height="220" rx="8" fill="#f6f8fc" stroke="#ced7e5"/>
+<text x="25" y="357" class="head">2  K noktasında R2 kapanır</text>
+<path d="M60 493 L275 493" fill="none" stroke="#b2bdcd" stroke-width="4" stroke-dasharray="none"/>
+<text x="167.5" y="481.0" class="small">R1 · 2 dk</text>
+<path d="M275 493 L490 493" fill="none" stroke="#c52835" stroke-width="4" stroke-dasharray="8 5"/>
+<text x="382.5" y="521.0" class="small">R2 · 2 dk</text>
+<path d="M275 493 L275 398" fill="none" stroke="#b2bdcd" stroke-width="4" stroke-dasharray="none"/>
+<text x="160.0" y="445.5" class="small">R3 · 3 dk</text>
+<path d="M275 398 L490 493" fill="none" stroke="#b2bdcd" stroke-width="4" stroke-dasharray="none"/>
+<text x="382.5" y="433.5" class="small">R4 · 3 dk</text>
+<path d="M275 493 L275.0 407.5" fill="none" stroke="#2453d6" stroke-width="5" marker-end="url(#arrow)"/>
+<path d="M275 398 L468.5 483.5" fill="none" stroke="#2453d6" stroke-width="5" marker-end="url(#arrow)"/>
+<rect x="52" y="485" width="16" height="16" fill="#18273d"/>
+<text x="73" y="517" class="small">H0</text>
+<circle cx="275" cy="493" r="8" fill="#18273d"/>
+<text x="288" y="517" class="small">K</text>
+<circle cx="275" cy="398" r="8" fill="#18273d"/>
+<text x="288" y="386" class="small">B</text>
+<circle cx="490" cy="493" r="8" fill="#18273d"/>
+<text x="503" y="517" class="small">A</text>
+<circle cx="275" cy="493" r="16" fill="white" stroke="#2453d6" stroke-width="4"/>
+<text x="265" y="499" class="small">V1</text>
+<text x="600" y="394" class="body">Gösterilen an: 2 dakika</text>
+<text x="600" y="426" class="body">Araç konumu: K  |  Hedef: A</text>
+<text x="600" y="458" class="body">Yeni rota: K → B → A</text>
+<text x="600" y="495" class="body">Sonuç: 8. dakikada 100 koli teslim</text>
+<text x="600" y="525" class="small">Aynı araç ve görev korunur; merkeze geri dönülmez.</text>
+<rect x="8" y="560" width="1104" height="220" rx="8" fill="#f6f8fc" stroke="#ced7e5"/>
+<text x="25" y="592" class="head">3  K noktasında R2 ve R3 kapanır</text>
+<path d="M60 728 L275 728" fill="none" stroke="#b2bdcd" stroke-width="4" stroke-dasharray="none"/>
+<text x="167.5" y="716.0" class="small">R1 · 2 dk</text>
+<path d="M275 728 L490 728" fill="none" stroke="#c52835" stroke-width="4" stroke-dasharray="8 5"/>
+<text x="382.5" y="756.0" class="small">R2 · 2 dk</text>
+<path d="M275 728 L275 633" fill="none" stroke="#c52835" stroke-width="4" stroke-dasharray="8 5"/>
+<text x="160.0" y="680.5" class="small">R3 · 3 dk</text>
+<path d="M275 633 L490 728" fill="none" stroke="#b2bdcd" stroke-width="4" stroke-dasharray="none"/>
+<text x="382.5" y="668.5" class="small">R4 · 3 dk</text>
+<rect x="52" y="720" width="16" height="16" fill="#18273d"/>
+<text x="73" y="752" class="small">H0</text>
+<circle cx="275" cy="728" r="8" fill="#18273d"/>
+<text x="288" y="752" class="small">K</text>
+<circle cx="275" cy="633" r="8" fill="#18273d"/>
+<text x="288" y="621" class="small">B</text>
+<circle cx="490" cy="728" r="8" fill="#18273d"/>
+<text x="503" y="752" class="small">A</text>
+<circle cx="275" cy="728" r="16" fill="white" stroke="#2453d6" stroke-width="4"/>
+<text x="265" y="734" class="small">V1</text>
+<text x="600" y="629" class="body">Gösterilen an: 2 dakika</text>
+<text x="600" y="661" class="body">Araç konumu: K  |  Hedef: A</text>
+<text x="600" y="693" class="body">Uygun rota yok: araç K noktasında bekler</text>
+<text x="600" y="730" class="body">Teslim: 0  |  Araçta ayrılmış: 100 koli</text>
+<text x="600" y="760" class="small">Aynı araç ve görev korunur; merkeze geri dönülmez.</text>
+<text x="12" y="824" class="small">Mavi ok: kalan rota     Mavi halka V1: mevcut konum     Kırmızı kesik: kapalı yol</text>
+<text x="12" y="853" class="small">Normal ve olaylı koşullar ayrı deneylerdir. Şemadaki küçük ağ doğrulama içindir.</text>
+<text x="12" y="882" class="small">Ana bölgesel ağ korunur: 180 düğüm, 348 yol, 12 araç ve 16 görev.</text>
+</svg>

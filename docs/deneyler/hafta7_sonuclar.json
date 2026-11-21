@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "algorithm": "astar",
+  "damage_factor": 2,
+  "cases": {
+    "normal": {
+      "input_sha256": {
+        "hafta7_mikro_ag.json": "c92f3ed7870046432401b220c21e25ee86be6cb63b4f274f5295480d4501ad86",
+        "hafta7_mikro_arac.json": "8ea56e436658f36f74f2681c133384e5dbea21efa5ffc715b82acf59189f5c48"
+      },
+      "time_min": 4.0,
+      "steps": 2,
+      "logistics": {
+        "requested": 100,
+        "delivered": 100,
+        "reserved": 0,
+        "unassigned": 0,
+        "remaining": 0
+      },
+      "arrived_vehicles": 1,
+      "blocked_vehicles": 0,
+      "teams_arrived": 0,
+      "unassigned_tasks": 0
+    },
+    "kapanma": {
+      "input_sha256": {
+        "hafta7_mikro_ag.json": "c92f3ed7870046432401b220c21e25ee86be6cb63b4f274f5295480d4501ad86",
+        "hafta7_mikro_arac.json": "8ea56e436658f36f74f2681c133384e5dbea21efa5ffc715b82acf59189f5c48",
+        "hafta7_yol_kapanmasi.json": "2e2e59af09ce396c67f09636917f93002b06dc006e18a89f97c918aa691e9da3"
+      },
+      "time_min": 8.0,
+      "steps": 3,
+      "logistics": {
+        "requested": 100,
+        "delivered": 100,
+        "reserved": 0,
+        "unassigned": 0,
+        "remaining": 0
+      },
+      "arrived_vehicles": 1,
+      "blocked_vehicles": 0,
+      "teams_arrived": 0,
+      "unassigned_tasks": 0
+    },
+    "izolasyon": {
+      "input_sha256": {
+        "hafta7_mikro_ag.json": "c92f3ed7870046432401b220c21e25ee86be6cb63b4f274f5295480d4501ad86",
+        "hafta7_mikro_arac.json": "8ea56e436658f36f74f2681c133384e5dbea21efa5ffc715b82acf59189f5c48",
+        "hafta7_yol_izolasyon.json": "e6d6029b810ae2874479ee0a9d71de29b42265394455e8c078ddc20c777dcd5b"
+      },
+      "time_min": 2.0,
+      "steps": 1,
+      "logistics": {
+        "requested": 100,
+        "delivered": 0,
+        "reserved": 100,
+        "unassigned": 0,
+        "remaining": 100
+      },
+      "arrived_vehicles": 0,
+      "blocked_vehicles": 1,
+      "teams_arrived": 0,
+      "unassigned_tasks": 0
+    },
+    "bolgesel": {
+      "input_sha256": {
+        "bolgesel_ag.json": "387c1331bb0a3d5ddb235a92aec221c1d69f93492b05b9418c5b1d9c0505f574",
+        "gorev_senaryosu_12_arac.json": "917c3b52b83d006b0913b7399799a841a95c8e4cc6ca8ee93633a458e721e19a"
+      },
+      "time_min": 53.575,
+      "steps": 93,
+      "logistics": {
+        "requested": 930,
+        "delivered": 455,
+        "reserved": 0,
+        "unassigned": 475,
+        "remaining": 475
+      },
+      "arrived_vehicles": 11,
+      "blocked_vehicles": 0,
+      "teams_arrived": 4,
+      "unassigned_tasks": 5
+    }
+  }
+}

@@ -6,13 +6,26 @@ AYROS MMY, simüle edilmiş bir afet bölgesinde yardım merkezlerinden afet nok
 
 Afet noktaları ayrıca aciliyet, yaralı ve etkilenen kişi sayısına göre açıklanabilir bir ihtiyaç puanıyla sıralanır. Merkezden erişilebilirlik ve rota süresi bu puandan ayrı gösterilir.
 
-6. hafta geliştirmesi, ihtiyaç sırasındaki hedeflere kapasitesi yeterli ve müsait araçları atar. Her araç ilk turda tek görev alır; sonuçlar rota haritası ve açıklamalı JSON olarak üretilebilir. Bu çalışma şu anda yerel `hafta-6-arac-atama` dalındadır; aşağıdaki klonlama adımları yayımlanmış 5. hafta sürümünü açar.
+6. haftanın kapasite ve hizmet türü kısıtlı araç ataması, 7. haftada zaman içinde yürütülür. Araçların konumu ve görev durumu izlenir; yol kapanınca mevcut düğümden alternatif rota hesaplanır. Teslim edilen, araçta ayrılmış ve henüz atanmamış yardım miktarları ayrı tutulur. `main`, 7. hafta sonundaki çalıştırılabilir projeyi içerir. Haftalık sürümlere ayrı dallardan erişilebilir.
 
 **Mevcut sürüm:** Komut satırı uygulaması · Python 3.11+ · Yalnızca standart kütüphane
 
 [Hızlı başlangıç](#hızlı-başlangıç) · [Kullanım](#kullanım) · [Algoritmalar](#algoritmalar-ve-karşılaştırma) · [Yol modeli](#yol-modeli) · [Testler](#testler) · [Yol haritası](#yol-haritası)
 
-Güncel geliştirme: [6. hafta araç atama sürümü](https://github.com/AYROS-MMY/afet-yardim-rota-planlama/tree/hafta-6-arac-atama).
+Güncel simülasyon sürümü: [7. hafta](https://github.com/AYROS-MMY/afet-yardim-rota-planlama/tree/hafta-7-dinamik-simulasyon) · [Simülasyon ve deney kılavuzu](docs/simulasyon.md) · [6. hafta araç atama sürümü](https://github.com/AYROS-MMY/afet-yardim-rota-planlama/tree/hafta-6-arac-atama).
+
+## Projenin amacı ve işleyişi
+
+Afet sonrası yol hasarları, yardım merkezleri ile ihtiyaç noktaları arasındaki ulaşımı değiştirir. AYROS MMY, bu koşullarda kaynak ve rota kararlarını sentetik bir ağ üzerinde inceleyen bir karar destek prototipidir. Lojistik, sağlık ve kurtarma ihtiyaçları ayrı görevler olarak ele alınır.
+
+1. JSON senaryosundan yol ağını, araçları ve görevleri yükle, girdileri doğrula.
+2. Aciliyet, yaralı ve afetzede sayılarını kullanarak bölge ihtiyaç puanını hesapla.
+3. Görev sırasına göre hizmet türü, kapasite, müsaitlik ve erişim koşullarını sağlayan aracı ata.
+4. Dijkstra veya A* ile tahmini süre maliyeti en düşük rotayı hesapla.
+5. Araçları yol sürelerine göre ilerlet, yol olayından etkilenen rotaları yeniden hesapla.
+6. Araç konumunu, olayları, koli teslimlerini ve ekip varışlarını çıktılarda incele.
+
+Bölge ihtiyaç puanı ile ulaşım süresi ayrı karar bilgileridir. İhtiyacı yüksek bir bölgenin erişimi kapandığında ihtiyaç kaydı korunur. Sağlık ve kurtarma görevlerinde ekibin hedefe varışı izlenir. Modelin kapsamı ve deney kuralları [simülasyon kılavuzunda](docs/simulasyon.md) açıklanır.
 
 ## Önizleme
 
@@ -33,6 +46,9 @@ Mavi çerçeve seçilen rotayı gösterir. Yeşil yollar açık, turuncu kesikli
 - **Arama görselleri:** İki algoritmanın kesinleştirdiği düğümler aynı ölçekte yan yana gösterilir.
 - **İhtiyaç önceliklendirme:** Değiştirilebilir ağırlıklar, sabit referanslar ve kararlı eşitlik kurallarıyla 0–100 puan.
 - **Açıklanabilir çıktılar:** Her ölçütün puan katkısı, erişilemeyen noktalar, JSON dışa aktarım ve SVG karşılaştırması.
+- **Hizmet türüne uygun araç atama:** Lojistik, sağlık ve kurtarma için bağımsız görevler; kapasite, müsaitlik ve erişim kontrolleri.
+- **Düğüm adımlı simülasyon:** Yol sürelerine göre araç hareketi, mevcut düğümden yeniden rota, bekleme ve tek seferlik varış kaydı.
+- **Teslimat hesabı ve olay günlüğü:** Koli/ekip ayrımı, girdi özetleriyle tekrarlanabilir JSON ve açıklayıcı durum görselleri.
 
 ## Hızlı başlangıç
 
@@ -43,11 +59,7 @@ git clone https://github.com/AYROS-MMY/afet-yardim-rota-planlama.git
 cd afet-yardim-rota-planlama
 ```
 
-Güncel uygulama henüz geliştirme dalındadır:
-
-```bash
-git switch hafta-6-arac-atama
-```
+Klonlama sonrası `main` üzerinde bütün uygulama, senaryolar, testler ve teknik belgeler hazırdır.
 
 Windows'ta proje klasöründeki terminalden çalıştırın:
 
@@ -56,6 +68,21 @@ py -3.11 -m ayros --start H0 --target A5 --algorithm astar --svg output/rota.svg
 ```
 
 macOS/Linux üzerinde aynı komutta `py -3.11` yerine Python 3.11+ yorumlayıcınızın `python3` komutunu kullanın. Oluşan `output/rota.svg` dosyasını tarayıcıda açın. `output/` klasörü gerektiğinde oluşturulur ve Git takibine alınmaz.
+
+### Fork üzerinden geliştirme
+
+GitHub'da **Fork** düğmesiyle kendi kopyanızı oluşturun. Fork'un `main` dalı güncel uygulamayı içerir. Aşağıdaki `KULLANICI_ADINIZ` alanını kendi GitHub adınızla değiştirin:
+
+```powershell
+git clone https://github.com/KULLANICI_ADINIZ/afet-yardim-rota-planlama.git
+cd afet-yardim-rota-planlama
+git remote add upstream https://github.com/AYROS-MMY/afet-yardim-rota-planlama.git
+git switch -c gelistirme/ozellik-adi
+py -3.11 -m unittest discover -s tests -v
+py -3.11 scripts/run_simulation_examples.py
+```
+
+Yeni geliştirmeyi kendi dalınıza commit edip fork'unuza gönderin, ardından bu depoya pull request açın. Ana depodan güncelleme almak için `git fetch upstream` kullanabilirsiniz. Uygulamanın çalışması için `ayros/`, `data/` ve `scripts/` klasörleri gereklidir. Testler `tests/`, teknik notlar ve sabit deney kayıtları `docs/` altındadır. Akademik raporlar ile çalıştırma sırasında oluşan `output/` dosyaları yerelde tutulur.
 
 Varsayılan senaryoda beklenen sonuç:
 
@@ -68,9 +95,31 @@ Toplam mesafe: 17.60 km
 
 ## Kullanım
 
+### Araç hareketi ve yol kapanması
+
+Proje klasöründen çalıştırın:
+
+```powershell
+py -3.11 scripts/run_simulation_examples.py
+```
+
+`output/hafta7/simulasyon.svg` görselini tarayıcıda açın. Aynı klasörde her deneyin JSON olay günlüğü oluşur. Küçük örnekte normal teslimat **4 dakika**, kapanan yola alternatif rota ile teslimat **8 dakika** sürer. İki çıkış da kapanırsa araç **K'de bekler**; 100 koli teslim edilmiş sayılmaz.
+
+![Yol açıkken, kapandığında ve alternatif olmadığında araç durumu](docs/simulasyon.svg)
+
+Ana bölgesel senaryoyu tek başına çalıştırmak için:
+
+```powershell
+py -3.11 -m ayros.simulate --json output/hafta7_bolgesel.json
+```
+
+Yol olayı olmayan bu koşulda **11 araç hedefine ulaşır**, **455 koli teslim edilir**, **2 sağlık ve 2 kurtarma ekibi ulaşır**; **475 koli** henüz atanmamıştır. Son varış **53,575 dakika** olur. Bunlar simülasyon sonuçlarıdır; gerçek saha teslimatı değildir. Sağlık/kurtarmada yalnız ekip varışı modellenir.
+
+Bir adım sıradaki düğüme varışı işler; sabit bir dakika değildir. Yol olayı kontrol noktalarında uygulanır; üzerinde araç olan yol değişimi reddedilir. Canlı harita kontrolleri ve kısmi teslimat 8. hafta planındadır. [Olay kuralları, durum alanları, örnekler ve sınırlar](docs/simulasyon.md).
+
 ### İhtiyaç türüne göre görev dağıtımı
 
-6. hafta araç atama dalında, proje klasöründen çalıştırın:
+Başlangıçtaki araç görev planını üretmek için proje klasöründen çalıştırın:
 
 ```powershell
 py -3.11 -m ayros.dispatch --json output/hafta6_atama.json --svg output/hafta6_atama.svg --html output/hafta6_araclar.html
@@ -235,7 +284,7 @@ Sorgu medyanlarının aritmetik ortalaması 40 düğümlü ağda yaklaşık **0,
 ## Proje yapısı
 
 ```text
-ayros/       Çizge, rota, ihtiyaç önceliği, araç atama, CLI ve JSON/SVG üretimi
+ayros/       Çizge, rota, ihtiyaç önceliği, araç atama, simülasyon ve çıktılar
 data/        Çalıştırılabilir senaryolar ve küçük doğrulama örneği
 docs/        Proje görselleri ve mevcut teknik notlar
 scripts/     Tekrarlanabilir senaryo üretimi ve karşılaştırma deneyi
@@ -248,9 +297,11 @@ tests/       Veri modeli, rota doğruluğu, geometri ve CLI testleri
 py -3.11 -m unittest discover -s tests -v
 ```
 
-**125 test metodu**, veri doğrulama, kapalı yollar, hasar etkisi, ulaşılamayan hedefler, yol geometrisi, köprü kapanmaları, SVG ve komut satırı davranışlarını kapsar. Önceki 48 küçük ağ sorgusu bağımsız tam yol taramasıyla kontrol edilir. A* için 12 sabit tohumlu küçük ağdaki **144 sorgu**, 40 düğümlü ağdaki **24 sorgu** ve bölgesel ağdaki **72 sorgu** bağımsız Bellman–Ford hesabıyla karşılaştırılır. Tahminin tutarlılığı, arama kayıtlarının sonuçları değiştirmemesi, SVG düğümlerinin tam kayda eşitliği, düzlemsel topoloji, köprü kapanmaları ve çoklu ağ deney dosyası ayrıca sınanır. Döngü içindeki sorgular test metodu sayısına eklenmez. Önceliklendirme için eklenen 23 test; puan hesabı, 300 bağımsız rasyonel örnek, monotonluk, doygunluk, eşitlik, erişim bağımsızlığı, JSON/SVG ve CLI hata durumlarını kapsar.
+**145 test metodu**, veri doğrulama, kapalı yollar, hasar etkisi, ulaşılamayan hedefler, yol geometrisi, köprü kapanmaları, SVG ve komut satırı davranışlarını kapsar. Önceki 48 küçük ağ sorgusu bağımsız tam yol taramasıyla kontrol edilir. A* için 12 sabit tohumlu küçük ağdaki **144 sorgu**, 40 düğümlü ağdaki **24 sorgu** ve bölgesel ağdaki **72 sorgu** bağımsız Bellman–Ford hesabıyla karşılaştırılır. Tahminin tutarlılığı, arama kayıtlarının sonuçları değiştirmemesi, SVG düğümlerinin tam kayda eşitliği, düzlemsel topoloji, köprü kapanmaları ve çoklu ağ deney dosyası ayrıca sınanır. Döngü içindeki sorgular test metodu sayısına eklenmez. Önceliklendirme için eklenen 23 test; puan hesabı, 300 bağımsız rasyonel örnek, monotonluk, doygunluk, eşitlik, erişim bağımsızlığı, JSON/SVG ve CLI hata durumlarını kapsar.
 
 Araç ataması için 35 yeni test; hizmet türü, görev aciliyeti, bağımsız bölge ihtiyaçları, koli/ekip birimleri, eski şema uyumluluğu, kapasite, müsaitlik, tek görev, eşitlik, erişim gerekçeleri, A*/Dijkstra uyumu, JSON/SVG eşleşmesi, girdi koruması ve açgözlü yöntemin karşı örneğini kapsar.
+
+Simülasyon için 20 yeni test; zamanlı hareket, kapanmada yeniden rota, yol açılamadığında bekleme, yeniden açılma, tek seferlik teslimat, miktar korunumu, veri sırası, hata sonrası durumun korunması ve tekrarlanabilir JSON üretimini kapsar.
 
 Hesaplama süresi maliyet hazırlama, arama ve rota kurmayı içerir; dosya okuma ve SVG üretimini içermez. Tek çalıştırmanın süresi karşılaştırmalı performans sonucu olarak değerlendirilmez.
 
@@ -262,7 +313,10 @@ Hesaplama süresi maliyet hazırlama, arama ve rota kurmayı içerir; dosya okum
 - [x] A* ve aynı koşullarda algoritma karşılaştırması
 - [x] Afet noktalarının açıklanabilir ihtiyaç puanı ve merkezden erişim değerlendirmesi
 - [x] Temel çoklu araç görev dağıtımı (tek tur, kapasite ve müsaitlik)
-- [ ] Yol koşulları değiştiğinde otomatik yeniden planlama
+- [x] Düğüm adımlı hareket, yol olayından sonra yeniden rota ve teslimat takibi
+- [ ] Simülasyonun mevcut harita arayüzüne bağlanması
+- [ ] Kontrollü kısmi teslimat ve yakın küçük / uzak büyük araç deneyleri
+- [ ] Uçtan uca final doğrulaması ve sunum
 
 9. hafta final teslimine yönelik kabul ölçütleri: [Kalan haftaların planı](docs/yol_haritasi.md).
 
