@@ -14,9 +14,11 @@ from .model import ValidationError
 from .priority import PriorityPolicy, load_priority_policy
 from .routing import CostModel
 from .scenario import load_scenario
+from .console import safe_console
 
 
 def main():
+    safe_console()
     root = Path(__file__).resolve().parents[1]
     parser = argparse.ArgumentParser(description='AYROS | Tek turluk araç görev dağıtımı')
     parser.add_argument('--scenario', type=Path, default=root / 'data/bolgesel_ag.json')

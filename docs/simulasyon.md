@@ -83,9 +83,9 @@ Atama başlangıçta bir kez yapılır; araç başına tek görev, görev başı
 - `ayros/simulation.py`: durum geçişleri, zaman, yeniden rota ve miktar hesabı; dosya/ekran işlemi içermez.
 - `ayros/simulate.py`: olay girdisi, CLI, Türkçe özet ve JSON; hesapları motor üzerinden çalıştırır.
 - `scripts/run_simulation_examples.py`: sabit deneyler ve kontrol noktalarından SVG; teslimat mantığını yeniden uygulamaz.
-- `tests/test_simulation.py`: 24 test; normal/alternatif/engellenen rota, tekrar varış, açılma, veri sırası, farklı hizmetler, zamanlama, hata sonrası durumun korunması, girdi koruması, tekrarlanabilirlik, bölgesel ağda köprü kapanması/hasarı/izolasyonu ve yayımlanan deney kayıtlarının yeniden üretimle birebir eşleşmesi.
+- `tests/test_simulation.py`: 25 test; normal/alternatif/engellenen rota, tekrar varış, açılma, veri sırası, farklı hizmetler, zamanlama, hata sonrası durumun korunması, girdi koruması, tekrarlanabilirlik, bölgesel ağda köprü kapanması/hasarı/izolasyonu yayımlanan deney kayıtlarının yeniden üretimle birebir eşleşmesi ve Türkçe karakter desteklemeyen konsolda CLI çalışması.
 
-Tam test kümesi 149 test metodudur. Testler her gönderimde GitHub Actions üzerinde Windows ve Linux, Python 3.11 ve 3.13 ile çalışır. JSON çıktısı girdi SHA-256 değerlerini içerir. Çalışma zamanı veya hazırlanma tarihi eklenmediği için aynı girdiler aynı kaydı üretir. Bu sonuçlar sentetik senaryo doğrulamasıdır; saha başarısı ölçümü değildir.
+Tam test kümesi 150 test metodudur. Testler her gönderimde GitHub Actions üzerinde Windows ve Linux, Python 3.11 ve 3.13 ile çalışır. JSON çıktısı girdi SHA-256 değerlerini içerir. Çalışma zamanı veya hazırlanma tarihi eklenmediği için aynı girdiler aynı kaydı üretir. Bu sonuçlar sentetik senaryo doğrulamasıdır; saha başarısı ölçümü değildir.
 
 ## Kısa sunum akışı
 

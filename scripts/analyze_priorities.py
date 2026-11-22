@@ -16,6 +16,7 @@ from ayros.priority import PriorityPolicy, assess_priorities
 from ayros.priority_output import assessment_dict
 from ayros.routing import CostModel
 from ayros.scenario import load_scenario
+from ayros.console import safe_console
 
 
 def run_experiment() -> dict:
@@ -51,6 +52,7 @@ def run_experiment() -> dict:
 
 
 def main() -> None:
+    safe_console()
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output',type=Path,default=ROOT/'output/oncelik_deneyi.json')
     args = parser.parse_args()

@@ -1,5 +1,6 @@
 from dataclasses import replace
 import json
+import os
 from pathlib import Path
 import subprocess
 import sys
@@ -260,6 +261,14 @@ class SimulationTests(unittest.TestCase):
             self.assertEqual(json.loads(first)['final']['time_min'], 8)
             run = subprocess.run(command + ['--json', 'data/hafta7_mikro_arac.json'], cwd=ROOT, capture_output=True)
             self.assertEqual(run.returncode, 2)
+
+    def test_cli_runs_on_console_without_turkish_characters(self):
+        # İngilizce Windows konsolu (cp1252) 'ı', 'ş', 'ğ' karakterlerini yazamaz; CLI çökmemelidir.
+        env = dict(os.environ, PYTHONIOENCODING='cp1252')
+        run = subprocess.run([sys.executable, '-m', 'ayros.simulate', '--scenario', 'data/hafta7_mikro_ag.json',
+                              '--fleet', 'data/hafta7_mikro_arac.json'], cwd=ROOT, capture_output=True, env=env)
+        self.assertEqual(run.returncode, 0, run.stderr)
+        self.assertIn(b'Teslim 100', run.stdout)
 
     def test_cli_rejects_unreachable_event_step_without_output(self):
         with tempfile.TemporaryDirectory() as directory:

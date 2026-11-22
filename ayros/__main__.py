@@ -14,6 +14,7 @@ from .search_visualize import write_search_svg
 from .benchmark import ComparisonResult, compare_algorithms
 from .priority import PriorityPolicy, assess_priorities, load_priority_policy
 from .priority_output import write_priority_json, write_priority_svg
+from .console import safe_console
 
 
 def print_comparison(target: str, result: ComparisonResult) -> None:
@@ -27,6 +28,7 @@ def print_comparison(target: str, result: ComparisonResult) -> None:
 
 
 def main() -> int:
+    safe_console()
     parser = argparse.ArgumentParser(description="AYROS MMY senaryosu, Dijkstra/A* ve karşılaştırma")
     parser.add_argument("scenario", nargs="?", type=Path,
                         default=Path(__file__).resolve().parent.parent / "data" / "hafta3_genis_ag.json")

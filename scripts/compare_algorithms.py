@@ -17,9 +17,11 @@ from ayros.benchmark import compare_algorithms
 from ayros.model import NodeType, ValidationError
 from ayros.routing import CostModel
 from ayros.scenario import load_scenario
+from ayros.console import safe_console
 
 
 def main():
+    safe_console()
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--repeats", type=int, default=50)
     parser.add_argument("--scenario", type=Path, action="append", help="Birden fazla ağ için tekrarlanabilir; varsayılan 40 düğümlü ağ")

@@ -11,6 +11,7 @@ from .model import RoadStatus, ValidationError
 from .routing import CostModel
 from .scenario import load_scenario
 from .simulation import Simulation
+from .console import safe_console
 
 
 STATUS_LABELS = {
@@ -59,6 +60,7 @@ def load_events(path, graph):
 
 
 def main(argv=None):
+    safe_console()
     root = Path(__file__).resolve().parents[1]
     parser = argparse.ArgumentParser(description="AYROS | Düğüm adımlı araç simülasyonu")
     parser.add_argument("--scenario", type=Path, default=root / "data/bolgesel_ag.json")
