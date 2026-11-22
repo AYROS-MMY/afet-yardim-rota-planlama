@@ -22,3 +22,5 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: 7. hafta deneyleri
         run: python scripts/run_simulation_examples.py --output output/ci
+      - name: Yol kritikliği analizi
+        run: python scripts/analyze_road_criticality.py --output output/ci

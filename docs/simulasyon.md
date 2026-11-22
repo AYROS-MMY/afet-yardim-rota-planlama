@@ -62,6 +62,30 @@ Tek koşulu çalıştırmak için:
 py -3.11 -m ayros.simulate --events data/hafta7_bolgesel_kopru_kapanmasi.json --json output/hafta7_kopru.json
 ```
 
+## Yol kritikliği: hangi yol kapanırsa yardım en çok gecikir?
+
+Köprü deneyi tek bir yolu inceler. Karar verici için asıl soru, hasar tespiti ve onarımda hangi yolun önce ele alınması gerektiğidir. Bunun için başlangıç planındaki araçların kullandığı **85 yolun her biri**, araçlar merkezden çıkmadan önce tek başına kapatıldı ve simülasyon sonuna kadar yürütüldü. Olay yokken elde edilen varış zamanlarıyla karşılaştırılarak her yol için toplam gecikme, en büyük gecikme ve etkilenen araçlar hesaplandı.
+
+```powershell
+py -3.11 scripts/analyze_road_criticality.py
+```
+
+| Sıra | Yol | Tür | Toplam gecikme | Etkilenen araçlar |
+|---|---|---|---|---|
+| 1 | R079 | İkincil yol (H0 merkezinin çıkışı) | 23,15 dk | K01, S02, V01, V02 |
+| 2 | R157 | İkincil yol (H1'den çıkan iki rotanın ortak yolu) | 14,82 dk | V03, V07 |
+| 3 | R178 | Köprü | 14,21 dk | S02 |
+| 4 | R137 | İkincil yol (R178 köprüsünün doğu ucu) | 13,95 dk | S02 |
+| 5 | R169 | İkincil yol | 11,02 dk | K01, V01 |
+
+- **En kritik yol köprü değil, H0 merkezinin çıkış yolu R079'dur.** Kapanırsa H0'dan çıkan dört aracın hepsi başka çıkış kullanmak zorunda kalır; gecikmeler toplanınca köprüden daha büyük etki oluşur.
+- **Hiçbir yolun tek başına kapanması bir aracı hedefsiz bırakmaz.** Ağ, kullanılan her yol için alternatif içerir. Ulaşımı kesen durum, daha önce gösterildiği gibi üç köprünün birlikte kapanmasıdır.
+- Sıralama mevcut araç-görev planına bağlıdır; başka bir filo veya görev dağılımında farklı yollar öne çıkabilir. Gecikmeler simülasyon dakikasıdır.
+
+![Yolların kapanınca oluşturduğu toplam gecikme](yol_kritikligi.svg)
+
+Tam kayıt: [yol kritikliği deney sonucu](deneyler/hafta7_yol_kritikligi.json).
+
 ## Zaman ve olay kuralları
 
 `Simulation.step()` tüm filoyu sıradaki düğüme-varış zamanına taşır. Her araç kendi yol süresine göre ilerler; farklı uzunluktaki yollar tek bir dakika sayılmaz. Aynı anda ulaşan araçlar kimlik sırasıyla işlenir. Yol üstündeki aracın son düğümü `node`, aktif yolu `edge_id`, varacağı düğüm `next_node` alanındadır. `eta_min` başlangıca göre tahmini varış dakikasıdır. `completed_distance_km` yalnız tamamen geçilmiş yolların mesafesidir.
@@ -83,10 +107,10 @@ Atama başlangıçta bir kez yapılır; araç başına tek görev, görev başı
 - `ayros/simulation.py`: durum geçişleri, zaman, yeniden rota ve miktar hesabı; dosya/ekran işlemi içermez.
 - `ayros/simulate.py`: olay girdisi, CLI, Türkçe özet ve JSON; hesapları motor üzerinden çalıştırır.
 - `scripts/run_simulation_examples.py`: sabit deneyler ve kontrol noktalarından SVG; teslimat mantığını yeniden uygulamaz.
-- `tests/test_simulation.py`: 25 test; normal/alternatif/engellenen rota, tekrar varış, açılma, veri sırası, farklı hizmetler, zamanlama, hata sonrası durumun korunması, girdi koruması, tekrarlanabilirlik, bölgesel ağda köprü kapanması/hasarı/izolasyonu yayımlanan deney kayıtlarının yeniden üretimle birebir eşleşmesi ve Türkçe karakter desteklemeyen konsolda CLI çalışması.
+- `tests/test_simulation.py`: 27 test; normal/alternatif/engellenen rota, tekrar varış, açılma, veri sırası, farklı hizmetler, zamanlama, hata sonrası durumun korunması, girdi koruması, tekrarlanabilirlik, bölgesel ağda köprü kapanması/hasarı/izolasyonu yayımlanan deney kayıtlarının yeniden üretimle birebir eşleşmesi ve Türkçe karakter desteklemeyen konsolda CLI çalışması ve yol kritikliği sıralamasının yayımlanan kayıtla eşleşmesi.
 
-Tam test kümesi 150 test metodudur. Testler her gönderimde GitHub Actions üzerinde Windows ve Linux, Python 3.11 ve 3.13 ile çalışır. JSON çıktısı girdi SHA-256 değerlerini içerir. Çalışma zamanı veya hazırlanma tarihi eklenmediği için aynı girdiler aynı kaydı üretir. Bu sonuçlar sentetik senaryo doğrulamasıdır; saha başarısı ölçümü değildir.
+Tam test kümesi 152 test metodudur. Testler her gönderimde GitHub Actions üzerinde Windows ve Linux, Python 3.11 ve 3.13 ile çalışır. JSON çıktısı girdi SHA-256 değerlerini rolüne göre (`scenario`, `fleet`, `events`) ve satır sonundan bağımsız olarak içerir; farklı klasörlerdeki aynı adlı dosyalar birbirinin kaydını silmez. Çalışma zamanı veya hazırlanma tarihi eklenmediği için aynı girdiler aynı kaydı üretir. Bu sonuçlar sentetik senaryo doğrulamasıdır; saha başarısı ölçümü değildir.
 
 ## Kısa sunum akışı
 
-“Geçen hafta hangi aracın hangi göreve atanacağını planladık. Bu hafta bu planı zaman içinde yürüttük. Araç hedefe varmadan yükü teslim saymıyoruz. Küçük örnekte normal yol 4 dakika sürüyor. Araç K'ye ulaşınca yol kapanırsa bulunduğu yerden alternatif rota buluyor ve 8. dakikada ulaşıyor. İki yol da kapalıysa bekliyor; 100 koli araçta kalıyor. Aynı motoru büyük ağda da çalıştırdık: R178 köprüsü kapanınca yalnız o köprüyü kullanan sağlık aracı yeniden rota buluyor ve 14 dakika gecikiyor; üç köprü birden kapanırsa nehrin öbür yakasına ulaşılamıyor. Bir sonraki hafta bu durumu haritaya bağlayıp kısmi teslimat kararını karşılaştıracağız.”
+“Geçen hafta hangi aracın hangi göreve atanacağını planladık. Bu hafta bu planı zaman içinde yürüttük. Araç hedefe varmadan yükü teslim saymıyoruz. Küçük örnekte normal yol 4 dakika sürüyor. Araç K'ye ulaşınca yol kapanırsa bulunduğu yerden alternatif rota buluyor ve 8. dakikada ulaşıyor. İki yol da kapalıysa bekliyor; 100 koli araçta kalıyor. Aynı motoru büyük ağda da çalıştırdık: R178 köprüsü kapanınca yalnız o köprüyü kullanan sağlık aracı yeniden rota buluyor ve 14 dakika gecikiyor; üç köprü birden kapanırsa nehrin öbür yakasına ulaşılamıyor. Her yolu tek tek kapattığımızda en kritik yolun köprü değil, H0 merkezinin çıkış yolu olduğunu gördük. Bir sonraki hafta bu durumu haritaya bağlayıp kısmi teslimat kararını karşılaştıracağız.”

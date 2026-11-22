@@ -110,6 +110,8 @@ py -3.11 scripts/run_simulation_examples.py
 
 Aynı kurallar 180 düğümlü bölgesel ağda da sınanır. R178 köprüsü kapanınca yalnız bu köprüyü kullanan S02 sağlık aracı R179 üzerinden yeni rota bulur; varışı **53,575 dakikadan 67,79 dakikaya** çıkar, diğer araçların varışı değişmez. Üç köprü birden kapanırsa S02 ve V04 bekler, teslim edilen koli **455'ten 405'e** iner. [Köprü deneyleri](docs/simulasyon.md#bölgesel-ağda-köprü-olayları).
 
+Araçların kullandığı 85 yol tek tek kapatıldığında en büyük toplam gecikmeyi köprü değil, **H0 merkezinin çıkış yolu R079** oluşturur (23,15 dk, 4 araç). Hiçbir yolun tek başına kapanması bir aracı hedefsiz bırakmaz. [Yol kritikliği analizi](docs/simulasyon.md#yol-kritikliği-hangi-yol-kapanırsa-yardım-en-çok-gecikir).
+
 ![Bölgesel ağda köprü kapanınca yeniden rota](docs/bolgesel_kopru.svg)
 
 Ana bölgesel senaryoyu tek başına çalıştırmak için:
@@ -302,11 +304,11 @@ tests/       Veri modeli, rota doğruluğu, geometri ve CLI testleri
 py -3.11 -m unittest discover -s tests -v
 ```
 
-**150 test metodu**, veri doğrulama, kapalı yollar, hasar etkisi, ulaşılamayan hedefler, yol geometrisi, köprü kapanmaları, SVG ve komut satırı davranışlarını kapsar. Önceki 48 küçük ağ sorgusu bağımsız tam yol taramasıyla kontrol edilir. A* için 12 sabit tohumlu küçük ağdaki **144 sorgu**, 40 düğümlü ağdaki **24 sorgu** ve bölgesel ağdaki **72 sorgu** bağımsız Bellman–Ford hesabıyla karşılaştırılır. Tahminin tutarlılığı, arama kayıtlarının sonuçları değiştirmemesi, SVG düğümlerinin tam kayda eşitliği, düzlemsel topoloji, köprü kapanmaları ve çoklu ağ deney dosyası ayrıca sınanır. Döngü içindeki sorgular test metodu sayısına eklenmez. Önceliklendirme için eklenen 23 test; puan hesabı, 300 bağımsız rasyonel örnek, monotonluk, doygunluk, eşitlik, erişim bağımsızlığı, JSON/SVG ve CLI hata durumlarını kapsar.
+**152 test metodu**, veri doğrulama, kapalı yollar, hasar etkisi, ulaşılamayan hedefler, yol geometrisi, köprü kapanmaları, SVG ve komut satırı davranışlarını kapsar. Önceki 48 küçük ağ sorgusu bağımsız tam yol taramasıyla kontrol edilir. A* için 12 sabit tohumlu küçük ağdaki **144 sorgu**, 40 düğümlü ağdaki **24 sorgu** ve bölgesel ağdaki **72 sorgu** bağımsız Bellman–Ford hesabıyla karşılaştırılır. Tahminin tutarlılığı, arama kayıtlarının sonuçları değiştirmemesi, SVG düğümlerinin tam kayda eşitliği, düzlemsel topoloji, köprü kapanmaları ve çoklu ağ deney dosyası ayrıca sınanır. Döngü içindeki sorgular test metodu sayısına eklenmez. Önceliklendirme için eklenen 23 test; puan hesabı, 300 bağımsız rasyonel örnek, monotonluk, doygunluk, eşitlik, erişim bağımsızlığı, JSON/SVG ve CLI hata durumlarını kapsar.
 
 Araç ataması için 35 yeni test; hizmet türü, görev aciliyeti, bağımsız bölge ihtiyaçları, koli/ekip birimleri, eski şema uyumluluğu, kapasite, müsaitlik, tek görev, eşitlik, erişim gerekçeleri, A*/Dijkstra uyumu, JSON/SVG eşleşmesi, girdi koruması ve açgözlü yöntemin karşı örneğini kapsar.
 
-Simülasyon için 25 yeni test; zamanlı hareket, kapanmada yeniden rota, yol açılamadığında bekleme, yeniden açılma, tek seferlik teslimat, miktar korunumu, veri sırası, hata sonrası durumun korunması, tekrarlanabilir JSON üretimi, bölgesel ağda köprü kapanması/hasarı/izolasyonu ve yayımlanan deney kayıtlarının yeniden üretimle eşleşmesini ve Türkçe karakter desteklemeyen konsollarda (ör. İngilizce Windows) komut satırının çökmemesini kapsar.
+Simülasyon için 27 yeni test; zamanlı hareket, kapanmada yeniden rota, yol açılamadığında bekleme, yeniden açılma, tek seferlik teslimat, miktar korunumu, veri sırası, hata sonrası durumun korunması, tekrarlanabilir JSON üretimi, bölgesel ağda köprü kapanması/hasarı/izolasyonu ve yayımlanan deney kayıtlarının yeniden üretimle eşleşmesini ve Türkçe karakter desteklemeyen konsollarda (ör. İngilizce Windows) komut satırının çökmemesini ve yol kritikliği sıralamasını kapsar.
 
 Testler her gönderimde [GitHub Actions](.github/workflows/testler.yml) ile Windows ve Linux üzerinde, Python 3.11 ve 3.13 ile otomatik çalışır.
 

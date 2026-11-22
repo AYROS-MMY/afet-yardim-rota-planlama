@@ -216,6 +216,24 @@ class SimulationTests(unittest.TestCase):
                 self.assertEqual((Path(directory) / name).read_text(encoding='utf-8'),
                                  (ROOT / 'docs' / name).read_text(encoding='utf-8'))
 
+    def test_road_criticality_ranks_depot_exit_first_and_matches_published_record(self):
+        sys.path.insert(0, str(ROOT))
+        from scripts.analyze_road_criticality import analyze, draw
+        scenario = load_scenario(ROOT / 'data/bolgesel_ag.json')
+        fleet = load_dispatch(ROOT / 'data/gorev_senaryosu_12_arac.json', scenario.graph)
+        result = analyze(scenario, fleet)
+        first = result['roads'][0]
+        # H0 merkezinin çıkış yolu: dört aracı birlikte geciktirir, köprüden daha kritiktir.
+        self.assertEqual((first['road_id'], first['affected_vehicles']), ('R079', ['K01', 'S02', 'V01', 'V02']))
+        self.assertAlmostEqual(first['total_delay_min'], 23.15)
+        bridge = next(r for r in result['roads'] if r['road_id'] == 'R178')
+        self.assertAlmostEqual(bridge['total_delay_min'], 67.79 - 53.575, places=3)
+        self.assertEqual(result['roads_blocking_a_vehicle'], 0)
+        self.assertTrue(all(r['total_delay_min'] > 0 for r in result['roads']))
+        published = json.loads((ROOT / 'docs/deneyler/hafta7_yol_kritikligi.json').read_text(encoding='utf-8'))
+        self.assertEqual(json.loads(json.dumps(result)), published)
+        self.assertEqual(draw(scenario, result), (ROOT / 'docs/yol_kritikligi.svg').read_text(encoding='utf-8'))
+
     def test_legacy_fleet_and_algorithms(self):
         graph = load_scenario(ROOT / 'data/bolgesel_ag.json').graph
         fleet = load_dispatch(ROOT / 'data/arac_senaryosu.json', graph)
@@ -269,6 +287,22 @@ class SimulationTests(unittest.TestCase):
                               '--fleet', 'data/hafta7_mikro_arac.json'], cwd=ROOT, capture_output=True, env=env)
         self.assertEqual(run.returncode, 0, run.stderr)
         self.assertIn(b'Teslim 100', run.stdout)
+
+    def test_cli_keeps_hashes_of_inputs_with_the_same_file_name(self):
+        # Codex incelemesi (PR #8): aynı adlı girdiler birbirinin özetini silmemeli.
+        with tempfile.TemporaryDirectory() as directory:
+            folders = [Path(directory) / name for name in ('ag', 'filo')]
+            for folder, source in zip(folders, ('hafta7_mikro_ag.json', 'hafta7_mikro_arac.json')):
+                folder.mkdir()
+                (folder / 'girdi.json').write_bytes((ROOT / 'data' / source).read_bytes())
+            output = Path(directory) / 'result.json'
+            run = subprocess.run([sys.executable, '-m', 'ayros.simulate', '--scenario', str(folders[0] / 'girdi.json'),
+                                  '--fleet', str(folders[1] / 'girdi.json'), '--json', str(output)],
+                                 cwd=ROOT, capture_output=True)
+            self.assertEqual(run.returncode, 0, run.stderr)
+            hashes = json.loads(output.read_text(encoding='utf-8'))['input_sha256']
+            self.assertEqual(set(hashes), {'scenario', 'fleet'})
+            self.assertNotEqual(hashes['scenario']['sha256'], hashes['fleet']['sha256'])
 
     def test_cli_rejects_unreachable_event_step_without_output(self):
         with tempfile.TemporaryDirectory() as directory:

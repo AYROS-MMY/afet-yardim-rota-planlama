@@ -73,7 +73,8 @@ def main(argv=None):
     args = parser.parse_args(argv)
     if args.steps is not None and args.steps < 0:
         parser.error("Adım sayısı negatif olamaz.")
-    inputs = [args.scenario, args.fleet] + ([args.events] if args.events else [])
+    roles = [("scenario", args.scenario), ("fleet", args.fleet)] + ([("events", args.events)] if args.events else [])
+    inputs = [path for _, path in roles]
     if args.json and args.json.resolve() in {path.resolve() for path in inputs}:
         parser.error("Çıktı dosyası girdilerden farklı olmalıdır.")
     try:
@@ -121,7 +122,10 @@ def main(argv=None):
         if args.json:
             payload = {"schema_version": 1, "algorithm": args.algorithm,
                        "damage_factor": args.damage_factor,
-                       "input_sha256": {path.name: _content_hash(path) for path in inputs},
+                       # Anahtar dosya adı değil girdinin rolüdür: farklı klasörlerde aynı adlı
+                       # dosyalar kullanılsa da hiçbir girdinin özeti kaybolmaz.
+                       "input_sha256": {role: {"file": path.name, "sha256": _content_hash(path)}
+                                        for role, path in roles},
                        "checkpoints": checkpoints, "final": state}
             args.json.parent.mkdir(parents=True, exist_ok=True)
             args.json.write_text(json.dumps(payload, ensure_ascii=False, indent=2, allow_nan=False) + "\n", encoding="utf-8")

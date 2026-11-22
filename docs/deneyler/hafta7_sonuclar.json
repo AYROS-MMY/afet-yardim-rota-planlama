@@ -5,8 +5,14 @@
   "cases": {
     "normal": {
       "input_sha256": {
-        "hafta7_mikro_ag.json": "e387ffd400efb4745a10bc0f6af23bc91e22c21e22829a767f2552f994c472e3",
-        "hafta7_mikro_arac.json": "5fc8e5f53452cf31102e4c3c6d9810e6e13113c55bb8de3fdfbbbf7010fc6ed3"
+        "scenario": {
+          "file": "hafta7_mikro_ag.json",
+          "sha256": "e387ffd400efb4745a10bc0f6af23bc91e22c21e22829a767f2552f994c472e3"
+        },
+        "fleet": {
+          "file": "hafta7_mikro_arac.json",
+          "sha256": "5fc8e5f53452cf31102e4c3c6d9810e6e13113c55bb8de3fdfbbbf7010fc6ed3"
+        }
       },
       "time_min": 4.0,
       "steps": 2,
@@ -28,9 +34,18 @@
     },
     "kapanma": {
       "input_sha256": {
-        "hafta7_mikro_ag.json": "e387ffd400efb4745a10bc0f6af23bc91e22c21e22829a767f2552f994c472e3",
-        "hafta7_mikro_arac.json": "5fc8e5f53452cf31102e4c3c6d9810e6e13113c55bb8de3fdfbbbf7010fc6ed3",
-        "hafta7_yol_kapanmasi.json": "9ee28597bd6e2ff458f33d7b0ae2a2ff95fe2f78e6485720044bdf4ed936676f"
+        "scenario": {
+          "file": "hafta7_mikro_ag.json",
+          "sha256": "e387ffd400efb4745a10bc0f6af23bc91e22c21e22829a767f2552f994c472e3"
+        },
+        "fleet": {
+          "file": "hafta7_mikro_arac.json",
+          "sha256": "5fc8e5f53452cf31102e4c3c6d9810e6e13113c55bb8de3fdfbbbf7010fc6ed3"
+        },
+        "events": {
+          "file": "hafta7_yol_kapanmasi.json",
+          "sha256": "9ee28597bd6e2ff458f33d7b0ae2a2ff95fe2f78e6485720044bdf4ed936676f"
+        }
       },
       "time_min": 8.0,
       "steps": 3,
@@ -54,9 +69,18 @@
     },
     "izolasyon": {
       "input_sha256": {
-        "hafta7_mikro_ag.json": "e387ffd400efb4745a10bc0f6af23bc91e22c21e22829a767f2552f994c472e3",
-        "hafta7_mikro_arac.json": "5fc8e5f53452cf31102e4c3c6d9810e6e13113c55bb8de3fdfbbbf7010fc6ed3",
-        "hafta7_yol_izolasyon.json": "5e47f6fd67d5efb12a2ccae672ee0572eaeb5b2236fa28c60b828e160967be24"
+        "scenario": {
+          "file": "hafta7_mikro_ag.json",
+          "sha256": "e387ffd400efb4745a10bc0f6af23bc91e22c21e22829a767f2552f994c472e3"
+        },
+        "fleet": {
+          "file": "hafta7_mikro_arac.json",
+          "sha256": "5fc8e5f53452cf31102e4c3c6d9810e6e13113c55bb8de3fdfbbbf7010fc6ed3"
+        },
+        "events": {
+          "file": "hafta7_yol_izolasyon.json",
+          "sha256": "5e47f6fd67d5efb12a2ccae672ee0572eaeb5b2236fa28c60b828e160967be24"
+        }
       },
       "time_min": 2.0,
       "steps": 1,
@@ -80,8 +104,14 @@
     },
     "bolgesel": {
       "input_sha256": {
-        "bolgesel_ag.json": "252a5cbf2865f5b3ed788bd76faf29386f90f5fcf66a110a8ece43085a0d74a4",
-        "gorev_senaryosu_12_arac.json": "8589c7cde1508bbe263a54a17f92fccef5c27f2c77d97b9db221768197e68a2c"
+        "scenario": {
+          "file": "bolgesel_ag.json",
+          "sha256": "252a5cbf2865f5b3ed788bd76faf29386f90f5fcf66a110a8ece43085a0d74a4"
+        },
+        "fleet": {
+          "file": "gorev_senaryosu_12_arac.json",
+          "sha256": "8589c7cde1508bbe263a54a17f92fccef5c27f2c77d97b9db221768197e68a2c"
+        }
       },
       "time_min": 53.575,
       "steps": 93,
@@ -113,9 +143,18 @@
     },
     "kopru_kapanmasi": {
       "input_sha256": {
-        "bolgesel_ag.json": "252a5cbf2865f5b3ed788bd76faf29386f90f5fcf66a110a8ece43085a0d74a4",
-        "gorev_senaryosu_12_arac.json": "8589c7cde1508bbe263a54a17f92fccef5c27f2c77d97b9db221768197e68a2c",
-        "hafta7_bolgesel_kopru_kapanmasi.json": "201bb8ced925fe77720fc49e12870f50368a24b644d887537bfbba38d505e1f1"
+        "scenario": {
+          "file": "bolgesel_ag.json",
+          "sha256": "252a5cbf2865f5b3ed788bd76faf29386f90f5fcf66a110a8ece43085a0d74a4"
+        },
+        "fleet": {
+          "file": "gorev_senaryosu_12_arac.json",
+          "sha256": "8589c7cde1508bbe263a54a17f92fccef5c27f2c77d97b9db221768197e68a2c"
+        },
+        "events": {
+          "file": "hafta7_bolgesel_kopru_kapanmasi.json",
+          "sha256": "201bb8ced925fe77720fc49e12870f50368a24b644d887537bfbba38d505e1f1"
+        }
       },
       "time_min": 67.78999999999999,
       "steps": 93,
@@ -149,9 +188,18 @@
     },
     "kopruler_hasarli": {
       "input_sha256": {
-        "bolgesel_ag.json": "252a5cbf2865f5b3ed788bd76faf29386f90f5fcf66a110a8ece43085a0d74a4",
-        "gorev_senaryosu_12_arac.json": "8589c7cde1508bbe263a54a17f92fccef5c27f2c77d97b9db221768197e68a2c",
-        "hafta7_bolgesel_kopruler_hasarli.json": "9567cf128597a5fd87027387f7df0c25f40f1edd5ef82e6590f2e2814d461609"
+        "scenario": {
+          "file": "bolgesel_ag.json",
+          "sha256": "252a5cbf2865f5b3ed788bd76faf29386f90f5fcf66a110a8ece43085a0d74a4"
+        },
+        "fleet": {
+          "file": "gorev_senaryosu_12_arac.json",
+          "sha256": "8589c7cde1508bbe263a54a17f92fccef5c27f2c77d97b9db221768197e68a2c"
+        },
+        "events": {
+          "file": "hafta7_bolgesel_kopruler_hasarli.json",
+          "sha256": "9567cf128597a5fd87027387f7df0c25f40f1edd5ef82e6590f2e2814d461609"
+        }
       },
       "time_min": 58.37500000000001,
       "steps": 93,
@@ -186,9 +234,18 @@
     },
     "tum_kopruler_kapali": {
       "input_sha256": {
-        "bolgesel_ag.json": "252a5cbf2865f5b3ed788bd76faf29386f90f5fcf66a110a8ece43085a0d74a4",
-        "gorev_senaryosu_12_arac.json": "8589c7cde1508bbe263a54a17f92fccef5c27f2c77d97b9db221768197e68a2c",
-        "hafta7_bolgesel_tum_kopruler_kapali.json": "2f9ca424711b87d61a8e3bb148261a2c6f1fc7d22a6e18ae036c2e7690d6603a"
+        "scenario": {
+          "file": "bolgesel_ag.json",
+          "sha256": "252a5cbf2865f5b3ed788bd76faf29386f90f5fcf66a110a8ece43085a0d74a4"
+        },
+        "fleet": {
+          "file": "gorev_senaryosu_12_arac.json",
+          "sha256": "8589c7cde1508bbe263a54a17f92fccef5c27f2c77d97b9db221768197e68a2c"
+        },
+        "events": {
+          "file": "hafta7_bolgesel_tum_kopruler_kapali.json",
+          "sha256": "2f9ca424711b87d61a8e3bb148261a2c6f1fc7d22a6e18ae036c2e7690d6603a"
+        }
       },
       "time_min": 45.335,
       "steps": 57,
