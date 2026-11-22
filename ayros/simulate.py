@@ -28,6 +28,11 @@ def _unique_keys(pairs):
     return result
 
 
+def _content_hash(path):
+    """Satır sonundan bağımsız SHA-256: Windows (CRLF) ve Linux (LF) kopyası aynı değeri verir."""
+    return sha256(path.read_bytes().replace(b"\r\n", b"\n")).hexdigest()
+
+
 def load_events(path, graph):
     """after_step bir varış adımıdır, dakika değildir. 0 başlangıçtır."""
     data = json.loads(Path(path).read_text(encoding="utf-8-sig"), object_pairs_hook=_unique_keys)
@@ -114,7 +119,7 @@ def main(argv=None):
         if args.json:
             payload = {"schema_version": 1, "algorithm": args.algorithm,
                        "damage_factor": args.damage_factor,
-                       "input_sha256": {path.name: sha256(path.read_bytes()).hexdigest() for path in inputs},
+                       "input_sha256": {path.name: _content_hash(path) for path in inputs},
                        "checkpoints": checkpoints, "final": state}
             args.json.parent.mkdir(parents=True, exist_ok=True)
             args.json.write_text(json.dumps(payload, ensure_ascii=False, indent=2, allow_nan=False) + "\n", encoding="utf-8")

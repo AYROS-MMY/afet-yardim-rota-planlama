@@ -10,7 +10,7 @@ Proje kökünde Python 3.11 veya daha yeni bir sürümle:
 py -3.11 scripts/run_simulation_examples.py
 ```
 
-Bu komut `output/hafta7/` içinde normal, kapanma, izolasyon ve bölgesel koşulların ayrı JSON kayıtlarını, kısa sonuç özetini ve `simulasyon.svg` görselini üretir. SVG tarayıcıda açılır. Canlı animasyon değildir; motorun gerçek kontrol noktalarından üretilmiş üç açıklayıcı durum görüntüsüdür.
+Bu komut `output/hafta7/` içinde küçük ağdaki üç koşulun, bölgesel ağın ve bölgesel ağdaki üç köprü olayının ayrı JSON kayıtlarını, kısa sonuç özetini, `simulasyon.svg` ve `bolgesel_kopru.svg` görsellerini üretir. SVG tarayıcıda açılır. Canlı animasyon değildir; motorun gerçek kontrol noktalarından üretilmiş üç açıklayıcı durum görüntüsüdür.
 
 ![Normal rota, yol kapanması ve bekleme durumları](simulasyon.svg)
 
@@ -39,6 +39,29 @@ py -3.11 -m ayros.simulate --scenario data/hafta7_mikro_ag.json --fleet data/haf
 
 `--steps 1` ile ilk varış adımında durulur. Bu adıma bağlı yol olayı varsa durmadan önce uygulanır. `--algorithm dijkstra` alternatif rota algoritmasını, `--damage-factor 2` hasarlı yol katsayısını seçer. Normal koşul için `--events` kaldırılır; izolasyon için `data/hafta7_yol_izolasyon.json` kullanılır.
 
+## Bölgesel ağda köprü olayları
+
+Küçük ağdaki kurallar büyük ağda da sınandı. Bölgesel ağda nehri geçen üç köprü (R178, R179, R180) vardır. Yol olayı ilk varış adımından sonra, 1,65. dakikada uygulanır. Aynı 12 araçlı plan dört koşulda yürütülür:
+
+| Koşul | Olay dosyası | S02 sağlık, H0→A11 | V04 lojistik, H2→A04 | Teslim |
+|---|---|---|---|---|
+| Olay yok | - | 53,575 dk | 52,835 dk | 455 / 930 koli |
+| R178 kapalı | `hafta7_bolgesel_kopru_kapanmasi.json` | 67,79 dk (yeni rota) | 52,835 dk | 455 / 930 koli |
+| R178 ve R180 hasarlı | `hafta7_bolgesel_kopruler_hasarli.json` | 58,375 dk | 57,635 dk | 455 / 930 koli |
+| Üç köprü kapalı | `hafta7_bolgesel_tum_kopruler_kapali.json` | Ulaşamadı, bekliyor | Ulaşamadı, bekliyor | 405 / 930 koli |
+
+- **Tek köprü kapanınca:** R178'i kullanan tek araç S02'dir. S02 bulunduğu yolu bitirir, 2,04. dakikada vardığı düğümden R179 üzerinden yeni rota bulur. Varış 14,2 dakika gecikir. Köprüyü kullanmayan 10 aracın varış zamanı değişmez.
+- **Köprüler hasarlıysa:** Köprü geçişi 4,8 dakikadan 9,6 dakikaya çıkar. Alternatif rotalar daha uzun olduğu için rota aynı kalır; S02 ve V04 4,8 dakika gecikir.
+- **Üç köprü kapanınca:** Nehrin iki yakası ayrılır. S02 ve V04 bekler. V04'teki 50 koli araçta ayrılmış kalır, teslim sayılmaz. A11'e sağlık ekibi ulaşamaz.
+
+![Bölgesel ağda R178 köprüsü kapanınca S02'nin ilk ve yeni rotası](bolgesel_kopru.svg)
+
+Tek koşulu çalıştırmak için:
+
+```powershell
+py -3.11 -m ayros.simulate --events data/hafta7_bolgesel_kopru_kapanmasi.json --json output/hafta7_kopru.json
+```
+
 ## Zaman ve olay kuralları
 
 `Simulation.step()` tüm filoyu sıradaki düğüme-varış zamanına taşır. Her araç kendi yol süresine göre ilerler; farklı uzunluktaki yollar tek bir dakika sayılmaz. Aynı anda ulaşan araçlar kimlik sırasıyla işlenir. Yol üstündeki aracın son düğümü `node`, aktif yolu `edge_id`, varacağı düğüm `next_node` alanındadır. `eta_min` başlangıca göre tahmini varış dakikasıdır. `completed_distance_km` yalnız tamamen geçilmiş yolların mesafesidir.
@@ -60,10 +83,10 @@ Atama başlangıçta bir kez yapılır; araç başına tek görev, görev başı
 - `ayros/simulation.py`: durum geçişleri, zaman, yeniden rota ve miktar hesabı; dosya/ekran işlemi içermez.
 - `ayros/simulate.py`: olay girdisi, CLI, Türkçe özet ve JSON; hesapları motor üzerinden çalıştırır.
 - `scripts/run_simulation_examples.py`: sabit deneyler ve kontrol noktalarından SVG; teslimat mantığını yeniden uygulamaz.
-- `tests/test_simulation.py`: 20 test; normal/alternatif/engellenen rota, tekrar varış, açılma, veri sırası, farklı hizmetler, zamanlama, hata sonrası durumun korunması, girdi koruması ve tekrarlanabilirlik.
+- `tests/test_simulation.py`: 24 test; normal/alternatif/engellenen rota, tekrar varış, açılma, veri sırası, farklı hizmetler, zamanlama, hata sonrası durumun korunması, girdi koruması, tekrarlanabilirlik, bölgesel ağda köprü kapanması/hasarı/izolasyonu ve yayımlanan deney kayıtlarının yeniden üretimle birebir eşleşmesi.
 
-Tam test kümesi 145 test metodudur. JSON çıktısı girdi SHA-256 değerlerini içerir. Çalışma zamanı veya hazırlanma tarihi eklenmediği için aynı girdiler aynı kaydı üretir. Bu sonuçlar sentetik senaryo doğrulamasıdır; saha başarısı ölçümü değildir.
+Tam test kümesi 149 test metodudur. Testler her gönderimde GitHub Actions üzerinde Windows ve Linux, Python 3.11 ve 3.13 ile çalışır. JSON çıktısı girdi SHA-256 değerlerini içerir. Çalışma zamanı veya hazırlanma tarihi eklenmediği için aynı girdiler aynı kaydı üretir. Bu sonuçlar sentetik senaryo doğrulamasıdır; saha başarısı ölçümü değildir.
 
 ## Kısa sunum akışı
 
-“Geçen hafta hangi aracın hangi göreve atanacağını planladık. Bu hafta bu planı zaman içinde yürüttük. Araç hedefe varmadan yükü teslim saymıyoruz. Küçük örnekte normal yol 4 dakika sürüyor. Araç K'ye ulaşınca yol kapanırsa bulunduğu yerden alternatif rota buluyor ve 8. dakikada ulaşıyor. İki yol da kapalıysa bekliyor; 100 koli araçta kalıyor. Aynı motoru büyük ağda da çalıştırdık. Bir sonraki hafta bu durumu haritaya bağlayıp kısmi teslimat kararını karşılaştıracağız.”
+“Geçen hafta hangi aracın hangi göreve atanacağını planladık. Bu hafta bu planı zaman içinde yürüttük. Araç hedefe varmadan yükü teslim saymıyoruz. Küçük örnekte normal yol 4 dakika sürüyor. Araç K'ye ulaşınca yol kapanırsa bulunduğu yerden alternatif rota buluyor ve 8. dakikada ulaşıyor. İki yol da kapalıysa bekliyor; 100 koli araçta kalıyor. Aynı motoru büyük ağda da çalıştırdık: R178 köprüsü kapanınca yalnız o köprüyü kullanan sağlık aracı yeniden rota buluyor ve 14 dakika gecikiyor; üç köprü birden kapanırsa nehrin öbür yakasına ulaşılamıyor. Bir sonraki hafta bu durumu haritaya bağlayıp kısmi teslimat kararını karşılaştıracağız.”

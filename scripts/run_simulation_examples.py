@@ -12,6 +12,13 @@ sys.path.insert(0, str(ROOT))
 from ayros.simulate import main as simulate
 from ayros.scenario import load_scenario
 
+# Bölgesel ağda köprü olayları. Hepsi ilk varış adımından sonra uygulanır.
+REGIONAL_EVENTS = {
+    'kopru_kapanmasi': 'R178 köprüsü kapalı',
+    'kopruler_hasarli': 'R178 ve R180 köprüleri hasarlı',
+    'tum_kopruler_kapali': 'Üç köprü de kapalı',
+}
+
 
 def number(value):
     return f'{value:.3f}'.rstrip('0').rstrip('.').replace('.', ',')
@@ -86,6 +93,132 @@ def draw_examples(graph, cases):
     return '\n'.join(svg) + '\n'
 
 
+def draw_bridge_experiment(scenario, cases):
+    """Bölgesel ağda R178 kapanınca S02'nin ilk ve yeni rotası; dört koşulun sonuç tablosu."""
+    graph = scenario.graph
+    points = [(n.x_km, n.y_km) for n in graph.nodes.values()] + list(scenario.river)
+    points += [p for road in graph.roads.values() for p in road.via]
+    xmin, xmax = min(x for x, _ in points), max(x for x, _ in points)
+    ymin, ymax = min(y for _, y in points), max(y for _, y in points)
+    scale = min(1100 / (xmax - xmin), 560 / (ymax - ymin))
+
+    def project(point):
+        return 50 + (point[0] - xmin) * scale, 690 - (point[1] - ymin) * scale
+
+    def road_points(road_id, start):
+        road = graph.roads[road_id]
+        via = road.via if road.source == start else tuple(reversed(road.via))
+        end = road.target if road.source == start else road.source
+        geometry = [(graph.nodes[start].x_km, graph.nodes[start].y_km), *via,
+                    (graph.nodes[end].x_km, graph.nodes[end].y_km)]
+        return ' '.join(f'{x:.1f},{y:.1f}' for x, y in map(project, geometry))
+
+    def path_lines(path, roads, color, width, dash=''):
+        dash = f' stroke-dasharray="{dash}"' if dash else ''
+        for start, road_id in zip(path, roads):
+            svg.append(f'<polyline points="{road_points(road_id, start)}" fill="none" stroke="{color}" '
+                       f'stroke-width="{width}" stroke-linejoin="round" stroke-linecap="round"{dash}/>')
+
+    def text(x, y, value, size=17, weight='400', color='#162438', anchor='start'):
+        svg.append(f'<text x="{x:.1f}" y="{y:.1f}" font-size="{size}" font-weight="{weight}" fill="{color}" '
+                   f'text-anchor="{anchor}">{escape(str(value))}</text>')
+
+    case = cases['kopru_kapanmasi']
+    initial = next(c['state'] for c in case['checkpoints'] if c['label'] == 'initial')
+    s02_initial = next(v for v in initial['vehicles'] if v['id'] == 'S02')
+    change = next(e for e in case['final']['events'] if e['kind'] == 'route_changed' and e['vehicle_id'] == 'S02')
+    old_path, old_roads = s02_initial['remaining_path'], s02_initial['remaining_roads']
+    index = old_path.index(change['node'])
+    done_path, done_roads = old_path[:index + 1], old_roads[:index]
+    new_path = change['new_path']
+    final_roads = case['final']['roads']
+
+    def connecting_road(a, b):
+        # Yeni yol kimlikleri, olay günlüğündeki düğüm dizisinden ve son yol durumlarından bulunur.
+        options = [r for r in graph.roads.values() if {r.source, r.target} == {a, b}
+                   and final_roads[r.id] != 'closed']
+        return min(options, key=lambda r: (r.travel_time_min, r.id)).id
+
+    new_roads = [connecting_road(a, b) for a, b in zip(new_path, new_path[1:])]
+    arrivals = {key: cases[key]['final'] for key in ('bolgesel', *REGIONAL_EVENTS)}
+
+    def arrival(key, vehicle_id):
+        vehicle = next(v for v in arrivals[key]['vehicles'] if v['id'] == vehicle_id)
+        if vehicle['arrival_at'] is None:
+            return 'Ulaşamadı, bekliyor'
+        return f'{number(vehicle["arrival_at"])} dk'
+
+    height = 1010
+    svg = [f'<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="{height}" viewBox="0 0 1200 {height}" '
+           'role="img" aria-labelledby="title desc">',
+           '<title id="title">Bölgesel ağda köprü kapanınca yeniden rota</title>',
+           '<desc id="desc">R178 köprüsü kapanınca S02 sağlık aracının ilk ve yeni rotası ile dört koşulun varış süreleri.</desc>',
+           f'<rect width="1200" height="{height}" fill="white"/>', '<g font-family="Arial, sans-serif">']
+    text(30, 40, 'Bölgesel ağda köprü kapanınca ne olur?', 26, '700')
+    text(30, 72, '180 düğüm, 348 yol, 3 köprü. S02 sağlık aracı H0 merkezinden A11 bölgesine gidiyor.', 17, color='#43536b')
+    svg.append('<rect x="20" y="90" width="1160" height="620" rx="10" fill="#f8fafc" stroke="#d6deea"/>')
+    river = ' '.join(f'{x:.1f},{y:.1f}' for x, y in map(project, scenario.river))
+    svg.append(f'<polyline points="{river}" fill="none" stroke="#dbeafe" stroke-width="26"/>')
+    for road in graph.roads.values():
+        bridge = road.road_type == 'bridge'
+        svg.append(f'<polyline points="{road_points(road.id, road.source)}" fill="none" '
+                   f'stroke="{"#64748b" if bridge else "#c7d0dc"}" stroke-width="{5 if bridge else 1.4}"/>')
+    path_lines(old_path, old_roads, '#ea580c', 5, '10 7')
+    path_lines(done_path, done_roads, '#2453d6', 6)
+    path_lines(new_path, new_roads, '#2453d6', 6)
+    for road_id in ('R178', 'R179', 'R180'):
+        road = graph.roads[road_id]
+        x1, y1 = project((graph.nodes[road.source].x_km, graph.nodes[road.source].y_km))
+        x2, y2 = project((graph.nodes[road.target].x_km, graph.nodes[road.target].y_km))
+        if road_id == 'R178':
+            svg.append(f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="#c52835" '
+                       'stroke-width="7" stroke-dasharray="7 5"/>')
+            cx, cy = (x1 + x2) / 2, (y1 + y2) / 2
+            svg.append(f'<path d="M{cx-11:.1f} {cy-11:.1f} L{cx+11:.1f} {cy+11:.1f} M{cx+11:.1f} {cy-11:.1f} '
+                       f'L{cx-11:.1f} {cy+11:.1f}" stroke="#c52835" stroke-width="5"/>')
+        text((x1 + x2) / 2, min(y1, y2) - 16, f'{road_id} köprü', 15, '700',
+             '#c52835' if road_id == 'R178' else '#475569', 'middle')
+    for node in graph.nodes.values():
+        x, y = project((node.x_km, node.y_km))
+        if node.node_type.value == 'aid_center':
+            svg.append(f'<rect x="{x-9:.1f}" y="{y-9:.1f}" width="18" height="18" fill="#18273d"/>')
+            text(x + 14, y + 6, node.id, 16, '700')
+        elif node.id == 'A11':
+            svg.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="13" fill="white" stroke="#18273d" stroke-width="4"/>')
+            text(x + 18, y + 6, 'A11 hedef', 16, '700')
+    vx, vy = project((graph.nodes[change['node']].x_km, graph.nodes[change['node']].y_km))
+    svg.append(f'<circle cx="{vx:.1f}" cy="{vy:.1f}" r="14" fill="white" stroke="#2453d6" stroke-width="4"/>')
+    text(vx - 10, vy + 38, f'S02 burada yeni rota buldu ({number(change["time_min"])}. dk)', 15, '700', '#2453d6')
+    svg[-1] = svg[-1].replace('<text ', '<text paint-order="stroke" stroke="white" stroke-width="5" ', 1)
+    legend = [('#ea580c', '10 7', f'İlk rota: varış {arrival("bolgesel", "S02")}'),
+              ('#2453d6', '', f'Gerçekleşen rota: varış {arrival("kopru_kapanmasi", "S02")}'),
+              ('#c52835', '7 5', 'Kapanan köprü (R178)')]
+    for i, (color, dash, label) in enumerate(legend):
+        y = 112 + i * 26
+        dash = f' stroke-dasharray="{dash}"' if dash else ''
+        svg.append(f'<line x1="40" y1="{y}" x2="88" y2="{y}" stroke="{color}" stroke-width="5"{dash}/>')
+        text(98, y + 6, label, 16)
+    top = 740
+    text(30, top, 'Dört koşulun sonucu (yol olayı ilk varış adımından sonra, 1,65. dakikada uygulanır)', 19, '700')
+    columns = (30, 370, 640, 900)
+    headers = ('Koşul', 'S02 sağlık, H0→A11', 'V04 lojistik, H2→A04', 'Teslim edilen koli')
+    svg.append(f'<rect x="20" y="{top+14}" width="1160" height="38" fill="#e7eef8"/>')
+    for x, value in zip(columns, headers):
+        text(x, top + 40, value, 16, '700')
+    rows = [('Olay yok', 'bolgesel')] + [(label, key) for key, label in REGIONAL_EVENTS.items()]
+    for i, (label, key) in enumerate(rows):
+        y = top + 82 + i * 40
+        svg.append(f'<line x1="20" y1="{y+14}" x2="1180" y2="{y+14}" stroke="#d6deea"/>')
+        values = (label, arrival(key, 'S02'), arrival(key, 'V04'),
+                  f'{arrivals[key]["logistics"]["delivered"]} / {arrivals[key]["logistics"]["requested"]}')
+        for x, value in zip(columns, values):
+            text(x, y, value, 16, color='#c52835' if 'Ulaşamadı' in value else '#162438')
+    text(30, height - 18, 'Hasarlı köprüde geçiş süresi 2 katına çıkar, rota aynı kalır. Köprüyü kullanmayan araçların rotası değişmez.',
+         15, color='#43536b')
+    svg.append('</g></svg>')
+    return '\n'.join(svg) + '\n'
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', type=Path, default=ROOT / 'output/hafta7')
@@ -93,9 +226,10 @@ def main(argv=None):
     args.output.mkdir(parents=True, exist_ok=True)
     cases = {}
     for key, event in [('normal', None), ('kapanma', 'hafta7_yol_kapanmasi.json'),
-                       ('izolasyon', 'hafta7_yol_izolasyon.json'), ('bolgesel', None)]:
+                       ('izolasyon', 'hafta7_yol_izolasyon.json'), ('bolgesel', None),
+                       *[(key, f'hafta7_bolgesel_{key}.json') for key in REGIONAL_EVENTS]]:
         command = ['--json', str(args.output / f'{key}.json')]
-        if key != 'bolgesel':
+        if key not in ('bolgesel', *REGIONAL_EVENTS):
             command += ['--scenario', str(ROOT/'data/hafta7_mikro_ag.json'),
                         '--fleet', str(ROOT/'data/hafta7_mikro_arac.json')]
         if event:
@@ -113,10 +247,14 @@ def main(argv=None):
             'blocked_vehicles': sum(v['status'] == 'blocked' for v in state['vehicles']),
             'teams_arrived': sum(t['team_arrived'] for t in state['tasks']),
             'unassigned_tasks': sum(t['status'] == 'unassigned' for t in state['tasks']),
+            'rerouted_vehicles': sorted(v['id'] for v in state['vehicles'] if v['reroutes']),
+            'vehicle_arrivals': {v['id']: v['arrival_at'] for v in state['vehicles'] if v['task_id']},
         }
     (args.output/'sonuclar.json').write_text(json.dumps(summary, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
     graph = load_scenario(ROOT/'data/hafta7_mikro_ag.json').graph
     (args.output/'simulasyon.svg').write_text(draw_examples(graph, cases), encoding='utf-8')
+    regional = load_scenario(ROOT/'data/bolgesel_ag.json')
+    (args.output/'bolgesel_kopru.svg').write_text(draw_bridge_experiment(regional, cases), encoding='utf-8')
     print(f'Deney özeti ve görsel: {args.output}')
     return 0
 

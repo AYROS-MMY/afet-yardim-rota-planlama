@@ -162,6 +162,59 @@ class SimulationTests(unittest.TestCase):
         self.assertEqual(final['logistics']['unassigned'], 475)
         self.assertEqual(sum(t['status'] == 'unassigned' for t in final['tasks']), 5)
 
+    def run_regional_event(self, event_file):
+        graph = load_scenario(ROOT / 'data/bolgesel_ag.json').graph
+        fleet = load_dispatch(ROOT / 'data/gorev_senaryosu_12_arac.json', graph)
+        events = load_events(ROOT / 'data' / event_file, graph)
+        sim = Simulation(graph, fleet)
+        while sim.snapshot()['step'] < 1:
+            sim.step()
+        sim.change_roads(events[1])
+        final = self.finish(sim)
+        return final, {v['id']: v for v in final['vehicles']}
+
+    def test_regional_bridge_closure_reroutes_only_the_affected_vehicle(self):
+        final, vehicles = self.run_regional_event('hafta7_bolgesel_kopru_kapanmasi.json')
+        self.assertEqual([v for v in vehicles if vehicles[v]['reroutes']], ['S02'])
+        self.assertAlmostEqual(vehicles['S02']['arrival_at'], 67.79)
+        self.assertAlmostEqual(vehicles['V04']['arrival_at'], 52.835)
+        change = next(e for e in final['events'] if e['kind'] == 'route_changed')
+        self.assertNotEqual(change['old_path'], change['new_path'])
+        self.assertIn('K003', change['new_path'])
+        self.assertNotIn('K001', change['new_path'][1:])
+        self.assertEqual(final['logistics']['delivered'], 455)
+
+    def test_regional_damaged_bridges_keep_route_and_double_bridge_time(self):
+        final, vehicles = self.run_regional_event('hafta7_bolgesel_kopruler_hasarli.json')
+        # Köprü temel süresi 4,8 dk; hasar katsayısı 2 olduğundan gecikme 4,8 dk'dır.
+        self.assertAlmostEqual(vehicles['S02']['arrival_at'], 53.575 + 4.8)
+        self.assertAlmostEqual(vehicles['V04']['arrival_at'], 52.835 + 4.8)
+        for event in final['events']:
+            if event['kind'] == 'route_changed':
+                self.assertEqual(event['old_path'], event['new_path'])
+
+    def test_closing_all_bridges_holds_cross_river_vehicles(self):
+        final, vehicles = self.run_regional_event('hafta7_bolgesel_tum_kopruler_kapali.json')
+        self.assertEqual({v for v in vehicles if vehicles[v]['status'] == 'blocked'}, {'S02', 'V04'})
+        self.assertIsNone(vehicles['S02']['arrival_at'])
+        self.assertEqual(final['logistics']['delivered'], 405)
+        self.assertEqual(final['logistics']['reserved'], 50)
+        tasks = {t['id']: t for t in final['tasks']}
+        self.assertFalse(tasks['A11-S']['team_arrived'])
+        self.assertEqual(tasks['A04-L']['status'], 'blocked')
+
+    def test_published_experiment_records_match_a_fresh_run(self):
+        with tempfile.TemporaryDirectory() as directory:
+            run = subprocess.run([sys.executable, 'scripts/run_simulation_examples.py', '--output', directory],
+                                 cwd=ROOT, capture_output=True)
+            self.assertEqual(run.returncode, 0, run.stderr)
+            fresh = json.loads((Path(directory) / 'sonuclar.json').read_text(encoding='utf-8'))
+            published = json.loads((ROOT / 'docs/deneyler/hafta7_sonuclar.json').read_text(encoding='utf-8'))
+            self.assertEqual(fresh, published)
+            for name in ('simulasyon.svg', 'bolgesel_kopru.svg'):
+                self.assertEqual((Path(directory) / name).read_text(encoding='utf-8'),
+                                 (ROOT / 'docs' / name).read_text(encoding='utf-8'))
+
     def test_legacy_fleet_and_algorithms(self):
         graph = load_scenario(ROOT / 'data/bolgesel_ag.json').graph
         fleet = load_dispatch(ROOT / 'data/arac_senaryosu.json', graph)
