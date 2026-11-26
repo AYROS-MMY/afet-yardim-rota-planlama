@@ -1,0 +1,282 @@
+{
+  "schema_version": 1,
+  "algorithm": "astar",
+  "damage_factor": 2,
+  "cases": {
+    "normal": {
+      "input_sha256": {
+        "scenario": {
+          "file": "hafta7_mikro_ag.json",
+          "sha256": "e387ffd400efb4745a10bc0f6af23bc91e22c21e22829a767f2552f994c472e3"
+        },
+        "fleet": {
+          "file": "hafta7_mikro_arac.json",
+          "sha256": "5fc8e5f53452cf31102e4c3c6d9810e6e13113c55bb8de3fdfbbbf7010fc6ed3"
+        }
+      },
+      "time_min": 4.0,
+      "steps": 2,
+      "logistics": {
+        "requested": 100,
+        "delivered": 100,
+        "reserved": 0,
+        "unassigned": 0,
+        "remaining": 0
+      },
+      "arrived_vehicles": 1,
+      "blocked_vehicles": 0,
+      "teams_arrived": 0,
+      "unassigned_tasks": 0,
+      "rerouted_vehicles": [],
+      "vehicle_arrivals": {
+        "V1": 4.0
+      }
+    },
+    "kapanma": {
+      "input_sha256": {
+        "scenario": {
+          "file": "hafta7_mikro_ag.json",
+          "sha256": "e387ffd400efb4745a10bc0f6af23bc91e22c21e22829a767f2552f994c472e3"
+        },
+        "fleet": {
+          "file": "hafta7_mikro_arac.json",
+          "sha256": "5fc8e5f53452cf31102e4c3c6d9810e6e13113c55bb8de3fdfbbbf7010fc6ed3"
+        },
+        "events": {
+          "file": "hafta7_yol_kapanmasi.json",
+          "sha256": "9ee28597bd6e2ff458f33d7b0ae2a2ff95fe2f78e6485720044bdf4ed936676f"
+        }
+      },
+      "time_min": 8.0,
+      "steps": 3,
+      "logistics": {
+        "requested": 100,
+        "delivered": 100,
+        "reserved": 0,
+        "unassigned": 0,
+        "remaining": 0
+      },
+      "arrived_vehicles": 1,
+      "blocked_vehicles": 0,
+      "teams_arrived": 0,
+      "unassigned_tasks": 0,
+      "rerouted_vehicles": [
+        "V1"
+      ],
+      "vehicle_arrivals": {
+        "V1": 8.0
+      }
+    },
+    "izolasyon": {
+      "input_sha256": {
+        "scenario": {
+          "file": "hafta7_mikro_ag.json",
+          "sha256": "e387ffd400efb4745a10bc0f6af23bc91e22c21e22829a767f2552f994c472e3"
+        },
+        "fleet": {
+          "file": "hafta7_mikro_arac.json",
+          "sha256": "5fc8e5f53452cf31102e4c3c6d9810e6e13113c55bb8de3fdfbbbf7010fc6ed3"
+        },
+        "events": {
+          "file": "hafta7_yol_izolasyon.json",
+          "sha256": "5e47f6fd67d5efb12a2ccae672ee0572eaeb5b2236fa28c60b828e160967be24"
+        }
+      },
+      "time_min": 2.0,
+      "steps": 1,
+      "logistics": {
+        "requested": 100,
+        "delivered": 0,
+        "reserved": 100,
+        "unassigned": 0,
+        "remaining": 100
+      },
+      "arrived_vehicles": 0,
+      "blocked_vehicles": 1,
+      "teams_arrived": 0,
+      "unassigned_tasks": 0,
+      "rerouted_vehicles": [
+        "V1"
+      ],
+      "vehicle_arrivals": {
+        "V1": null
+      }
+    },
+    "bolgesel": {
+      "input_sha256": {
+        "scenario": {
+          "file": "bolgesel_ag.json",
+          "sha256": "252a5cbf2865f5b3ed788bd76faf29386f90f5fcf66a110a8ece43085a0d74a4"
+        },
+        "fleet": {
+          "file": "gorev_senaryosu_12_arac.json",
+          "sha256": "8589c7cde1508bbe263a54a17f92fccef5c27f2c77d97b9db221768197e68a2c"
+        }
+      },
+      "time_min": 53.575,
+      "steps": 93,
+      "logistics": {
+        "requested": 930,
+        "delivered": 455,
+        "reserved": 0,
+        "unassigned": 475,
+        "remaining": 475
+      },
+      "arrived_vehicles": 11,
+      "blocked_vehicles": 0,
+      "teams_arrived": 4,
+      "unassigned_tasks": 5,
+      "rerouted_vehicles": [],
+      "vehicle_arrivals": {
+        "K01": 36.395,
+        "K02": 12.14,
+        "S01": 12.14,
+        "S02": 53.575,
+        "V01": 36.395,
+        "V02": 22.580000000000002,
+        "V03": 30.584999999999997,
+        "V04": 52.83500000000001,
+        "V06": 21.689999999999998,
+        "V07": 45.335,
+        "V08": 18.98
+      }
+    },
+    "kopru_kapanmasi": {
+      "input_sha256": {
+        "scenario": {
+          "file": "bolgesel_ag.json",
+          "sha256": "252a5cbf2865f5b3ed788bd76faf29386f90f5fcf66a110a8ece43085a0d74a4"
+        },
+        "fleet": {
+          "file": "gorev_senaryosu_12_arac.json",
+          "sha256": "8589c7cde1508bbe263a54a17f92fccef5c27f2c77d97b9db221768197e68a2c"
+        },
+        "events": {
+          "file": "hafta7_bolgesel_kopru_kapanmasi.json",
+          "sha256": "201bb8ced925fe77720fc49e12870f50368a24b644d887537bfbba38d505e1f1"
+        }
+      },
+      "time_min": 67.78999999999999,
+      "steps": 93,
+      "logistics": {
+        "requested": 930,
+        "delivered": 455,
+        "reserved": 0,
+        "unassigned": 475,
+        "remaining": 475
+      },
+      "arrived_vehicles": 11,
+      "blocked_vehicles": 0,
+      "teams_arrived": 4,
+      "unassigned_tasks": 5,
+      "rerouted_vehicles": [
+        "S02"
+      ],
+      "vehicle_arrivals": {
+        "K01": 36.395,
+        "K02": 12.14,
+        "S01": 12.14,
+        "S02": 67.78999999999999,
+        "V01": 36.395,
+        "V02": 22.580000000000002,
+        "V03": 30.584999999999997,
+        "V04": 52.83500000000001,
+        "V06": 21.689999999999998,
+        "V07": 45.335,
+        "V08": 18.98
+      }
+    },
+    "kopruler_hasarli": {
+      "input_sha256": {
+        "scenario": {
+          "file": "bolgesel_ag.json",
+          "sha256": "252a5cbf2865f5b3ed788bd76faf29386f90f5fcf66a110a8ece43085a0d74a4"
+        },
+        "fleet": {
+          "file": "gorev_senaryosu_12_arac.json",
+          "sha256": "8589c7cde1508bbe263a54a17f92fccef5c27f2c77d97b9db221768197e68a2c"
+        },
+        "events": {
+          "file": "hafta7_bolgesel_kopruler_hasarli.json",
+          "sha256": "9567cf128597a5fd87027387f7df0c25f40f1edd5ef82e6590f2e2814d461609"
+        }
+      },
+      "time_min": 58.37500000000001,
+      "steps": 93,
+      "logistics": {
+        "requested": 930,
+        "delivered": 455,
+        "reserved": 0,
+        "unassigned": 475,
+        "remaining": 475
+      },
+      "arrived_vehicles": 11,
+      "blocked_vehicles": 0,
+      "teams_arrived": 4,
+      "unassigned_tasks": 5,
+      "rerouted_vehicles": [
+        "S02",
+        "V04"
+      ],
+      "vehicle_arrivals": {
+        "K01": 36.395,
+        "K02": 12.14,
+        "S01": 12.14,
+        "S02": 58.37500000000001,
+        "V01": 36.395,
+        "V02": 22.580000000000002,
+        "V03": 30.584999999999997,
+        "V04": 57.635000000000005,
+        "V06": 21.689999999999998,
+        "V07": 45.335,
+        "V08": 18.98
+      }
+    },
+    "tum_kopruler_kapali": {
+      "input_sha256": {
+        "scenario": {
+          "file": "bolgesel_ag.json",
+          "sha256": "252a5cbf2865f5b3ed788bd76faf29386f90f5fcf66a110a8ece43085a0d74a4"
+        },
+        "fleet": {
+          "file": "gorev_senaryosu_12_arac.json",
+          "sha256": "8589c7cde1508bbe263a54a17f92fccef5c27f2c77d97b9db221768197e68a2c"
+        },
+        "events": {
+          "file": "hafta7_bolgesel_tum_kopruler_kapali.json",
+          "sha256": "2f9ca424711b87d61a8e3bb148261a2c6f1fc7d22a6e18ae036c2e7690d6603a"
+        }
+      },
+      "time_min": 45.335,
+      "steps": 57,
+      "logistics": {
+        "requested": 930,
+        "delivered": 405,
+        "reserved": 50,
+        "unassigned": 475,
+        "remaining": 525
+      },
+      "arrived_vehicles": 9,
+      "blocked_vehicles": 2,
+      "teams_arrived": 3,
+      "unassigned_tasks": 5,
+      "rerouted_vehicles": [
+        "S02",
+        "V04"
+      ],
+      "vehicle_arrivals": {
+        "K01": 36.395,
+        "K02": 12.14,
+        "S01": 12.14,
+        "S02": null,
+        "V01": 36.395,
+        "V02": 22.580000000000002,
+        "V03": 30.584999999999997,
+        "V04": null,
+        "V06": 21.689999999999998,
+        "V07": 45.335,
+        "V08": 18.98
+      }
+    }
+  }
+}

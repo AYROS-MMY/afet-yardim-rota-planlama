@@ -1,12 +1,14 @@
 # 9. hafta finaline kadar geliştirme planı
 
-Bu plan, 6. hafta sonunda çalışan çizge, Dijkstra/A*, ihtiyaç puanı ve üç hizmet türünde bağımsız görevlere tek turluk araç atamasının üzerine kuruludur. Bölge ihtiyaç paneli ve araç seçilebilir HTML görünümü hesaplanmış başlangıç planını gösterir. Hareket, olay işleme ve teslimat takibi henüz uygulanmadı.
+Bu plan, 6. hafta sonunda çalışan çizge, Dijkstra/A*, ihtiyaç puanı ve üç hizmet türünde bağımsız görevlere tek turluk araç atamasının üzerine kuruludur. Bölge ihtiyaç paneli ve araç seçilebilir HTML görünümü hesaplanmış başlangıç planını gösterir. 7. haftada hareket, yol olayları ve teslimat takibi ayrı bir hesap motorunda tamamlandı; mevcut HTML ekranı başlangıç planını göstermeye devam eder.
 
-## 7. hafta — Durum takibi ve yeniden planlama
+## 7. hafta — Tamamlanan durum takibi ve yeniden planlama
 
-Araç için planlandı, yolda, teslim edildi ve yol bulunamadı durumları tanımlanacak. Simülasyon düğümler arasında adım adım ilerleyecek. İlk sürümde yol olayı araç bir düğümdeyken uygulanacak; yol ortasında konum ve dönüş kuralı eklenmeyecek. Yol kapanınca yalnızca etkilenen görevin kalan rotası mevcut düğümden aynı hedefe yeniden hesaplanacak. Alternatif yoksa araç bekleyecek; olay ve gerekçe kaydedilecek. Hedefe varış tek sefer sayılacak.
+Araç konumu ve görev durumu zaman içinde izlenir. Her adım sıradaki düğüme varışa ilerler; aynı anda varan araçlar kimlik sırasıyla işlenir. Kontrol noktalarında yol değişimi uygulanır. Üzerinde araç olan yol değiştirilemez; ilerideki rotası etkilenen araç mevcut yolunu tamamlayıp ulaştığı düğümden aynı hedefe yeniden rota hesaplar. Alternatif yoksa bekler. Başlangıç ataması korunur; araç merkeze geri taşınmaz. Teslimat yalnız hedefe varıldığında bir kez sayılır. Sağlık/kurtarmada ekip varışı kaydedilir.
 
-Kabul koşulları: araç merkezine geri ışınlanmaz; kapanan yol yeni rotaya alınmaz; etkilenmeyen görev değişmez; alternatif bulunamadığında açık bekleme durumu vardır; tekrar ilerletmede teslimat iki kez sayılmaz. Önce komut satırı ve testlerle doğrulanacak.
+Doğrulandı: küçük ağda normal 4 dakika, alternatif rota 8 dakika; iki çıkış kapalıyken 0 teslim ve araçta 100 koli. Bölgesel örnekte 11 araç varışı, 455 koli teslimi, 4 ekip varışı ve 475 koli açık ihtiyaç. Bölgesel ağda R178 köprüsü kapanınca yalnız S02 yeniden rota bulur (53,575 → 67,79 dk); üç köprü kapanınca S02 ve V04 bekler, teslim 405 koliye iner. 85 yolun tek tek kapatıldığı kritiklik analizinde en kritik yol H0 merkezinin çıkışı R079 oldu (23,15 dk toplam gecikme); hiçbir tek yol kapanması aracı hedefsiz bırakmadı. 27 yeni testle tüm proje 152 teste ulaştı; testler GitHub Actions ile her gönderimde çalışır. Olay günlüğü ve SVG karşılaştırması üretilebilir. Ayrıntılar: [Simülasyon kılavuzu](simulasyon.md).
+
+Kabul koşulları karşılandı: mevcut konumdan yeniden rota, kapalı yola girmeme, etkilenmeyen görevin korunması, alternatif yokken açık bekleme durumu ve çift sayılmayan teslimat. Simülasyon komut satırında çalışır; canlı harita bağlantısı 8. haftadır. Başlangıçta atanmayan görevler otomatik yeniden atanmaz. Bütün araçlar durduğunda zaman ilerlemez; bekleyen araca yol açılması aynı kontrol noktasında API üzerinden uygulanabilir. Süreye bağlı olay kuyruğu bu aşamanın kapsamına alınmadı.
 
 ## 8. hafta — Kısmi teslimat, karar karşılaştırması ve arayüz
 
@@ -30,4 +32,4 @@ Kabul koşulları: tek belgelenmiş başlangıç akışı; tekrarlanabilir senar
 
 Global filo optimumu, gerçek şehir/OSM verisi, canlı saha entegrasyonu, stok, çok duraklı tur final kapsamı dışında kalacak. Mevcut açgözlü yöntemin büyük aracı erken tüketebilmesi testli bir sınırlamadır. Bazı görevlere ilk turda atama yapılamaması veri/kaynak kısıtlarının sonucudur; başarılı teslimat oranı veya gerçek afet performansı değildir.
 
-En büyük takvim riski 7. haftadaki durum ve olay mantığıdır. Sıkışma halinde animasyon ve görsel efektler azaltılacak; doğrulanmış adımlı simülasyon ve yeniden planlama korunacak. 9. haftaya temel algoritma geliştirmesi bırakılmayacak. Hoca ayrıca zorunlu özellik belirtirse bu kapsam yeniden değerlendirilmeli.
+7. haftanın durum ve olay motoru tamamlandı. Kalan başlıca takvim riski 8. haftadaki kısmi teslimat ile harita bağlantısının birlikte geliştirilmesidir. Sıkışma halinde animasyon ve görsel efektler azaltılacak; doğrulanmış adımlı simülasyon ve yeniden planlama korunacak. 9. haftaya temel algoritma geliştirmesi bırakılmayacak. Hoca ayrıca zorunlu özellik belirtirse bu kapsam yeniden değerlendirilmeli.

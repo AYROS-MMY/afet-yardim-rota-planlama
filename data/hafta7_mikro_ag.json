@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "directed": false,
+  "coordinate_system": "cartesian_km",
+  "name": "7. hafta mikro ağ",
+  "description": "K düğümünde R2 kapanırsa B üzerinden alternatif rota.",
+  "nodes": [
+    {
+      "id": "H0",
+      "name": "Merkez",
+      "node_type": "aid_center",
+      "x_km": 0,
+      "y_km": 0
+    },
+    {
+      "id": "K",
+      "name": "Kavşak",
+      "node_type": "intersection",
+      "x_km": 1,
+      "y_km": 0
+    },
+    {
+      "id": "B",
+      "name": "Alternatif",
+      "node_type": "intersection",
+      "x_km": 1,
+      "y_km": 1
+    },
+    {
+      "id": "A",
+      "name": "Afet noktası",
+      "node_type": "disaster_area",
+      "x_km": 2,
+      "y_km": 0,
+      "affected_count": 100,
+      "injured_count": 10,
+      "urgency_level": 5
+    }
+  ],
+  "roads": [
+    {
+      "id": "R1",
+      "source": "H0",
+      "target": "K",
+      "distance_km": 1,
+      "travel_time_min": 2,
+      "status": "open"
+    },
+    {
+      "id": "R2",
+      "source": "K",
+      "target": "A",
+      "distance_km": 1,
+      "travel_time_min": 2,
+      "status": "open"
+    },
+    {
+      "id": "R3",
+      "source": "K",
+      "target": "B",
+      "distance_km": 1,
+      "travel_time_min": 3,
+      "status": "open"
+    },
+    {
+      "id": "R4",
+      "source": "B",
+      "target": "A",
+      "distance_km": 1.5,
+      "travel_time_min": 3,
+      "status": "open"
+    }
+  ]
+}

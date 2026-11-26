@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "events": [
+    {
+      "after_step": 1,
+      "changes": {
+        "R2": "closed",
+        "R3": "closed"
+      }
+    }
+  ]
+}

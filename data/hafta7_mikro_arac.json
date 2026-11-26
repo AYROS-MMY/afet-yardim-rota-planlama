@@ -1,0 +1,21 @@
+{
+  "schema_version": 2,
+  "vehicles": [
+    {
+      "id": "V1",
+      "center": "H0",
+      "capacity": 120,
+      "available": true,
+      "service": "logistics"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "A-L",
+      "target": "A",
+      "service": "logistics",
+      "quantity": 100,
+      "urgency": 5
+    }
+  ]
+}
