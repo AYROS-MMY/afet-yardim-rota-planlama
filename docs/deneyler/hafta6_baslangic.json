@@ -1,0 +1,871 @@
+{
+  "schema_version": 2,
+  "strategy": "task_urgency_then_area_score_greedy_single_round",
+  "algorithm": "astar",
+  "cost_model": {
+    "damaged_factor": 2
+  },
+  "policy": {
+    "urgency_weight": 0.5,
+    "injured_weight": 0.3,
+    "affected_weight": 0.2,
+    "injured_reference": 100,
+    "affected_reference": 500
+  },
+  "scenario_sha256": "387c1331bb0a3d5ddb235a92aec221c1d69f93492b05b9418c5b1d9c0505f574",
+  "fleet_sha256": "917c3b52b83d006b0913b7399799a841a95c8e4cc6ca8ee93633a458e721e19a",
+  "vehicles": [
+    {
+      "id": "V01",
+      "center": "H0",
+      "capacity": 120,
+      "available": true,
+      "service": "logistics"
+    },
+    {
+      "id": "V02",
+      "center": "H0",
+      "capacity": 80,
+      "available": true,
+      "service": "logistics"
+    },
+    {
+      "id": "V03",
+      "center": "H1",
+      "capacity": 150,
+      "available": true,
+      "service": "logistics"
+    },
+    {
+      "id": "V04",
+      "center": "H2",
+      "capacity": 100,
+      "available": true,
+      "service": "logistics"
+    },
+    {
+      "id": "V05",
+      "center": "H2",
+      "capacity": 200,
+      "available": false,
+      "service": "logistics"
+    },
+    {
+      "id": "V06",
+      "center": "H1",
+      "capacity": 60,
+      "available": true,
+      "service": "logistics"
+    },
+    {
+      "id": "S01",
+      "center": "H2",
+      "capacity": 1,
+      "available": true,
+      "service": "medical"
+    },
+    {
+      "id": "S02",
+      "center": "H0",
+      "capacity": 1,
+      "available": true,
+      "service": "medical"
+    },
+    {
+      "id": "K01",
+      "center": "H0",
+      "capacity": 1,
+      "available": true,
+      "service": "rescue"
+    },
+    {
+      "id": "K02",
+      "center": "H2",
+      "capacity": 1,
+      "available": true,
+      "service": "rescue"
+    },
+    {
+      "id": "V07",
+      "center": "H1",
+      "capacity": 100,
+      "available": true,
+      "service": "logistics"
+    },
+    {
+      "id": "V08",
+      "center": "H0",
+      "capacity": 100,
+      "available": true,
+      "service": "logistics"
+    }
+  ],
+  "entries": [
+    {
+      "rank": 1,
+      "target": "A08",
+      "score": 63.24,
+      "demand": 120,
+      "unit": "koli",
+      "service": "logistics",
+      "task": {
+        "id": "A08-L",
+        "target": "A08",
+        "service": "logistics",
+        "quantity": 120,
+        "urgency": 5
+      },
+      "status": "assigned",
+      "vehicle": {
+        "id": "V03",
+        "center": "H1",
+        "capacity": 150,
+        "available": true,
+        "service": "logistics"
+      },
+      "route": {
+        "found": true,
+        "path": [
+          "H1",
+          "K124",
+          "K024",
+          "K074",
+          "K052",
+          "K100",
+          "K146",
+          "K122",
+          "K102",
+          "K058",
+          "K072",
+          "K148",
+          "A08"
+        ],
+        "road_ids": [
+          "R190",
+          "R062",
+          "R057",
+          "R293",
+          "R153",
+          "R072",
+          "R157",
+          "R078",
+          "R046",
+          "R081",
+          "R160",
+          "R042"
+        ],
+        "cost_min": 30.584999999999997,
+        "distance_km": 13.64,
+        "base_time_min": 28.885,
+        "settled_nodes": 36,
+        "elapsed_ms": 0.6883000023663044,
+        "algorithm": "astar",
+        "settled_order": []
+      }
+    },
+    {
+      "rank": 2,
+      "target": "A08",
+      "score": 63.24,
+      "demand": 1,
+      "unit": "ekip",
+      "service": "medical",
+      "task": {
+        "id": "A08-S",
+        "target": "A08",
+        "service": "medical",
+        "quantity": 1,
+        "urgency": 5
+      },
+      "status": "assigned",
+      "vehicle": {
+        "id": "S01",
+        "center": "H2",
+        "capacity": 1,
+        "available": true,
+        "service": "medical"
+      },
+      "route": {
+        "found": true,
+        "path": [
+          "H2",
+          "K106",
+          "K082",
+          "K092",
+          "K054",
+          "A08"
+        ],
+        "road_ids": [
+          "R223",
+          "R004",
+          "R134",
+          "R166",
+          "R116"
+        ],
+        "cost_min": 12.14,
+        "distance_km": 5.9,
+        "base_time_min": 12.14,
+        "settled_nodes": 13,
+        "elapsed_ms": 0.6972999981371686,
+        "algorithm": "astar",
+        "settled_order": []
+      }
+    },
+    {
+      "rank": 3,
+      "target": "A03",
+      "score": 61.94,
+      "demand": 1,
+      "unit": "ekip",
+      "service": "rescue",
+      "task": {
+        "id": "A03-K",
+        "target": "A03",
+        "service": "rescue",
+        "quantity": 1,
+        "urgency": 5
+      },
+      "status": "assigned",
+      "vehicle": {
+        "id": "K01",
+        "center": "H0",
+        "capacity": 1,
+        "available": true,
+        "service": "rescue"
+      },
+      "route": {
+        "found": true,
+        "path": [
+          "H0",
+          "K027",
+          "K075",
+          "K015",
+          "K093",
+          "A04",
+          "K043",
+          "K067",
+          "K141",
+          "K117",
+          "K023",
+          "K065",
+          "K021",
+          "K057",
+          "K069",
+          "A03"
+        ],
+        "road_ids": [
+          "R079",
+          "R114",
+          "R050",
+          "R053",
+          "R015",
+          "R125",
+          "R258",
+          "R135",
+          "R120",
+          "R009",
+          "R108",
+          "R144",
+          "R304",
+          "R156",
+          "R169"
+        ],
+        "cost_min": 36.395,
+        "distance_km": 17.759999999999998,
+        "base_time_min": 36.394999999999996,
+        "settled_nodes": 55,
+        "elapsed_ms": 1.0111000010510907,
+        "algorithm": "astar",
+        "settled_order": []
+      }
+    },
+    {
+      "rank": 4,
+      "target": "A08",
+      "score": 63.24,
+      "demand": 1,
+      "unit": "ekip",
+      "service": "rescue",
+      "task": {
+        "id": "A08-K",
+        "target": "A08",
+        "service": "rescue",
+        "quantity": 1,
+        "urgency": 4
+      },
+      "status": "assigned",
+      "vehicle": {
+        "id": "K02",
+        "center": "H2",
+        "capacity": 1,
+        "available": true,
+        "service": "rescue"
+      },
+      "route": {
+        "found": true,
+        "path": [
+          "H2",
+          "K106",
+          "K082",
+          "K092",
+          "K054",
+          "A08"
+        ],
+        "road_ids": [
+          "R223",
+          "R004",
+          "R134",
+          "R166",
+          "R116"
+        ],
+        "cost_min": 12.14,
+        "distance_km": 5.9,
+        "base_time_min": 12.14,
+        "settled_nodes": 13,
+        "elapsed_ms": 0.6972999981371686,
+        "algorithm": "astar",
+        "settled_order": []
+      }
+    },
+    {
+      "rank": 5,
+      "target": "A03",
+      "score": 61.94,
+      "demand": 80,
+      "unit": "koli",
+      "service": "logistics",
+      "task": {
+        "id": "A03-L",
+        "target": "A03",
+        "service": "logistics",
+        "quantity": 80,
+        "urgency": 4
+      },
+      "status": "assigned",
+      "vehicle": {
+        "id": "V01",
+        "center": "H0",
+        "capacity": 120,
+        "available": true,
+        "service": "logistics"
+      },
+      "route": {
+        "found": true,
+        "path": [
+          "H0",
+          "K027",
+          "K075",
+          "K015",
+          "K093",
+          "A04",
+          "K043",
+          "K067",
+          "K141",
+          "K117",
+          "K023",
+          "K065",
+          "K021",
+          "K057",
+          "K069",
+          "A03"
+        ],
+        "road_ids": [
+          "R079",
+          "R114",
+          "R050",
+          "R053",
+          "R015",
+          "R125",
+          "R258",
+          "R135",
+          "R120",
+          "R009",
+          "R108",
+          "R144",
+          "R304",
+          "R156",
+          "R169"
+        ],
+        "cost_min": 36.395,
+        "distance_km": 17.759999999999998,
+        "base_time_min": 36.394999999999996,
+        "settled_nodes": 55,
+        "elapsed_ms": 1.0111000010510907,
+        "algorithm": "astar",
+        "settled_order": []
+      }
+    },
+    {
+      "rank": 6,
+      "target": "A11",
+      "score": 61.58,
+      "demand": 200,
+      "unit": "koli",
+      "service": "logistics",
+      "task": {
+        "id": "A11-L",
+        "target": "A11",
+        "service": "logistics",
+        "quantity": 200,
+        "urgency": 4
+      },
+      "status": "insufficient_capacity",
+      "vehicle": null,
+      "route": null
+    },
+    {
+      "rank": 7,
+      "target": "A11",
+      "score": 61.58,
+      "demand": 1,
+      "unit": "ekip",
+      "service": "medical",
+      "task": {
+        "id": "A11-S",
+        "target": "A11",
+        "service": "medical",
+        "quantity": 1,
+        "urgency": 4
+      },
+      "status": "assigned",
+      "vehicle": {
+        "id": "S02",
+        "center": "H0",
+        "capacity": 1,
+        "available": true,
+        "service": "medical"
+      },
+      "route": {
+        "found": true,
+        "path": [
+          "H0",
+          "K027",
+          "K017",
+          "K051",
+          "K133",
+          "K111",
+          "K163",
+          "K107",
+          "K091",
+          "K071",
+          "K053",
+          "K149",
+          "K147",
+          "K001",
+          "K002",
+          "K150",
+          "K098",
+          "K078",
+          "K020",
+          "K130",
+          "A11"
+        ],
+        "road_ids": [
+          "R079",
+          "R063",
+          "R239",
+          "R279",
+          "R158",
+          "R086",
+          "R110",
+          "R068",
+          "R148",
+          "R141",
+          "R036",
+          "R165",
+          "R146",
+          "R178",
+          "R137",
+          "R174",
+          "R150",
+          "R052",
+          "R090",
+          "R132"
+        ],
+        "cost_min": 53.575,
+        "distance_km": 25.26,
+        "base_time_min": 51.715,
+        "settled_nodes": 89,
+        "elapsed_ms": 1.0469999979250133,
+        "algorithm": "astar",
+        "settled_order": []
+      }
+    },
+    {
+      "rank": 8,
+      "target": "A06",
+      "score": 47.68,
+      "demand": 40,
+      "unit": "koli",
+      "service": "logistics",
+      "task": {
+        "id": "A06-L",
+        "target": "A06",
+        "service": "logistics",
+        "quantity": 40,
+        "urgency": 3
+      },
+      "status": "assigned",
+      "vehicle": {
+        "id": "V02",
+        "center": "H0",
+        "capacity": 80,
+        "available": true,
+        "service": "logistics"
+      },
+      "route": {
+        "found": true,
+        "path": [
+          "H0",
+          "K027",
+          "K017",
+          "K051",
+          "K007",
+          "K031",
+          "K025",
+          "K125",
+          "K143",
+          "A06"
+        ],
+        "road_ids": [
+          "R079",
+          "R063",
+          "R239",
+          "R159",
+          "R065",
+          "R041",
+          "R087",
+          "R139",
+          "R096"
+        ],
+        "cost_min": 22.580000000000002,
+        "distance_km": 9.94,
+        "base_time_min": 20.72,
+        "settled_nodes": 22,
+        "elapsed_ms": 0.8037999941734597,
+        "algorithm": "astar",
+        "settled_order": []
+      }
+    },
+    {
+      "rank": 9,
+      "target": "A01",
+      "score": 46.38,
+      "demand": 45,
+      "unit": "koli",
+      "service": "logistics",
+      "task": {
+        "id": "A01-L",
+        "target": "A01",
+        "service": "logistics",
+        "quantity": 45,
+        "urgency": 3
+      },
+      "status": "assigned",
+      "vehicle": {
+        "id": "V08",
+        "center": "H0",
+        "capacity": 100,
+        "available": true,
+        "service": "logistics"
+      },
+      "route": {
+        "found": true,
+        "path": [
+          "H0",
+          "K085",
+          "K121",
+          "K153",
+          "A01"
+        ],
+        "road_ids": [
+          "R348",
+          "R131",
+          "R111",
+          "R105"
+        ],
+        "cost_min": 18.98,
+        "distance_km": 6.73,
+        "base_time_min": 16.76,
+        "settled_nodes": 16,
+        "elapsed_ms": 0.6843999872216955,
+        "algorithm": "astar",
+        "settled_order": []
+      }
+    },
+    {
+      "rank": 10,
+      "target": "A09",
+      "score": 46.02,
+      "demand": 55,
+      "unit": "koli",
+      "service": "logistics",
+      "task": {
+        "id": "A09-L",
+        "target": "A09",
+        "service": "logistics",
+        "quantity": 55,
+        "urgency": 3
+      },
+      "status": "assigned",
+      "vehicle": {
+        "id": "V06",
+        "center": "H1",
+        "capacity": 60,
+        "available": true,
+        "service": "logistics"
+      },
+      "route": {
+        "found": true,
+        "path": [
+          "H1",
+          "K124",
+          "K024",
+          "K042",
+          "K018",
+          "K132",
+          "K064",
+          "K066",
+          "K060",
+          "A09"
+        ],
+        "road_ids": [
+          "R190",
+          "R062",
+          "R020",
+          "R313",
+          "R061",
+          "R064",
+          "R013",
+          "R124",
+          "R007"
+        ],
+        "cost_min": 21.689999999999998,
+        "distance_km": 9.28,
+        "base_time_min": 20.23,
+        "settled_nodes": 21,
+        "elapsed_ms": 0.7522999949287623,
+        "algorithm": "astar",
+        "settled_order": []
+      }
+    },
+    {
+      "rank": 11,
+      "target": "A04",
+      "score": 44.72,
+      "demand": 50,
+      "unit": "koli",
+      "service": "logistics",
+      "task": {
+        "id": "A04-L",
+        "target": "A04",
+        "service": "logistics",
+        "quantity": 50,
+        "urgency": 3
+      },
+      "status": "assigned",
+      "vehicle": {
+        "id": "V04",
+        "center": "H2",
+        "capacity": 100,
+        "available": true,
+        "service": "logistics"
+      },
+      "route": {
+        "found": true,
+        "path": [
+          "H2",
+          "K086",
+          "K016",
+          "K068",
+          "K108",
+          "K050",
+          "K038",
+          "K126",
+          "K090",
+          "K160",
+          "K006",
+          "K005",
+          "K057",
+          "K021",
+          "K065",
+          "K023",
+          "K117",
+          "K141",
+          "K067",
+          "K043",
+          "A04"
+        ],
+        "road_ids": [
+          "R100",
+          "R082",
+          "R074",
+          "R023",
+          "R262",
+          "R145",
+          "R199",
+          "R026",
+          "R163",
+          "R030",
+          "R180",
+          "R117",
+          "R304",
+          "R144",
+          "R108",
+          "R009",
+          "R120",
+          "R135",
+          "R258",
+          "R125"
+        ],
+        "cost_min": 52.83500000000001,
+        "distance_km": 24.16,
+        "base_time_min": 52.835,
+        "settled_nodes": 84,
+        "elapsed_ms": 0.8862999966368079,
+        "algorithm": "astar",
+        "settled_order": []
+      }
+    },
+    {
+      "rank": 12,
+      "target": "A12",
+      "score": 31.76,
+      "demand": 30,
+      "unit": "koli",
+      "service": "logistics",
+      "task": {
+        "id": "A12-L",
+        "target": "A12",
+        "service": "logistics",
+        "quantity": 30,
+        "urgency": 3
+      },
+      "status": "unreachable",
+      "vehicle": null,
+      "route": null
+    },
+    {
+      "rank": 13,
+      "target": "A07",
+      "score": 30.46,
+      "demand": 65,
+      "unit": "koli",
+      "service": "logistics",
+      "task": {
+        "id": "A07-L",
+        "target": "A07",
+        "service": "logistics",
+        "quantity": 65,
+        "urgency": 3
+      },
+      "status": "assigned",
+      "vehicle": {
+        "id": "V07",
+        "center": "H1",
+        "capacity": 100,
+        "available": true,
+        "service": "logistics"
+      },
+      "route": {
+        "found": true,
+        "path": [
+          "H1",
+          "K124",
+          "K024",
+          "K074",
+          "K052",
+          "K100",
+          "K146",
+          "K122",
+          "K102",
+          "K058",
+          "K072",
+          "K056",
+          "K136",
+          "K032",
+          "K126",
+          "A07"
+        ],
+        "road_ids": [
+          "R190",
+          "R062",
+          "R057",
+          "R293",
+          "R153",
+          "R072",
+          "R157",
+          "R078",
+          "R046",
+          "R081",
+          "R300",
+          "R113",
+          "R028",
+          "R310",
+          "R098"
+        ],
+        "cost_min": 45.335,
+        "distance_km": 18.12,
+        "base_time_min": 41.97,
+        "settled_nodes": 71,
+        "elapsed_ms": 1.4368000120157376,
+        "algorithm": "astar",
+        "settled_order": []
+      }
+    },
+    {
+      "rank": 14,
+      "target": "A02",
+      "score": 29.16,
+      "demand": 90,
+      "unit": "koli",
+      "service": "logistics",
+      "task": {
+        "id": "A02-L",
+        "target": "A02",
+        "service": "logistics",
+        "quantity": 90,
+        "urgency": 3
+      },
+      "status": "no_available_vehicle",
+      "vehicle": null,
+      "route": null
+    },
+    {
+      "rank": 15,
+      "target": "A10",
+      "score": 28.8,
+      "demand": 85,
+      "unit": "koli",
+      "service": "logistics",
+      "task": {
+        "id": "A10-L",
+        "target": "A10",
+        "service": "logistics",
+        "quantity": 85,
+        "urgency": 3
+      },
+      "status": "no_available_vehicle",
+      "vehicle": null,
+      "route": null
+    },
+    {
+      "rank": 16,
+      "target": "A05",
+      "score": 27.5,
+      "demand": 70,
+      "unit": "koli",
+      "service": "logistics",
+      "task": {
+        "id": "A05-L",
+        "target": "A05",
+        "service": "logistics",
+        "quantity": 70,
+        "urgency": 3
+      },
+      "status": "no_available_vehicle",
+      "vehicle": null,
+      "route": null
+    }
+  ]
+}
