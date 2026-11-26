@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "name": "Üçüncü hafta — elle doğrulanan rota örneği",
+  "description": "Sentetik, çift yönlü dört düğüm. Süreler dakika, mesafeler kilometredir. SB-BT rotası hasar katsayısı 2 ile 6 dakika; SC-CT rotası 5 dakikadır. ST kapalıdır.",
+  "directed": false,
+  "coordinate_system": "cartesian_km",
+  "nodes": [
+    {"id": "S", "name": "Yardım merkezi", "node_type": "aid_center", "x_km": 0, "y_km": 0},
+    {"id": "B", "name": "Üst kavşak", "node_type": "intersection", "x_km": 1, "y_km": 1},
+    {"id": "C", "name": "Alt kavşak", "node_type": "intersection", "x_km": 1, "y_km": -1},
+    {"id": "T", "name": "Afet noktası", "node_type": "disaster_area", "x_km": 2, "y_km": 0, "affected_count": 30, "injured_count": 5, "urgency_level": 3}
+  ],
+  "roads": [
+    {"id": "SB", "source": "S", "target": "B", "distance_km": 1.5, "travel_time_min": 2, "status": "open"},
+    {"id": "BT", "source": "B", "target": "T", "distance_km": 1.5, "travel_time_min": 2, "status": "damaged"},
+    {"id": "SC", "source": "S", "target": "C", "distance_km": 1.6, "travel_time_min": 3, "status": "open"},
+    {"id": "CT", "source": "C", "target": "T", "distance_km": 1.6, "travel_time_min": 2, "status": "open"},
+    {"id": "ST", "source": "S", "target": "T", "distance_km": 2.2, "travel_time_min": 1, "status": "closed"}
+  ]
+}

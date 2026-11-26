@@ -1,187 +1,148 @@
 <h1 align="center">AYROS MMY</h1>
-<p align="center">Afet Yardım Rota Optimizasyon Sistemi</p>
+<p align="center"><strong>Afet Yardım Rota Optimizasyon Sistemi</strong></p>
+<p align="center">Python ile çizge modelleme, yol koşullarına duyarlı rota hesabı ve SVG görselleştirme.</p>
 
-AYROS MMY, simüle edilmiş afet bölgelerinde yardım araçlarının yol koşulları ve ihtiyaç öncelikleri dikkate alınarak yönlendirilmesi amacıyla geliştirilecek bir akademik projedir. Dijkstra ve A* algoritmalarıyla rota hesaplama, değişen yol koşullarına göre yeniden planlama ve temel düzeyde çoklu araç görev dağıtımı hedeflenmektedir.
+AYROS MMY, simüle edilmiş bir afet bölgesinde yardım merkezlerinden afet noktalarına ulaşım rotaları hesaplayan bir akademik projedir. Dijkstra algoritması, açık ve hasarlı yolların tahmini geçiş sürelerini değerlendirerek en düşük süre maliyetli rotayı bulur; kapalı yolları aramaya dahil etmez.
 
-> **Proje durumu — 2. hafta:** İlk çizge modeli, JSON senaryo okuma, veri doğrulama, komşuluk sorguları ve statik SVG gösterimi tamamlandı. Rota algoritmaları, hasar maliyeti, araç atama ve hareket simülasyonu henüz geliştirilmedi. Aşağıdaki genel kapsam bu sonraki hedefleri de içerir.
+**Mevcut sürüm:** Komut satırı uygulaması · Python 3.11+ · Yalnızca standart kütüphane
 
-## Proje Hakkında
+[Hızlı başlangıç](#hızlı-başlangıç) · [Kullanım](#kullanım) · [Yol modeli](#yol-modeli) · [Testler](#testler) · [Yol haritası](#yol-haritası)
 
-Afet sonrasında yolların hasar görmesi veya ulaşıma kapanması, yardım araçlarının afet noktalarına erişimini güçleştirebilir. AYROS MMY kapsamında, bu koşulların simüle edildiği bir yol ağı üzerinde yardım araçları için uygun rotaların hesaplanması planlanmaktadır.
+## Önizleme
 
-Afet bölgesi **ağırlıklı çizge (weighted graph)** olarak modellenecektir. Kavşaklar, yardım merkezleri ve afet noktaları düğümleri; bu noktaları birbirine bağlayan yollar ise kenarları oluşturacaktır. Her yol için mesafe, tahmini geçiş süresi ve yol durumu gibi bilgiler tutulacaktır.
+![Düzensiz yerleşim ağında H0 merkezinden A5 afet noktasına hesaplanan rota](docs/hafta3_genis_rota.svg)
 
-## Projenin Amacı
+Mavi çerçeve seçilen rotayı gösterir. Yeşil yollar açık, turuncu kesikli yollar hasarlı, kırmızı noktalı yollar kapalıdır. SVG dosyasını tarayıcıda açarak yolların üzerine geldiğinizde tür, mesafe ve süre ayrıntılarını görebilirsiniz.
 
-Projenin amacı, yardım araçlarının yönlendirilmesinde yalnızca en kısa mesafeyi değil; yol durumunu, tahmini seyahat süresini ve afet noktalarının aciliyetini de dikkate alan bir sistem geliştirmektir.
+## Özellikler
 
-Bu doğrultuda yol koşullarının rota maliyetine yansıtılması, afet noktalarının ihtiyaçlarına göre önceliklendirilmesi ve araçların uygun hedeflere atanması hedeflenmektedir. Önceliklendirme ve görev dağıtımı hedef seçimini destekleyecek; rota algoritmaları ise seçilen hedefe ulaşmak için tanımlanan yol maliyetleri üzerinden çalışacaktır.
+- **Dijkstra ile rota hesabı:** Başlangıç ve hedef seçimi; rota, toplam maliyet, temel süre ve mesafe çıktısı.
+- **Yol koşullarının modellenmesi:** Değiştirilebilir hasar katsayısı ve kapalı yolların elenmesi.
+- **Toplu erişilebilirlik sorgusu:** Bir merkezden bütün afet noktalarına bağımsız rota hesabı.
+- **Geometri içeren senaryolar:** Düzensiz mahalleler, ana yollar, ara sokaklar, çıkmazlar ve köprüler.
+- **SVG çıktısı:** Yol durumları, yol sınıfları, seçilen rota ve maliyet açıklamaları.
+- **Veri doğrulama:** Geçersiz kimlikler, ölçümler, bağlantılar ve yol geometrileri için açıklayıcı hatalar.
+- **Arama ölçümleri:** Maliyeti kesinleştirilen düğüm sayısı ve rota hesaplama süresi.
 
-## Planlanan Özellikler
+## Hızlı başlangıç
 
-- **Çizge tabanlı afet simülasyonu:** Kavşak, yardım merkezi ve afet noktalarından oluşan bir yol ağı oluşturulması.
-- **Yol bilgilerinin tutulması:** Her yolun mesafesinin, tahmini geçiş süresinin ve açık, hasarlı veya kapalı olma durumunun modellenmesi.
-- **Yol koşullarına duyarlı maliyet hesabı:** Kapalı yolların rota hesabından çıkarılması ve hasarlı yolların rota maliyetinin artırılması.
-- **İki rota algoritması:** Dijkstra ve A* algoritmalarının uygulanması ve karşılaştırılması.
-- **Sezgisel rota arama:** A* için modelin uygun olduğu durumlarda Öklid uzaklığı gibi sezgisel yöntemlerin değerlendirilmesi.
-- **Dinamik yeniden planlama:** Yol kapanması veya maliyet değişimi durumunda ilgili rotaların yeniden hesaplanması.
-- **Afet noktalarının önceliklendirilmesi:** Yaralı sayısı, afetzede sayısı ve aciliyet seviyesi gibi verilerin değerlendirilmesi.
-- **Temel görev dağıtımı:** Birden fazla yardım aracının uygun afet noktalarına atanması.
-- **Senaryo üretimi:** Farklı düğüm ve yol sayıları, kapalı veya hasarlı yol oranları, araç sayıları ve afet öncelik seviyeleri içeren senaryolar hazırlanması.
-- **Performans analizi:** Rota maliyeti, tahmini seyahat süresi, algoritma çalışma süresi ve incelenen düğüm sayısının ölçülmesi.
-
-## Sistem Akışı
-
-```text
-Afet bölgesi simülasyonu
-          |
-          v
-Düğümlerin ve yolların oluşturulması
-          |
-          v
-Yol durumlarının belirlenmesi
-          |
-          v
-Afet noktalarının önceliklendirilmesi
-          |
-          v
-Araçların afet noktalarına atanması
-          |
-          v
-Dijkstra / A* ile rota hesaplama
-          |
-          v
-Rotanın oluşturulması
-          |
-          v
-Yol durumunda veya maliyetinde değişiklik
-          |
-          v
-Gerekiyorsa yeniden rota hesaplama
-```
-
-## Kullanılacak Algoritmalar
-
-### Dijkstra
-
-Dijkstra algoritması, negatif olmayan kenar ağırlıklarına sahip bir çizgede başlangıç düğümünden diğer düğümlere en düşük maliyetli yolları bulmak için kullanılacaktır. Projede kenar maliyetlerinin yol bilgileri ve yol koşulları temelinde tanımlanması planlanmaktadır. Kapalı yollar aramaya dahil edilmeyecek, hasarlı yollar için artırılmış maliyet uygulanacaktır.
-
-Dijkstra, aynı senaryolarda A* ile karşılaştırılacak temel rota algoritmalarından biri olacaktır.
-
-### A*
-
-A* algoritması, başlangıçtan bir düğüme ulaşmanın maliyetini, o düğümden hedefe kalan maliyetin sezgisel tahminiyle birlikte değerlendirir:
-
-```text
-f(n) = g(n) + h(n)
-```
-
-- **g(n):** Başlangıç düğümünden n düğümüne kadar bulunan yolun maliyeti.
-- **h(n):** n düğümünden hedefe ulaşmak için kalan maliyetin sezgisel tahmini.
-- **f(n):** n düğümü üzerinden hedefe ulaşmanın tahmini toplam maliyeti.
-
-Düğümlerin konum bilgileri ve seçilen maliyet modeli uygun olduğunda Öklid uzaklığı gibi sezgisel yöntemler değerlendirilecektir. Sezgisel fonksiyonun rota maliyetiyle uyumlu birimde olması ve en düşük maliyetli rotayı bulma güvencesi için kalan maliyeti olduğundan yüksek tahmin etmemesi gözetilecektir. Kullanılacak sezgisel yöntem, sistem modeli netleştikçe belirlenecektir.
-
-## Yol Modeli
-
-| Yol durumu | Sistemde planlanan değerlendirme |
-| --- | --- |
-| **Açık** | Mesafe ve tahmini geçiş süresi gibi yol bilgileri üzerinden hesaplanan temel maliyetle rota aramasına dahil edilecektir. |
-| **Hasarlı** | Geçişe izin verilecek; olumsuz yol koşullarını yansıtmak için rota maliyeti artırılacaktır. |
-| **Kapalı** | Geçişe izin verilmeyecek ve rota hesabında kullanılamayacaktır. |
-
-Mesafe, tahmini geçiş süresi ve yol durumunun maliyete nasıl yansıtılacağı tasarım sürecinde netleştirilecektir. Hasarlı yollar için uygulanacak ek maliyet veya katsayı henüz kesinleştirilmemiştir.
-
-## Afet Noktalarının Önceliklendirilmesi
-
-Afet noktalarının değerlendirilmesinde aşağıdaki verilerin kullanılması planlanmaktadır:
-
-- Yaralı sayısı.
-- Afetzede sayısı.
-- Aciliyet seviyesi.
-- İlgili noktaya ulaşım maliyeti.
-
-Bu veriler, yardım ihtiyacının önceliğini ve araçların hangi noktalara yönlendirileceğini belirlemede kullanılacaktır. **Kesin bir matematiksel öncelik formülü henüz belirlenmemiştir.** Ölçütlerin ağırlıkları ve birlikte nasıl değerlendirileceği, proje tasarımı ve simülasyon senaryoları doğrultusunda ele alınacaktır.
-
-## Performans Karşılaştırması
-
-Dijkstra ve A* algoritmalarının aynı yol ağı, başlangıç ve hedef noktaları ile aynı maliyet modeli kullanılarak karşılaştırılması planlanmaktadır.
-
-| Metrik | Değerlendirilecek ölçüt |
-| --- | --- |
-| **Rota maliyeti** | Hesaplanan rotadaki kenar maliyetlerinin toplamı. |
-| **Tahmini seyahat süresi** | Rotadaki yolların tahmini geçiş sürelerinin toplamı. |
-| **Algoritma çalışma süresi** | Rota hesaplama işleminin tamamlanması için geçen süre. |
-| **İncelenen düğüm sayısı** | Arama sırasında incelenen düğümlerin, iki algoritma için ortak bir sayım tanımıyla ölçülen sayısı. |
-
-Deneylerde düğüm ve yol sayıları, kapalı veya hasarlı yol oranları, araç sayıları ve afet öncelik seviyeleri değiştirilecektir. Bu bölüm karşılaştırma planını açıklamaktadır; henüz deney sonucu veya bir algoritmanın üstünlüğüne ilişkin bir bulgu sunulmamaktadır.
-
-## Kullanılacak Teknolojiler
-
-| Teknoloji | Planlanan kullanım |
-| --- | --- |
-| **Python** | Simülasyon modelinin, rota algoritmalarının, temel görev dağıtımının ve performans ölçümlerinin geliştirilmesi. |
-
-Algoritmaların mümkün olduğunca proje ekibi tarafından geliştirilmesi hedeflenmektedir. Görselleştirme ve analiz için kullanılabilecek Python kütüphaneleri ilerleyen aşamalarda değerlendirilecektir; henüz belirli bir kütüphane veya framework seçilmemiştir.
-
-## İleri Aşama Hedefleri
-
-Projenin kapsamı ve geliştirme süresi elverirse aşağıdaki olası geliştirmeler değerlendirilebilecektir:
-
-- **Araç Rotalama Problemi (Vehicle Routing Problem — VRP):** Birden fazla aracın ve ziyaret edilecek noktaların birlikte ele alındığı yaklaşımların incelenmesi.
-- **Gelişmiş çoklu araç atama:** Temel görev dağıtımının ötesinde, araçlar arasındaki görev paylaşımının geliştirilmesi.
-- **Daha büyük simülasyonlar:** Daha fazla düğüm, yol, araç ve afet noktası içeren senaryoların denenmesi.
-- **Gelişmiş görselleştirme:** Yol durumlarının, afet önceliklerinin ve rota değişimlerinin daha ayrıntılı gösterilmesi.
-
-Bu başlıklar gelecekteki olası geliştirmelerdir; tamamlanmış işlevleri veya mevcut aşamada kesinleşmiş teslimleri ifade etmemektedir.
-
-## Proje Durumu
-
-İkinci haftada Python veri modeli ve küçük bir afet senaryosu oluşturuldu. Senaryo **10 düğüm ve 14 çift yönlü yol** içerir: **9 açık, 3 hasarlı, 2 kapalı yol**. Düğümler 1 yardım merkezi, 6 kavşak ve 3 afet noktasından oluşur.
-
-Kapalı yollar veride korunur ve geçilebilir komşu sorgularından çıkarılır. Hasarlı yolların durumu tutulur; henüz ek maliyet uygulanmaz. Rota, öncelik puanı ve araç atama hesabı yapılmaz. **19 otomatik test başarılıdır.**
-
-## Çalıştırma
-
-Python **3.11 veya üzeri** yeterlidir. Bu sürüm yalnızca standart kütüphaneyi kullanır; ek paket kurulumu gerekmez. Komutları depo klasöründe çalıştırın:
+Git ve Python **3.11 veya üzeri** kurulu olmalıdır. Ek Python paketi kurulumu gerekmez.
 
 ```bash
-python -m ayros
-python -m ayros --svg docs/hafta2_senaryo.svg
-python -m unittest discover -s tests -v
+git clone https://github.com/AYROS-MMY/afet-yardim-rota-planlama.git
+cd afet-yardim-rota-planlama
 ```
 
-Farklı bir senaryo için `python -m ayros data/hafta2_senaryo.json` komutunu kullanabilirsiniz. Windows'ta Python komutu `py` ise `python` yerine `py` yazın. Hatalı dosyalarda program anlaşılır hata ile `1`, başarılı çalışmada `0` çıkış kodu döndürür.
+Güncel uygulama henüz geliştirme dalındadır:
 
-![İkinci hafta afet çizgesi](docs/hafta2_senaryo.svg)
+```bash
+git switch hafta-3-dijkstra
+```
 
-## Dosyalar ve ikinci hafta notları
+Windows'ta proje klasöründeki terminalden çalıştırın:
 
-- `ayros/model.py`: Düğüm, yol ve yönsüz komşuluk listesi.
-- `ayros/scenario.py`: JSON okuma ve veri kontrolleri.
-- `ayros/__main__.py`: Terminalde senaryo özeti.
-- `ayros/visualize.py`: Veriden SVG üretimi.
-- `data/hafta2_senaryo.json`: Tekrarlanabilir örnek senaryo.
-- `tests/test_scenario.py`: Model, dosya okuma, görsel ve komut satırı testleri.
-- [Veri sözlüğü ve sunum adımları](docs/hafta2.md)
-- [Gereksinim analizi](docs/gereksinimler.md)
+```powershell
+py -3.11 -m ayros --start H0 --target A5 --svg output/rota.svg
+```
 
-Koordinatlar yerel düzlemde kilometre cinsindedir; gerçek enlem/boylam değildir. İlk modelde yollar çift yönlüdür; aynı iki düğüm arasında tek yol desteklenir. Bağlantısız ağlar geçerlidir, boş düğüm listesi reddedilir. Ayrıntılı kapsam ve sonraki adım hafta notunda açıklanmıştır.
+macOS/Linux üzerinde aynı komutta `py -3.11` yerine Python 3.11+ yorumlayıcınızın `python3` komutunu kullanın. Oluşan `output/rota.svg` dosyasını tarayıcıda açın. `output/` klasörü gerektiğinde oluşturulur ve Git takibine alınmaz.
 
-## Ekip
+Varsayılan senaryoda beklenen sonuç:
 
-| Ad Soyad |
-| --- |
-| Mert Aydın |
-| Yusuf Öksüz |
-| Muhammet ALTINOLUK |
+```text
+Rota: H0 -> K09 -> K10 -> K11 -> K25 -> K26 -> K30 -> K31 -> K28 -> A5
+Maliyet / hasar dahil tahmini süre: 38.08 dk
+Temel süre (hasar etkisi hariç): 34.84 dk
+Toplam mesafe: 17.60 km
+```
 
-## Akademik Bağlam
+## Kullanım
 
-Bu proje, **Fırat Üniversitesi Mühendislik Fakültesi Bilgisayar Mühendisliği** bünyesinde, **Bilgisayar Mühendisliği Tasarım Dersi** kapsamında geliştirilmektedir.
+Seçilen merkezden bütün afet noktalarını sorgulayın:
 
-**Akademik proje başlığı:** Simüle Edilmiş Afet Bölgesinde Yardım Araçları İçin Rota Planlama
+```powershell
+py -3.11 -m ayros --start H0 --all-targets
+py -3.11 -m ayros --start H1 --all-targets
+```
 
----
+Hasarın ek süre etkisini kaldırarak rota seçimini karşılaştırın:
 
-AYROS MMY — Afet Yardım Rota Optimizasyon Sistemi
+```powershell
+py -3.11 -m ayros --start H0 --target A5 --damage-factor 1 --svg output/hasar_1.svg
+```
+
+Bu sorgu farklı bir rota üzerinden **28,90 dakika** ve **15,18 km** verir. [Karşılaştırma görseli](docs/hafta3_hasar_1.svg) depoda hazır bulunur. Katsayının 1 olması kapalı yolları açmaz.
+
+Kendi JSON senaryonuzu veya küçük doğrulama örneğini çalıştırın:
+
+```powershell
+py -3.11 -m ayros data/hafta3_ornek.json --start S --target T
+py -3.11 -m ayros --help
+```
+
+`--all-targets`, her hedef için ayrı sonuç üretir; ziyaret sırası veya araç ataması yapmaz. SVG üretimi için tek bir hedef seçilmelidir. Ulaşılamayan hedefte “Rota bulunamadı” mesajı verilir. Çıkış kodları: başarı **0**, veri/dosya hatası **1**, komut kullanımı hatası **2**, tek hedefe ulaşılamaması **3**. Toplu sorgu tamamlandığında bazı hedefler erişilemez olsa da çıkış kodu **0** olur.
+
+## Yol modeli
+
+Yol ağı, çift yönlü ve ağırlıklı bir çizgedir. Düğümler yardım merkezi, kavşak veya afet noktası; kenarlar bu noktaları bağlayan yollardır. Dijkstra uygulaması proje kodundadır; `heapq` yalnızca öncelik kuyruğu olarak kullanılır.
+
+- **Açık yol:** Maliyet temel geçiş süresidir.
+- **Hasarlı yol:** Maliyet, temel süre × hasar katsayısıdır. Katsayı varsayılan olarak **2**, en az **1** olur.
+- **Kapalı yol:** Senaryo verisinde tutulur, rota aramasında kullanılmaz.
+
+Maliyet birimi **dakika**, mesafe birimi **kilometredir**. En düşük süre maliyeti aranır; mesafe ayrı raporlanır. Hasar dahil tahmini süre ile rota maliyeti bu modelde aynı değerdir. Afet aciliyeti ve ihtiyaç bilgileri veride tutulur; henüz hedef seçimini etkilemez.
+
+Ana senaryo `data/hafta3_genis_ag.json` dosyasıdır:
+
+- **40 düğüm:** 2 yardım merkezi, 6 afet noktası ve 32 kavşak.
+- **65 yol:** 51 açık, 9 hasarlı ve 5 kapalı yol.
+- **İki köprü:** Derenin ayırdığı yakaları birbirine bağlar.
+- **Erişim örneği:** A6'nın iki girişi de kapalıdır; her merkezden 6 afet noktasının 5'ine ulaşılır.
+
+Yolun isteğe bağlı `via` koordinatları geometrisini, `road_type` alanı sınıfını belirler. Ara geometri noktaları yeni kavşak oluşturmaz. Mesafeler çizilen yol parçalarının toplamından hesaplanır. Temel süreler ana yol, ikincil yol, sokak ve köprü için sırasıyla **40, 30, 20 ve 25 km/saat** varsayımlarına dayanır.
+
+Koordinatlar yerel düzlemdedir; gerçek enlem/boylam değildir. Ağ, hızlar ve hasar katsayısı sentetiktir; gerçek şehir veya canlı saha verisi kullanılmaz. Her komut sabit bir senaryoyu çözer.
+
+Senaryoyu aynı verilerle yeniden üretmek için:
+
+```powershell
+py -3.11 scripts/generate_week3_scenario.py
+```
+
+## Proje yapısı
+
+```text
+ayros/       Çizge modeli, senaryo doğrulama, Dijkstra, CLI ve SVG üretimi
+data/        Çalıştırılabilir senaryolar ve küçük doğrulama örneği
+docs/        Proje görselleri ve mevcut teknik notlar
+scripts/     Tekrarlanabilir senaryo üretimi
+tests/       Veri modeli, rota doğruluğu, geometri ve CLI testleri
+```
+
+## Testler
+
+```powershell
+py -3.11 -m unittest discover -s tests -v
+```
+
+**47 test**, veri doğrulama, kapalı yollar, hasar etkisi, ulaşılamayan hedefler, yol geometrisi, köprü kapanmaları, SVG ve komut satırı davranışlarını kapsar. Küçük ağlarda **48 sorgu** bağımsız tam yol taramasıyla, ana senaryoda **24 sorgu** test kodundaki bağımsız Bellman–Ford hesabıyla karşılaştırılır.
+
+Hesaplama süresi maliyet hazırlama, arama ve rota kurmayı içerir; dosya okuma ve SVG üretimini içermez. Tek çalıştırmanın süresi karşılaştırmalı performans sonucu olarak değerlendirilmez.
+
+## Yol haritası
+
+- [x] Çizge modeli ve JSON senaryo doğrulama
+- [x] Dijkstra, yol durumu maliyeti ve erişilebilirlik sorguları
+- [x] Geometri içeren yol ağı ve SVG rota görselleştirme
+- [ ] A* ve aynı koşullarda algoritma karşılaştırması
+- [ ] Afet noktalarının önceliklendirilmesi
+- [ ] Temel çoklu araç görev dağıtımı
+- [ ] Yol koşulları değiştiğinde otomatik yeniden planlama
+
+## Ekip ve akademik bağlam
+
+**Muhammet Altınoluk · Mert Aydın · Yusuf Öksüz**
+
+Fırat Üniversitesi, Mühendislik Fakültesi, Bilgisayar Mühendisliği — Bilgisayar Mühendisliği Tasarım Dersi.
+
+**Akademik proje başlığı:** Simüle Edilmiş Afet Bölgesinde Yardım Araçları İçin Rota Planlama.

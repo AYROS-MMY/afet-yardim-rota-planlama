@@ -4,7 +4,7 @@ import json
 from dataclasses import dataclass
 from pathlib import Path
 
-from .model import Graph, Node, NodeType, Road, RoadStatus, ValidationError, require_text
+from .model import Graph, Node, NodeType, Road, RoadStatus, ValidationError, coordinate_pairs, require_text
 
 
 @dataclass(frozen=True)
@@ -12,6 +12,7 @@ class Scenario:
     name: str
     description: str
     graph: Graph
+    river: tuple[tuple[float, float], ...] = ()
 
 
 def load_scenario(path: str | Path) -> Scenario:
@@ -56,4 +57,7 @@ def scenario_from_dict(data: dict) -> Scenario:
             roads.append(Road(**values))
         except (KeyError, TypeError, ValueError) as error:
             raise ValidationError(f"Yol kaydı {index}: {error}") from error
-    return Scenario(data["name"], data["description"], Graph(nodes, roads))
+    river = coordinate_pairs(data.get("river", []), "Dere çizgisi")
+    if river and len(river) < 2:
+        raise ValidationError("Dere çizgisi en az iki nokta içermelidir.")
+    return Scenario(data["name"], data["description"], Graph(nodes, roads), river)
